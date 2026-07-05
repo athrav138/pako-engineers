@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { PageHero } from "@/components/sections/PageHero";
+import { Container } from "@/components/ui/Container";
+import { RFQForm } from "@/components/forms/RFQForm";
+import { company } from "@/lib/content/company";
+
+export const metadata: Metadata = {
+  title: "Contact & Request a Quote",
+  description:
+    "Send your drawing or specification to Pako Engineers for a capability confirmation and quote.",
+  alternates: { canonical: "/contact" },
+};
+
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ product?: string }>;
+}) {
+  const params = await searchParams;
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact / RFQ"
+        title="Request a quote"
+        description="Send your specification, diameter, length, material, tolerance and drawing file, and Pako Engineers will confirm capability and lead time."
+      />
+
+      <section className="py-20 md:py-28">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <div className="flex flex-col gap-6">
+            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
+              <h3 className="font-display text-base font-semibold text-navy">
+                Registered Works
+              </h3>
+              <div className="mt-4 flex items-start gap-3 text-sm text-muted">
+                <MapPin size={18} className="mt-0.5 shrink-0 text-oxide" />
+                {company.address.full}
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
+              <h3 className="font-display text-base font-semibold text-navy">
+                Direct Contact
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-muted">
+                {company.leadership.map((person) => (
+                  <li key={person.name} className="flex items-start gap-3">
+                    <Phone size={18} className="mt-0.5 shrink-0 text-oxide" />
+                    <span>
+                      {person.name} ({person.role}) -{" "}
+                      <a href={`tel:${person.phone.replaceAll("-", "")}`} className="text-navy hover:text-oxide">
+                        {person.phone}
+                      </a>
+                    </span>
+                  </li>
+                ))}
+                <li className="flex items-start gap-3">
+                  <Mail size={18} className="mt-0.5 shrink-0 text-oxide" />
+                  <a href={`mailto:${company.contact.email}`} className="text-navy hover:text-oxide">
+                    {company.contact.email}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href={`https://wa.me/${company.contact.whatsapp.replace("+", "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface p-4 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-white"
+            >
+              <MessageCircle size={18} />
+              Chat on WhatsApp
+            </a>
+
+            <div className="overflow-hidden rounded-lg border border-line">
+              <iframe
+                title="Pako Engineers location map"
+                width="100%"
+                height="220"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  company.contact.mapQuery
+                )}&output=embed`}
+              />
+            </div>
+          </div>
+
+          <RFQForm defaultProduct={params.product} />
+        </Container>
+      </section>
+    </>
+  );
+}
