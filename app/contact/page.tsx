@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -63,6 +63,37 @@ export default async function ContactPage({
                   </a>
                 </li>
               </ul>
+            </div>
+
+            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
+              <h3 className="font-display text-base font-semibold text-navy">
+                Sales Phone
+              </h3>
+              <div className="mt-4 flex items-start gap-3 text-sm text-muted">
+                <Phone size={18} className="mt-0.5 shrink-0 text-oxide" />
+                <span>
+                  <a href={`tel:${company.contact.phone}`} className="text-navy hover:text-oxide">
+                    {company.contact.phone}
+                  </a>
+                  {" · "}
+                  <a href={`mailto:${company.contact.email}`} className="text-navy hover:text-oxide">
+                    {company.contact.email}
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
+              <h3 className="font-display text-base font-semibold text-navy">
+                Business Hours
+              </h3>
+              <div className="mt-4 flex items-start gap-3 text-sm text-muted">
+                <Clock size={18} className="mt-0.5 shrink-0 text-oxide" />
+                <div>
+                  <p>{company.businessHours.open}</p>
+                  <p className="mt-1">{company.businessHours.closed} — Closed</p>
+                </div>
+              </div>
             </div>
 
             <a

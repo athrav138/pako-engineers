@@ -4,40 +4,148 @@ import { cn } from '@/lib/utils';
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
   variant?: 'default' | 'white';
+  /** Show only the PE monogram mark without the wordmark */
+  compact?: boolean;
 }
 
-export const Logo = ({ className, variant = 'default', ...props }: LogoProps) => {
-  const fillColor = variant === 'white' ? 'fill-white' : 'fill-navy';
-  const textColor = variant === 'white' ? 'fill-white' : 'fill-navy';
-  const accentColor = variant === 'white' ? 'fill-white/90' : 'fill-steel';
-  const innerBgColor = variant === 'white' ? '#0A2342' : '#ffffff';
+export const Logo = ({ className, variant = 'default', compact = false, ...props }: LogoProps) => {
+  const isWhite = variant === 'white';
+
+  // Color palette — professional blues matching the brand
+  const primaryBlue = isWhite ? '#FFFFFF' : '#1B5A96';     // P letter & "PAKO"
+  const accentBlue  = isWhite ? '#C8DDEF' : '#4A9AD4';     // E letter & "Engineers"
+  const serifColor  = isWhite ? '#E8F0F7' : '#2D7BBE';     // Serif detail / shadow
+
+  if (compact) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 72 72"
+        className={cn("h-full w-auto", className)}
+        aria-label="Pako Engineers"
+        role="img"
+        {...props}
+      >
+        <defs>
+          <linearGradient id="pe-grad-c" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={primaryBlue} />
+            <stop offset="100%" stopColor={serifColor} />
+          </linearGradient>
+        </defs>
+        {/* P letter — bold serif style */}
+        <text
+          x="12"
+          y="56"
+          fontFamily="'Georgia', 'Times New Roman', serif"
+          fontWeight="700"
+          fontSize="58"
+          fill="url(#pe-grad-c)"
+          letterSpacing="-0.02em"
+        >
+          P
+        </text>
+        {/* E subscript — elegant lowercase */}
+        <text
+          x="38"
+          y="60"
+          fontFamily="'Georgia', 'Times New Roman', serif"
+          fontWeight="400"
+          fontStyle="italic"
+          fontSize="34"
+          fill={accentBlue}
+        >
+          E
+        </text>
+      </svg>
+    );
+  }
 
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 380 80" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 340 64"
       className={cn("h-full w-auto", className)}
+      aria-label="Pako Engineers"
+      role="img"
       {...props}
     >
-      {/* Industrial Gear Icon */}
-      <g className={fillColor}>
-        <circle cx="40" cy="40" r="32" />
-        <rect x="34" y="4" width="12" height="72" rx="2" />
-        <rect x="34" y="4" width="12" height="72" rx="2" transform="rotate(45 40 40)" />
-        <rect x="34" y="4" width="12" height="72" rx="2" transform="rotate(90 40 40)" />
-        <rect x="34" y="4" width="12" height="72" rx="2" transform="rotate(135 40 40)" />
-      </g>
-      
-      {/* Inner Circle */}
-      <circle cx="40" cy="40" r="23" fill={innerBgColor} />
-      
-      {/* Pe Monogram */}
-      <text x="33" y="48" fontFamily="var(--font-manrope), sans-serif" fontWeight="800" fontSize="24" className={accentColor} textAnchor="middle">P</text>
-      <text x="50" y="48" fontFamily="var(--font-manrope), sans-serif" fontWeight="600" fontSize="20" className={fillColor} textAnchor="middle">e</text>
+      <defs>
+        <linearGradient id="pe-p-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={isWhite ? '#FFFFFF' : '#1E6DB5'} />
+          <stop offset="100%" stopColor={primaryBlue} />
+        </linearGradient>
+        <linearGradient id="pe-e-grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={accentBlue} />
+          <stop offset="100%" stopColor={isWhite ? '#A8C8E8' : '#6BB3E0'} />
+        </linearGradient>
+      </defs>
 
-      {/* Brand Text */}
-      <text x="95" y="48" fontFamily="var(--font-manrope), sans-serif" fontWeight="800" fontSize="32" letterSpacing="0.02em" className={textColor}>PAKO</text>
-      <text x="190" y="48" fontFamily="var(--font-manrope), sans-serif" fontWeight="400" fontSize="32" letterSpacing="0.02em" className={accentColor}>ENGINEERS</text>
+      {/* ── PE Monogram ── */}
+      <g>
+        {/* P — large bold serif */}
+        <text
+          x="4"
+          y="52"
+          fontFamily="'Georgia', 'Times New Roman', serif"
+          fontWeight="700"
+          fontSize="54"
+          fill="url(#pe-p-grad)"
+          letterSpacing="-0.02em"
+        >
+          P
+        </text>
+        {/* E — overlapping italic subscript */}
+        <text
+          x="30"
+          y="56"
+          fontFamily="'Georgia', 'Times New Roman', serif"
+          fontWeight="400"
+          fontStyle="italic"
+          fontSize="30"
+          fill="url(#pe-e-grad)"
+        >
+          E
+        </text>
+      </g>
+
+      {/* ── Wordmark ── */}
+      <g>
+        {/* PAKO — bold */}
+        <text
+          x="68"
+          y="40"
+          fontFamily="'Manrope', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+          fontWeight="800"
+          fontSize="28"
+          fill={primaryBlue}
+          letterSpacing="0.06em"
+        >
+          PAKO
+        </text>
+        {/* Engineers — lighter weight */}
+        <text
+          x="170"
+          y="40"
+          fontFamily="'Manrope', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+          fontWeight="400"
+          fontSize="28"
+          fill={accentBlue}
+          letterSpacing="0.02em"
+        >
+          Engineers
+        </text>
+      </g>
+
+      {/* ── Subtle underline accent ── */}
+      <rect
+        x="68"
+        y="50"
+        width="40"
+        height="2"
+        rx="1"
+        fill={accentBlue}
+        opacity="0.5"
+      />
     </svg>
   );
 };

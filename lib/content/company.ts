@@ -8,9 +8,9 @@ export const company = {
   yearsInBusiness: new Date().getFullYear() - 1994,
   certification: "ISO 9001:2015",
   address: {
-    line1: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road",
-    line2: "Burli, Tal. Palus, Sangli - 416308, Maharashtra, India",
-    full: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road, Burli, Tal. Palus, Sangli - 416308, Maharashtra, India",
+    line1: "Gat No. 453, M. No. 1230, Palus Colony, Kirloskar Wadi Road",
+    line2: "Burli, Tal - Palus, Sangli-416308, Maharashtra, India",
+    full: "Gat No. 453, M. No. 1230, Palus Colony, Kirloskar Wadi Road, Burli, Tal - Palus, Sangli-416308, Maharashtra, India",
   },
   leadership: [
     { name: "Mr. Sudarshan Khot", role: "Chief Executive Officer", phone: "+91-9921854252" },
@@ -24,7 +24,7 @@ export const company = {
     positioning:
       "An ISO 9001:2015 manufacturer and exporter serving pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East and North America.",
     facility:
-      "Pako Engineers operates from Gat No. 453, Burli, Tal. Palus, Sangli, with machining, grinding, CNC lathe, wire-cut, VMC key-way and in-house assembly capabilities supported by calibrated measuring instruments.",
+      "Pako Engineers operates from Gat No. 453, Burli, Tal - Palus, Sangli, with machining, grinding, CNC lathe, wire-cut, VMC key-way and in-house assembly capabilities supported by calibrated measuring instruments.",
   },
   workforce: {
     total: 47,
@@ -60,15 +60,21 @@ export const company = {
     "Saudi Arabia",
   ],
   contact: {
+    phone: "09860269972",
     email: "sales@pakoshaft.com",
     whatsapp: "+919921854252",
-    mapQuery: "Pako Engineers, Burli, Tal. Palus, Sangli, Maharashtra 416308",
+    mapQuery: "Pako Engineers, Burli, Tal - Palus, Sangli, Maharashtra 416308",
+  },
+  businessHours: {
+    open: "Wednesday - Monday: 10:00 AM - 6:00 PM",
+    closed: "Tuesday",
   },
   links: {
     website: "https://pakoshaft.com/",
     linkedin: "https://www.linkedin.com/company/pako-engineers/",
-    exportersIndia: "https://www.exportersindia.com/pako-engineers-company5734979/",
+    exportersIndia: "https://www.exportersindia.com/pako-engineers/",
     indiaMart: "https://www.indiamart.com/pako-engineers/aboutus.html",
+    justDial: "https://www.justdial.com/Sangli/Pako-Engineers-Inampatta/9999PX233-X233-180411113230-R4I6_BZDET",
   },
 } as const;
 

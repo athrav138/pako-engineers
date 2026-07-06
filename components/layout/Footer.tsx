@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
-import { MapPin, Mail, Phone, ShieldCheck, Award } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
+import { MapPin, Mail, Phone, ShieldCheck, Award, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
 
@@ -10,15 +10,7 @@ export function Footer() {
       <Container className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Company Info */}
         <div>
-          <div className="relative h-16 w-60 overflow-hidden bg-white">
-            <Image
-              src={company.logo}
-              alt={`${company.name} logo`}
-              fill
-              sizes="240px"
-              className="object-contain"
-            />
-          </div>
+          <Logo variant="white" className="h-12 w-auto" />
           <p className="mt-4 text-sm leading-relaxed text-white/70">
             {company.tagline} Trusted worldwide since {company.founded}.
           </p>
@@ -89,6 +81,19 @@ export function Footer() {
               <a href={`mailto:${company.contact.email}`} className="transition-colors hover:text-white">
                 {company.contact.email}
               </a>
+            </li>
+            <li className="flex gap-3">
+              <Phone size={18} className="mt-0.5 shrink-0 text-white/50" />
+              <a href={`tel:${company.contact.phone}`} className="transition-colors hover:text-white">
+                {company.contact.phone}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Clock size={18} className="mt-0.5 shrink-0 text-white/50" />
+              <span className="leading-relaxed">
+                {company.businessHours.open}<br />
+                {company.businessHours.closed} — Closed
+              </span>
             </li>
           </ul>
         </div>

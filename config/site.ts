@@ -6,7 +6,8 @@ export const siteConfig = {
   links: {
     website: "https://pakoshaft.com/",
     linkedin: "https://www.linkedin.com/company/pako-engineers/",
-    exportersIndia: "https://www.exportersindia.com/pako-engineers-company5734979/",
+    exportersIndia: "https://www.exportersindia.com/pako-engineers/",
     indiaMart: "https://www.indiamart.com/pako-engineers/aboutus.html",
+    justDial: "https://www.justdial.com/Sangli/Pako-Engineers-Inampatta/9999PX233-X233-180411113230-R4I6_BZDET",
   },
 }

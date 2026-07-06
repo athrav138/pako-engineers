@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import { ProjectsContent } from "@/components/sections/projects/ProjectsContent";
+import { PageHero } from "@/components/sections/PageHero";
+import { CTABand } from "@/components/sections/CTABand";
+
+export const metadata: Metadata = {
+  title: "Projects & Case Studies | Pako Engineers",
+  description:
+    "Explore Pako Engineers' precision manufacturing projects — pump assemblies, OEM partnerships, custom engineering, and export solutions for global clients.",
+  alternates: { canonical: "/projects" },
+};
+
+export default function ProjectsPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Projects & Case Studies"
+        title="Engineering Excellence in Action"
+        description="From pump assembly programs for Flowserve and EBARA to custom export solutions — see how Pako Engineers delivers precision manufacturing at scale."
+      />
+      <ProjectsContent />
+      <CTABand />
+    </>
+  );
+}

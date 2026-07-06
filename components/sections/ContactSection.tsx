@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { company } from "@/lib/content/company";
 
 export function ContactSection() {
@@ -46,6 +46,27 @@ export function ContactSection() {
               <div>
                 <p className="font-bold text-navy">Email</p>
                 <p className="mt-1 text-ink-muted">{company.contact.email}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy/5 text-navy">
+                <Phone size={24} />
+              </div>
+              <div>
+                <p className="font-bold text-navy">Call Us</p>
+                <p className="mt-1 text-ink-muted">{company.contact.phone} &middot; {company.contact.email}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy/5 text-navy">
+                <Clock size={24} />
+              </div>
+              <div>
+                <p className="font-bold text-navy">Business Hours</p>
+                <p className="mt-1 text-ink-muted">{company.businessHours.open}</p>
+                <p className="text-ink-muted">{company.businessHours.closed} — Closed</p>
               </div>
             </div>
           </div>
