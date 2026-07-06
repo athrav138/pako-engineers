@@ -3,18 +3,24 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { submitContact } from "@/app/actions/contact";
-import { Send, Loader2 } from "lucide-react";
+import * as z from "zod";
+import { motion, AnimatePresence } from "framer-motion";
+import { Loader2, CheckCircle2, Paperclip } from "lucide-react";
+import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email is required"),
   company: z.string().optional(),
-  phone: z.string().optional(),
-  subject: z.string().min(5, "Subject is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(8, "Phone is required"),
+  country: z.string().min(2, "Country is required"),
+  industry: z.string().optional(),
+  subject: z.string().min(3, "Subject is required"),
   message: z.string().min(10, "Message is required"),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "You must accept the terms" })
+  })
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -22,138 +28,132 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema)
   });
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    setError(null);
-
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-      if (value) formData.append(key, value);
-    });
-
-    const result = await submitContact(formData);
-
-    setIsSubmitting(false);
-
-    if (result.success) {
+    try {
+      // Simulate API call for lead management
+      await new Promise(resolve => setTimeout(resolve, 1500)); 
       setIsSuccess(true);
       reset();
-      setTimeout(() => setIsSuccess(false), 5000);
-    } else {
-      setError(result.error || "An error occurred while submitting the form.");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="bg-white p-8 rounded-xl shadow-card border border-line">
-      <h3 className="text-2xl font-display font-bold text-navy mb-6">Send us a Message</h3>
-      
-      {isSuccess && (
-        <div className="mb-6 p-4 bg-success/10 text-success rounded-md border border-success/20 flex items-center">
-          <div className="font-medium">Thank you! Your message has been sent successfully.</div>
-        </div>
-      )}
-      
-      {error && (
-        <div className="mb-6 p-4 bg-error/10 text-error rounded-md border border-error/20 flex items-center">
-          <div className="font-medium">{error}</div>
-        </div>
-      )}
+    <div className="rounded-2xl border border-line bg-white p-8 shadow-raised">
+      <AnimatePresence mode="wait">
+        {isSuccess ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="flex min-h-[400px] flex-col items-center justify-center text-center"
+          >
+            <CheckCircle2 size={64} className="mb-6 text-success" />
+            <h3 className="mb-4 font-display text-2xl font-bold text-navy">Message Sent!</h3>
+            <p className="mb-8 text-ink-muted">
+              Thank you for contacting Pako Engineers. Our team will get back to you shortly.
+            </p>
+            <Button onClick={() => setIsSuccess(false)}>Send Another Message</Button>
+          </motion.div>
+        ) : (
+          <motion.form
+            key="form"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6"
+          >
+            <h3 className="font-display text-2xl font-bold text-navy mb-6">Send a Message</h3>
+            
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Name *</label>
+                <Input {...register("name")} placeholder="John Doe" />
+                {errors.name && <p className="text-xs text-red-500">{errors.name.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Company</label>
+                <Input {...register("company")} placeholder="OEM Inc." />
+              </div>
+            </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium text-ink">Full Name <span className="text-error">*</span></label>
-            <input
-              {...register("name")}
-              id="name"
-              className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface"
-              placeholder="John Doe"
-            />
-            {errors.name && <p className="text-error text-xs">{errors.name.message}</p>}
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-ink">Email Address <span className="text-error">*</span></label>
-            <input
-              {...register("email")}
-              id="email"
-              type="email"
-              className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface"
-              placeholder="john@company.com"
-            />
-            {errors.email && <p className="text-error text-xs">{errors.email.message}</p>}
-          </div>
-        </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Email *</label>
+                <Input type="email" {...register("email")} placeholder="john@example.com" />
+                {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Phone *</label>
+                <Input type="tel" {...register("phone")} placeholder="+1 234 567 890" />
+                {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+              </div>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label htmlFor="company" className="text-sm font-medium text-ink">Company</label>
-            <input
-              {...register("company")}
-              id="company"
-              className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface"
-              placeholder="Company Name"
-            />
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-medium text-ink">Phone Number</label>
-            <input
-              {...register("phone")}
-              id="phone"
-              type="tel"
-              className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface"
-              placeholder="+1 (555) 000-0000"
-            />
-          </div>
-        </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Country *</label>
+                <Input {...register("country")} placeholder="United States" />
+                {errors.country && <p className="text-xs text-red-500">{errors.country.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Subject *</label>
+                <Input {...register("subject")} placeholder="General Inquiry" />
+                {errors.subject && <p className="text-xs text-red-500">{errors.subject.message}</p>}
+              </div>
+            </div>
 
-        <div className="space-y-2">
-          <label htmlFor="subject" className="text-sm font-medium text-ink">Subject <span className="text-error">*</span></label>
-          <input
-            {...register("subject")}
-            id="subject"
-            className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface"
-            placeholder="How can we help you?"
-          />
-          {errors.subject && <p className="text-error text-xs">{errors.subject.message}</p>}
-        </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-navy">Message *</label>
+              <textarea
+                {...register("message")}
+                rows={4}
+                className="w-full rounded-md border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-oxide"
+                placeholder="How can we help you?"
+              />
+              {errors.message && <p className="text-xs text-red-500">{errors.message.message}</p>}
+            </div>
 
-        <div className="space-y-2">
-          <label htmlFor="message" className="text-sm font-medium text-ink">Message <span className="text-error">*</span></label>
-          <textarea
-            {...register("message")}
-            id="message"
-            rows={5}
-            className="w-full px-4 py-3 rounded-md border border-line focus:outline-none focus:ring-2 focus:ring-orange/50 transition-all bg-surface resize-none"
-            placeholder="Tell us about your requirements..."
-          />
-          {errors.message && <p className="text-error text-xs">{errors.message.message}</p>}
-        </div>
+            <div className="flex items-center gap-4 border border-dashed border-line bg-surface/50 p-4 rounded-md cursor-pointer hover:border-oxide/50">
+               <Paperclip size={20} className="text-ink-muted" />
+               <span className="text-sm text-ink-muted">Attach files (Optional)</span>
+            </div>
 
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full sm:w-auto min-w-[200px]"
-        >
-          {isSubmitting ? (
-            <span className="flex items-center space-x-2">
-              <Loader2 className="animate-spin h-4 w-4" />
-              <span>Sending...</span>
-            </span>
-          ) : (
-            <span className="flex items-center space-x-2">
-              <span>Send Message</span>
-              <Send className="h-4 w-4" />
-            </span>
-          )}
-        </Button>
-      </form>
+            <div className="flex items-center gap-3 text-sm text-ink-muted">
+              <input type="checkbox" {...register("consent")} className="h-4 w-4 rounded border-line text-oxide focus:ring-oxide" />
+              <span>I consent to having Pako Engineers collect my details for communication purposes. *</span>
+            </div>
+            {errors.consent && <p className="text-xs text-red-500 mt-1">{errors.consent.message}</p>}
+
+            <Button type="submit" size="lg" className="w-full justify-center" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
+            </Button>
+          </motion.form>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

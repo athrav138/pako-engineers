@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
-import { RFQForm } from "@/components/forms/RFQForm";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/lib/content/company";
 
 export const metadata: Metadata = {
@@ -89,7 +89,7 @@ export default async function ContactPage({
             </div>
           </div>
 
-          <RFQForm defaultProduct={params.product} />
+          <ContactForm />
         </Container>
       </section>
     </>

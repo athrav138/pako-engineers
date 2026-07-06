@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { StatsBand } from "@/components/sections/StatsBand";
-import { ProductOverview } from "@/components/sections/ProductOverview";
-import { ClientStrip } from "@/components/sections/ClientStrip";
-import { ExportMarkets } from "@/components/sections/ExportMarkets";
-import { CTABand } from "@/components/sections/CTABand";
 import { AboutSplit } from "@/components/sections/AboutSplit";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
+import { ProductOverview } from "@/components/sections/ProductOverview";
+
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { MaterialsSection } from "@/components/sections/MaterialsSection";
 import { QualityAssurance } from "@/components/sections/QualityAssurance";
+import { InfrastructureSection } from "@/components/sections/InfrastructureSection";
+import { ExportMarkets } from "@/components/sections/ExportMarkets";
+import { ClientStrip } from "@/components/sections/ClientStrip";
+import { GalleryMasonry } from "@/components/sections/GalleryMasonry";
+import { CompanyVideo } from "@/components/sections/CompanyVideo";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { NewsSection } from "@/components/sections/NewsSection";
+import { CTABand } from "@/components/sections/CTABand";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
@@ -20,14 +28,21 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <StatsBand />
       <AboutSplit />
       <WhyChooseUs />
+      <CapabilitiesSection />
       <ProductOverview />
+
       <ProcessTimeline />
+      <MaterialsSection />
       <QualityAssurance />
+      <InfrastructureSection />
       <ExportMarkets />
       <ClientStrip />
+      <GalleryMasonry />
+      <CompanyVideo />
+      <TestimonialsSection />
+      <NewsSection />
       <CTABand />
       <ContactSection />
     </>

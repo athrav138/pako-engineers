@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { Analytics } from "@/components/seo/Analytics";
 import { SITE_URL, DEFAULT_META_DESCRIPTION } from "@/lib/constants";
 import { company } from "@/lib/content/company";
 import "./globals.css";
@@ -9,24 +11,27 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Pako Engineers | Precision Machining & Export Manufacturer",
+    default: "Pako Engineers | Precision Machined Components & Pump Assemblies",
     template: "%s | Pako Engineers",
   },
   description: DEFAULT_META_DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: "Pako Engineers",
-    title: "Pako Engineers | Precision Machining & Export Manufacturer",
+    title: "Pako Engineers | Precision Machined Components & Pump Assemblies",
     description: DEFAULT_META_DESCRIPTION,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pako Engineers | Precision Machining & Export Manufacturer",
+    title: "Pako Engineers | Precision Machined Components & Pump Assemblies",
     description: DEFAULT_META_DESCRIPTION,
   },
   alternates: {
     canonical: SITE_URL,
+  },
+  icons: {
+    icon: company.logo,
   },
 };
 
@@ -62,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col bg-white font-body text-ink antialiased">
+        <LoadingScreen />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-navy focus:px-4 focus:py-2 focus:text-white"
@@ -78,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <Analytics />
       </body>
     </html>
   );

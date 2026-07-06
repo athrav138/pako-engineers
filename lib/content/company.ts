@@ -1,7 +1,9 @@
 export const company = {
   name: "Pako Engineers",
   legalName: "Pako Engineers",
-  tagline: "Precision-engineered shafts and pump components, trusted by global OEMs since 1994.",
+  tagline: "MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
+  welcome: "Welcome",
+  logo: "/images/pako-logo.svg",
   founded: 1994,
   yearsInBusiness: new Date().getFullYear() - 1994,
   certification: "ISO 9001:2015",
@@ -15,12 +17,14 @@ export const company = {
     { name: "Mr. Suhas Khot", role: "Managing Director", phone: "+91-9860269972" },
   ],
   profile: {
+    firstSlide:
+      "PAKO ENGINEERS MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
     activity:
-      "Manufacture and export of shafts, sleeves, couplings, lock nuts, pump parts and accessories in all materials of construction.",
+      "Manufacture and export of precision machined components, pump assemblies, shafts, sleeves, couplings, lock nuts, retainer rings, Thordon bearings, gears and pump parts in all materials of construction.",
     positioning:
-      "An established, quality-certified industrial exporter serving pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East and North America.",
+      "An ISO 9001:2015 manufacturer and exporter serving pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East and North America.",
     facility:
-      "Pako Engineers operates from Burli, Tal. Palus, Sangli, with turning, grinding, CNC machining, wire-cut and key-way capabilities supported by in-house quality checks.",
+      "Pako Engineers operates from Gat No. 453, Burli, Tal. Palus, Sangli, with machining, grinding, CNC lathe, wire-cut, VMC key-way and in-house assembly capabilities supported by calibrated measuring instruments.",
   },
   workforce: {
     total: 47,
@@ -56,9 +60,15 @@ export const company = {
     "Saudi Arabia",
   ],
   contact: {
-    email: "info@pakoshaft.com",
+    email: "sales@pakoshaft.com",
     whatsapp: "+919921854252",
     mapQuery: "Pako Engineers, Burli, Tal. Palus, Sangli, Maharashtra 416308",
+  },
+  links: {
+    website: "https://pakoshaft.com/",
+    linkedin: "https://www.linkedin.com/company/pako-engineers/",
+    exportersIndia: "https://www.exportersindia.com/pako-engineers-company5734979/",
+    indiaMart: "https://www.indiamart.com/pako-engineers/aboutus.html",
   },
 } as const;
 
@@ -80,11 +90,19 @@ export const bushMaterials = [
 
 export const machiningCapacity = [
   {
-    process: "Turning (Shaft / Flange)",
+    process: "Flange / Concrete Shaft Machining",
     range: "50 mm - 1500 mm diameter, up to 14,000 mm length",
   },
   {
-    process: "Grinding",
+    process: "Flange / Concrete Shaft Grinding",
+    range: "50 mm - 800 mm diameter, up to 6,500 mm length",
+  },
+  {
+    process: "Shaft Machining",
+    range: "50 mm - 1500 mm diameter, up to 8,000 mm length",
+  },
+  {
+    process: "Shaft Grinding",
     range: "50 mm - 800 mm diameter, up to 6,500 mm length",
   },
   {
@@ -116,6 +134,7 @@ export const inHouseTesting = [
   "Hardness Testing",
   "Surface Check",
   "NDT - Dye Penetrant Test (DPT)",
+  "Dimensional inspection with calipers, micrometers and gauges",
 ] as const;
 
 export const outsourcedTesting = [
@@ -195,18 +214,5 @@ export const galleryItems = [
     category: "Quality",
     image: "/images/quality-inspection.png",
     alt: "Inspection and quality verification for machined components",
-  },
-] as const;
-
-export const downloads = [
-  {
-    title: "Company Profile Deck",
-    description: "February 2026 profile covering products, capacity, clients and export markets.",
-    href: "/downloads/pako-profile-february-2026.pptx",
-  },
-  {
-    title: "Website Specification",
-    description: "Verified website content, page structure and technical build requirements prepared July 2026.",
-    href: "/downloads/pako-engineers-website-specification.docx",
   },
 ] as const;

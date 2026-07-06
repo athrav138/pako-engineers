@@ -4,10 +4,21 @@
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: light dark;
     --font-manrope: Arial, Helvetica, sans-serif;
     --font-inter: Arial, Helvetica, sans-serif;
     --font-space-grotesk: "Segoe UI", Arial, Helvetica, sans-serif;
+    --font-jetbrains-mono: "Courier New", Courier, monospace;
+    
+    /* Animation Tokens */
+    --speed-fast: 150ms;
+    --speed-medium: 300ms;
+    --speed-slow: 500ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   * {
@@ -17,6 +28,24 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  body {
+    @apply bg-background-light text-ink font-body antialiased;
+  }
+  
+  .dark body {
+    @apply bg-background-dark text-white;
+  }
+
+  /* Typography Styles (Headings) */
+  h1, .h1 { @apply text-h1 font-heading tracking-tight text-ink dark:text-white mb-6; }
+  h2, .h2 { @apply text-h2 font-heading tracking-tight text-ink dark:text-white mb-5; }
+  h3, .h3 { @apply text-h3 font-heading tracking-tight text-ink dark:text-white mb-4; }
+  h4, .h4 { @apply text-h4 font-heading tracking-tight text-ink dark:text-white mb-4; }
+  h5, .h5 { @apply text-h5 font-heading tracking-tight text-ink dark:text-white mb-3; }
+  h6, .h6 { @apply text-h6 font-heading tracking-tight text-ink dark:text-white mb-3; }
+  
+  p { @apply text-body text-ink-muted dark:text-gray-300 mb-4; }
 
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -34,5 +63,40 @@
 
   ::selection {
     @apply bg-orange/20;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-surface-dark/70 backdrop-blur-md border border-white/20 dark:border-line-dark/50 shadow-glass;
+  }
+  
+  .glass-dark {
+    @apply bg-surface-dark/80 backdrop-blur-lg border border-line-dark/50 shadow-glass;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-500;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, theme('colors.primary.DEFAULT') 0%, theme('colors.secondary.DEFAULT') 100%);
+  }
+
+  /* Structural Utilities */
+  .section-padding {
+    @apply py-12 md:py-18 lg:py-24;
+  }
+
+  .section-padding-large {
+    @apply py-16 md:py-24 lg:py-30;
+  }
+  
+  .reading-width {
+    @apply max-w-[680px] mx-auto;
   }
 }

@@ -1,9 +1,12 @@
 export const siteConfig = {
   name: "Pako Engineers",
-  description: "Precision-engineered shafts and pump components for global OEMs.",
+  description: "MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
   url: "https://pakoshaft.com",
   ogImage: "https://pakoshaft.com/og.jpg",
   links: {
-    linkedin: "https://www.linkedin.com/company/pako-engineers",
+    website: "https://pakoshaft.com/",
+    linkedin: "https://www.linkedin.com/company/pako-engineers/",
+    exportersIndia: "https://www.exportersindia.com/pako-engineers-company5734979/",
+    indiaMart: "https://www.indiamart.com/pako-engineers/aboutus.html",
   },
 }

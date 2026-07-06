@@ -15,15 +15,22 @@ export function CTABand({
     <section className="bg-navy py-16">
       <Container className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div>
-          <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
-            {title}
+          <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
+            Let's Build Precision Together.
           </h2>
-          <p className="mt-2 max-w-xl text-white/70">{description}</p>
+          <p className="mt-4 max-w-xl text-lg text-white/70">
+            Send us your drawings or specifications. Our engineering team will review and respond with capability confirmation, pricing, and exact lead times.
+          </p>
         </div>
-        <Button href="/contact" size="lg" className="shrink-0">
-          Request a Quote
-          <ArrowRight size={18} />
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <Button href="/contact" size="lg" className="shrink-0 bg-white text-navy hover:bg-white/90">
+            Request a Quote
+            <ArrowRight size={18} className="ml-2" />
+          </Button>
+          <Button href="/contact" size="lg" variant="outline" className="shrink-0 text-white border-white/30 hover:bg-white/10">
+            Contact Sales
+          </Button>
+        </div>
       </Container>
     </section>
   );

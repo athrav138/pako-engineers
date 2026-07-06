@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Mail, Phone, ShieldCheck, Award } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
@@ -9,9 +10,17 @@ export function Footer() {
       <Container className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Company Info */}
         <div>
-          <p className="font-display text-lg font-bold">PAKO ENGINEERS</p>
+          <div className="relative h-16 w-60 overflow-hidden bg-white">
+            <Image
+              src={company.logo}
+              alt={`${company.name} logo`}
+              fill
+              sizes="240px"
+              className="object-contain"
+            />
+          </div>
           <p className="mt-4 text-sm leading-relaxed text-white/70">
-            Precision-engineered manufacturing solutions. Trusted worldwide since 1994.
+            {company.tagline} Trusted worldwide since {company.founded}.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium">
@@ -47,7 +56,7 @@ export function Footer() {
             Products & Resources
           </p>
           <ul className="mt-6 space-y-3">
-            {["Products", "Capabilities", "Industries Served", "Downloads", "Careers"].map((item) => (
+            {["Products", "Capabilities", "Industries Served", "Careers"].map((item) => (
               <li key={item}>
                 <Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="text-sm text-white/80 transition-colors hover:text-white">
                   {item}

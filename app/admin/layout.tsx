@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
 import Link from "next/link";
-import { LayoutDashboard, Settings, FileText } from "lucide-react";
+import { LayoutDashboard, Settings, FileText, Package, Users, Briefcase, Database } from "lucide-react";
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const navItems = [
-    { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-    { name: "Public Website", href: "/", icon: FileText },
-    { name: "Settings", href: "/admin", icon: Settings },
+    { name: "Dashboard Overview", href: "/admin", icon: LayoutDashboard },
+    { name: "Products & Specs", href: "/admin", icon: Package },
+    { name: "RFQ & Lead Pipeline", href: "/admin", icon: Users },
+    { name: "CMS Pages & Blogs", href: "/admin", icon: FileText },
+    { name: "Career & Jobs", href: "/admin", icon: Briefcase },
+    { name: "Media & Database", href: "/admin", icon: Database },
+    { name: "Global Settings", href: "/admin", icon: Settings },
   ];
 
   return (
@@ -38,7 +42,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
         <header className="h-16 bg-white border-b border-line flex items-center justify-between px-8">
           <h1 className="text-xl font-display font-semibold text-ink">Admin Portal</h1>
           <div className="flex items-center space-x-4">
-            <div className="text-sm font-medium text-muted">Website running</div>
+            <Link href="/" className="text-sm font-medium text-oxide hover:underline mr-4">View Public Website &rarr;</Link>
             <div className="h-8 w-8 rounded-full bg-navy flex items-center justify-center text-white text-sm font-bold">
               A
             </div>

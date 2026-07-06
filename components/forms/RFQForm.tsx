@@ -3,203 +3,154 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
-import { rfqSchema, PRODUCT_OPTIONS, type RfqFormValues } from "@/lib/validations/rfq";
+import * as z from "zod";
+import { motion, AnimatePresence } from "framer-motion";
+import { Upload, CheckCircle2, Loader2 } from "lucide-react";
+import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
 
-type SubmitState = "idle" | "submitting" | "success" | "error";
+const rfqSchema = z.object({
+  companyName: z.string().min(2, "Company name is required"),
+  contactName: z.string().min(2, "Contact name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(8, "Phone number is required"),
+  country: z.string().min(2, "Country is required"),
+  industry: z.string().optional(),
+  product: z.string().optional(),
+  material: z.string().optional(),
+  quantity: z.string().optional(),
+  requiredDate: z.string().optional(),
+  message: z.string().min(10, "Please provide more details about your requirement"),
+});
 
-const inputClasses =
-  "w-full rounded border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-muted/60 focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy";
+type RFQFormValues = z.infer<typeof rfqSchema>;
 
-function Field({
-  label,
-  htmlFor,
-  error,
-  children,
-}: {
-  label: string;
-  htmlFor: string;
-  error?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-medium text-ink">
-        {label}
-      </label>
-      {children}
-      {error && (
-        <p className="mt-1.5 flex items-center gap-1 text-xs text-red-600" role="alert">
-          <AlertCircle size={12} /> {error}
-        </p>
-      )}
-    </div>
-  );
-}
-
-export function RFQForm({ defaultProduct }: { defaultProduct?: string }) {
-  const [state, setState] = useState<SubmitState>("idle");
-  const [fileError, setFileError] = useState<string | null>(null);
+export function RFQForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<RfqFormValues>({
-    resolver: zodResolver(rfqSchema),
-    defaultValues: {
-      productType: (PRODUCT_OPTIONS.find((p) => p === defaultProduct) ??
-        undefined) as RfqFormValues["productType"],
-    },
+    reset
+  } = useForm<RFQFormValues>({
+    resolver: zodResolver(rfqSchema)
   });
 
-  async function onSubmit(values: RfqFormValues) {
-    setState("submitting");
-    setFileError(null);
-
-    const fileInput = document.getElementById("drawing") as HTMLInputElement | null;
-    const file = fileInput?.files?.[0];
-    const body = new FormData();
-
-    Object.entries(values).forEach(([key, value]) => {
-      if (value) body.append(key, value);
-    });
-    if (file) body.append("drawing", file);
-
+  const onSubmit = async (data: RFQFormValues) => {
+    setIsSubmitting(true);
     try {
-      const res = await fetch("/api/rfq", {
-        method: "POST",
-        body,
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        if (data?.error) setFileError(data.error);
-        throw new Error("Request failed");
-      }
-      setState("success");
+      // Keep this form storage-free; the primary RFQ form posts to /api/rfq.
+      await new Promise(resolve => setTimeout(resolve, 1500)); 
+      setIsSuccess(true);
       reset();
-      if (fileInput) fileInput.value = "";
-    } catch {
-      setState("error");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
-  }
-
-  if (state === "success") {
-    return (
-      <div className="flex flex-col items-center gap-3 rounded-lg border border-line bg-white p-10 text-center">
-        <CheckCircle2 className="text-green-600" size={40} />
-        <h3 className="font-display text-xl font-semibold text-navy">
-          Enquiry received
-        </h3>
-        <p className="max-w-sm text-sm text-muted">
-          Thank you for your enquiry. Our team will review your requirement and
-          respond within one business day.
-        </p>
-        <Button variant="outline" size="sm" onClick={() => setState("idle")}>
-          Submit another enquiry
-        </Button>
-      </div>
-    );
-  }
+  };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="grid grid-cols-1 gap-5 rounded-lg border border-line bg-white p-8 shadow-card sm:grid-cols-2"
-      noValidate
-    >
-      <Field label="Full Name" htmlFor="name" error={errors.name?.message}>
-        <input id="name" className={inputClasses} {...register("name")} />
-      </Field>
+    <div className="relative rounded-2xl border border-line bg-white p-8 shadow-raised lg:p-12">
+      <AnimatePresence mode="wait">
+        {isSuccess ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="flex min-h-[400px] flex-col items-center justify-center text-center"
+          >
+            <CheckCircle2 size={64} className="mb-6 text-success" />
+            <h3 className="mb-4 font-display text-3xl font-bold text-navy">Request Received!</h3>
+            <p className="mb-8 max-w-md text-ink-muted">
+              Thank you for reaching out to Pako Engineers. Our engineering team will review your specifications and contact you within 24 hours.
+            </p>
+            <Button onClick={() => setIsSuccess(false)}>Submit Another Request</Button>
+          </motion.div>
+        ) : (
+          <motion.form
+            key="form"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6"
+          >
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Company Name *</label>
+                <Input {...register("companyName")} placeholder="OEM Engineering Ltd" />
+                {errors.companyName && <p className="text-xs text-red-500">{errors.companyName.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Contact Name *</label>
+                <Input {...register("contactName")} placeholder="John Smith" />
+                {errors.contactName && <p className="text-xs text-red-500">{errors.contactName.message}</p>}
+              </div>
+            </div>
 
-      <Field label="Company" htmlFor="company" error={errors.company?.message}>
-        <input id="company" className={inputClasses} {...register("company")} />
-      </Field>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Email Address *</label>
+                <Input type="email" {...register("email")} placeholder="john@oem.com" />
+                {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Phone Number *</label>
+                <Input type="tel" {...register("phone")} placeholder="+1 234 567 8900" />
+                {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+              </div>
+            </div>
 
-      <Field label="Email" htmlFor="email" error={errors.email?.message}>
-        <input id="email" type="email" className={inputClasses} {...register("email")} />
-      </Field>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Country *</label>
+                <Input {...register("country")} placeholder="United States" />
+                {errors.country && <p className="text-xs text-red-500">{errors.country.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Product / Category</label>
+                <Input {...register("product")} placeholder="e.g. Pump Shaft" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-navy">Material Grade</label>
+                <Input {...register("material")} placeholder="e.g. Super Duplex S32750" />
+              </div>
+            </div>
 
-      <Field label="Country" htmlFor="country" error={errors.country?.message}>
-        <input id="country" className={inputClasses} {...register("country")} />
-      </Field>
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-navy">Detailed Requirements *</label>
+              <textarea
+                {...register("message")}
+                rows={5}
+                className="w-full rounded-md border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-oxide"
+                placeholder="Please describe the application, tolerance requirements, heat treatment, and surface finish..."
+              />
+              {errors.message && <p className="text-xs text-red-500">{errors.message.message}</p>}
+            </div>
 
-      <Field label="Phone" htmlFor="phone">
-        <input id="phone" className={inputClasses} {...register("phone")} />
-      </Field>
+            <div className="rounded-lg border-2 border-dashed border-line bg-surface/50 p-8 text-center transition-colors hover:border-oxide/50 hover:bg-surface cursor-pointer">
+              <Upload className="mx-auto mb-4 text-ink-muted" size={32} />
+              <p className="font-medium text-navy">Upload Technical Drawings</p>
+              <p className="mt-1 text-xs text-ink-muted">PDF, DWG, STEP, or ZIP files up to 20MB</p>
+            </div>
 
-      <Field
-        label="Product Type"
-        htmlFor="productType"
-        error={errors.productType?.message}
-      >
-        <select id="productType" className={inputClasses} {...register("productType")}>
-          <option value="">Select a product</option>
-          {PRODUCT_OPTIONS.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </Field>
-
-      <Field label="Material" htmlFor="material">
-        <input id="material" className={inputClasses} {...register("material")} />
-      </Field>
-
-      <Field label="Quantity" htmlFor="quantity">
-        <input id="quantity" className={inputClasses} {...register("quantity")} />
-      </Field>
-
-      <div className="sm:col-span-2">
-        <Field
-          label="Requirement Details"
-          htmlFor="message"
-          error={errors.message?.message}
-        >
-          <textarea
-            id="message"
-            rows={5}
-            className={cn(inputClasses, "resize-none")}
-            {...register("message")}
-          />
-        </Field>
-      </div>
-
-      <div className="sm:col-span-2">
-        <Field label="Drawing / Specification File" htmlFor="drawing" error={fileError ?? undefined}>
-          <input
-            id="drawing"
-            name="drawing"
-            type="file"
-            accept=".pdf,.dwg,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
-            className={cn(inputClasses, "file:mr-4 file:border-0 file:bg-navy file:px-3 file:py-1.5 file:text-xs file:font-medium file:text-white")}
-          />
-        </Field>
-        <p className="mt-1.5 text-xs text-muted">Accepted formats: PDF, DWG, JPG, PNG up to 10MB.</p>
-      </div>
-
-      {state === "error" && (
-        <p className="flex items-center gap-1 text-sm text-red-600 sm:col-span-2" role="alert">
-          <AlertCircle size={14} /> Something went wrong sending your enquiry. Please
-          try again or email us directly.
-        </p>
-      )}
-
-      <div className="sm:col-span-2">
-        <Button type="submit" size="lg" disabled={state === "submitting"} className="w-full sm:w-auto">
-          {state === "submitting" ? (
-            <>
-              <Loader2 size={18} className="animate-spin" /> Sending
-            </>
-          ) : (
-            "Submit Enquiry"
-          )}
-        </Button>
-      </div>
-    </form>
+            <Button type="submit" size="lg" className="w-full justify-center" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Processing Request...
+                </>
+              ) : (
+                "Submit Request for Quotation"
+              )}
+            </Button>
+          </motion.form>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

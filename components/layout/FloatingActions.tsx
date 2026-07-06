@@ -28,16 +28,7 @@ export function FloatingActions() {
         style={{ scaleX }}
       />
       <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-3">
-        <Link
-          href="/request-quote"
-          className="group flex h-12 items-center justify-center gap-2 rounded-full bg-navy px-5 font-medium text-white shadow-raised transition-all hover:bg-oxide"
-          aria-label="Request Quote"
-        >
-          <FileText size={18} />
-          <span className="hidden w-0 overflow-hidden whitespace-nowrap transition-all group-hover:w-[100px] group-hover:pl-1 md:inline-block">
-            Request Quote
-          </span>
-        </Link>
+
         <a
           href={`https://wa.me/${company.contact.whatsapp?.replace("+", "")}`}
           target="_blank"

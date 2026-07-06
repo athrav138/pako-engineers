@@ -1,49 +1,34 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { CTABand } from "@/components/sections/CTABand";
-import { galleryItems } from "@/lib/content/company";
+import { MasonryGallery } from "@/components/sections/gallery/MasonryGallery";
 
 export const metadata: Metadata = {
-  title: "Gallery",
-  description:
-    "Photographs of the Pako Engineers shop floor, machining equipment, finished components and inspection workflow.",
+  title: "Media Gallery & Factory Tour | Pako Engineers",
+  description: "Explore our state-of-the-art manufacturing plant, CNC machines, quality inspection labs, and precision machined components.",
   alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Gallery"
-        title="Inside the Pako Engineers facility"
-        description="Shop floor, finished components, infrastructure and inspection imagery used across the site."
-      />
-
-      <section className="py-20 md:py-28">
+      <section className="bg-navy py-16 md:py-24 text-white">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {galleryItems.map((item) => (
-              <figure key={item.title} className="overflow-hidden rounded-lg border border-line bg-white shadow-card">
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="flex items-center justify-between gap-4 p-5">
-                  <span className="font-display text-lg font-semibold text-navy">{item.title}</span>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted">{item.category}</span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="flex items-center gap-2 text-sm font-medium text-oxide mb-4">
+            <span>Home</span>
+            <span>&rarr;</span>
+            <span className="text-white">Gallery</span>
           </div>
+          <h1 className="font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-6 max-w-4xl">
+            Inside Pako Engineers
+          </h1>
+          <p className="max-w-2xl text-lg text-white/80">
+            Take a visual tour of our 40,000 sq.ft facility, showcasing our advanced heavy-duty CNC machining centers and metallurgical testing laboratories.
+          </p>
         </Container>
       </section>
+
+      <MasonryGallery />
 
       <CTABand />
     </>

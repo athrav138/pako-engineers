@@ -20,7 +20,6 @@ const routes = [
   "/gallery",
   "/videos",
   "/machines",
-  "/downloads",
   "/career",
   "/csr",
   "/export-markets",
