@@ -30,7 +30,7 @@ type MegaMenuConfig = {
   featured: { title: string; desc: string; href: string; cta: string };
 };
 
-const MEGA: Record<string, MegaMenuConfig> = {
+const MEGA = {
   Company: {
     heading: "Company",
     description: "30+ years of precision engineering excellence, serving pump OEMs and rotating equipment manufacturers across 12+ countries.",
@@ -110,9 +110,10 @@ const MEGA: Record<string, MegaMenuConfig> = {
     ],
     featured: { title: "Get a Quote", desc: "Send your specifications and get a detailed manufacturing proposal within 24 hours.", href: "/request-quote", cta: "Request Quote" },
   },
-};
+} satisfies Record<string, MegaMenuConfig>;
 
-type NavItem = { label: string; href: string; megaKey?: string };
+type MegaKey = keyof typeof MEGA;
+type NavItem = { label: string; href: string; megaKey?: MegaKey };
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
@@ -130,8 +131,8 @@ const NAV_ITEMS: NavItem[] = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeMega, setActiveMega] = useState<string | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [activeMega, setActiveMega] = useState<MegaKey | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<MegaKey | null>(null);
 
   const pathname = usePathname();
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
@@ -149,7 +150,7 @@ export function Header() {
     setMobileExpanded(null);
   }, [pathname]);
 
-  const openMega = useCallback((key: string) => {
+  const openMega = useCallback((key: MegaKey) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setActiveMega(key);
   }, []);

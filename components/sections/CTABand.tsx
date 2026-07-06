@@ -9,17 +9,17 @@ type CTABandProps = {
 
 export function CTABand({
   title = "Have a drawing ready to quote?",
-  description = "Send your specification and we'll respond with capability confirmation and lead time.",
+  description = "Send your specification and we will respond with capability confirmation and lead time.",
 }: CTABandProps) {
   return (
     <section className="bg-navy py-16">
       <Container className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
-            Let's Build Precision Together.
+            {title}
           </h2>
           <p className="mt-4 max-w-xl text-lg text-white/70">
-            Send us your drawings or specifications. Our engineering team will review and respond with capability confirmation, pricing, and exact lead times.
+            {description}
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 shrink-0">

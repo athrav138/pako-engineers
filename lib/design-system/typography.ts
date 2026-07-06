@@ -1,3 +1,9 @@
+import type { Config } from "tailwindcss";
+
+type TailwindTheme = NonNullable<Config["theme"]>;
+type TailwindThemeExtend = NonNullable<TailwindTheme["extend"]>;
+type TailwindFontSize = TailwindThemeExtend["fontSize"];
+
 export const typography = {
   fontFamily: {
     heading: ["var(--font-manrope)", "sans-serif"],
@@ -20,9 +26,9 @@ export const typography = {
     "body": ["1rem", { lineHeight: "1.6" }], // 16px
     "body-sm": ["0.875rem", { lineHeight: "1.6" }], // 14px
     "caption": ["0.75rem", { lineHeight: "1.5" }], // 12px
-    "label": ["0.875rem", { lineHeight: "1.5", letterSpacing: "0.04em", fontWeight: "600", textTransform: "uppercase" }], // 14px
+    "label": ["0.875rem", { lineHeight: "1.5", letterSpacing: "0.04em", fontWeight: "600" }], // 14px
     "button": ["1rem", { lineHeight: "1.5", letterSpacing: "0.01em", fontWeight: "500" }], // 16px
     "nav": ["0.9375rem", { lineHeight: "1.5", fontWeight: "500" }], // 15px
     "footer": ["0.875rem", { lineHeight: "1.6" }], // 14px
-  }
+  } satisfies TailwindFontSize,
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -58,11 +59,12 @@ export function CapabilitiesSection() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-all hover:shadow-raised md:flex-row"
             >
               <div className="relative w-full md:w-2/5 aspect-video md:aspect-auto overflow-hidden bg-surface">
-                <img 
-                  src={cap.image} 
-                  alt={cap.title} 
+                <Image
+                  src={cap.image}
+                  alt={cap.title}
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
                 />
               </div>
               <div className="flex flex-1 flex-col p-8 md:p-10 justify-center">

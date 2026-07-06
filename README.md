@@ -1,103 +1,44 @@
-# PAKO ENGINEERS - Enterprise Manufacturing Platform
+# Pako Engineers Website
 
-Welcome to the enterprise digital platform for Pako Engineers. This repository contains the complete Next.js 15 application designed to function as a high-performance corporate website, B2B lead generation tool, and internal administrative CRM.
+Corporate website for Pako Engineers, built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
-## 🏗 System Architecture
+## Tech Stack
 
-The platform is built using a modern, scalable tech stack:
+- Next.js App Router
+- TypeScript strict mode
+- Tailwind CSS
+- Framer Motion and GSAP
+- React Hook Form and Zod
 
-- **Framework**: Next.js 15 (App Router, React Server Components)
-- **Language**: TypeScript (Strict Mode)
-- **Styling**: Tailwind CSS & shadcn/ui
-- **Animations**: Framer Motion & GSAP
-- **Database**: PostgreSQL (via Prisma ORM)
-- **Content Management**: Sanity CMS
-- **Authentication**: Auth.js (NextAuth)
-- **Forms**: React Hook Form + Zod
-- **Email Automation**: Resend
-- **Media**: Cloudinary (Image/Video optimization)
-
-## 📁 Project Structure
-
-```
-├── app/                  # Next.js App Router (Public & Admin Routes)
-│   ├── admin/            # Secure Enterprise Dashboard
-│   ├── api/              # RESTful API Endpoints (v1)
-│   ├── products/         # Dynamic Product Experience Platform
-│   ├── manufacturing/    # Manufacturing & Capabilities Module
-│   ├── quality/          # Quality Assurance & Testing Facilities
-│   └── request-quote/    # Multi-step RFQ Lead Generation
-├── components/           # Reusable UI Architecture
-│   ├── forms/            # Complex Zod-validated forms
-│   ├── sections/         # Page layout sections
-│   └── ui/               # Atomic shadcn components
-├── prisma/               # Database Schema & Migrations
-├── sanity/               # Headless CMS Schema definitions
-└── lib/                  # Utilities, Types, and Configs
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18.x or later
-- pnpm (Recommended) or npm
-- PostgreSQL database
-- Sanity account
-
-### Installation
-
-1. **Clone & Install Dependencies**
-   ```bash
-   git clone <repo-url>
-   cd pako-engineers
-   pnpm install
-   ```
-
-2. **Environment Variables**
-   Create a `.env` file based on `.env.example` and add your keys:
-   ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/pako_db"
-   NEXTAUTH_SECRET="your-secret-key"
-   NEXT_PUBLIC_SANITY_PROJECT_ID="your-sanity-id"
-   RESEND_API_KEY="your-resend-key"
-   ```
-
-3. **Database Migration**
-   ```bash
-   pnpm prisma generate
-   pnpm prisma migrate deploy
-   ```
-
-4. **Run Development Server**
-   ```bash
-   pnpm dev
-   ```
-   Access the public site at `http://localhost:3000` and the Admin panel at `http://localhost:3000/admin`.
-
-## 🛡 Enterprise Features
-
-- **Lead Management**: Advanced Multi-step RFQ forms directly injected into the PostgreSQL CRM.
-- **Role-Based Access Control**: Secure `/admin` routes restricted to verified staff.
-- **Cinematic Experience**: Heavy integration of GSAP ScrollTriggers and Framer Motion for a "Luxury Industrial" aesthetic.
-- **SEO Optimized**: Fully compliant JSON-LD Schema (ManufacturingBusiness, Breadcrumbs, Products).
-
-## 🧪 Testing & QA
-
-Run the test suites before deployment:
-```bash
-# E2E Tests with Playwright
-pnpm test:e2e
-
-# Unit Tests with Vitest
-pnpm test:unit
-```
-
-## 🚢 Deployment
-
-The platform is optimized for Vercel deployment.
-CI/CD is handled via GitHub Actions to ensure strict type checking and linting before production rollout.
+## Local Setup
 
 ```bash
-pnpm build
-pnpm start
+npm install
+npm run dev
 ```
+
+Open `http://localhost:3000`.
+
+## Verification
+
+Run these checks before deployment:
+
+```bash
+npm run typecheck
+npm run build
+```
+
+## Vercel Deployment
+
+This repo is ready for Vercel using the included `package-lock.json`.
+
+1. Push the repo to GitHub.
+2. In Vercel, choose **Add New Project** and import the GitHub repository.
+3. Keep the framework preset as **Next.js**.
+4. Use the default install and build commands:
+   - Install Command: `npm install`
+   - Build Command: `npm run build`
+   - Output Directory: leave blank for Next.js
+5. Deploy.
+
+The project pins Node with `engines.node: "24.x"`. Vercel supports Node 24.x and will use it for deployments.

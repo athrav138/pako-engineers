@@ -1,1 +1,1 @@
-export { metadata, default } from "../industries/page";
+export { default } from "../industries/page";
