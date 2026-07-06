@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/sections/HomeHero";
-import { StatsBand } from "@/components/sections/StatsBand";
 import { AboutSplit } from "@/components/sections/AboutSplit";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";

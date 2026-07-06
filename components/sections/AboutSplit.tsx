@@ -25,9 +25,10 @@ export function AboutSplit() {
           className="relative aspect-square overflow-hidden rounded-lg bg-surface lg:aspect-[4/5]"
         >
           <Image
-            src="/images/real/pako-engineers-inampatta-sangli-b3nj3sm4d3.avif"
+            src="/images/factory-floor.png"
             alt="Pako Engineers Factory Floor"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-navy/10" />

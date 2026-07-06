@@ -7,8 +7,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Menu, Phone, Mail, X, ChevronDown, ChevronRight, Linkedin,
   MapPin, ShieldCheck, ArrowRight, Building2, Package, Cog, Factory,
-  Award, BookOpen, FileText, Download, Users, Globe, Briefcase, Wrench,
-  Microscope, FlaskConical, Anchor, Settings, Clock, MessageSquare, Map,
+  Award, BookOpen, FileText, Globe, Briefcase, Wrench,
+  Microscope, FlaskConical, Settings, Clock, MessageSquare, Map,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -50,7 +50,7 @@ const MEGA: Record<string, MegaMenuConfig> = {
   Products: {
     heading: "Products",
     description: "Precision machined components and pump assemblies manufactured to international standards for global OEMs.",
-    image: "/images/real/pump-shafts-500x500.webp",
+    image: "/images/product-shafts.png",
     imageAlt: "Precision pump shafts by Pako Engineers",
     links: [
       { label: "Pump Shafts", href: "/products/shaft", icon: Cog },

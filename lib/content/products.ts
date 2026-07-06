@@ -19,7 +19,7 @@ export const products: ProductSpec[] = [
     materials: "Features: Long functional life, Abrasion resistance, Wear & tear resistance",
     sizeRange: "Machining: 50 mm - 1500 mm dia. up to 8000 mm length",
     finish: "10 - 50 microns",
-    image: "/images/real/pump-shafts-500x500.webp",
+    image: "/images/product-shafts.png",
   },
   {
     slug: "sleeve",
@@ -30,7 +30,7 @@ export const products: ProductSpec[] = [
     materials: "Features: Appreciated for superior performance, Custom designs available upon request",
     sizeRange: "Machining: 50 mm - 1500 mm dia. | Grinding ID: 50 mm - 500 mm dia.",
     finish: "10 - 50 microns",
-    image: "/images/real/sleeves-1529745778-4012175.webp",
+    image: "/images/hero-machining.png",
   },
   {
     slug: "impeller",
@@ -41,7 +41,7 @@ export const products: ProductSpec[] = [
     materials: "EN8, SS316, 410, 410T, SS304, K-Monel 500",
     sizeRange: "Customised to drawing and assembly requirement",
     finish: "As per drawing / QAP",
-    image: "/images/real/impiller-1529745835-4012185.webp",
+    image: "/images/factory-floor.png",
   },
   {
     slug: "coupling",
@@ -86,7 +86,7 @@ export const products: ProductSpec[] = [
     materials: "Stainless Steel, Thordon, Gunmetal, Feroform F363",
     sizeRange: "Diameter 70 mm - 700 mm",
     finish: "10 - 50 microns",
-    image: "/images/real/ring-125x125.webp",
+    image: "/images/quality-inspection.png",
   },
   {
     slug: "gears",

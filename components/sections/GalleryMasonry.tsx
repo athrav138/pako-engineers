@@ -39,7 +39,7 @@ export function GalleryMasonry() {
             >
               {/* Fallback abstract representation for gallery */}
               <div className="absolute inset-0 bg-gradient-to-br from-navy to-steel opacity-80" />
-              <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 mix-blend-overlay" />
+              <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '4px 4px' }} />
               
               <div className="absolute inset-0 flex items-center justify-center text-white/20 transition-transform duration-700 group-hover:scale-110">
                 <span className="font-display text-2xl font-bold tracking-widest">{item.category}</span>

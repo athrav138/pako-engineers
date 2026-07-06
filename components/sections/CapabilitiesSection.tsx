@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Drill, Settings, Wrench } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
@@ -11,21 +11,21 @@ const CAPABILITIES = [
     title: "CNC Turning & Machining",
     description: "Shaft, flange and concrete shaft machining supported by massive CNC lathe capacity for long precision components. Tolerances down to 5 microns.",
     capacity: "50 mm - 1500 mm dia., up to 14,000 mm length",
-    image: "/images/real/pako-engineers-inampatta-sangli-x12lilcicd.avif",
+    image: "/images/hero-machining.png",
   },
   {
     id: "grinding",
     title: "Cylindrical Grinding",
     description: "High-precision grinding capability for shafts, sleeves, couplings and bushes with extensive internal and outer diameter support.",
     capacity: "50 mm - 800 mm dia., up to 6,500 mm length",
-    image: "/images/real/pako-engineers-inampatta-sangli-ysalyd9hy4.avif",
+    image: "/images/quality-inspection.png",
   },
   {
     id: "assembly",
     title: "Assembly & Inspection",
     description: "In-house assembly plus internal key-way, VMC key-way and wire-cut support for pump assemblies, followed by rigorous quality inspection.",
     capacity: "Internal key-way up to 1,200 mm",
-    image: "/images/real/pako-engineers-inampatta-sangli-vrr3lt0pff.avif",
+    image: "/images/factory-floor.png",
   },
 ];
 
