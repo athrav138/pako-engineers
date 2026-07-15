@@ -3,7 +3,7 @@ export const company = {
   legalName: "Pako Engineers",
   tagline: "MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
   welcome: "Welcome",
-  logo: "/images/pako-logo.svg",
+  logo: "/images/logo.png",
   founded: 1994,
   yearsInBusiness: new Date().getFullYear() - 1994,
   certification: "ISO 9001:2015",

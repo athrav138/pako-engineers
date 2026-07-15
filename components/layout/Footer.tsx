@@ -10,7 +10,9 @@ export function Footer() {
       <Container className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Company Info */}
         <div>
-          <Logo variant="white" className="h-12 w-auto" />
+          <div className="inline-flex rounded-xl bg-white px-3 py-2 shadow-sm ring-1 ring-black/5">
+            <Logo className="h-14 w-auto" />
+          </div>
           <p className="mt-4 text-sm leading-relaxed text-white/70">
             {company.tagline} Trusted worldwide since {company.founded}.
           </p>

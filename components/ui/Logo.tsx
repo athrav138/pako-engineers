@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 import { cn } from '@/lib/utils';
 
-interface LogoProps extends React.SVGProps<SVGSVGElement> {
+interface LogoProps {
   className?: string;
   variant?: 'default' | 'white';
   /** Show only the PE monogram mark without the wordmark */
   compact?: boolean;
 }
 
-export const Logo = ({ className, variant = 'default', compact = false, ...props }: LogoProps) => {
+export const Logo = ({ className, variant = 'default', compact = false }: LogoProps) => {
   const isWhite = variant === 'white';
 
   // Color palette — professional blues matching the brand
@@ -24,7 +25,6 @@ export const Logo = ({ className, variant = 'default', compact = false, ...props
         className={cn("h-full w-auto", className)}
         aria-label="Pako Engineers"
         role="img"
-        {...props}
       >
         <defs>
           <linearGradient id="pe-grad-c" x1="0" y1="0" x2="0" y2="1">
@@ -60,6 +60,19 @@ export const Logo = ({ className, variant = 'default', compact = false, ...props
     );
   }
 
+  if (!isWhite) {
+    return (
+      <Image
+        src="/images/logo.png"
+        alt="Pako Engineers"
+        width={1536}
+        height={1024}
+        className={cn("h-full w-auto object-contain", className)}
+        priority={false}
+      />
+    );
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +80,6 @@ export const Logo = ({ className, variant = 'default', compact = false, ...props
       className={cn("h-full w-auto", className)}
       aria-label="Pako Engineers"
       role="img"
-      {...props}
     >
       <defs>
         <linearGradient id="pe-p-grad" x1="0" y1="0" x2="0" y2="1">

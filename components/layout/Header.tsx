@@ -182,7 +182,7 @@ export function Header() {
                 <Mail size={11} className="text-sky-400" />sales@pakoshaft.com
               </a>
               <span className="flex items-center gap-1.5 pl-4">
-                <MapPin size={11} className="text-sky-400" />Sangli, Maharashtra, India
+              <MapPin size={11} className="text-sky-400" />Burli, Maharashtra
               </span>
             </div>
             <div className="flex items-center divide-x divide-white/10">
@@ -198,9 +198,6 @@ export function Header() {
                 <span className="text-white/20">|</span>
                 <a href="https://www.justdial.com/Sangli/Pako-Engineers-Inampatta/9999PX233-X233-180411113230-R4I6_BZDET" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors text-[10.5px] font-semibold tracking-wide">JustDial</a>
               </div>
-              <Link href="/request-quote" className="pl-4 font-bold text-sky-400 hover:text-white transition-colors uppercase tracking-widest text-[10.5px]">
-                Request a Quote
-              </Link>
             </div>
           </Container>
         </div>
@@ -212,7 +209,9 @@ export function Header() {
         )}>
           <Container className="flex h-[64px] items-center justify-between gap-3">
             <Link href="/" className="shrink-0" onClick={() => setMobileOpen(false)}>
-              <Logo variant="default" className="h-[40px] w-auto" />
+              <div className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3 py-1.5 shadow-sm">
+                <Logo variant="default" className="h-[48px] w-auto" />
+              </div>
             </Link>
 
             {/* Desktop Nav Links */}
