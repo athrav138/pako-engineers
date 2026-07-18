@@ -35,18 +35,10 @@ export default function ClientsPage() {
         </Container>
       </section>
 
-      {/* Infinite Logo Slider Placeholder */}
+      {/* Global Reach Section */}
       <section className="bg-white py-12 border-b border-line overflow-hidden">
          <Container>
            <p className="text-center text-sm font-semibold uppercase tracking-wider text-ink-muted mb-8">Exporting to 20+ Countries including USA, Germany, Japan, and UAE</p>
-           <div className="flex justify-between items-center opacity-50 grayscale gap-8 overflow-hidden">
-             {/* Imagine these are scrolling logos */}
-             <div className="h-12 w-32 bg-surface rounded-md"></div>
-             <div className="h-12 w-32 bg-surface rounded-md"></div>
-             <div className="h-12 w-32 bg-surface rounded-md"></div>
-             <div className="h-12 w-32 bg-surface rounded-md"></div>
-             <div className="h-12 w-32 bg-surface rounded-md"></div>
-           </div>
          </Container>
       </section>
 

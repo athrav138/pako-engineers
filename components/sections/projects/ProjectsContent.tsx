@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 const projects = [
   {
     id: "pump-assembly",
+    href: "/projects/pump-assembly-projects",
     title: "Pump Assembly Programs",
     category: "Pump Assembly",
     client: "Flowserve, EBARA, DMW Corporation",
@@ -18,6 +19,7 @@ const projects = [
   },
   {
     id: "oem",
+    href: "/projects/oem-manufacturing",
     title: "OEM Manufacturing Partnerships",
     category: "OEM Manufacturing",
     client: "TMEIC, Valmet, Nash",
@@ -27,6 +29,7 @@ const projects = [
   },
   {
     id: "custom",
+    href: "/projects/custom-engineering",
     title: "Custom Engineering Solutions",
     category: "Custom Engineering",
     client: "Various industrial clients",
@@ -36,6 +39,7 @@ const projects = [
   },
   {
     id: "export",
+    href: "/projects/export-projects",
     title: "Export Manufacturing Projects",
     category: "Export Projects",
     client: "Clients in Japan, Germany, USA, UAE, South Korea",
@@ -45,6 +49,7 @@ const projects = [
   },
   {
     id: "industrial",
+    href: "/projects/industrial-solutions",
     title: "Industrial Rotating Equipment",
     category: "Industrial Solutions",
     client: "Power, Marine, Oil & Gas sectors",
@@ -135,12 +140,12 @@ export function ProjectsContent() {
 
                 {/* CTA */}
                 <Button
-                  href={`/contact?project=${encodeURIComponent(project.title)}`}
+                  href={project.href}
                   variant="outline"
                   size="sm"
                   className="mt-auto w-full justify-center"
                 >
-                  Enquire About This Project <ArrowRight size={14} className="ml-1" />
+                  View Project Details <ArrowRight size={14} className="ml-1" />
                 </Button>
               </motion.div>
             );

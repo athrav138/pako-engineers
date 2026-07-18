@@ -1,8 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
+
+const LEADER_IMAGES = [
+  "/images/pako-engineers-inampatta-sangli-km7ieyz05d-250.avif",
+  "/images/pako-engineers-inampatta-sangli-0em6g582db-250.avif",
+];
 
 export function LeadershipSection() {
   return (
@@ -28,8 +34,13 @@ export function LeadershipSection() {
               className="group"
             >
               <div className="relative mb-8 aspect-square overflow-hidden rounded-2xl bg-surface">
-                {/* Fallback pattern */}
-                <div className="absolute inset-0 bg-navy/10" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.1 }} />
+                <Image
+                  src={LEADER_IMAGES[i] ?? LEADER_IMAGES[0] ?? "/images/hero-machining.png"}
+                  alt={`${leader.name} - ${leader.role} at Pako Engineers`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
               </div>
               <div className="text-center md:text-left">

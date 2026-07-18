@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -12,8 +13,20 @@ export function CTABand({
   description = "Send your specification and we will respond with capability confirmation and lead time.",
 }: CTABandProps) {
   return (
-    <section className="bg-navy py-16">
-      <Container className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+    <section className="relative overflow-hidden bg-navy py-16">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-machining.png"
+          alt="CNC machining background"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-navy/80" />
+      </div>
+
+      <Container className="relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
             {title}

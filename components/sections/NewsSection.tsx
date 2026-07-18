@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -12,6 +13,7 @@ const NEWS_ITEMS = [
     category: "Company Update",
     date: "Aug 15, 2026",
     excerpt: "To meet the growing demand from global pump manufacturers, we have successfully installed a new 14-meter CNC lathe capable of turning shafts up to 1500mm in diameter.",
+    image: "/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const NEWS_ITEMS = [
     category: "Technical Article",
     date: "Jul 22, 2026",
     excerpt: "Machining super duplex stainless steel presents unique challenges. Learn how our engineering team optimizes tooling and feeds to maintain tight tolerances.",
+    image: "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3-250.avif",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const NEWS_ITEMS = [
     category: "Awards",
     date: "Jun 10, 2026",
     excerpt: "We are proud to announce that Pako Engineers has been recognized for its outstanding contribution to India's engineering export growth.",
+    image: "/images/pako-engineers-inampatta-sangli-6aohn6oy1s-250.avif",
   },
 ];
 
@@ -55,15 +59,27 @@ export function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col justify-between rounded-xl border border-line bg-white p-8 transition-all hover:border-navy/20 hover:shadow-raised"
+              className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-all hover:border-navy/20 hover:shadow-raised"
             >
-              <div>
-                <div className="mb-6 flex items-center justify-between text-sm">
-                  <span className="font-semibold text-oxide">{item.category}</span>
-                  <span className="flex items-center gap-1.5 text-ink-muted">
-                    <Calendar size={14} />
-                    {item.date}
-                  </span>
+              {/* News thumbnail image */}
+              <div className="relative h-48 w-full overflow-hidden bg-surface">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="absolute top-4 left-4 rounded-full bg-oxide px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
+                  {item.category}
+                </span>
+              </div>
+
+              <div className="flex flex-col flex-1 p-8">
+                <div className="mb-4 flex items-center gap-1.5 text-sm text-ink-muted">
+                  <Calendar size={14} />
+                  {item.date}
                 </div>
                 <h3 className="mb-4 font-display text-xl font-bold leading-snug text-navy transition-colors group-hover:text-oxide">
                   {item.title}
@@ -71,10 +87,10 @@ export function NewsSection() {
                 <p className="mb-8 text-ink-muted leading-relaxed line-clamp-3">
                   {item.excerpt}
                 </p>
-              </div>
-              <div className="flex items-center font-medium text-navy transition-colors group-hover:text-oxide">
-                Read Article
-                <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <div className="mt-auto flex items-center font-medium text-navy transition-colors group-hover:text-oxide">
+                  Read Article
+                  <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+                </div>
               </div>
             </motion.div>
           ))}

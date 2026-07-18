@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +10,14 @@ export function ProductHero() {
   return (
     <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0">
-        <div className="h-full w-full bg-[url('/images/hero-machining.png')] bg-cover bg-center opacity-45" />
+        <Image
+          src="/images/product-shafts.png"
+          alt="Precision pump shafts manufactured by Pako Engineers"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover opacity-45"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent" />
       </div>
 

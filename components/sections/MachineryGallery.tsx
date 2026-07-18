@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Settings2, ArrowRight } from "lucide-react";
@@ -12,6 +13,7 @@ const MACHINES = [
     maxLength: "14000 mm",
     tolerance: "5 Microns",
     applications: "Pump Shafts, Marine Propellers, Heavy Rotors",
+    image: "/images/pako-engineers-inampatta-sangli-h2rios7qk8-250.avif",
   },
   {
     name: "Vertical Machining Center (VMC)",
@@ -20,6 +22,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "2 Microns",
     applications: "Complex Housings, Impellers, Keyways",
+    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by-250.avif",
   },
   {
     name: "Cylindrical Grinding Machine",
@@ -28,6 +31,7 @@ const MACHINES = [
     maxLength: "2000 mm",
     tolerance: "1 Micron",
     applications: "Bearing Areas, Seal Fits, Precision Sleeves",
+    image: "/images/pako-engineers-inampatta-sangli-xas6rn507h-250.avif",
   },
   {
     name: "Wire Cut EDM",
@@ -36,6 +40,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "1 Micron",
     applications: "Splines, Special Keyways, Exotic Alloy Profiles",
+    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp",
   }
 ];
 
@@ -69,11 +74,14 @@ export function MachineryGallery() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-shadow hover:shadow-raised lg:flex-row"
             >
               <div className="relative aspect-video w-full bg-surface lg:w-2/5">
-                {/* Fallback image */}
-                <div className="absolute inset-0 bg-navy/5" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '16px 16px', opacity: 0.1 }} />
-                <div className="absolute inset-0 flex items-center justify-center text-navy/10 group-hover:scale-110 transition-transform duration-700">
-                  <Settings2 size={64} strokeWidth={1} />
-                </div>
+                <Image
+                  src={machine.image}
+                  alt={`${machine.name} at Pako Engineers`}
+                  fill
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="flex flex-1 flex-col justify-center p-6 lg:p-8">
                 <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-oxide">{machine.manufacturer}</span>

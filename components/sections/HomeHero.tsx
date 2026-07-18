@@ -85,9 +85,11 @@ export function HomeHero() {
             animate={mounted ? "visible" : "hidden"}
             className="mb-10 text-[15px] font-bold uppercase leading-[1.5] tracking-[0.08em] text-white md:text-[18px] lg:text-[20px]"
           >
-            Manufacture &amp; Exporter of
+            Manufacturer &amp; Exporter of
             <br />
-            Precision Machined Components &amp;
+            Precision Machined Components
+            <br />
+            &amp;
             <br />
             Pump Assemblies
           </motion.p>

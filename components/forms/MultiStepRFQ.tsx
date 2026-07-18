@@ -8,10 +8,31 @@ import { Button } from "@/components/ui/Button";
 
 const STEPS = ["Company", "Contact", "Specifications", "Review"];
 
-export function MultiStepRFQ() {
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+
+function MultiStepRFQForm() {
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const searchParams = useSearchParams();
+  const initialProduct = searchParams.get("product") || "";
+
+  const [formData, setFormData] = useState({
+    companyName: "",
+    country: "",
+    industry: "",
+    contactName: "",
+    designation: "",
+    email: "",
+    phone: "",
+    product: initialProduct,
+    material: "",
+    quantity: "",
+    requiredDate: "",
+    message: "",
+    drawing: null as File | null
+  });
 
   const handleNext = () => {
     if (currentStep < STEPS.length - 1) setCurrentStep((prev) => prev + 1);
@@ -25,7 +46,22 @@ export function MultiStepRFQ() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const payload = new FormData();
+      payload.append("companyName", formData.companyName);
+      payload.append("contactName", formData.contactName);
+      payload.append("email", formData.email);
+      payload.append("phone", formData.phone);
+      payload.append("country", formData.country);
+      payload.append("industry", formData.industry);
+      payload.append("product", formData.product);
+      payload.append("material", formData.material);
+      payload.append("quantity", formData.quantity);
+      payload.append("requiredDate", formData.requiredDate);
+      payload.append("message", formData.message || `RFQ submitted for ${formData.product || "custom precision component"}.`);
+      if (formData.drawing) payload.append("drawing", formData.drawing);
+
+      const response = await fetch("/api/rfq", { method: "POST", body: payload });
+      if (!response.ok) throw new Error("RFQ submission failed");
       setIsSuccess(true);
     } catch (error) {
       console.error(error);
@@ -87,16 +123,16 @@ export function MultiStepRFQ() {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-navy">Company Name *</label>
-                    <Input placeholder="OEM Engineering Ltd" required />
+                    <Input placeholder="OEM Engineering Ltd" value={formData.companyName} onChange={(e) => setFormData({ ...formData, companyName: e.target.value })} required />
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Country *</label>
-                      <Input placeholder="United States" required />
+                      <Input placeholder="United States" value={formData.country} onChange={(e) => setFormData({ ...formData, country: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Industry</label>
-                      <Input placeholder="e.g. Oil & Gas" />
+                      <Input placeholder="e.g. Oil & Gas" value={formData.industry} onChange={(e) => setFormData({ ...formData, industry: e.target.value })} />
                     </div>
                   </div>
                 </div>
@@ -110,21 +146,21 @@ export function MultiStepRFQ() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Full Name *</label>
-                      <Input placeholder="John Smith" required />
+                      <Input placeholder="John Smith" value={formData.contactName} onChange={(e) => setFormData({ ...formData, contactName: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Designation</label>
-                      <Input placeholder="Procurement Manager" />
+                      <Input placeholder="Procurement Manager" value={formData.designation} onChange={(e) => setFormData({ ...formData, designation: e.target.value })} />
                     </div>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Business Email *</label>
-                      <Input type="email" placeholder="john@oem.com" required />
+                      <Input type="email" placeholder="john@oem.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Phone Number *</label>
-                      <Input type="tel" placeholder="+1 234 567 8900" required />
+                      <Input type="tel" placeholder="+1 234 567 8900" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
                     </div>
                   </div>
                 </div>
@@ -138,29 +174,46 @@ export function MultiStepRFQ() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Product Component *</label>
-                      <Input placeholder="e.g. Pump Shaft or Thordon Bearing" required />
+                      <Input 
+                        placeholder="e.g. Pump Shaft or Thordon Bearing" 
+                        value={formData.product} 
+                        onChange={(e) => setFormData({...formData, product: e.target.value})}
+                        required 
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Material Grade *</label>
-                      <Input placeholder="e.g. Super Duplex S32750" required />
+                      <Input placeholder="e.g. Super Duplex S32750" value={formData.material} onChange={(e) => setFormData({ ...formData, material: e.target.value })} required />
                     </div>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Order Quantity *</label>
-                      <Input type="number" placeholder="100" required />
+                      <Input type="number" placeholder="100" value={formData.quantity} onChange={(e) => setFormData({ ...formData, quantity: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Required Delivery Date</label>
-                      <Input type="date" />
+                      <Input type="date" value={formData.requiredDate} onChange={(e) => setFormData({ ...formData, requiredDate: e.target.value })} />
                     </div>
                   </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-navy">Additional Notes</label>
+                    <textarea 
+                      className="w-full rounded-md border border-line bg-surface p-3 text-sm text-navy focus:border-oxide focus:outline-none" 
+                      rows={3} 
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Any specific tolerances, finishes, or requirements?"
+                    ></textarea>
+                  </div>
                   
-                  <div className="rounded-lg border-2 border-dashed border-line bg-surface/50 p-8 text-center transition-colors hover:border-oxide/50 hover:bg-surface cursor-pointer mt-4">
+                  <label className="block rounded-lg border-2 border-dashed border-line bg-surface/50 p-8 text-center transition-colors hover:border-oxide/50 hover:bg-surface cursor-pointer mt-4">
                     <Upload className="mx-auto mb-4 text-ink-muted" size={32} />
                     <p className="font-medium text-navy">Upload Technical Drawings (Required)</p>
-                    <p className="mt-1 text-xs text-ink-muted">PDF, DWG, STEP, or ZIP files up to 20MB</p>
-                  </div>
+                    <p className="mt-1 text-xs text-ink-muted">{formData.drawing ? formData.drawing.name : "PDF, DWG, JPG, or PNG files up to 10MB"}</p>
+                    <input type="file" className="sr-only" accept=".pdf,.dwg,.jpg,.jpeg,.png" onChange={(e) => setFormData({ ...formData, drawing: e.target.files?.[0] ?? null })} />
+                  </label>
                 </div>
               </div>
             )}
@@ -214,5 +267,13 @@ export function MultiStepRFQ() {
         </div>
       </form>
     </div>
+  );
+}
+
+export function MultiStepRFQ() {
+  return (
+    <Suspense fallback={<div className="h-[500px] w-full animate-pulse rounded-2xl bg-surface"></div>}>
+      <MultiStepRFQForm />
+    </Suspense>
   );
 }

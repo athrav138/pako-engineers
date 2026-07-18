@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search, Filter, Eye } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -59,9 +60,20 @@ export function ProductListing() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-raised"
             >
-              <div className="relative aspect-square overflow-hidden bg-surface">
-                {/* Fallback pattern */}
-                <div className="absolute inset-0 bg-navy/5" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '24px 24px', opacity: 0.1 }} />
+              <div className="relative aspect-square overflow-hidden bg-white group-hover:bg-slate-50 transition-colors flex items-center justify-center p-4">
+                {product.image ? (
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 bg-navy/5" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '24px 24px', opacity: 0.1 }} />
+                )}
                 
                 {/* Overlay actions */}
                 <div className="absolute inset-0 flex items-center justify-center gap-3 bg-navy/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">

@@ -1,17 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Maximize2 } from "lucide-react";
 
-// Placeholder sizes for masonry effect
+// Real factory photographs from public/images
 const GALLERY_ITEMS = [
-  { id: 1, span: "col-span-1 row-span-1", category: "Factory" },
-  { id: 2, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery" },
-  { id: 3, span: "col-span-1 row-span-1", category: "Inspection" },
-  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Products" },
-  { id: 5, span: "col-span-1 row-span-1", category: "Assembly" },
-  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Team" },
+  { id: 1, span: "col-span-1 row-span-1", category: "Factory", src: "/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif" },
+  { id: 2, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp" },
+  { id: 3, span: "col-span-1 row-span-1", category: "Inspection", src: "/images/pako-engineers-inampatta-sangli-h2rios7qk8-250.avif" },
+  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Products", src: "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3-250.avif" },
+  { id: 5, span: "col-span-1 row-span-1", category: "Assembly", src: "/images/pako-engineers-inampatta-sangli-6aohn6oy1s-250.avif" },
+  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Team", src: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by-250.avif" },
 ];
 
 export function GalleryMasonry() {
@@ -37,12 +38,17 @@ export function GalleryMasonry() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative overflow-hidden rounded-xl bg-navy ${item.span}`}
             >
-              {/* Fallback abstract representation for gallery */}
-              <div className="absolute inset-0 bg-gradient-to-br from-navy to-steel opacity-80" />
-              <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '4px 4px' }} />
+              <Image
+                src={item.src}
+                alt={`Pako Engineers ${item.category} - Manufacturing facility`}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
               
-              <div className="absolute inset-0 flex items-center justify-center text-white/20 transition-transform duration-700 group-hover:scale-110">
-                <span className="font-display text-2xl font-bold tracking-widest">{item.category}</span>
+              <div className="absolute bottom-4 left-4 z-10">
+                <span className="font-display text-sm font-bold tracking-widest text-white/90 uppercase">{item.category}</span>
               </div>
 
               {/* Hover overlay */}

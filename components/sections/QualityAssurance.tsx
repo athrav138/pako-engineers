@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Search, ShieldCheck, Microscope, Ruler } from "lucide-react";
@@ -30,8 +31,19 @@ const QA_FACILITIES = [
 export function QualityAssurance() {
   return (
     <section className="relative overflow-hidden bg-navy py-20 lg:py-32 text-white">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/quality-inspection.png"
+          alt="Quality inspection at Pako Engineers"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-navy/85" />
+      </div>
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      <div className="absolute inset-0 z-[1] opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
       
       <Container className="relative z-10">
         <div className="mb-16 md:w-2/3 lg:w-1/2">

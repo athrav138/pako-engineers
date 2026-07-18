@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -10,7 +11,14 @@ export function CompanyHero() {
   return (
     <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0">
-        <div className="h-full w-full bg-[url('/images/factory-floor.png')] bg-cover bg-center opacity-45" />
+        <Image
+          src="/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif"
+          alt="Pako Engineers manufacturing facility exterior"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover opacity-45"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent" />
       </div>
 

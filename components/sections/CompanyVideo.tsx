@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -8,7 +9,13 @@ export function CompanyVideo() {
   return (
     <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-navy py-20 lg:py-32">
       <div className="absolute inset-0 z-0">
-        <div className="h-full w-full bg-[url('/images/factory-floor.png')] bg-cover bg-center opacity-50" />
+        <Image
+          src="/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp"
+          alt="Pako Engineers manufacturing facility"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-50"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30" />
       </div>
 

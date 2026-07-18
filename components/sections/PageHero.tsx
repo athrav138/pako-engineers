@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import type { ReactNode } from "react";
@@ -9,13 +10,27 @@ type PageHeroProps = {
   title: string;
   description?: string;
   children?: ReactNode;
+  backgroundImage?: string;
 };
 
 /** Standard interior-page hero: dark navy band, used on every page except Home. */
-export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, children, backgroundImage }: PageHeroProps) {
   return (
-    <section className="bg-navy py-20 md:py-28">
-      <Container>
+    <section className="relative overflow-hidden bg-navy py-20 md:py-28">
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/80" />
+        </div>
+      )}
+      <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

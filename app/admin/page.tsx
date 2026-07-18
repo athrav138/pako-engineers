@@ -33,7 +33,7 @@ export default function AdminDashboardPage() {
         ))}
       </div>
 
-      {/* Charts and Pipeline (Placeholder UI for Linear/Vercel style) */}
+      {/* Charts and Pipeline */}
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Main Chart Area */}
         <div className="lg:col-span-2 rounded-xl border border-line bg-white p-6 shadow-sm min-h-[400px] flex flex-col">

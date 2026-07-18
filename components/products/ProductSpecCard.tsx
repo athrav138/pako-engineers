@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import type { ProductSpec } from "@/lib/content/products";
+import type { ProductData } from "@/lib/content/products";
 
-export function ProductSpecCard({ product }: { product: ProductSpec }) {
+export function ProductSpecCard({ product }: { product: ProductData }) {
   return (
     <article
       id={product.slug}
@@ -37,19 +37,19 @@ export function ProductSpecCard({ product }: { product: ProductSpec }) {
               <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
                 Material
               </dt>
-              <dd className="mt-1 text-sm text-ink">{product.materials}</dd>
+              <dd className="mt-1 text-sm text-ink">{product.materials.join(", ")}</dd>
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
-                Size Range
+                Applications
               </dt>
-              <dd className="mt-1 text-sm text-ink">{product.sizeRange}</dd>
+              <dd className="mt-1 text-sm text-ink">{product.applications.join(", ")}</dd>
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
-                Surface Finish
+                Certifications
               </dt>
-              <dd className="mt-1 text-sm text-ink">{product.finish}</dd>
+              <dd className="mt-1 text-sm text-ink">{product.certifications.join(", ")}</dd>
             </div>
           </dl>
         </div>

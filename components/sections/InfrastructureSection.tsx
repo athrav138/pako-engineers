@@ -1,14 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { company, equipment, machiningCapacity } from "@/lib/content/company";
 
 const INFRA_IMAGES = [
-  { id: 1, src: "/images/infra/cnc-shop.jpg", label: "CNC Machine Shop" },
-  { id: 2, src: "/images/infra/inspection.jpg", label: "Quality Inspection Lab" },
-  { id: 3, src: "/images/infra/assembly.jpg", label: "Clean Assembly Area" },
-  { id: 4, src: "/images/infra/warehouse.jpg", label: "Export Packaging & Warehouse" },
+  { id: 1, src: "/images/pako-engineers-inampatta-sangli-xas6rn507h-250.avif", label: "CNC Machine Shop" },
+  { id: 2, src: "/images/pako-engineers-inampatta-sangli-km7ieyz05d-250.avif", label: "Quality Inspection Lab" },
+  { id: 3, src: "/images/pako-engineers-inampatta-sangli-0em6g582db-250.avif", label: "Clean Assembly Area" },
 ];
 
 export function InfrastructureSection() {
@@ -39,7 +39,13 @@ export function InfrastructureSection() {
             transition={{ duration: 0.6 }}
             className="group relative overflow-hidden rounded-2xl md:col-span-8 md:row-span-2 min-h-[300px] bg-surface"
           >
-            <div className="absolute inset-0 bg-navy/10" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.05 }} />
+            <Image
+              src="/images/factory-floor.png"
+              alt="Pako Engineers factory floor overview"
+              fill
+              sizes="(max-width: 768px) 100vw, 66vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-6 left-6 z-10">
               <p className="font-display text-xl font-bold text-white">Factory Floor Overview</p>
@@ -48,7 +54,7 @@ export function InfrastructureSection() {
           </motion.div>
 
           {/* Smaller Images */}
-          {INFRA_IMAGES.slice(1, 3).map((img, i) => (
+          {INFRA_IMAGES.slice(0, 2).map((img, i) => (
             <motion.div 
               key={img.id}
               initial={{ opacity: 0, scale: 0.98 }}
@@ -57,8 +63,14 @@ export function InfrastructureSection() {
               transition={{ duration: 0.6, delay: 0.2 + (i * 0.1) }}
               className="group relative overflow-hidden rounded-2xl md:col-span-4 md:row-span-1 min-h-[200px] bg-surface"
             >
-               <div className="absolute inset-0 bg-navy/10" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.05 }} />
-               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
+              <Image
+                src={img.src}
+                alt={`Pako Engineers ${img.label}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
               <div className="absolute bottom-4 left-4 z-10">
                 <p className="font-display font-bold text-white">
                   {i === 0 ? equipment[0] : machiningCapacity[0].process}

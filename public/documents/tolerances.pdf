@@ -1,0 +1,12 @@
+Pako Engineers - Standard Tolerances Guide
+
+General machining tolerances are controlled by customer drawing, approved QAP, and applicable ISO/DIN/ASME standards.
+
+Typical achievable values:
+- Turned diameters: down to 0.005 mm where geometry permits
+- Ground bearing fits: Ra 0.2 to 0.8 microns
+- Face runout: 0.01 mm to 0.02 mm depending on diameter
+- Shaft straightness: 0.05 mm per meter
+- Keyways and slots: inspected by calibrated gauges or CMM
+
+All dimensions remain subject to drawing review and manufacturability confirmation.

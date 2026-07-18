@@ -1,13 +1,15 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { products } from "@/lib/content/products";
 
-export function RelatedProductsCarousel() {
+export function RelatedProductsCarousel({ currentSlug, relatedSlugs }: { currentSlug?: string; relatedSlugs?: string[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inViewRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(inViewRef, { once: true, margin: "-50px" });
@@ -52,7 +54,12 @@ export function RelatedProductsCarousel() {
           className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide md:gap-8"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {products.slice(0, 6).map((product, i) => (
+          {(relatedSlugs?.length
+            ? relatedSlugs
+                .map((slug) => products.find((product) => product.slug === slug))
+                .filter((product): product is (typeof products)[number] => Boolean(product))
+            : products.filter((product) => product.slug !== currentSlug).slice(0, 6)
+          ).map((product, i) => (
             <motion.div
               key={product.slug}
               initial={{ opacity: 0, x: 50 }}
@@ -61,11 +68,15 @@ export function RelatedProductsCarousel() {
               className="group min-w-[280px] max-w-[320px] flex-1 shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-line bg-white shadow-sm transition-all hover:shadow-raised md:min-w-[320px]"
             >
               <div className="relative aspect-square overflow-hidden bg-surface">
-                {/* Fallback pattern */}
-                <div className="absolute inset-0 bg-navy/5" style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 1px)', backgroundSize: '24px 24px', opacity: 0.1 }} />
-                
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(min-width: 768px) 320px, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 flex items-center justify-center bg-navy/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
+                  <Button href={`/products/${product.slug}`} variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
                     <Eye size={18} className="mr-2" />
                     View Product
                   </Button>
@@ -73,8 +84,10 @@ export function RelatedProductsCarousel() {
               </div>
               <div className="flex flex-col p-6">
                 <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-oxide">{product.category}</span>
-                <h3 className="mb-2 font-display text-lg font-bold text-navy">{product.name}</h3>
-                <p className="text-sm text-ink-muted">Materials: <span className="font-medium text-ink">{product.materials}</span></p>
+                <Link href={`/products/${product.slug}`}>
+                  <h3 className="mb-2 font-display text-lg font-bold text-navy hover:text-oxide transition-colors">{product.name}</h3>
+                </Link>
+                <p className="text-sm text-ink-muted line-clamp-2">{product.summary}</p>
               </div>
             </motion.div>
           ))}

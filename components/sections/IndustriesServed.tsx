@@ -2,22 +2,20 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
-import { Droplet, Factory, Flame, Anchor, Truck, Plane, Cog, HardHat } from "lucide-react";
+import {
+  Droplet, Factory, Flame, Anchor, Truck, Zap, Cog, HardHat,
+} from "lucide-react";
 
 const INDUSTRIES = [
   { name: "Oil & Gas", icon: Flame, desc: "Corrosion-resistant components for refineries and offshore platforms." },
-  { name: "Marine", icon: Anchor, desc: "Duplex steel propellor shafts and maritime engine components." },
-  { name: "Power", icon: Zap, desc: "Turbine components and cooling system parts." },
-  { name: "Agriculture", icon: Truck, desc: "Heavy-duty shafts for agricultural machinery and irrigation." },
-  { name: "Chemical", icon: Factory, desc: "Acid-resistant pump components in super duplex and Monel." },
+  { name: "Marine", icon: Anchor, desc: "Duplex steel propeller shafts and maritime engine components." },
+  { name: "Power Generation", icon: Zap, desc: "Turbine components and cooling system parts for thermal plants." },
+  { name: "Agriculture", icon: Truck, desc: "Heavy-duty shafts for agricultural machinery and irrigation pumps." },
+  { name: "Chemical Processing", icon: Factory, desc: "Acid-resistant pump components in super duplex and Monel alloys." },
   { name: "Mining", icon: HardHat, desc: "Wear-resistant parts for extreme extraction environments." },
-  { name: "Water Pumps", icon: Droplet, desc: "Impellers, shafts, and wear rings for high-pressure fluid handling." },
+  { name: "Water & Wastewater", icon: Droplet, desc: "Impellers, shafts, and wear rings for high-pressure fluid handling." },
   { name: "Heavy Engineering", icon: Cog, desc: "Custom industrial gearboxes and hydraulic cylinders." },
 ];
-
-// Re-using Zap icon for Power Generation since we don't have Zap in the import. Wait, I didn't import Zap. Let me fix the import.
-// I will import Zap.
-import { Zap } from "lucide-react";
 
 export function IndustriesServed() {
   return (

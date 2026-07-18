@@ -21,15 +21,15 @@ export function ProductOverview() {
           {products.slice(0, 4).map((product) => (
             <Link
               key={product.slug}
-              href={`/products#${product.slug}`}
+              href={`/products/${product.slug}`}
               className="group flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-raised"
             >
-              <div className="relative h-48 w-full overflow-hidden bg-surface">
+              <div className="relative h-48 w-full overflow-hidden bg-white p-4 group-hover:bg-slate-50 transition-colors">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-col flex-1 p-6">

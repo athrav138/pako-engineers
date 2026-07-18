@@ -16,7 +16,7 @@ export default function SearchPage() {
   const links = [
     ...NAV_LINKS,
     ...FOOTER_LINKS,
-    ...products.map((product) => ({ href: `/products#${product.slug}`, label: product.name })),
+    ...products.map((product) => ({ href: `/products/${product.slug}`, label: product.name })),
     { href: "/request-quote", label: "Request Quote" },
     { href: "/contact", label: "Contact" },
   ];
