@@ -1,0 +1,460 @@
+export type ImageCategory =
+  | "company"
+  | "hero"
+  | "logos"
+  | "machines"
+  | "manufacturing"
+  | "products"
+  | "projects"
+  | "quality";
+
+export type ImageAsset = {
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+  category: ImageCategory;
+  width: number;
+  height: number;
+  priority?: boolean;
+  comingSoon?: boolean;
+  recommendedPhoto?: string;
+};
+
+const asset = (image: ImageAsset) => image;
+
+export const Images = {
+  assets: {
+    factoryBuildingExterior: asset({
+      src: "/images/company/factory-building-exterior.avif",
+      alt: "Pako Engineers factory building exterior in Sangli",
+      title: "Factory Building Exterior",
+      caption: "Exterior view of the Pako Engineers manufacturing facility.",
+      category: "company",
+      width: 1080,
+      height: 684,
+    }),
+    factoryBuildingExteriorThumb: asset({
+      src: "/images/company/factory-building-exterior-thumb.avif",
+      alt: "Pako Engineers factory exterior thumbnail",
+      title: "Factory Exterior Thumbnail",
+      caption: "Compact exterior view for cards and previews.",
+      category: "company",
+      width: 250,
+      height: 250,
+    }),
+    factoryEntranceSignageThumb: asset({
+      src: "/images/company/factory-entrance-signage-thumb.avif",
+      alt: "Pako Engineers factory entrance signage",
+      title: "Factory Entrance Signage",
+      caption: "Factory entrance and signage at the manufacturing works.",
+      category: "company",
+      width: 360,
+      height: 360,
+    }),
+    pakoEngineersBuildingSignageThumb: asset({
+      src: "/images/company/pako-engineers-building-signage-thumb.avif",
+      alt: "Pako Engineers building signage",
+      title: "Building Signage",
+      caption: "Pako Engineers signage on the facility building.",
+      category: "company",
+      width: 250,
+      height: 250,
+    }),
+    cncTurningHero: asset({
+      src: "/images/hero/cnc-turning-hero.png",
+      alt: "CNC precision turning operation at Pako Engineers",
+      title: "CNC Turning Hero",
+      caption: "Precision CNC turning for pump shafts and rotating components.",
+      category: "hero",
+      width: 1024,
+      height: 1024,
+      priority: true,
+    }),
+    logo: asset({
+      src: "/images/logos/pako-engineers-logo.png",
+      alt: "Pako Engineers logo",
+      title: "Pako Engineers Logo",
+      caption: "Official Pako Engineers brand mark.",
+      category: "logos",
+      width: 1536,
+      height: 1024,
+      priority: true,
+    }),
+    cncOperatorMachineControlThumb: asset({
+      src: "/images/machines/cnc-operator-machine-control-thumb.avif",
+      alt: "Machine operator working at CNC controls",
+      title: "CNC Operator Machine Control",
+      caption: "Operator setting up precision machining equipment.",
+      category: "machines",
+      width: 360,
+      height: 360,
+    }),
+    cylindricalGrindingMachine: asset({
+      src: "/images/machines/cylindrical-grinding-machine.avif",
+      alt: "Cylindrical grinding machine inside Pako Engineers facility",
+      title: "Cylindrical Grinding Machine",
+      caption: "Grinding capability for critical bearing and seal areas.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    heavyDutyEngineLathe: asset({
+      src: "/images/machines/heavy-duty-engine-lathe.avif",
+      alt: "Heavy duty engine lathe on the factory floor",
+      title: "Heavy Duty Engine Lathe",
+      caption: "Large conventional turning capacity for heavy components.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    heavyDutyLatheBed: asset({
+      src: "/images/machines/heavy-duty-lathe-bed.avif",
+      alt: "Long heavy duty lathe bed for machining large components",
+      title: "Heavy Duty Lathe Bed",
+      caption: "Long-bed turning setup for large shaft machining.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    legacyLatheInspection: asset({
+      src: "/images/machines/legacy-lathe-inspection.avif",
+      alt: "Operator inspecting a lathe setup",
+      title: "Lathe Setup Inspection",
+      caption: "Manual inspection and setup verification at the lathe.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    legacyLatheInspectionThumb: asset({
+      src: "/images/machines/legacy-lathe-inspection-thumb.avif",
+      alt: "Lathe inspection thumbnail",
+      title: "Lathe Inspection Thumbnail",
+      caption: "Compact lathe inspection image for preview cards.",
+      category: "machines",
+      width: 360,
+      height: 360,
+    }),
+    longBedTurningLathe: asset({
+      src: "/images/machines/long-bed-turning-lathe.avif",
+      alt: "Long bed turning lathe in the Pako Engineers machine shop",
+      title: "Long Bed Turning Lathe",
+      caption: "Long-bed lathe used for precision shaft machining.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    longBedTurningLatheThumb: asset({
+      src: "/images/machines/long-bed-turning-lathe-thumb.avif",
+      alt: "Long bed turning lathe thumbnail",
+      title: "Long Bed Turning Lathe Thumbnail",
+      caption: "Compact long-bed lathe image for gallery use.",
+      category: "machines",
+      width: 360,
+      height: 360,
+    }),
+    longShaftMachiningLathe: asset({
+      src: "/images/machines/long-shaft-machining-lathe.avif",
+      alt: "Long shaft machining operation on a lathe",
+      title: "Long Shaft Machining Lathe",
+      caption: "Long shaft turning setup for precision component production.",
+      category: "machines",
+      width: 1728,
+      height: 534,
+    }),
+    machineOperatorLatheThumb: asset({
+      src: "/images/machines/machine-operator-lathe-thumb.avif",
+      alt: "Operator working beside a lathe",
+      title: "Machine Operator Lathe",
+      caption: "Operator and turning machine on the production floor.",
+      category: "machines",
+      width: 360,
+      height: 360,
+    }),
+    shaftMachiningLathe: asset({
+      src: "/images/machines/shaft-machining-lathe.avif",
+      alt: "Shaft machining on a heavy duty lathe",
+      title: "Shaft Machining Lathe",
+      caption: "Heavy-duty lathe machining for shafts and rotating components.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    surfaceGrindingMachine: asset({
+      src: "/images/machines/surface-grinding-machine.jpg",
+      alt: "Surface grinding machine in the manufacturing facility",
+      title: "Surface Grinding Machine",
+      caption: "Surface grinding equipment for precision finishing.",
+      category: "machines",
+      width: 1728,
+      height: 1152,
+    }),
+    modernFactoryFloorOverview: asset({
+      src: "/images/manufacturing/modern-factory-floor-overview.png",
+      alt: "Pako Engineers factory floor overview",
+      title: "Modern Factory Floor Overview",
+      caption: "Wide overview of manufacturing capacity and shop-floor scale.",
+      category: "manufacturing",
+      width: 1024,
+      height: 1024,
+      priority: true,
+    }),
+    machinedCircularFlange: asset({
+      src: "/images/products/machined-circular-flange.avif",
+      alt: "Machined circular flange component",
+      title: "Machined Circular Flange",
+      caption: "Finished circular machined component with drilled bolt pattern.",
+      category: "products",
+      width: 1728,
+      height: 1296,
+    }),
+    machinedFlangeComponent: asset({
+      src: "/images/products/machined-flange-component.jpg",
+      alt: "Finished machined flange component",
+      title: "Machined Flange Component",
+      caption: "Precision-machined flange component ready for inspection.",
+      category: "products",
+      width: 1728,
+      height: 1296,
+    }),
+    machinedSleeveComponents: asset({
+      src: "/images/products/machined-sleeve-components.avif",
+      alt: "Finished machined sleeve components",
+      title: "Machined Sleeve Components",
+      caption: "Finished sleeves and bush components machined to drawing.",
+      category: "products",
+      width: 1728,
+      height: 1296,
+    }),
+    precisionPumpShaftsLineup: asset({
+      src: "/images/products/precision-pump-shafts-lineup.avif",
+      alt: "Lineup of precision pump shafts and sleeves",
+      title: "Precision Pump Shafts Lineup",
+      caption: "Finished pump shafts and sleeves arranged after machining.",
+      category: "products",
+      width: 1728,
+      height: 2592,
+    }),
+    pumpShaftsAndSleeves: asset({
+      src: "/images/products/pump-shafts-and-sleeves.png",
+      alt: "Pump shafts and sleeves manufactured by Pako Engineers",
+      title: "Pump Shafts and Sleeves",
+      caption: "Finished precision shafts, sleeves and machined pump components.",
+      category: "products",
+      width: 1024,
+      height: 1024,
+      priority: true,
+    }),
+    largePumpRotorAssembly: asset({
+      src: "/images/projects/large-pump-rotor-assembly.avif",
+      alt: "Large pump rotor assembly on the shop floor",
+      title: "Large Pump Rotor Assembly",
+      caption: "Large pump assembly work supported by overhead handling.",
+      category: "projects",
+      width: 1728,
+      height: 1296,
+      priority: true,
+    }),
+    largePumpRotorAssemblyThumb: asset({
+      src: "/images/projects/large-pump-rotor-assembly-thumb.avif",
+      alt: "Large pump rotor assembly thumbnail",
+      title: "Large Pump Rotor Assembly Thumbnail",
+      caption: "Compact assembly image for cards and preview galleries.",
+      category: "projects",
+      width: 360,
+      height: 360,
+    }),
+    verticalPumpAssembly: asset({
+      src: "/images/projects/vertical-pump-assembly.jpg",
+      alt: "Vertical pump assembly work in progress",
+      title: "Vertical Pump Assembly",
+      caption: "Vertical pump assembly and rotating equipment work.",
+      category: "projects",
+      width: 676,
+      height: 450,
+    }),
+    verticalPumpAssemblyThumb: asset({
+      src: "/images/projects/vertical-pump-assembly-thumb.avif",
+      alt: "Vertical pump assembly thumbnail",
+      title: "Vertical Pump Assembly Thumbnail",
+      caption: "Compact vertical pump assembly image for cards.",
+      category: "projects",
+      width: 250,
+      height: 250,
+    }),
+    precisionQualityInspection: asset({
+      src: "/images/quality/precision-quality-inspection.png",
+      alt: "Precision quality inspection of a machined component",
+      title: "Precision Quality Inspection",
+      caption: "Dimensional inspection and documentation for machined components.",
+      category: "quality",
+      width: 1024,
+      height: 1024,
+      priority: true,
+    }),
+  },
+} as const;
+
+export const ImageGroups = {
+  hero: {
+    homepage: Images.assets.cncTurningHero,
+    company: Images.assets.modernFactoryFloorOverview,
+    products: Images.assets.pumpShaftsAndSleeves,
+    projects: Images.assets.largePumpRotorAssembly,
+    services: Images.assets.shaftMachiningLathe,
+    quality: Images.assets.precisionQualityInspection,
+    manufacturing: Images.assets.cncTurningHero,
+    contact: Images.assets.factoryBuildingExterior,
+    rfq: Images.assets.precisionQualityInspection,
+  },
+  openGraph: {
+    homepage: Images.assets.cncTurningHero,
+    company: Images.assets.modernFactoryFloorOverview,
+    products: Images.assets.pumpShaftsAndSleeves,
+    projects: Images.assets.largePumpRotorAssembly,
+    services: Images.assets.shaftMachiningLathe,
+    contact: Images.assets.factoryBuildingExterior,
+    rfq: Images.assets.precisionQualityInspection,
+  },
+  products: {
+    shaft: {
+      primary: Images.assets.pumpShaftsAndSleeves,
+      secondary: Images.assets.precisionPumpShaftsLineup,
+      hero: Images.assets.pumpShaftsAndSleeves,
+      gallery: [
+        Images.assets.pumpShaftsAndSleeves,
+        Images.assets.cncTurningHero,
+        Images.assets.largePumpRotorAssemblyThumb,
+        Images.assets.precisionQualityInspection,
+      ],
+    },
+    sleeve: {
+      primary: Images.assets.machinedSleeveComponents,
+      secondary: Images.assets.precisionQualityInspection,
+      hero: Images.assets.machinedSleeveComponents,
+      gallery: [Images.assets.machinedSleeveComponents, Images.assets.precisionQualityInspection],
+    },
+    impeller: {
+      primary: Images.assets.machinedFlangeComponent,
+      hero: Images.assets.machinedFlangeComponent,
+      gallery: [Images.assets.machinedFlangeComponent],
+      comingSoon: true,
+      recommendedPhoto: "Dedicated machined and balanced impeller product photo",
+    },
+    coupling: {
+      primary: Images.assets.machinedCircularFlange,
+      hero: Images.assets.machinedCircularFlange,
+      gallery: [Images.assets.machinedCircularFlange],
+      comingSoon: true,
+      recommendedPhoto: "Dedicated coupling product photo",
+    },
+    pumpParts: {
+      primary: Images.assets.longBedTurningLathe,
+      secondary: Images.assets.cncTurningHero,
+      hero: Images.assets.longBedTurningLathe,
+      gallery: [Images.assets.longBedTurningLathe, Images.assets.cncTurningHero],
+      comingSoon: true,
+      recommendedPhoto: "Assorted custom pump parts arranged on a clean inspection surface",
+    },
+    lockNut: {
+      primary: Images.assets.machinedCircularFlange,
+      hero: Images.assets.machinedCircularFlange,
+      gallery: [Images.assets.machinedCircularFlange],
+      comingSoon: true,
+      recommendedPhoto: "Dedicated precision lock nut close-up",
+    },
+    retainerRing: {
+      primary: Images.assets.machinedSleeveComponents,
+      hero: Images.assets.machinedSleeveComponents,
+      gallery: [Images.assets.machinedSleeveComponents],
+      comingSoon: true,
+      recommendedPhoto: "Dedicated retainer ring and bearing assembly photo",
+    },
+    gears: {
+      primary: Images.assets.shaftMachiningLathe,
+      hero: Images.assets.shaftMachiningLathe,
+      gallery: [Images.assets.shaftMachiningLathe],
+      comingSoon: true,
+      recommendedPhoto: "Dedicated custom gear and gear shaft product photo",
+    },
+  },
+  services: {
+    cncTurning: {
+      hero: Images.assets.cncTurningHero,
+      machinery: Images.assets.shaftMachiningLathe,
+      process: Images.assets.longBedTurningLathe,
+      finishedProduct: Images.assets.pumpShaftsAndSleeves,
+    },
+    grinding: {
+      hero: Images.assets.cylindricalGrindingMachine,
+      machinery: Images.assets.surfaceGrindingMachine,
+      process: Images.assets.legacyLatheInspection,
+      finishedProduct: Images.assets.machinedSleeveComponents,
+    },
+    milling: {
+      hero: Images.assets.machineOperatorLatheThumb,
+      machinery: Images.assets.cncOperatorMachineControlThumb,
+      process: Images.assets.longShaftMachiningLathe,
+      finishedProduct: Images.assets.machinedCircularFlange,
+      comingSoon: true,
+      recommendedPhoto: "Dedicated VMC milling or key-way machining photo",
+    },
+    assembly: {
+      hero: Images.assets.largePumpRotorAssembly,
+      machinery: Images.assets.verticalPumpAssembly,
+      process: Images.assets.verticalPumpAssemblyThumb,
+      finishedProduct: Images.assets.largePumpRotorAssemblyThumb,
+    },
+    inspection: {
+      hero: Images.assets.precisionQualityInspection,
+      machinery: Images.assets.legacyLatheInspectionThumb,
+      process: Images.assets.precisionQualityInspection,
+      finishedProduct: Images.assets.machinedFlangeComponent,
+      comingSoon: true,
+      recommendedPhoto: "Dedicated CMM inspection equipment photo",
+    },
+    engineering: {
+      hero: Images.assets.modernFactoryFloorOverview,
+      machinery: Images.assets.heavyDutyEngineLathe,
+      process: Images.assets.heavyDutyLatheBed,
+      finishedProduct: Images.assets.precisionPumpShaftsLineup,
+    },
+  },
+  placeholders: {
+    managementTeamPortraits: {
+      comingSoon: true,
+      recommendedPhoto: "Management team portraits",
+    },
+    isoCertificates: {
+      comingSoon: true,
+      recommendedPhoto: "High-resolution ISO certificate scans",
+    },
+    cmmInspection: {
+      comingSoon: true,
+      recommendedPhoto: "Dedicated CMM inspection equipment photo",
+    },
+    vmcMachining: {
+      comingSoon: true,
+      recommendedPhoto: "VMC machining or key-way machining photo",
+    },
+    edmMachining: {
+      comingSoon: true,
+      recommendedPhoto: "Wire-cut EDM machining photo",
+    },
+    exportPackaging: {
+      comingSoon: true,
+      recommendedPhoto: "Export packaging and wooden crating photo",
+    },
+    warehouse: {
+      comingSoon: true,
+      recommendedPhoto: "Warehouse and raw material storage photo",
+    },
+    rawMaterials: {
+      comingSoon: true,
+      recommendedPhoto: "Raw material bars, forgings, and incoming stock photo",
+    },
+  },
+} as const;
+
+export const publicImageUrl = (image: ImageAsset) => image.src;
+export const absoluteImageUrl = (image: ImageAsset) => `https://pakoshaft.com${image.src}`;

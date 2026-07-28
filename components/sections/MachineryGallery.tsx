@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -13,7 +14,7 @@ const MACHINES = [
     maxLength: "14000 mm",
     tolerance: "5 Microns",
     applications: "Pump Shafts, Marine Propellers, Heavy Rotors",
-    image: "/images/pako-engineers-inampatta-sangli-h2rios7qk8-250.avif",
+    image: Images.assets.heavyDutyEngineLathe.src,
   },
   {
     name: "Vertical Machining Center (VMC)",
@@ -22,7 +23,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "2 Microns",
     applications: "Complex Housings, Impellers, Keyways",
-    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by-250.avif",
+    image: Images.assets.machineOperatorLatheThumb.src,
   },
   {
     name: "Cylindrical Grinding Machine",
@@ -31,7 +32,7 @@ const MACHINES = [
     maxLength: "2000 mm",
     tolerance: "1 Micron",
     applications: "Bearing Areas, Seal Fits, Precision Sleeves",
-    image: "/images/pako-engineers-inampatta-sangli-xas6rn507h-250.avif",
+    image: Images.assets.surfaceGrindingMachine.src,
   },
   {
     name: "Wire Cut EDM",
@@ -40,7 +41,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "1 Micron",
     applications: "Splines, Special Keyways, Exotic Alloy Profiles",
-    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp",
+    image: Images.assets.longShaftMachiningLathe.src,
   }
 ];
 

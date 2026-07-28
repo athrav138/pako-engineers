@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { company } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Manufacturing Facility & Process | Pako Engineers – CNC Machining Experts",
   description: "End-to-end precision manufacturing process: from raw material verification through CNC turning, grinding, NDT, assembly, and export packaging.",
@@ -32,7 +33,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Sourcing premium-grade forgings and castings in SS304, SS316, Duplex, Super Duplex, Monel, and EN-series steels. Every heat comes with Mill Test Certificates verified against EN 10204 3.1 requirements.",
       quality: "Incoming chemical and physical property verification",
       machines: "Material testing lab, spectroscopy (outsourced)",
-      image: "/images/pako-engineers-inampatta-sangli-246b4xbmg4.avif",
+      image: Images.assets.heavyDutyLatheBed.src,
     },
     {
       step: "02",
@@ -40,7 +41,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Band saw cutting to rough dimensions followed by initial turning to establish base diameters and relieve internal stress from the forging process.",
       quality: "Dimensional check at rough stage using calipers and gauges",
       machines: "Heavy-duty band saws, conventional lathes",
-      image: "/images/pako-engineers-inampatta-sangli-8cm88vo30j.avif",
+      image: Images.assets.heavyDutyEngineLathe.src,
     },
     {
       step: "03",
@@ -48,7 +49,7 @@ export default function ManufacturingFacilityPage() {
       desc: "High-precision multi-axis CNC turning and VMC machining to achieve critical geometries, key-ways, splines, threads, and bearing fits with tolerances down to 5 microns.",
       quality: "First-off inspection and periodic in-process checking",
       machines: "CNC lathes (up to 1500mm dia), VMC machining centres",
-      image: "/images/hero-machining.png",
+      image: Images.assets.cncTurningHero.src,
     },
     {
       step: "04",
@@ -56,7 +57,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Stress relieving, hardening, tempering, and normalizing — outsourced to certified heat treatment partners with calibrated furnace control and documented time-temperature profiles.",
       quality: "Post-treatment hardness verification (Rockwell/Brinell)",
       machines: "Outsourced certified heat treatment facilities",
-      image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-xay5ra4b6r.avif",
+      image: Images.assets.cylindricalGrindingMachine.src,
     },
     {
       step: "05",
@@ -64,7 +65,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Cylindrical and internal grinding achieving surface finishes down to Ra 0.2 microns. Vibration-damped flooring ensures absolute stability for sub-micron tolerance requirements.",
       quality: "Surface roughness measurement, roundness check",
       machines: "CNC cylindrical grinders, internal grinders",
-      image: "/images/pako-engineers-inampatta-sangli-xas6rn507h.avif",
+      image: Images.assets.legacyLatheInspection.src,
     },
     {
       step: "06",
@@ -72,7 +73,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Wire-cut EDM for complex spline profiles, irregular key-ways, and exotic alloy machining where conventional cutting tools cannot achieve the required geometry.",
       quality: "Profile verification against drawing coordinates",
       machines: "NXG EZEECUT Wire-Cut Machine, VMC key-way",
-      image: "/images/pako-engineers-inampatta-sangli-dxlc3e8p9c.webp",
+      image: Images.assets.longShaftMachiningLathe.src,
     },
     {
       step: "07",
@@ -80,7 +81,7 @@ export default function ManufacturingFacilityPage() {
       desc: "100% dimensional verification followed by non-destructive testing: Dye Penetrant Testing (DPT), Ultrasonic Testing (UT), PMI, and Radiography as required by the client specification.",
       quality: "Complete documentation package with MTR, DPT, and dimensional reports",
       machines: "DPT kits, hardness testers, surface roughness testers, calipers, micrometers",
-      image: "/images/quality-inspection.png",
+      image: Images.assets.precisionQualityInspection.src,
     },
     {
       step: "08",
@@ -88,7 +89,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Static balancing, rotor assembly, and pump sub-assembly build-up in a clean, dust-free environment with calibrated torque tooling and alignment equipment.",
       quality: "Balance grade verification, assembly torque records",
       machines: "Static balancing machine, assembly fixtures",
-      image: "/images/pako-engineers-inampatta-sangli-oa1cwygurt.avif",
+      image: Images.assets.factoryBuildingExterior.src,
     },
     {
       step: "09",
@@ -96,7 +97,7 @@ export default function ManufacturingFacilityPage() {
       desc: "Anti-rust VCI coating, foam protection, bubble wrapping, and fumigated wooden crating for safe global transit by sea, air, or land. Full packing lists and commercial documentation prepared in-house.",
       quality: "Final visual inspection before packing, packing list verification",
       machines: "Dedicated packing zone with fumigation certificate",
-      image: "/images/pako-engineers-inampatta-sangli-t3bhte14qa.avif",
+      image: Images.assets.longShaftMachiningLathe.src,
     },
   ];
 
@@ -106,7 +107,7 @@ export default function ManufacturingFacilityPage() {
         eyebrow="Manufacturing Facility"
         title="End-to-End Precision Engineering Workflow"
         description="Our manufacturing process is engineered for complete traceability, repeatability, and micrometer accuracy at every stage — from raw forging to export packaging."
-        backgroundImage="/images/hero-machining.png"
+        backgroundImage={Images.assets.cncTurningHero.src}
       >
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button href="/infrastructure" variant="glass">

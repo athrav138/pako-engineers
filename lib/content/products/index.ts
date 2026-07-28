@@ -1,5 +1,6 @@
 import { ProductData } from "./types";
 
+import { Images } from "@/lib/images";
 const QA_STANDARD = [
   { title: "Incoming Inspection", description: "PMI (Positive Material Identification) and chemical analysis of all incoming raw materials to ensure grade conformity." },
   { title: "In-Process Inspection", description: "Continuous dimensional checks using calibrated micrometers, bore gauges, and digital verniers directly at the CNC station." },
@@ -18,14 +19,14 @@ export const products: ProductData[] = [
     summary: "Heavy-duty precision pump shafts engineered for critical industrial and marine applications.",
     description: "Our precision pump shafts are the core of our manufacturing capability. Machined to exacting tolerances up to 1500mm in diameter and 8000mm in length, these shafts deliver uncompromising performance in high-stress, continuous-duty environments.",
     overview: "Pump shafts are critical power transmission components responsible for connecting the pump driver (motor/engine) to the impeller. They must withstand severe torsional loads, vibration, and corrosive fluids. Pako Engineers manufactures precision shafts with absolute straightness and concentricity. Our advanced CNC machining capability allows us to produce complex profiles, splines, and keyways perfectly aligned with OEM specifications, ensuring extended bearing life and reduced mechanical seal wear.",
-    image: "/images/product-shafts.png",
+    image: Images.assets.pumpShaftsAndSleeves.src,
     gallery: [
-      "/images/product-shafts.png",
-      "/images/hero-machining.png",
-      "/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif",
-      "/images/quality-inspection.png"
+      Images.assets.pumpShaftsAndSleeves.src,
+      Images.assets.cncTurningHero.src,
+      Images.assets.largePumpRotorAssemblyThumb.src,
+      Images.assets.precisionQualityInspection.src
     ],
-    engineeringDrawing: "/images/product-shafts.png",
+    engineeringDrawing: Images.assets.pumpShaftsAndSleeves.src,
     features: [
       { title: "High Precision Tolerances", description: "Dimensional accuracy down to 5 microns ensuring perfect bearing fits and seal alignment." },
       { title: "Zero-Runout Profiles", description: "Precision CNC grinding guarantees minimal runout, extending pump seal and bearing life." },
@@ -97,10 +98,10 @@ export const products: ProductData[] = [
     summary: "Wear-resistant sleeves and bushes designed to protect pump shafts in extreme conditions.",
     description: "Pako Engineers manufactures high-precision shaft sleeves designed to protect the pump shaft from wear, corrosion, and erosion at the stuffing box and seal locations.",
     overview: "Shaft sleeves act as a sacrificial barrier between the rotating shaft and the stationary packing or mechanical seal. Since they are subjected to intense friction and abrasive fluids, they must be extremely hard and perfectly concentric. We manufacture sleeves with superior surface finishes and high Rockwell hardness, drastically reducing seal wear and maintenance downtime for industrial pumps.",
-    image: "/images/pako-engineers-inampatta-sangli-h2rios7qk8.avif",
+    image: Images.assets.machinedSleeveComponents.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-h2rios7qk8.avif",
-      "/images/quality-inspection.png"
+      Images.assets.machinedSleeveComponents.src,
+      Images.assets.precisionQualityInspection.src
     ],
     features: [
       { title: "Exceptional Hardness", description: "Heat-treated for maximum wear resistance in abrasive pumping applications." },
@@ -162,9 +163,9 @@ export const products: ProductData[] = [
     summary: "Dynamically balanced impellers manufactured for optimum fluid dynamics and efficiency.",
     description: "We supply fully machined and dynamically balanced impellers for various centrifugal pump designs. Whether open, semi-open, or closed, our impellers are machined from high-quality castings.",
     overview: "The impeller is the heart of a centrifugal pump, directly dictating flow rate and pressure. Pako Engineers specializes in the precision machining and dynamic balancing of impeller castings. We ensure critical bore tolerances, vane profiles, and keyways are exact. Proper dynamic balancing is crucial, and we ensure every impeller meets ISO 1940 standards, preventing vibration that could destroy bearings and seals.",
-    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by.avif",
+    image: Images.assets.machinedFlangeComponent.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by.avif"
+      Images.assets.machinedFlangeComponent.src
     ],
     features: [
       { title: "Dynamic Balancing", description: "In-house static and dynamic balancing to ISO 1940 Grade 6.3 or 2.5." },
@@ -225,9 +226,9 @@ export const products: ProductData[] = [
     summary: "Rigid muff and flexible drive couplings machined for absolute alignment in rotating assemblies.",
     description: "Pako Engineers manufactures high-precision muff couplings, rigid couplings, and drive coupling components. Machined to exacting standards, these components ensure zero angular or parallel misalignment.",
     overview: "Couplings are vital for transmitting torque from the motor to the pump shaft while accommodating slight misalignments and dampening vibration. We manufacture the metallic hubs, flanges, and muff couplings that form these assemblies. Because any misalignment causes severe bearing failure, our couplings are bored and faced with extreme perpendicularity and concentricity.",
-    image: "/images/pako-engineers-inampatta-sangli-xas6rn507h.avif",
+    image: Images.assets.machinedCircularFlange.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-xas6rn507h.avif"
+      Images.assets.machinedCircularFlange.src
     ],
     features: [
       { title: "Absolute Alignment", description: "Precision bored to ensure perfect shaft-to-shaft concentricity." },
@@ -288,10 +289,10 @@ export const products: ProductData[] = [
     summary: "Bespoke engineered parts and sub-assemblies manufactured to stringent OEM drawings.",
     description: "Beyond standard shafts and impellers, we act as a complete contract manufacturing partner for global OEMs. We manufacture a wide array of custom pump components.",
     overview: "Pumps consist of dozens of precision-machined stationary and rotating components. We manufacture bearing housings, stuffing boxes, mechanical seal plates, wear rings, discharge manifolds, and casing covers. By combining heavy CNC turning, multi-axis milling, and precision grinding, we deliver ready-to-assemble components straight to your production line.",
-    image: "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3.avif",
+    image: Images.assets.longBedTurningLathe.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3.avif",
-      "/images/hero-machining.png"
+      Images.assets.longBedTurningLathe.src,
+      Images.assets.cncTurningHero.src
     ],
     features: [
       { title: "Build-to-Print Manufacturing", description: "Exact adherence to customer drawings and Quality Assurance Plans (QAP)." },
@@ -352,9 +353,9 @@ export const products: ProductData[] = [
     summary: "Heavy-duty threaded lock nuts for securing bearings and rotating assemblies.",
     description: "Our precision-threaded lock nuts are critical components for securing bearings, gears, and impellers onto shafts.",
     overview: "Lock nuts must hold massive rotating assemblies together under intense vibration. If the thread is inaccurate or the locking face is not perfectly perpendicular to the thread axis, it will bend the shaft when tightened, causing catastrophic vibration. We CNC machine lock nuts with perfect perpendicularity and exact thread profiles to ensure fail-safe retention.",
-    image: "/images/pako-engineers-inampatta-sangli-6aohn6oy1s.avif",
+    image: Images.assets.machinedCircularFlange.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-6aohn6oy1s.avif"
+      Images.assets.machinedCircularFlange.src
     ],
     features: [
       { title: "Exact Thread Profiles", description: "CNC cut threads for zero backlash and perfect fitment." },
@@ -413,9 +414,9 @@ export const products: ProductData[] = [
     summary: "High-precision retainer rings and elastomeric bearings for marine and industrial pumps.",
     description: "We manufacture tight-tolerance retainer rings and bearing components, including the machining of specialized elastomeric bearings like Thordon and Feroform.",
     overview: "Vertical turbine pumps and marine tail-shafts rely on water-lubricated bearings housed inside metallic retainer rings. Machining non-metallic composites like Thordon requires specialized tooling, speeds, and feeds to maintain tight running clearances without melting or distorting the material. Pako Engineers has perfected this process, supplying ready-to-install bearing assemblies.",
-    image: "/images/pako-engineers-inampatta-sangli-km7ieyz05d.avif",
+    image: Images.assets.machinedSleeveComponents.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-km7ieyz05d.avif"
+      Images.assets.machinedSleeveComponents.src
     ],
     features: [
       { title: "Specialized Machining", description: "Expertise in machining non-metallic bearing composites like Thordon and Feroform." },
@@ -473,9 +474,9 @@ export const products: ProductData[] = [
     summary: "Precision machined gears for integration into rotating assemblies and gearboxes.",
     description: "Pako Engineers manufactures custom spur and helical gears based on customer drawings.",
     overview: "Gears transmit massive torque and speed. Inaccurate tooth geometry leads to noise, heat, and rapid failure. Integrated into our broader capability of producing rotating assemblies, our gear manufacturing process involves precise hobbing, case hardening, and profile grinding. We ensure exact involute profiles, pitch accuracy, and optimal surface hardness.",
-    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6.avif",
+    image: Images.assets.shaftMachiningLathe.src,
     gallery: [
-      "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6.avif"
+      Images.assets.shaftMachiningLathe.src
     ],
     features: [
       { title: "Profile Accuracy", description: "Precision gear hobbing and grinding for exact involute profiles." },

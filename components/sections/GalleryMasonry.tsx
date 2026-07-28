@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,12 +8,12 @@ import { Maximize2 } from "lucide-react";
 
 // Real factory photographs from public/images
 const GALLERY_ITEMS = [
-  { id: 1, span: "col-span-1 row-span-1", category: "Factory", src: "/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif" },
-  { id: 2, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp" },
-  { id: 3, span: "col-span-1 row-span-1", category: "Inspection", src: "/images/pako-engineers-inampatta-sangli-h2rios7qk8-250.avif" },
-  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Products", src: "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3-250.avif" },
-  { id: 5, span: "col-span-1 row-span-1", category: "Assembly", src: "/images/pako-engineers-inampatta-sangli-6aohn6oy1s-250.avif" },
-  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Team", src: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-88792vy3by-250.avif" },
+  { id: 1, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.largePumpRotorAssemblyThumb.src },
+  { id: 2, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: Images.assets.shaftMachiningLathe.src },
+  { id: 3, span: "col-span-1 row-span-1", category: "Factory", src: Images.assets.factoryEntranceSignageThumb.src },
+  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: Images.assets.longBedTurningLatheThumb.src },
+  { id: 5, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.verticalPumpAssemblyThumb.src },
+  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Machinery", src: Images.assets.machineOperatorLatheThumb.src },
 ];
 
 export function GalleryMasonry() {

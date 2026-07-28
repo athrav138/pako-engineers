@@ -9,6 +9,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
 import { FileDown, Search, ShieldAlert, BarChart, ArrowRight, CheckCircle2, Factory } from "lucide-react";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Quality Assurance & Testing | Pako Engineers – ISO 9001:2015",
   description: "Explore our rigorous quality control processes, NDT testing facilities, dimensional inspection capabilities, and ISO 9001:2015 zero-defect philosophy.",
@@ -41,7 +42,7 @@ export default function QualityPage() {
         eyebrow="Quality Assurance"
         title="Zero-Defect Manufacturing Philosophy"
         description="Quality is embedded at every stage of the manufacturing process ensuring complete traceability and dimensional accuracy for every component we export."
-        backgroundImage="/images/quality-inspection.png"
+        backgroundImage={Images.assets.precisionQualityInspection.src}
       >
          <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button href="#manual" variant="glass">

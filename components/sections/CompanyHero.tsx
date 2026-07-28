@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,7 +13,7 @@ export function CompanyHero() {
     <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif"
+          src={Images.assets.largePumpRotorAssemblyThumb.src}
           alt="Pako Engineers manufacturing facility exterior"
           fill
           sizes="100vw"

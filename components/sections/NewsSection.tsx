@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -13,7 +14,7 @@ const NEWS_ITEMS = [
     category: "Company Update",
     date: "Aug 15, 2026",
     excerpt: "To meet the growing demand from global pump manufacturers, we have successfully installed a new 14-meter CNC lathe capable of turning shafts up to 1500mm in diameter.",
-    image: "/images/pako-engineers-inampatta-sangli-2gplhuh9m7-250.avif",
+    image: Images.assets.largePumpRotorAssemblyThumb.src,
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const NEWS_ITEMS = [
     category: "Technical Article",
     date: "Jul 22, 2026",
     excerpt: "Machining super duplex stainless steel presents unique challenges. Learn how our engineering team optimizes tooling and feeds to maintain tight tolerances.",
-    image: "/images/pako-engineers-inampatta-sangli-b3nj3sm4d3-250.avif",
+    image: Images.assets.legacyLatheInspectionThumb.src,
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const NEWS_ITEMS = [
     category: "Awards",
     date: "Jun 10, 2026",
     excerpt: "We are proud to announce that Pako Engineers has been recognized for its outstanding contribution to India's engineering export growth.",
-    image: "/images/pako-engineers-inampatta-sangli-6aohn6oy1s-250.avif",
+    image: Images.assets.verticalPumpAssemblyThumb.src,
   },
 ];
 

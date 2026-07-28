@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { cn } from '@/lib/utils';
 
+import { Images } from "@/lib/images";
 interface LogoProps {
   className?: string;
   variant?: 'default' | 'white';
@@ -63,7 +64,7 @@ export const Logo = ({ className, variant = 'default', compact = false }: LogoPr
   if (!isWhite) {
     return (
       <Image
-        src="/images/logo.png"
+        src={Images.assets.logo.src}
         alt="Pako Engineers"
         width={1536}
         height={1024}

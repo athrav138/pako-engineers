@@ -9,6 +9,7 @@ import { RelatedPages } from "@/components/sections/RelatedPages";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our Story & History | Pako Engineers – A Legacy of Precision Since 1994",
   description: "From a modest workshop in Sangli to a global OEM supplier — discover the three-decade journey of Pako Engineers and our evolution in precision machining.",
@@ -28,7 +29,7 @@ export default function OurStoryPage() {
         eyebrow="Our Story"
         title="Three Decades of Engineering Excellence"
         description="From a modest machining workshop to a globally trusted OEM partner — our growth is defined by an unwavering commitment to precision, quality, and customer trust."
-        backgroundImage="/images/pako-engineers-inampatta-sangli-x12lilcicd.avif"
+        backgroundImage={Images.assets.machinedSleeveComponents.src}
       />
 
       <Breadcrumb items={[{ label: "Company", href: "/about" }, { label: "Our Story", href: "/our-story" }]} />
@@ -56,7 +57,7 @@ export default function OurStoryPage() {
             <div className="space-y-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-raised border border-line">
                 <Image
-                  src="/images/pako-engineers-inampatta-sangli-5bbvuvw8kp.avif"
+                  src={Images.assets.precisionPumpShaftsLineup.src}
                   alt="Pako Engineers original facility"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -69,7 +70,7 @@ export default function OurStoryPage() {
               </div>
               <div className="relative aspect-[16/7] rounded-2xl overflow-hidden shadow-raised border border-line">
                 <Image
-                  src="/images/pako-engineers-inampatta-sangli-zpqdk7swjw.avif"
+                  src={Images.assets.machinedCircularFlange.src}
                   alt="Modern CNC machinery at Pako Engineers"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

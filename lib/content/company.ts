@@ -1,9 +1,10 @@
+import { Images } from "@/lib/images";
 export const company = {
   name: "Pako Engineers",
   legalName: "Pako Engineers",
   tagline: "MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
   welcome: "Welcome",
-  logo: "/images/logo.png",
+  logo: Images.assets.logo.src,
   founded: 1994,
   yearsInBusiness: new Date().getFullYear() - 1994,
   certification: "ISO 9001:2015",
@@ -200,25 +201,25 @@ export const galleryItems = [
   {
     title: "Machining Bay",
     category: "Shop Floor & Machines",
-    image: "/images/hero-machining.png",
+    image: Images.assets.cncTurningHero.src,
     alt: "Pako Engineers machining area for precision components",
   },
   {
     title: "Factory Floor",
     category: "Infrastructure",
-    image: "/images/factory-floor.png",
+    image: Images.assets.modernFactoryFloorOverview.src,
     alt: "Pako Engineers factory floor in Sangli",
   },
   {
     title: "Finished Shafts",
     category: "Products",
-    image: "/images/product-shafts.png",
+    image: Images.assets.pumpShaftsAndSleeves.src,
     alt: "Finished precision shafts manufactured by Pako Engineers",
   },
   {
     title: "Quality Inspection",
     category: "Quality",
-    image: "/images/quality-inspection.png",
+    image: Images.assets.precisionQualityInspection.src,
     alt: "Inspection and quality verification for machined components",
   },
 ] as const;

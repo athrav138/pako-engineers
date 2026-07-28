@@ -1,28 +1,27 @@
 import type { Metadata } from "next";
 import { MultiStepRFQ } from "@/components/forms/MultiStepRFQ";
+import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Request for Quotation | Pako Engineers",
   description: "Submit your drawing and requirements for a precision manufacturing quotation. We respond within 24 hours.",
   alternates: { canonical: "/request-quote" },
+  openGraph: {
+    images: [{ url: Images.assets.precisionQualityInspection.src, width: 1200, height: 630 }],
+  },
 };
 
 export default function RequestQuotePage() {
   return (
     <>
-      <section className="bg-navy py-16 text-white md:py-24 lg:py-32">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              Request for Quotation
-            </h1>
-            <p className="text-lg text-white/80">
-              Submit your technical requirements and drawings. Our engineering team will review your specifications and provide a detailed manufacturing proposal within 24 hours.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="RFQ"
+        title="Request for Quotation"
+        description="Submit your technical requirements and drawings. Our engineering team will review your specifications and provide a detailed manufacturing proposal within 24 hours."
+        backgroundImage={Images.assets.precisionQualityInspection.src}
+      />
 
       <section className="bg-background-light py-20 lg:py-32">
         <Container>

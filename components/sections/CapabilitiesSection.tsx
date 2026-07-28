@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,21 +13,21 @@ const CAPABILITIES = [
     title: "CNC Turning & Machining",
     description: "Shaft, flange and concrete shaft machining supported by massive CNC lathe capacity for long precision components. Tolerances down to 5 microns.",
     capacity: "50 mm - 1500 mm dia., up to 14,000 mm length",
-    image: "/images/hero-machining.png",
+    image: Images.assets.cncTurningHero.src,
   },
   {
     id: "grinding",
     title: "Cylindrical Grinding",
     description: "High-precision grinding capability for shafts, sleeves, couplings and bushes with extensive internal and outer diameter support.",
     capacity: "50 mm - 800 mm dia., up to 6,500 mm length",
-    image: "/images/quality-inspection.png",
+    image: Images.assets.precisionQualityInspection.src,
   },
   {
     id: "assembly",
     title: "Assembly & Inspection",
     description: "In-house assembly plus internal key-way, VMC key-way and wire-cut support for pump assemblies, followed by rigorous quality inspection.",
     capacity: "Internal key-way up to 1,200 mm",
-    image: "/images/factory-floor.png",
+    image: Images.assets.modernFactoryFloorOverview.src,
   },
 ];
 

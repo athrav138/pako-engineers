@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -9,7 +10,7 @@ import { ProductData, IndustryDetail } from "@/lib/content/products/types";
 // ═════ GALLERY ═════
 export function ProductGallery({ images, name }: { images: string[], name: string }) {
   const [activeImg, setActiveImg] = useState(0);
-  const activeImage = images[activeImg] ?? images[0] ?? "/images/product-shafts.png";
+  const activeImage = images[activeImg] ?? images[0] ?? Images.assets.pumpShaftsAndSleeves.src;
 
   return (
     <div className="space-y-4">

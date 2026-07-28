@@ -5,11 +5,15 @@ import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Contact & Request a Quote",
   description:
     "Send your drawing or specification to Pako Engineers for a capability confirmation and quote.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    images: [{ url: Images.assets.factoryBuildingExterior.src, width: 1200, height: 630 }],
+  },
 };
 
 export default async function ContactPage({
@@ -25,6 +29,7 @@ export default async function ContactPage({
         eyebrow="Contact / RFQ"
         title="Request a quote"
         description="Send your specification, diameter, length, material, tolerance and drawing file, and Pako Engineers will confirm capability and lead time."
+        backgroundImage={Images.assets.factoryBuildingExterior.src}
       />
 
       <section className="py-20 md:py-28">

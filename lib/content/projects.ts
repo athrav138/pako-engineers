@@ -1,6 +1,7 @@
 import { company, machiningCapacity, inHouseTesting, outsourcedTesting, galleryItems } from "@/lib/content/company";
 import { getAllProducts } from "@/lib/content/products";
 
+import { Images } from "@/lib/images";
 export type ProjectSlug =
   | "pump-assembly-projects"
   | "oem-manufacturing"
@@ -66,7 +67,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Pump Assembly Projects",
     eyebrow: "Projects",
     description: "Drawing-led pump component and assembly support for OEM pump programs.",
-    image: "/images/product-shafts.png",
+    image: Images.assets.verticalPumpAssembly.src,
     overview:
       "Pako Engineers manufactures precision machined pump shafts, sleeves, couplings, lock nuts, retainer rings, bearings and pump parts for OEM assembly programs. Work is controlled through drawing review, routing, machining, inspection, documentation and dispatch.",
     sections: [
@@ -109,7 +110,7 @@ export const projectPages: ProjectPageData[] = [
     title: "OEM Manufacturing",
     eyebrow: "Projects",
     description: "Repeatable build-to-print manufacturing support for pump OEMs and rotating equipment manufacturers.",
-    image: "/images/hero-machining.png",
+    image: Images.assets.cncTurningHero.src,
     overview:
       "Pako Engineers supports OEM manufacturing with precision turning, grinding, CNC lathe machining, wire-cut machining, internal key-way machining and custom gear manufacturing. The workflow is suited to drawing-controlled production where repeatability, documentation and inspection discipline are critical.",
     sections: [
@@ -143,7 +144,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Custom Engineering",
     eyebrow: "Projects",
     description: "Custom precision component manufacturing support for drawings, samples and prototypes.",
-    image: "/images/quality-inspection.png",
+    image: Images.assets.precisionQualityInspection.src,
     overview:
       "Custom engineering work is handled as a controlled manufacturing support process. Pako Engineers reviews customer requirements, confirms feasible machining routes and manufactures components based on approved drawings, samples or technical specifications.",
     sections: [
@@ -179,7 +180,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Export Projects",
     eyebrow: "Projects",
     description: "Export-ready precision components with documentation, packaging and compliance support.",
-    image: "/images/factory-floor.png",
+    image: Images.assets.factoryBuildingExteriorThumb.src,
     overview:
       "Pako Engineers exports precision machined components and pump assemblies to customers across Asia, Europe, the Middle East and North America. Export projects are prepared with documentation, packaging and dispatch coordination aligned to customer purchase order requirements.",
     sections: [
@@ -225,7 +226,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Industrial Solutions",
     eyebrow: "Projects",
     description: "Manufacturing solutions for industrial rotating equipment applications.",
-    image: "/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6.avif",
+    image: Images.assets.shaftMachiningLathe.src,
     overview:
       "Pako Engineers supports industrial sectors that rely on precision shafts, sleeves, impellers, couplings, lock nuts, retainer rings, bearings, gears and custom pump parts.",
     sections: [],

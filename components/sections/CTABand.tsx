@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
+import { Images } from "@/lib/images";
 type CTABandProps = {
   title?: string;
   description?: string;
@@ -17,7 +18,7 @@ export function CTABand({
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-machining.png"
+          src={Images.assets.cncTurningHero.src}
           alt="CNC machining background"
           fill
           sizes="100vw"

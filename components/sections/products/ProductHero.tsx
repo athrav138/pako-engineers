@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ export function ProductHero() {
     <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/product-shafts.png"
+          src={Images.assets.pumpShaftsAndSleeves.src}
           alt="Precision pump shafts manufactured by Pako Engineers"
           fill
           sizes="100vw"

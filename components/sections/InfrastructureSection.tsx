@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -6,9 +7,9 @@ import { Container } from "@/components/ui/Container";
 import { company, equipment, machiningCapacity } from "@/lib/content/company";
 
 const INFRA_IMAGES = [
-  { id: 1, src: "/images/pako-engineers-inampatta-sangli-xas6rn507h-250.avif", label: "CNC Machine Shop" },
-  { id: 2, src: "/images/pako-engineers-inampatta-sangli-km7ieyz05d-250.avif", label: "Quality Inspection Lab" },
-  { id: 3, src: "/images/pako-engineers-inampatta-sangli-0em6g582db-250.avif", label: "Clean Assembly Area" },
+  { id: 1, src: Images.assets.heavyDutyEngineLathe.src, label: "CNC Machine Shop" },
+  { id: 2, src: Images.assets.precisionQualityInspection.src, label: "Quality Inspection" },
+  { id: 3, src: Images.assets.verticalPumpAssemblyThumb.src, label: "Assembly Area" },
 ];
 
 export function InfrastructureSection() {
@@ -40,7 +41,7 @@ export function InfrastructureSection() {
             className="group relative overflow-hidden rounded-2xl md:col-span-8 md:row-span-2 min-h-[300px] bg-surface"
           >
             <Image
-              src="/images/factory-floor.png"
+              src={Images.assets.modernFactoryFloorOverview.src}
               alt="Pako Engineers factory floor overview"
               fill
               sizes="(max-width: 768px) 100vw, 66vw"
@@ -73,7 +74,7 @@ export function InfrastructureSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
               <div className="absolute bottom-4 left-4 z-10">
                 <p className="font-display font-bold text-white">
-                  {i === 0 ? equipment[0] : machiningCapacity[0].process}
+                  {img.label}
                 </p>
               </div>
             </motion.div>

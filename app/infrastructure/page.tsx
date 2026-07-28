@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { company, equipment, machiningCapacity } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Infrastructure & Facilities | Pako Engineers – World-Class Manufacturing Setup",
   description: "Explore the state-of-the-art infrastructure at Pako Engineers: CNC machining bays, grinding stations, inspection labs, assembly areas, and export packaging zones.",
@@ -33,10 +34,10 @@ export default function InfrastructurePage() {
   ];
 
   const zones = [
-    { title: "CNC Machining Bay", desc: "Houses our heavy-duty turning centers and VMCs. Layout optimized for one-piece flow with dedicated material staging areas.", image: "/images/pako-engineers-inampatta-sangli-8cm88vo30j.avif" },
-    { title: "Precision Grinding Section", desc: "Vibration-damped flooring provides absolute stability for cylindrical and internal grinding machines achieving sub-micron finishes.", image: "/images/pako-engineers-inampatta-sangli-xas6rn507h.avif" },
-    { title: "Assembly & Testing Area", desc: "Clean, dust-free environment for static balancing, rotor assembly, and pump sub-assembly build-up with full dimensional verification.", image: "/images/pako-engineers-inampatta-sangli-oa1cwygurt.avif" },
-    { title: "Warehouse & Dispatch", desc: "Secure raw material storage with FIFO tracking and a dedicated export packaging zone for fumigated wooden crating and anti-rust treatment.", image: "/images/pako-engineers-inampatta-sangli-t3bhte14qa.avif" },
+    { title: "CNC Machining Bay", desc: "Houses our heavy-duty turning centers and VMCs. Layout optimized for one-piece flow with dedicated material staging areas.", image: Images.assets.heavyDutyEngineLathe.src },
+    { title: "Precision Grinding Section", desc: "Vibration-damped flooring provides absolute stability for cylindrical and internal grinding machines achieving sub-micron finishes.", image: Images.assets.legacyLatheInspection.src },
+    { title: "Assembly & Testing Area", desc: "Clean, dust-free environment for static balancing, rotor assembly, and pump sub-assembly build-up with full dimensional verification.", image: Images.assets.factoryBuildingExterior.src },
+    { title: "Warehouse & Dispatch", desc: "Secure raw material storage with FIFO tracking and a dedicated export packaging zone for fumigated wooden crating and anti-rust treatment.", image: Images.assets.longShaftMachiningLathe.src },
   ];
 
   return (
@@ -45,7 +46,7 @@ export default function InfrastructurePage() {
         eyebrow="Infrastructure"
         title="Purpose-Built for Precision Manufacturing"
         description={`Our facility at ${company.address.line1}, Sangli is engineered for large-scale production with streamlined material flow, advanced inspection labs, and a lean shop floor layout.`}
-        backgroundImage="/images/factory-floor.png"
+        backgroundImage={Images.assets.modernFactoryFloorOverview.src}
       >
         <div className="mt-8">
           <Button href="/manufacturing-facility" variant="glass">

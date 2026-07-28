@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -25,7 +26,7 @@ export function AboutSplit() {
           className="relative aspect-square overflow-hidden rounded-lg bg-surface lg:aspect-[4/5]"
         >
           <Image
-            src="/images/factory-floor.png"
+            src={Images.assets.modernFactoryFloorOverview.src}
             alt="Pako Engineers Factory Floor"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

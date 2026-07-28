@@ -20,7 +20,7 @@ export default function ManufacturingPage() {
       {/* Hero Section */}
       <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-navy">
         <div className="absolute inset-0 z-0">
-          <div className="h-full w-full bg-[url('/images/hero-machining.png')] bg-cover bg-center opacity-40" />
+          <div className="h-full w-full bg-[url('/images/hero/cnc-turning-hero.png')] bg-cover bg-center opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent" />
         </div>
 

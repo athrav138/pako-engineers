@@ -1,5 +1,6 @@
 "use client";
 
+import { Images } from "@/lib/images";
 import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "@/components/ui/Logo";
@@ -34,7 +35,7 @@ const MEGA = {
   Company: {
     heading: "Company",
     description: "30+ years of precision engineering excellence, serving pump OEMs and rotating equipment manufacturers across 12+ countries.",
-    image: "/images/hero-machining.png",
+    image: Images.assets.cncTurningHero.src,
     imageAlt: "Pako Engineers manufacturing facility",
     links: [
       { label: "About Us", href: "/about", icon: Building2 },
@@ -50,7 +51,7 @@ const MEGA = {
   Products: {
     heading: "Products",
     description: "Precision machined components and pump assemblies manufactured to international standards for global OEMs.",
-    image: "/images/product-shafts.png",
+    image: Images.assets.pumpShaftsAndSleeves.src,
     imageAlt: "Precision pump shafts by Pako Engineers",
     links: [
       { label: "Pump Shafts", href: "/products/shaft", icon: Cog },
@@ -68,7 +69,7 @@ const MEGA = {
   Projects: {
     heading: "Projects",
     description: "Delivering precision solutions for leading pump OEMs, marine systems, and industrial rotating equipment manufacturers worldwide.",
-    image: "/images/quality-inspection.png",
+    image: Images.assets.precisionQualityInspection.src,
     imageAlt: "Pako Engineers project delivery",
     links: [
       { label: "Pump Assembly Projects", href: "/projects/pump-assembly-projects", icon: Settings },
@@ -82,7 +83,7 @@ const MEGA = {
   Services: {
     heading: "Services",
     description: "End-to-end manufacturing capabilities from CNC machining to final inspection, supporting diameters up to 1500mm.",
-    image: "/images/factory-floor.png",
+    image: Images.assets.modernFactoryFloorOverview.src,
     imageAlt: "CNC machining services at Pako Engineers",
     links: [
       { label: "CNC Turning", href: "/capabilities#cnc-turning", icon: Wrench },
@@ -100,7 +101,7 @@ const MEGA = {
   Contact: {
     heading: "Contact",
     description: "Connect with our engineering and sales team for inquiries, quotations, and technical support.",
-    image: "/images/hero-machining.png",
+    image: Images.assets.cncTurningHero.src,
     imageAlt: "Contact Pako Engineers",
     links: [
       { label: "Contact Us", href: "/contact", icon: MessageSquare },

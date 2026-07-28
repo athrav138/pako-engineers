@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -34,7 +35,7 @@ export function QualityAssurance() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/quality-inspection.png"
+          src={Images.assets.precisionQualityInspection.src}
           alt="Quality inspection at Pako Engineers"
           fill
           sizes="100vw"

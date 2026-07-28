@@ -16,6 +16,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { company } from "@/lib/content/company";
 
+import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About Us | Pako Engineers – Precision Machined Components Since 1994",
   description:
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "ISO 9001:2015 certified manufacturer and exporter of precision machined components and pump assemblies, serving OEMs across 12+ countries.",
     url: "https://pakoshaft.com/about",
     type: "website",
-    images: [{ url: "/images/factory-floor.png", width: 1200, height: 630 }],
+    images: [{ url: Images.assets.modernFactoryFloorOverview.src, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -44,7 +45,7 @@ function OrganizationSchema() {
     legalName: company.legalName,
     foundingDate: String(company.founded),
     url: "https://pakoshaft.com",
-    logo: "https://pakoshaft.com/images/logo.png",
+    logo: absoluteImageUrl(Images.assets.logo),
     description: company.profile.positioning,
     address: {
       "@type": "PostalAddress",
@@ -77,7 +78,7 @@ export default function AboutPage() {
         eyebrow="About PAKO ENGINEERS"
         title="Engineering Precision. Delivering Excellence. Trusted Worldwide."
         description={`Over ${company.yearsInBusiness} years of manufacturing and exporting precision machined components and pump assemblies for leading OEMs across ${company.exportCountries.length} countries.`}
-        backgroundImage="/images/factory-floor.png"
+        backgroundImage={Images.assets.modernFactoryFloorOverview.src}
       >
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button href="/request-quote" className="bg-oxide hover:bg-[#E64A19] text-white">
@@ -115,7 +116,7 @@ export default function AboutPage() {
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-raised border border-line">
               <Image
-                src="/images/pako-engineers-inampatta-sangli-2gplhuh9m7.avif"
+                src={Images.assets.largePumpRotorAssembly.src}
                 alt="Pako Engineers manufacturing facility in Sangli, Maharashtra"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -192,7 +193,7 @@ export default function AboutPage() {
 
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden border border-line">
                 <Image
-                  src="/images/pako-engineers-inampatta-sangli-b3nj3sm4d3.avif"
+                  src={Images.assets.longBedTurningLathe.src}
                   alt="Team at Pako Engineers working on precision machined components"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

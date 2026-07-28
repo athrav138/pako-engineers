@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -10,7 +11,7 @@ export function CompanyVideo() {
     <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-navy py-20 lg:py-32">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6-250.webp"
+          src={Images.assets.shaftMachiningLathe.src}
           alt="Pako Engineers manufacturing facility"
           fill
           sizes="100vw"

@@ -10,6 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { company, materials, clients, machiningCapacity, equipment, industries } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Company Profile | Pako Engineers – Manufacturer & Exporter Since 1994",
   description: "Comprehensive company profile of Pako Engineers: ISO 9001:2015 certified, 47-member team, exporting precision machined components to 12+ countries.",
@@ -62,7 +63,7 @@ export default function CompanyProfilePage() {
         eyebrow="Company Profile"
         title="Pako Engineers at a Glance"
         description={company.profile.positioning}
-        backgroundImage="/images/pako-engineers-inampatta-sangli-industrial-equipment-manufacturers-r1phia7ur6.avif"
+        backgroundImage={Images.assets.shaftMachiningLathe.src}
       >
         <div className="mt-8">
           <Button href="#download" variant="glass">

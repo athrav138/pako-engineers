@@ -17,8 +17,8 @@ async function optimizeImages() {
     const publicImagesDir = path.join(__dirname, '../public/images');
     
     // 1. Optimize Hero Image (target < 500KB)
-    const heroImagePath = path.join(publicImagesDir, 'hero-machining.png');
-    const heroWebpPath = path.join(publicImagesDir, 'hero-machining.webp');
+    const heroImagePath = path.join(publicImagesDir, 'hero/cnc-turning-hero.png');
+    const heroWebpPath = path.join(publicImagesDir, 'hero/cnc-turning-hero.webp');
     
     if (fs.existsSync(heroImagePath)) {
       console.log('Optimizing hero image...');
@@ -26,7 +26,7 @@ async function optimizeImages() {
         .resize(1920) // max width for standard HD displays
         .webp({ quality: 80 }) // 80 quality usually yields < 500kb for webp
         .toFile(heroWebpPath);
-      console.log('Created optimized hero-machining.webp');
+      console.log('Created optimized hero/cnc-turning-hero.webp');
     }
 
     // 2. Remove backgrounds and optimize product images
@@ -34,11 +34,12 @@ async function optimizeImages() {
     // For true background removal without a dedicated ML server, you will need to run a python script using `rembg` (pip install rembg)
     // Example: rembg i input.avif output.png
     
-    const files = fs.readdirSync(publicImagesDir);
+    const files = fs.readdirSync(publicImagesDir, { recursive: true });
     for (const file of files) {
-      if (file.includes('250.avif') || file.includes('250.webp') || file === 'product-shafts.png') {
+      if (file.includes('thumb.avif') || file === 'products/pump-shafts-and-sleeves.png') {
         const inputPath = path.join(publicImagesDir, file);
-        const outputPath = path.join(publicImagesDir, file.split('.')[0] + '-transparent.webp');
+        const parsedPath = path.parse(inputPath);
+        const outputPath = path.join(parsedPath.dir, `${parsedPath.name}-transparent.webp`);
         
         console.log(`Processing product image: ${file}...`);
         

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { ShieldCheck, Download, CheckCircle2, Award, FileSearch, ArrowRight, RefreshCcw, CheckSquare, Settings } from "lucide-react";
 import { company } from "@/lib/content/company";
 
+import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "ISO 9001:2015 Certification | Pako Engineers",
   description: "View Pako Engineers' ISO 9001:2015 certification. We adhere to rigorous global quality management systems to ensure precision and traceability.",
@@ -42,7 +43,7 @@ export default function CertificationsPage() {
         eyebrow="Certifications"
         title={`${company.certification} Certified`}
         description="Our internationally recognized quality management systems ensure precision, traceability, and consistency in every component we manufacture."
-        backgroundImage="/images/quality-inspection.png"
+        backgroundImage={Images.assets.precisionQualityInspection.src}
       >
         <div className="mt-8">
           <Button href="#download" variant="glass">

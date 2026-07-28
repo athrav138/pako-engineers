@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -6,8 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
 
 const LEADER_IMAGES = [
-  "/images/pako-engineers-inampatta-sangli-km7ieyz05d-250.avif",
-  "/images/pako-engineers-inampatta-sangli-0em6g582db-250.avif",
+  Images.assets.pakoEngineersBuildingSignageThumb.src,
+  Images.assets.cncOperatorMachineControlThumb.src,
 ];
 
 export function LeadershipSection() {
@@ -35,7 +36,7 @@ export function LeadershipSection() {
             >
               <div className="relative mb-8 aspect-square overflow-hidden rounded-2xl bg-surface">
                 <Image
-                  src={LEADER_IMAGES[i] ?? LEADER_IMAGES[0] ?? "/images/hero-machining.png"}
+                  src={LEADER_IMAGES[i] ?? LEADER_IMAGES[0] ?? Images.assets.cncTurningHero.src}
                   alt={`${leader.name} - ${leader.role} at Pako Engineers`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

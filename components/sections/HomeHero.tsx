@@ -1,4 +1,5 @@
 "use client";
+import { Images } from "@/lib/images";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -36,7 +37,7 @@ export function HomeHero() {
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-machining.png"
+          src={Images.assets.cncTurningHero.src}
           alt="CNC precision machining at Pako Engineers factory"
           fill
           priority

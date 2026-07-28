@@ -5,6 +5,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { ProductListingClient } from "@/components/sections/products/ProductListingClient";
 import { getAllProducts } from "@/lib/content/products";
 
+import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Precision Products Catalogue | Pako Engineers",
   description: "Browse our complete catalog of precision engineered pump shafts, sleeves, impellers, couplings, and custom OEM components.",
@@ -29,7 +30,7 @@ export default function ProductsPage() {
     "publisher": {
       "@type": "Organization",
       "name": "Pako Engineers",
-      "logo": "https://pakoshaft.com/images/logo.png"
+      "logo": absoluteImageUrl(Images.assets.logo)
     },
     "mainEntity": {
       "@type": "ItemList",
@@ -52,7 +53,7 @@ export default function ProductsPage() {
         eyebrow="Product Catalogue"
         title="Precision Engineered Components"
         description="Our comprehensive range of high-precision machined components, manufactured to exact OEM specifications and international standards."
-        backgroundImage="/images/product-shafts.png"
+        backgroundImage={Images.assets.pumpShaftsAndSleeves.src}
       />
       <Breadcrumb items={[{ label: "Products", href: "/products" }]} />
       
