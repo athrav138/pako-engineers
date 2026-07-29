@@ -1,7 +1,7 @@
 import { company, machiningCapacity, inHouseTesting, outsourcedTesting, galleryItems } from "@/lib/content/company";
 import { getAllProducts } from "@/lib/content/products";
-
 import { Images } from "@/lib/images";
+
 export type ProjectSlug =
   | "pump-assembly-projects"
   | "oem-manufacturing"
@@ -84,8 +84,8 @@ export const projectPages: ProjectPageData[] = [
       {
         title: "Engineering Highlights",
         items: [
-          "Shaft machining up to 1500 mm diameter and 8000 mm length",
-          "Grinding capability for critical bearing and seal areas",
+          "Shaft machining from 50 mm to 1500 mm diameter and up to 8,000 mm (8 mtr) length",
+          "Grinding capability for critical bearing and seal areas (up to 6,500 mm length)",
           "Internal key-way capability for sleeves, couplings and bushes",
           "Pump assembly component machining supported by in-house inspection",
         ],
@@ -235,7 +235,7 @@ export const projectPages: ProjectPageData[] = [
         industry: "Oil & Gas",
         challenge: "Rotating equipment components face load, corrosion and traceability requirements.",
         solution: "Manufacture drawing-controlled shafts, sleeves and lock nuts with material and inspection documentation.",
-        productsUsed: ["Precision Pump Shafts", "Hardened CNC Sleeves", "Precision Lock Nuts"],
+        productsUsed: ["Precision Pump Shafts", "Sleeves", "Precision Lock Nuts"],
       },
       {
         industry: "Water",
@@ -247,37 +247,37 @@ export const projectPages: ProjectPageData[] = [
         industry: "Chemical",
         challenge: "Aggressive fluids demand suitable material selection and controlled surface finishes.",
         solution: "Support stainless, duplex and super duplex component manufacturing based on confirmed service conditions.",
-        productsUsed: ["Hardened CNC Sleeves", "Precision Pump Impellers", "Custom Pump Parts"],
+        productsUsed: ["Sleeves", "Precision Pump Impellers", "Pump Parts & Accessories"],
       },
       {
         industry: "Marine",
         challenge: "Marine components face seawater exposure and bearing alignment requirements.",
         solution: "Manufacture shafts, retainer rings and water-lubricated bearing components for marine pump systems.",
-        productsUsed: ["Precision Pump Shafts", "Retainer Rings & Bearings", "Hardened CNC Sleeves"],
+        productsUsed: ["Precision Pump Shafts", "Retainer Rings & Bearings", "Sleeves"],
       },
       {
         industry: "Mining",
         challenge: "Abrasive slurry service increases wear on sealing and rotating components.",
         solution: "Machine sleeves, shafts and pump parts with material and finish choices aligned to customer drawings.",
-        productsUsed: ["Hardened CNC Sleeves", "Custom Pump Parts", "Precision Pump Shafts"],
+        productsUsed: ["Sleeves", "Pump Parts & Accessories", "Precision Pump Shafts"],
       },
       {
         industry: "Power",
         challenge: "Power plant pumps need reliable rotating assemblies and documented inspection.",
         solution: "Provide shafts, impellers, couplings and lock nuts for critical pump and rotating equipment assemblies.",
-        productsUsed: ["Precision Pump Shafts", "Precision Pump Impellers", "Industrial Couplings"],
+        productsUsed: ["Precision Pump Shafts", "Precision Pump Impellers", "Couplings"],
       },
       {
         industry: "OEM",
         challenge: "OEM programs require repeatability, revision control and stable supplier capability.",
         solution: "Support build-to-print production with controlled machining routes and inspection documentation.",
-        productsUsed: ["Custom Pump Parts", "Retainer Rings & Bearings", "Industrial Custom Gears"],
+        productsUsed: ["Pump Parts & Accessories", "Retainer Rings & Bearings", "Industrial Custom Gears"],
       },
       {
         industry: "Agriculture",
         challenge: "Irrigation and utility pumps require durable components at practical production volumes.",
         solution: "Manufacture sleeves, shafts and bearing components to drawing and material requirements.",
-        productsUsed: ["Hardened CNC Sleeves", "Precision Pump Shafts", "Retainer Rings & Bearings"],
+        productsUsed: ["Sleeves", "Precision Pump Shafts", "Retainer Rings & Bearings"],
       },
     ],
     relatedProductSlugs: ["shaft", "sleeve", "impeller", "pump-parts"],

@@ -17,7 +17,7 @@ export const products: ProductData[] = [
     name: "Precision Pump Shafts",
     category: "Pump Shafts",
     summary: "Heavy-duty precision pump shafts engineered for critical industrial and marine applications.",
-    description: "Our precision pump shafts are the core of our manufacturing capability. Machined to exacting tolerances up to 1500mm in diameter and 8000mm in length, these shafts deliver uncompromising performance in high-stress, continuous-duty environments.",
+    description: "Our precision pump shafts are the core of our manufacturing capability. Machined to exacting tolerances from 50 mm to 1500 mm diameter and up to 8000 mm length (8 mtr) for machining, and up to 6500 mm length for grinding, these shafts deliver uncompromising performance in high-stress, continuous-duty environments.",
     overview: "Pump shafts are critical power transmission components responsible for connecting the pump driver (motor/engine) to the impeller. They must withstand severe torsional loads, vibration, and corrosive fluids. Pako Engineers manufactures precision shafts with absolute straightness and concentricity. Our advanced CNC machining capability allows us to produce complex profiles, splines, and keyways perfectly aligned with OEM specifications, ensuring extended bearing life and reduced mechanical seal wear.",
     image: Images.assets.pumpShaftsAndSleeves.src,
     gallery: [
@@ -28,16 +28,17 @@ export const products: ProductData[] = [
     ],
     engineeringDrawing: Images.assets.pumpShaftsAndSleeves.src,
     features: [
-      { title: "High Precision Tolerances", description: "Dimensional accuracy down to 5 microns ensuring perfect bearing fits and seal alignment." },
+      { title: "Precision Finish", description: "Finished to 10 to 50 microns for reliable bearing fits and seal alignment." },
       { title: "Zero-Runout Profiles", description: "Precision CNC grinding guarantees minimal runout, extending pump seal and bearing life." },
       { title: "Custom Key-Ways", description: "Multi-axis VMC machining for complex key-ways, splines, and threads." },
       { title: "Complete Traceability", description: "100% material traceability with EN 10204 3.1 certification and heat numbers." }
     ],
     specifications: [
       { label: "Outside Diameter", value: "50 mm - 1500 mm" },
-      { label: "Length", value: "Up to 8000 mm" },
+      { label: "Length (Machining)", value: "50 mm - 1500 mm dia. up to 8000 mm length" },
+      { label: "Length (Grinding)", value: "50 mm - 800 mm dia. up to 6500 mm length" },
       { label: "Weight Capacity", value: "Up to 5 Tons" },
-      { label: "Surface Finish", value: "Ra 0.2 to 1.6 microns" },
+      { label: "Finish", value: "10 to 50 microns" },
       { label: "Concentricity", value: "Within 0.01 mm" },
       { label: "Straightness", value: "0.05 mm per meter" },
       { label: "Dynamic Balance", value: "ISO 1940 Grade G2.5 / G6.3" },
@@ -49,9 +50,10 @@ export const products: ProductData[] = [
       { name: "SS316 / SS316L", description: "Austenitic stainless steel with excellent corrosion resistance.", recommendedFor: "Chemical, water treatment, and general industrial pumps." },
       { name: "Duplex (UNS S31803)", description: "High strength and superior pitting resistance.", recommendedFor: "Seawater, desalination, and offshore oil & gas." },
       { name: "Super Duplex (UNS S32750)", description: "Exceptional resistance to stress corrosion cracking.", recommendedFor: "Aggressive marine and harsh chemical environments." },
+      { name: "Nitronic 50", description: "High-strength stainless alloy with excellent corrosion resistance.", recommendedFor: "Critical shaft applications requiring high strength and corrosion resistance." },
       { name: "EN8 / EN19 / EN24", description: "High tensile alloy steels.", recommendedFor: "Heavy-duty power transmission in non-corrosive environments." }
     ],
-    materials: ["SS316", "Duplex", "Super Duplex", "EN8", "EN19"],
+    materials: ["Stainless Steel", "Duplex", "Super Duplex", "Nitronic 50"],
     manufacturingWorkflow: [
       { step: "Raw Material Sourcing", description: "Procurement of forged or rolled bars with 3.1 certs.", machinesUsed: "Bandsaw Cutting", inspection: "PMI and Chemical Check" },
       { step: "Rough Turning", description: "Removing excess material to near-net shape.", machinesUsed: "Heavy Duty CNC Lathe", inspection: "Dimensional check" },
@@ -78,12 +80,9 @@ export const products: ProductData[] = [
       { title: "Request 2D/3D CAD Drawing", type: "CAD", size: "ZIP", url: "/contact" }
     ],
     faqs: [
-      { question: "What is the maximum shaft length you can machine?", answer: "We can manufacture continuous shafts up to 8000mm in length and up to 1500mm in diameter using our heavy-duty CNC lathes." },
-      { question: "What tolerance can be achieved?", answer: "We routinely achieve dimensional tolerances down to 5 microns (0.005mm) and runout/concentricity within 10 microns." },
-      { question: "What materials are available?", answer: "We process SS304, SS316, SS410, Duplex, Super Duplex, K-Monel, Titanium, and various EN series alloy steels." },
-      { question: "Can custom dimensions be manufactured?", answer: "Yes, 100% of our production is custom-manufactured based on OEM drawings and specifications." },
-      { question: "What is the lead time?", answer: "Lead times depend on material availability and complexity, typically ranging from 4 to 12 weeks. Expedited options are available." },
-      { question: "What certifications are available?", answer: "ISO 9001:2015, EN 10204 3.1 Material Test Certificates, dynamic balancing reports, and NDT reports." },
+      { question: "What is the maximum shaft length you can machine?", answer: "We manufacture shafts from 50 mm to 1500 mm diameter up to 8000 mm length (8 mtr) for machining, and 50 mm to 800 mm diameter up to 6500 mm length for precision grinding." },
+      { question: "What finish can be achieved?", answer: "Shafts are finished to 10 to 50 microns as per the official product specification." },
+      { question: "What materials are available?", answer: "We process stainless steel, Duplex, Super Duplex, and Nitronic 50 for shaft manufacturing." },
       { question: "Can you manufacture from customer drawings?", answer: "Yes, we are a build-to-print manufacturer and work directly from your 2D CAD/PDF drawings." },
       { question: "Do you export internationally?", answer: "Yes, we export to over 12 countries including the USA, Germany, Japan, and the Middle East." },
       { question: "Do you provide surface treatments?", answer: "We coordinate with certified partners for hard chrome plating, HVOF, and specialized coatings." },
@@ -93,7 +92,7 @@ export const products: ProductData[] = [
   },
   {
     slug: "sleeve",
-    name: "Hardened CNC Sleeves",
+    name: "Sleeves",
     category: "Sleeves & Bushes",
     summary: "Wear-resistant sleeves and bushes designed to protect pump shafts in extreme conditions.",
     description: "Pako Engineers manufactures high-precision shaft sleeves designed to protect the pump shaft from wear, corrosion, and erosion at the stuffing box and seal locations.",
@@ -109,20 +108,20 @@ export const products: ProductData[] = [
       { title: "Corrosion Resistance", description: "Available in high-grade stainless and duplex steels for aggressive chemical environments." }
     ],
     specifications: [
-      { label: "Outside Diameter", value: "50 mm - 1500 mm" },
-      { label: "Inside Diameter", value: "50 mm - 500 mm (Bored & Ground)" },
-      { label: "Length", value: "Up to 1000 mm" },
+      { label: "Diameter", value: "50 mm - 400 mm" },
+      { label: "Length", value: "0.1 mtr - 1 mtr" },
       { label: "Wall Thickness", value: "Minimum 5 mm depending on OD" },
-      { label: "Surface Finish", value: "Up to Ra 0.2 microns (Superfinished)" },
+      { label: "Finish", value: "10 to 50 microns" },
       { label: "Hardness", value: "Up to 60 HRC depending on material & treatment" },
       { label: "Concentricity", value: "Within 0.005 mm" }
     ],
     detailedMaterials: [
       { name: "SS410 / SS420", description: "Martensitic stainless steel capable of high hardness.", recommendedFor: "Standard abrasive water and industrial applications." },
-      { name: "SS316 with Colmonoy Coating", description: "Austenitic steel with hardfacing.", recommendedFor: "Highly abrasive and corrosive slurry pumps." },
-      { name: "Bronze / Gunmetal", description: "Excellent bearing properties and corrosion resistance.", recommendedFor: "Marine and seawater applications." }
+      { name: "Duplex", description: "High strength and superior pitting resistance.", recommendedFor: "Seawater, desalination, and offshore applications." },
+      { name: "Super Duplex", description: "Exceptional corrosion resistance.", recommendedFor: "Aggressive marine and chemical environments." },
+      { name: "Nitronic 50", description: "High-strength stainless alloy with excellent corrosion resistance.", recommendedFor: "Critical sleeve applications requiring high strength and corrosion resistance." }
     ],
-    materials: ["SS410", "SS420", "SS316", "Bronze", "Duplex"],
+    materials: ["Stainless Steel", "Duplex", "Super Duplex", "Nitronic 50"],
     manufacturingWorkflow: [
       { step: "Material Sourcing", description: "Sourcing seamless pipes or forged billets.", machinesUsed: "Bandsaw", inspection: "Material Grade Check" },
       { step: "Rough Machining", description: "OD and ID rough turning.", machinesUsed: "CNC Lathe", inspection: "Dimensional" },
@@ -143,7 +142,8 @@ export const products: ProductData[] = [
       { title: "Sleeve Dimension & Tolerance Chart", type: "PDF", size: "1.5 MB", url: "/documents/sleeve-dimension-tolerance-chart.pdf" }
     ],
     faqs: [
-      { question: "What tolerance can you achieve on internal diameters?", answer: "Our internal CNC grinding machines can achieve ID tolerances down to 5 microns (0.005mm)." },
+      { question: "What sleeve sizes are available?", answer: "Sleeves are manufactured from 50 mm to 400 mm diameter and 0.1 mtr to 1 mtr length." },
+      { question: "What finish can be achieved?", answer: "Sleeves are finished to 10 to 50 microns as per the official product specification." },
       { question: "Do you offer hard-chrome plating or coatings?", answer: "Yes, we work with certified partners to provide hard-chrome plating, tungsten carbide coating, and Stellite hardfacing." },
       { question: "Can you machine thin-walled sleeves?", answer: "Yes, our specialized fixtures and mandrels allow us to grind thin-walled sleeves without distortion." },
       { question: "Do you manufacture split sleeves?", answer: "Yes, we can manufacture split-design sleeves based on customer drawings." },
@@ -221,7 +221,7 @@ export const products: ProductData[] = [
   },
   {
     slug: "coupling",
-    name: "Industrial Drive Couplings",
+    name: "Couplings",
     category: "Couplings",
     summary: "Rigid muff and flexible drive couplings machined for absolute alignment in rotating assemblies.",
     description: "Pako Engineers manufactures high-precision muff couplings, rigid couplings, and drive coupling components. Machined to exacting standards, these components ensure zero angular or parallel misalignment.",
@@ -237,18 +237,20 @@ export const products: ProductData[] = [
     ],
     specifications: [
       { label: "Outside Diameter", value: "50 mm - 400 mm" },
-      { label: "Length", value: "100 mm - 1000 mm" },
+      { label: "Length", value: "0.1 mtr - 1 mtr" },
+      { label: "Finish", value: "10 to 50 microns" },
       { label: "Bore Tolerance", value: "H7 / Custom Transition Fit" },
       { label: "Keyway Tolerance", value: "P9 / Js9" },
       { label: "Perpendicularity (Faces)", value: "Within 0.02 mm" },
       { label: "Material Hardness", value: "As specified (e.g., 250-300 BHN)" }
     ],
     detailedMaterials: [
-      { name: "Forged Carbon Steel (EN8)", description: "Standard high-strength material.", recommendedFor: "General industrial drive couplings." },
-      { name: "Alloy Steel (EN19 / EN24)", description: "High tensile and yield strength.", recommendedFor: "High torque and heavy-duty applications." },
-      { name: "Stainless Steel (SS316)", description: "Corrosion resistant.", recommendedFor: "Food processing and corrosive environments." }
+      { name: "Stainless Steel", description: "Corrosion resistant.", recommendedFor: "Food processing and corrosive environments." },
+      { name: "Duplex", description: "High strength and corrosion resistance.", recommendedFor: "Marine and pump coupling applications." },
+      { name: "Super Duplex", description: "Superior resistance in aggressive environments.", recommendedFor: "Critical chemical and offshore applications." },
+      { name: "Nitronic 50", description: "High-strength stainless alloy with excellent corrosion resistance.", recommendedFor: "High-load coupling applications." }
     ],
-    materials: ["EN8", "EN19", "EN24", "SS316"],
+    materials: ["Stainless Steel", "Duplex", "Super Duplex", "Nitronic 50"],
     manufacturingWorkflow: [
       { step: "Forging", description: "Sourcing forged steel blocks/cylinders.", machinesUsed: "Bandsaw", inspection: "UT for internal cracks" },
       { step: "Turning", description: "OD and face machining.", machinesUsed: "CNC Lathe", inspection: "Perpendicularity check" },
@@ -284,10 +286,10 @@ export const products: ProductData[] = [
   },
   {
     slug: "pump-parts",
-    name: "Custom Pump Components",
+    name: "Pump Parts & Accessories",
     category: "Pump Components",
-    summary: "Bespoke engineered parts and sub-assemblies manufactured to stringent OEM drawings.",
-    description: "Beyond standard shafts and impellers, we act as a complete contract manufacturing partner for global OEMs. We manufacture a wide array of custom pump components.",
+    summary: "Customized pump parts and accessories manufactured to stringent OEM drawings.",
+    description: "Beyond standard shafts and impellers, we act as a complete contract manufacturing partner for global OEMs. We manufacture a wide array of pump parts and accessories.",
     overview: "Pumps consist of dozens of precision-machined stationary and rotating components. We manufacture bearing housings, stuffing boxes, mechanical seal plates, wear rings, discharge manifolds, and casing covers. By combining heavy CNC turning, multi-axis milling, and precision grinding, we deliver ready-to-assemble components straight to your production line.",
     image: Images.assets.longBedTurningLathe.src,
     gallery: [
@@ -300,19 +302,18 @@ export const products: ProductData[] = [
       { title: "Assembly Ready", description: "Components arrive fully inspected, deburred, cleaned, and ready for assembly." }
     ],
     specifications: [
-      { label: "Outside Diameter", value: "Up to 1500 mm" },
-      { label: "Length", value: "Customised to drawing" },
+      { label: "Size", value: "Customize" },
       { label: "Weight", value: "Up to 5 Tons per piece" },
-      { label: "Tolerances", value: "Down to 5 microns" },
-      { label: "Surface Finish", value: "Ra 0.8 to 3.2 microns / As specified" },
+      { label: "Finish", value: "10 to 50 microns" },
       { label: "NDT Testing", value: "DPT, UT, PMI available" }
     ],
     detailedMaterials: [
       { name: "Stainless Steel (All Grades)", description: "Corrosion resistant.", recommendedFor: "General pump components." },
+      { name: "Duplex", description: "High strength and superior pitting resistance.", recommendedFor: "Seawater, desalination, and offshore applications." },
       { name: "Super Duplex Steel", description: "High strength and corrosion resistant.", recommendedFor: "Offshore and marine pump components." },
-      { name: "Cast Iron / Ductile Iron", description: "High machinability and strength.", recommendedFor: "Bearing housings and casings." }
+      { name: "Nitronic 50", description: "High-strength stainless alloy with excellent corrosion resistance.", recommendedFor: "Critical pump accessories requiring high strength and corrosion resistance." }
     ],
-    materials: ["Stainless Steel", "Duplex", "Super Duplex", "Nitronic 50", "Cast Iron", "Bronze"],
+    materials: ["Stainless Steel", "Duplex", "Super Duplex", "Nitronic 50"],
     manufacturingWorkflow: [
       { step: "Material Procurement", description: "Sourcing castings or forgings.", machinesUsed: "Visual", inspection: "PMI and cert check" },
       { step: "CNC Turning/Milling", description: "Primary machining operations.", machinesUsed: "CNC VTL / HMC", inspection: "Dimensional" },

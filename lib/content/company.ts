@@ -17,6 +17,35 @@ export const company = {
     { name: "Mr. Sudarshan Khot", role: "Chief Executive Officer", phone: "+91-9921854252" },
     { name: "Mr. Suhas Khot", role: "Managing Director", phone: "+91-9860269972" },
   ],
+  organizationChart: [
+    {
+      department: "Executive Leadership",
+      members: [
+        { name: "Mr. Sudarshan Khot", role: "CEO" },
+        { name: "Mr. Suhas Khot", role: "MD" },
+      ],
+    },
+    {
+      department: "Production",
+      members: [
+        { name: "Mr. Yogesh Mangave", role: "In House" },
+        { name: "Mr. Amit Pawar", role: "Out Source" },
+      ],
+    },
+    {
+      department: "Quality",
+      members: [
+        { name: "Mr. Tejas Surve", role: "Quality" },
+        { name: "Mr. Suhas Khot", role: "Quality" },
+      ],
+    },
+    {
+      department: "Account",
+      members: [
+        { name: "Mr. Dipak Bobade", role: "Account" },
+      ],
+    },
+  ],
   profile: {
     firstSlide:
       "PAKO ENGINEERS MANUFACTURE & EXPORTER OF PRECISION MACHINED COMPONENTS & PUMP ASSEMBLIES",
@@ -98,7 +127,7 @@ export const bushMaterials = [
 export const machiningCapacity = [
   {
     process: "Flange / Concrete Shaft Machining",
-    range: "50 mm - 1500 mm diameter, up to 14,000 mm length",
+    range: "50 mm - 1500 mm diameter, up to 8,000 mm length",
   },
   {
     process: "Flange / Concrete Shaft Grinding",
@@ -106,7 +135,7 @@ export const machiningCapacity = [
   },
   {
     process: "Shaft Machining",
-    range: "50 mm - 1500 mm diameter, up to 8,000 mm length",
+    range: "50 mm - 1500 mm diameter, 0.5 mtr - 8 mtr length (up to 8000 mm)",
   },
   {
     process: "Shaft Grinding",
