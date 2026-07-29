@@ -25,7 +25,7 @@ export default function MachinesPage() {
             Machinery & Equipment
           </h1>
           <p className="max-w-3xl text-lg text-white/80">
-            From 14-meter heavy-duty CNC lathes to 5-axis vertical machining centers, our equipment list ensures we can handle the most demanding tolerances and complex geometries in the industry.
+            From 10-meter heavy-duty CNC lathes to 5-axis vertical machining centers, our equipment list ensures we can handle the most demanding tolerances and complex geometries in the industry.
           </p>
         </Container>
       </section>

@@ -11,7 +11,7 @@ const MACHINES = [
     name: "Heavy-Duty CNC Lathe",
     manufacturer: "Doosan Puma Series",
     maxDiameter: "1500 mm",
-    maxLength: "14000 mm",
+    maxLength: "10000 mm",
     tolerance: "5 Microns",
     applications: "Pump Shafts, Marine Propellers, Heavy Rotors",
     image: Images.assets.heavyDutyEngineLathe.src,

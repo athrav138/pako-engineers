@@ -6,10 +6,10 @@ import { Container } from "@/components/ui/Container";
 import { products } from "@/lib/content/products";
 
 const CATEGORIES = [
-  { name: "Precision Shafts", icon: Drill, desc: "Standard and special pump shafts up to 1500 mm diameter." },
-  { name: "Sleeves & Bushes", icon: Circle, desc: "Sleeves, muff couplings and bushes with internal key-way capability." },
-  { name: "Pump Components", icon: Cog, desc: "Pump parts, accessories, impellers and rings made to QAP." },
-  { name: "Couplings", icon: Layers, desc: "Muff and drive couplings for rotating equipment assemblies." },
+  { name: "Precision Shafts", icon: Drill, desc: "Pump shafts from 50 mm to 1500 mm diameter and up to 8 mtr (8000 mm) length." },
+  { name: "Sleeves & Bushes", icon: Circle, desc: "Sleeves from 50 mm to 400 mm diameter and 0.1 mtr to 1 mtr length." },
+  { name: "Pump Components", icon: Cog, desc: "Pump parts and accessories customized to customer requirements." },
+  { name: "Couplings", icon: Layers, desc: "Couplings from 50 mm to 400 mm diameter and 0.1 mtr to 1 mtr length." },
   { name: "Lock Nuts", icon: Wrench, desc: "Metric threaded lock nuts from 30 mm to 750 mm diameter." },
   { name: "Bearings & Rings", icon: Circle, desc: "Retainer rings and Thordon bearing components." },
 ];

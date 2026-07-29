@@ -8,7 +8,7 @@ const TIMELINE = [
   { year: "1998", title: "Manufacturing Expansion", desc: "Added significant capacity with new conventional lathes and grinding machines to support the growing demand for heavy-duty shafts." },
   { year: "2002", title: "First Export Customer", desc: "Achieved a major milestone by exporting precision pump shafts to global OEMs in Japan and Europe." },
   { year: "2010", title: "ISO Certification", desc: "Achieved ISO 9001 certification, standardizing our QA processes and demonstrating our commitment to zero-defect manufacturing." },
-  { year: "2018", title: "Infrastructure Expansion", desc: "Expanded to a massive new facility with advanced climate-controlled inspection labs and dedicated material handling for components up to 14 meters." },
+  { year: "2018", title: "Infrastructure Expansion", desc: "Expanded to a massive new facility with advanced climate-controlled inspection labs and dedicated material handling for components up to 10 meters." },
   { year: "2024", title: "Advanced CNC Era", desc: "Integrated multi-axis VMCs and heavy-duty CNC turning machines capable of handling 1500mm diameter parts, solidifying our global market position." },
   { year: "Future", title: "Industry 4.0 Vision", desc: "Pako Engineers is continuously investing in automation, real-time machining analytics, and sustainable manufacturing practices." }
 ];

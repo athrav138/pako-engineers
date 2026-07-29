@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -43,7 +41,7 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
               <Home size={14} />
             </Link>
             {items.map((item, i) => (
-              <div key={item.href} className="flex items-center space-x-2">
+              <div key={`${item.href}-${item.label}-${i}`} className="flex items-center space-x-2">
                 <ChevronRight size={14} className="text-line flex-shrink-0" />
                 <Link
                   href={item.href}

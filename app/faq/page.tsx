@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What is the maximum machining capacity?",
     answer:
-      "Turning capacity is listed as 50 mm to 1500 mm diameter up to 14,000 mm length. Grinding capacity is listed as 50 mm to 800 mm diameter up to 6,500 mm length.",
+      "Turning capacity is listed as 50 mm to 1500 mm diameter up to 8,000 mm length. Grinding capacity is listed as 50 mm to 800 mm diameter up to 6,500 mm length.",
   },
   {
     question: "Is Pako Engineers certified?",

@@ -37,7 +37,7 @@ export default function CompanyProfilePage() {
   ];
 
   const competencies = [
-    "Precision Machining of Large Shafts (up to 14,000 mm length, 1500 mm diameter)",
+    "Precision Machining of Large Shafts (up to 8,000 mm length, 1500 mm diameter)",
     "Complex Key-way and Spline Machining using VMC and Wire-Cut EDM",
     "Close-tolerance CNC Grinding — Internal and External (down to 1 micron)",
     "Pump Assembly, Static Balancing, and Rotor Build-up",
@@ -120,6 +120,25 @@ export default function CompanyProfilePage() {
                     <div key={item.role} className="rounded-lg border border-line bg-white p-4 text-center shadow-sm">
                       <p className="font-mono text-2xl font-bold text-navy">{item.count}</p>
                       <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-ink-muted">{item.role}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <h3 className="font-display text-2xl font-bold text-navy mb-6">Organization Chart</h3>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {company.organizationChart.map((group) => (
+                    <div key={group.department} className="rounded-xl border border-line bg-white p-5 shadow-sm">
+                      <h4 className="font-display text-lg font-bold text-navy">{group.department}</h4>
+                      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                        {group.members.map((member) => (
+                          <div key={`${group.department}-${member.name}-${member.role}`} className="rounded-lg bg-surface p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-oxide">{member.role}</p>
+                            <p className="mt-1 font-bold text-navy">{member.name}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>

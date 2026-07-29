@@ -64,7 +64,7 @@ export default function InfrastructurePage() {
       <StatsSection
         stats={[
           { value: 1500, suffix: "mm", label: "Max Turning Dia" },
-          { value: 14000, suffix: "mm", label: "Max Component Length" },
+          { value: 8000, suffix: "mm", label: "Max Component Length" },
           { value: company.workforce.total, label: "Team Members" },
           { value: equipment.length, suffix: "+", label: "Machine Types" },
         ]}

@@ -46,7 +46,7 @@ export default function ManufacturingFacilityPage() {
     {
       step: "03",
       title: "CNC Turning & Milling",
-      desc: "High-precision multi-axis CNC turning and VMC machining to achieve critical geometries, key-ways, splines, threads, and bearing fits with tolerances down to 5 microns.",
+      desc: "High-precision multi-axis CNC turning and VMC machining to achieve critical geometries, key-ways, splines, threads, and bearing fits with controlled 10 to 50 microns finish requirements.",
       quality: "First-off inspection and periodic in-process checking",
       machines: "CNC lathes (up to 1500mm dia), VMC machining centres",
       image: Images.assets.cncTurningHero.src,
@@ -129,7 +129,7 @@ export default function ManufacturingFacilityPage() {
         stats={[
           { value: 9, label: "Production Steps" },
           { value: 1500, suffix: "mm", label: "Max Diameter" },
-          { value: 14000, suffix: "mm", label: "Max Length" },
+          { value: 8000, suffix: "mm", label: "Max Length" },
           { value: 5, label: "Micron Tolerance" },
         ]}
       />

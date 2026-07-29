@@ -10,10 +10,10 @@ import { Button } from "@/components/ui/Button";
 const NEWS_ITEMS = [
   {
     id: 1,
-    title: "Pako Engineers expands CNC turning capacity with new 14m lathe.",
+    title: "Pako Engineers expands CNC turning capacity with new 10m heavy-duty lathe.",
     category: "Company Update",
     date: "Aug 15, 2026",
-    excerpt: "To meet the growing demand from global pump manufacturers, we have successfully installed a new 14-meter CNC lathe capable of turning shafts up to 1500mm in diameter.",
+    excerpt: "To meet the growing demand from global pump manufacturers, we have successfully expanded our CNC lathe fleet capable of turning shafts up to 1500mm in diameter and 8,000mm in length.",
     image: Images.assets.largePumpRotorAssemblyThumb.src,
   },
   {
@@ -44,7 +44,7 @@ export function NewsSection() {
               Latest Updates
             </p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-navy md:text-4xl">
-              News & Technical Insights
+              News &amp; Technical Insights
             </h2>
           </div>
           <Button href="/news" variant="outline" className="w-fit">

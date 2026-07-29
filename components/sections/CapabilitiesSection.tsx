@@ -11,8 +11,8 @@ const CAPABILITIES = [
   {
     id: "turning",
     title: "CNC Turning & Machining",
-    description: "Shaft, flange and concrete shaft machining supported by massive CNC lathe capacity for long precision components. Tolerances down to 5 microns.",
-    capacity: "50 mm - 1500 mm dia., up to 14,000 mm length",
+    description: "Shaft, flange and concrete shaft machining supported by massive CNC lathe capacity for long precision components.",
+    capacity: "50 mm - 1500 mm dia., up to 8,000 mm length",
     image: Images.assets.cncTurningHero.src,
   },
   {

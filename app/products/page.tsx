@@ -8,11 +8,11 @@ import { getAllProducts } from "@/lib/content/products";
 import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Precision Products Catalogue | Pako Engineers",
-  description: "Browse our complete catalog of precision engineered pump shafts, sleeves, impellers, couplings, and custom OEM components.",
+  description: "Browse precision engineered pump shafts, sleeves, couplings, and pump parts & accessories manufactured in stainless steel, Duplex, Super Duplex, and Nitronic 50.",
   alternates: { canonical: "/products" },
   openGraph: {
     title: "Pako Engineers – Precision Products Catalogue",
-    description: "Explore high-quality machined components designed for global OEMs in the Oil & Gas, Power, and Marine sectors.",
+    description: "Explore shafts, sleeves, couplings, and pump parts & accessories manufactured to official size, material, and finish specifications.",
     url: "https://pakoshaft.com/products",
     type: "website",
   },
@@ -25,7 +25,7 @@ export default function ProductsPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Precision Products Catalogue",
-    "description": "Catalog of precision engineered pump shafts, sleeves, impellers, couplings, and custom components.",
+    "description": "Catalog of precision engineered pump shafts, sleeves, couplings, and pump parts & accessories.",
     "url": "https://pakoshaft.com/products",
     "publisher": {
       "@type": "Organization",

@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
       </PageHero>
 
-      <Breadcrumb items={[{ label: "Company", href: "/about" }, { label: "About Us", href: "/about" }]} />
+      <Breadcrumb items={[{ label: "Company", href: "/company" }, { label: "About Us", href: "/about" }]} />
 
       {/* ═══ COMPANY OVERVIEW ═══ */}
       <section className="py-20 lg:py-28 bg-white">
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 Pako Engineers is an {company.certification} certified manufacturer and exporter of precision machined components based in Sangli, Maharashtra. We specialize in pump shafts, sleeves, couplings, impellers, lock nuts, retainer rings, Thordon bearings, gears, and complete pump assemblies in all materials of construction.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
-                Our core strength lies in heavy-duty CNC turning, precision grinding, and wire-cut EDM machining for pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East, and North America. With machining capacity up to 1500 mm diameter and 14,000 mm length, we handle some of the largest pump components in the industry.
+                Our core strength lies in heavy-duty CNC turning, precision grinding, and wire-cut EDM machining for pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East, and North America. With machining capacity up to 1500 mm diameter and 8,000 mm length, we handle some of the largest pump components in the industry.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted">
                 Backed by a dedicated team of {company.workforce.total} professionals — including engineers, quality control specialists, CNC programmers, and skilled machinists — we maintain a zero-defect philosophy that has earned the trust of global corporations like Flowserve, EBARA, TMEIC, DMW Corporation, and Valmet.
@@ -139,7 +139,7 @@ export default function AboutPage() {
           { value: company.exportCountries.length, suffix: "+", label: "Countries Served" },
           { value: company.workforce.total, label: "Team Members" },
           { value: 1500, suffix: "mm", label: "Max Turning Dia" },
-          { value: 14000, suffix: "mm", label: "Max Length" },
+          { value: 8000, suffix: "mm", label: "Max Length" },
           { value: 500, suffix: "+", label: "Satisfied Clients" },
         ]}
       />
@@ -206,6 +206,38 @@ export default function AboutPage() {
       </section>
 
       {/* ═══ WHY CHOOSE US ═══ */}
+      <section className="py-20 lg:py-28 bg-surface border-y border-line">
+        <Container>
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
+              Company Details
+            </p>
+            <h2 className="font-display text-3xl font-bold text-navy mb-4 md:text-4xl">
+              Organization Chart
+            </h2>
+            <p className="text-lg leading-relaxed text-ink-muted">
+              Pako Engineers is organized across executive leadership, production, quality, and account functions for clear responsibility and faster coordination.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {company.organizationChart.map((group) => (
+              <div key={group.department} className="rounded-xl border border-line bg-white p-6 shadow-sm">
+                <h3 className="font-display text-lg font-bold text-navy">{group.department}</h3>
+                <div className="mt-5 space-y-3">
+                  {group.members.map((member) => (
+                    <div key={`${group.department}-${member.name}-${member.role}`} className="rounded-lg bg-surface p-4">
+                      <p className="text-sm font-semibold uppercase tracking-wide text-oxide">{member.role}</p>
+                      <p className="mt-1 font-display text-lg font-bold text-navy">{member.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <WhyChooseUs />
 
       {/* ═══ INDUSTRIES SERVED ═══ */}

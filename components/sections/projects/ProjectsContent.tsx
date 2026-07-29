@@ -13,7 +13,7 @@ const projects = [
     title: "Pump Assembly Programs",
     category: "Pump Assembly",
     client: "Flowserve, EBARA, DMW Corporation",
-    description: "Complete pump shaft and assembly manufacturing programs for global pump OEMs, including precision shafts up to 1500mm diameter with tight tolerances and full material traceability.",
+    description: "Complete pump shaft and assembly manufacturing programs for global pump OEMs, including precision shafts from 50 mm to 1500 mm diameter and up to 8 mtr (8000 mm) length with full material traceability.",
     tags: ["Pump Shafts", "Sleeves", "Couplings", "Assembly"],
     icon: Settings,
   },

@@ -9,7 +9,7 @@ import { machiningCapacity, equipment, materials, bushMaterials } from "@/lib/co
 export const metadata: Metadata = {
   title: "Manufacturing Capabilities",
   description:
-    "Turning up to 1500 mm diameter and 14 metres length, grinding, CNC lathe and custom gear manufacturing at Pako Engineers, Sangli.",
+    "Turning up to 1500 mm diameter and 8 metres length, grinding, CNC lathe and custom gear manufacturing at Pako Engineers, Sangli.",
   alternates: { canonical: "/capabilities" },
 };
 

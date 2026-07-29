@@ -92,7 +92,7 @@ export default function ClientsPage() {
                <div className="h-48 bg-surface opacity-10"></div>
                <div className="p-8">
                  <h3 className="text-2xl font-bold mb-2">High-Pressure API 610 Shafts</h3>
-                 <p className="text-white/70 mb-6">Successfully achieved 2-micron tolerance on Super Duplex shafts for offshore oil rigs, reducing pump vibration by 40%.</p>
+                 <p className="text-white/70 mb-6">Manufactured Super Duplex shafts with 10 to 50 microns finish for offshore pump applications.</p>
                  <button className="text-oxide font-medium hover:underline">Read Full Case Study</button>
                </div>
             </div>
