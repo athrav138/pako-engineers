@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    color-scheme: light dark;
+    color-scheme: light;
     --font-manrope: Arial, Helvetica, sans-serif;
-    --font-inter: Arial, Helvetica, sans-serif;
+    --font-inter: var(--font-manrope), Arial, Helvetica, sans-serif;
     --font-space-grotesk: "Segoe UI", Arial, Helvetica, sans-serif;
     --font-jetbrains-mono: "Courier New", Courier, monospace;
     
@@ -27,10 +27,30 @@
 
   html {
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
     @apply bg-background-light text-ink font-body antialiased;
+    min-height: 100dvh;
+  }
+
+  main > section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+
+  main > section:first-child,
+  main > section[aria-label*="Hero"] {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.orange.DEFAULT");
+    outline-offset: 3px;
   }
   
   .dark body {

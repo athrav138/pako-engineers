@@ -96,7 +96,7 @@ const MEGA = {
       { label: "Quality Inspection", href: "/capabilities#inspection", icon: Microscope },
       { label: "Export Packaging", href: "/capabilities#packaging", icon: Package },
     ],
-    featured: { title: "Max Capacity", desc: "Machining up to 1500mm diameter and 14,000mm length with CNC precision.", href: "/capabilities", cta: "View Capabilities" },
+    featured: { title: "Max Capacity", desc: "Machining up to 1500mm diameter and 8,000mm length with CNC precision.", href: "/capabilities", cta: "View Capabilities" },
   },
   Contact: {
     heading: "Contact",
@@ -139,9 +139,26 @@ export function Header() {
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40);
+    let frame = 0;
+    let last = window.scrollY > 40;
+    setScrolled(last);
+
+    const h = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const next = window.scrollY > 40;
+        if (next !== last) {
+          last = next;
+          setScrolled(next);
+        }
+      });
+    };
+
     window.addEventListener("scroll", h, { passive: true });
-    return () => window.removeEventListener("scroll", h);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", h);
+    };
   }, []);
 
   useEffect(() => {

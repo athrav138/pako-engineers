@@ -1,23 +1,9 @@
-"use client";
 import { Images } from "@/lib/images";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Award, Globe, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
-
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: EASE, delay },
-  },
-});
 
 const STATS = [
   { icon: ShieldCheck, title: "ISO 9001:2015", desc: "Certified Company" },
@@ -27,9 +13,6 @@ const STATS = [
 ];
 
 export function HomeHero() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
     <section
       className="relative flex min-h-[100vh] flex-col overflow-hidden bg-[#0A1B2E]"
@@ -42,7 +25,8 @@ export function HomeHero() {
           fill
           priority
           quality={90}
-          sizes="100vw"
+          fetchPriority="high"
+          sizes="(min-width: 1024px) 100vw, 100vw"
           className="object-cover object-center"
         />
         <div
@@ -57,34 +41,23 @@ export function HomeHero() {
 
       <Container className="relative z-10 flex flex-1 items-center pb-0 pt-[160px] lg:pt-[180px]">
         <div className="w-full max-w-[680px] lg:w-[55%]">
-          <motion.div
-            variants={fadeUp(0.1)}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-            className="mb-5"
-          >
+          <div className="mb-5 motion-safe:opacity-0 motion-safe:animate-fade-up [animation-delay:80ms]">
             <p className="text-[16px] font-normal italic tracking-wide text-white/90 md:text-[18px]">
               Pako Engineers
             </p>
             <div className="mt-2 h-[3px] w-[50px] rounded-full bg-[#1E5FAA]" />
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={fadeUp(0.2)}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
+          <h1
             className="mb-6 font-display leading-[0.95] tracking-tight"
             style={{ fontSize: "clamp(3.5rem, 7vw + 0.5rem, 7rem)" }}
           >
-            <span className="block font-extrabold text-white">PAKO</span>
-            <span className="block font-extrabold text-[#3B82F6]">ENGINEERS</span>
-          </motion.h1>
+            <span className="block font-extrabold text-white motion-safe:opacity-0 motion-safe:animate-fade-up [animation-delay:160ms]">PAKO</span>
+            <span className="block font-extrabold text-[#3B82F6] motion-safe:opacity-0 motion-safe:animate-fade-up [animation-delay:220ms]">ENGINEERS</span>
+          </h1>
 
-          <motion.p
-            variants={fadeUp(0.35)}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-            className="mb-10 text-[15px] font-bold uppercase leading-[1.5] tracking-[0.08em] text-white md:text-[18px] lg:text-[20px]"
+          <p
+            className="mb-10 text-[15px] font-bold uppercase leading-[1.5] tracking-[0.08em] text-white motion-safe:opacity-0 motion-safe:animate-fade-up md:text-[18px] lg:text-[20px] [animation-delay:300ms]"
           >
             Manufacturer &amp; Exporter of
             <br />
@@ -93,14 +66,9 @@ export function HomeHero() {
             &amp;
             <br />
             Pump Assemblies
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={fadeUp(0.5)}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-            className="flex flex-col gap-4 sm:flex-row sm:gap-5"
-          >
+          <div className="flex flex-col gap-4 motion-safe:opacity-0 motion-safe:animate-fade-up sm:flex-row sm:gap-5 [animation-delay:420ms]">
             <Button
               href="/products"
               size="lg"
@@ -118,18 +86,13 @@ export function HomeHero() {
               Request Quote
               <ArrowRight size={16} className="ml-2" />
             </Button>
-          </motion.div>
+          </div>
         </div>
       </Container>
 
       <div className="relative z-10 mt-auto w-full">
         <Container>
-          <motion.div
-            variants={fadeUp(0.7)}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-            className="flex flex-col items-center justify-between gap-6 border-t border-white/15 py-8 md:flex-row md:gap-0 lg:py-10"
-          >
+          <div className="flex flex-col items-center justify-between gap-6 border-t border-white/15 py-8 motion-safe:opacity-0 motion-safe:animate-fade-up md:flex-row md:gap-0 lg:py-10 [animation-delay:560ms]">
             {STATS.map((stat, i) => (
               <div key={stat.title} className="flex items-center gap-0 md:flex-1">
                 {i > 0 && (
@@ -152,7 +115,7 @@ export function HomeHero() {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </Container>
       </div>
     </section>

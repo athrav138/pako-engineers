@@ -1,32 +1,37 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUp, MessageCircle, FileText } from "lucide-react";
+import { ArrowUp, MessageCircle } from "lucide-react";
 import { company } from "@/lib/content/company";
-import { motion, useScroll, useSpring } from "framer-motion";
-import Link from "next/link";
 
 export function FloatingActions() {
   const [showTop, setShowTop] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   useEffect(() => {
-    const handleScroll = () => setShowTop(window.scrollY > 300);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    let frame = 0;
+    let last = window.scrollY > 300;
+    setShowTop(last);
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const next = window.scrollY > 300;
+        if (next !== last) {
+          last = next;
+          setShowTop(next);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <>
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-oxide origin-left z-[60]"
-        style={{ scaleX }}
-      />
       <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-3">
 
         <a
