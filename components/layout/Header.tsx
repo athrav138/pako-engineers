@@ -107,7 +107,7 @@ const MEGA = {
       { label: "Contact Us", href: "/contact", icon: MessageSquare },
       { label: "Factory Location", href: "/contact#map", icon: Map },
       { label: "Business Hours", href: "/contact#hours", icon: Clock },
-      { label: "Careers", href: "/career", icon: Briefcase },
+      { label: "Careers", href: "/careers", icon: Briefcase },
     ],
     featured: { title: "Get a Quote", desc: "Send your specifications and get a detailed manufacturing proposal within 24 hours.", href: "/request-quote", cta: "Request Quote" },
   },

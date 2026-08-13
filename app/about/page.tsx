@@ -87,6 +87,13 @@ export default function AboutPage() {
           <Button href="/company-profile" variant="glass">
             <Download size={16} className="mr-2" /> Company Profile
           </Button>
+          <a
+            href="/documents/pako-company-profile.pptx"
+            download="Pako-Engineers-Company-Profile.pptx"
+            className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 hover:bg-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors backdrop-blur-sm"
+          >
+            <Download size={16} /> Download PPT
+          </a>
         </div>
       </PageHero>
 

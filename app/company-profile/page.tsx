@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { FileText, Download, CheckCircle, ArrowRight, Users, Award, MapPin, Factory, Globe, Cog } from "lucide-react";
+import { FileText, Download, CheckCircle, ArrowRight, Users, Award, MapPin, Factory, Globe, Cog, BookOpen } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { StatsSection } from "@/components/sections/StatsSection";
@@ -65,9 +65,16 @@ export default function CompanyProfilePage() {
         description={company.profile.positioning}
         backgroundImage={Images.assets.shaftMachiningLathe.src}
       >
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="/documents/pako-company-profile.pptx"
+            download="Pako-Engineers-Company-Profile.pptx"
+            className="inline-flex items-center gap-2 rounded-md bg-oxide hover:bg-[#E64A19] px-6 py-3 text-sm font-semibold text-white transition-colors"
+          >
+            <BookOpen size={16} /> Download Presentation
+          </a>
           <Button href="#download" variant="glass">
-            <Download size={16} className="mr-2" /> Download Profile PDF
+            <Download size={16} className="mr-2" /> Download PDF
           </Button>
         </div>
       </PageHero>
@@ -151,13 +158,42 @@ export default function CompanyProfilePage() {
                 <div className="absolute -right-6 -top-6 opacity-10 pointer-events-none">
                   <FileText size={140} />
                 </div>
-                <h3 className="font-display text-xl font-bold mb-3 relative z-10">Download Profile</h3>
+                <h3 className="font-display text-xl font-bold mb-2 relative z-10">Download Profile</h3>
                 <p className="text-white/70 text-sm mb-6 relative z-10">
-                  Get a comprehensive PDF of our machine list, testing facilities, client references, and manufacturing capacity.
+                  Get our full company profile — machine list, testing facilities, client references, and manufacturing capacity.
                 </p>
-                <button className="w-full bg-oxide hover:bg-[#E64A19] text-white font-bold py-3 px-4 rounded flex items-center justify-center gap-2 transition-colors relative z-10">
-                  <Download size={18} /> Download PDF
-                </button>
+
+                {/* ── PPT Download ── */}
+                <a
+                  href="/documents/pako-company-profile.pptx"
+                  download="Pako-Engineers-Company-Profile.pptx"
+                  className="group mb-3 flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-500/20 text-orange-300">
+                    <BookOpen size={20} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-white truncate">Company Presentation</p>
+                    <p className="text-xs text-white/50">PowerPoint · PPTX · ~9.5 MB</p>
+                  </div>
+                  <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* ── PDF Download ── */}
+                <a
+                  href="/documents/pako-company-profile.pdf"
+                  download="Pako-Engineers-Company-Profile.pdf"
+                  className="group flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-red-500/20 text-red-300">
+                    <FileText size={20} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-white truncate">Company Profile PDF</p>
+                    <p className="text-xs text-white/50">PDF Document · Printable</p>
+                  </div>
+                  <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
+                </a>
               </div>
 
               <div className="bg-white p-8 rounded-xl border border-line shadow-sm">

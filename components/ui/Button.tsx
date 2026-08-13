@@ -45,8 +45,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);
 
     if (href) {
+      const { onClick, ...linkProps } = props as React.AnchorHTMLAttributes<HTMLAnchorElement> & typeof props;
       return (
-        <Link href={href} className={classes}>
+        <Link href={href} className={classes} onClick={onClick} {...(linkProps as object)}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {!isLoading && leftIcon && <span className="mr-2">{leftIcon}</span>}
           {children}

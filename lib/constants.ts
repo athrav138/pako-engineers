@@ -5,7 +5,6 @@ export const NAV_LINKS = [
   { href: "/products", label: "Products" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/quality", label: "Quality" },
-  { href: "/industries", label: "Industries" },
   { href: "/clients", label: "Clients" },
   { href: "/gallery", label: "Gallery" },
 ] as const;
@@ -17,7 +16,7 @@ export const FOOTER_LINKS = [
   { href: "/certifications", label: "Certifications" },
   { href: "/export-markets", label: "Export Markets" },
   { href: "/faq", label: "FAQ" },
-  { href: "/career", label: "Career" },
+  { href: "/careers", label: "Careers" },
   { href: "/csr", label: "CSR" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },
