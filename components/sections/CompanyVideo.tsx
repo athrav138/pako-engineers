@@ -1,8 +1,6 @@
-"use client";
 import { Images } from "@/lib/images";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
@@ -21,37 +19,26 @@ export function CompanyVideo() {
       </div>
 
       <Container className="relative z-10 flex flex-col items-center text-center text-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="motion-safe:opacity-0 motion-safe:animate-zoom-in">
           <button className="group mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-oxide text-white shadow-raised transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-oxide/50">
             <Play size={36} className="ml-2 fill-current transition-transform group-hover:scale-110" />
           </button>
-        </motion.div>
+        </div>
 
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-6 max-w-3xl font-display text-4xl font-bold tracking-tight md:text-5xl"
+        <h2 
+          className="mb-6 max-w-3xl font-display text-4xl font-bold tracking-tight md:text-5xl motion-safe:opacity-0 motion-safe:animate-fade-up"
+          style={{ animationDelay: '200ms' }}
         >
           See Our Manufacturing Excellence in Action
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-2xl text-lg text-white/80"
+        </h2>
+        <p
+          className="max-w-2xl text-lg text-white/80 motion-safe:opacity-0 motion-safe:animate-fade-up"
+          style={{ animationDelay: '300ms' }}
         >
           See the capability areas highlighted in the February 2026 company
           profile: machining, grinding, CNC lathe, wire-cut, in-house assembly
           and inspection support for export components.
-        </motion.p>
+        </p>
       </Container>
     </section>
   );

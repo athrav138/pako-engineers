@@ -15,6 +15,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { company } from "@/lib/content/company";
 
 /* ─────────────────────────────────────────────
    Mega Menu Data
@@ -193,11 +194,11 @@ export function Header() {
         )}>
           <Container className="flex justify-between items-center h-[36px]">
             <div className="flex items-center divide-x divide-white/10">
-              <a href="tel:09860269972" className="flex items-center gap-1.5 pr-4 hover:text-white transition-colors">
-                <Phone size={11} className="text-sky-400" />09860269972
+              <a href={`tel:${company.contact.phone}`} className="flex items-center gap-1.5 pr-4 hover:text-white transition-colors">
+                <Phone size={11} className="text-sky-400" />{company.contact.phone}
               </a>
-              <a href="mailto:sales@pakoshaft.com" className="flex items-center gap-1.5 px-4 hover:text-white transition-colors">
-                <Mail size={11} className="text-sky-400" />sales@pakoshaft.com
+              <a href={`mailto:${company.contact.email}`} className="flex items-center gap-1.5 px-4 hover:text-white transition-colors">
+                <Mail size={11} className="text-sky-400" />{company.contact.email}
               </a>
               <span className="flex items-center gap-1.5 pl-4">
               <MapPin size={11} className="text-sky-400" />Burli, Maharashtra
@@ -325,8 +326,8 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                <a href="tel:09860269972" className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Phone size={14} className="text-sky-600" />09860269972</a>
-                <a href="mailto:sales@pakoshaft.com" className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Mail size={14} className="text-sky-600" />sales@pakoshaft.com</a>
+                <a href={`tel:${company.contact.phone}`} className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Phone size={14} className="text-sky-600" />{company.contact.phone}</a>
+                <a href={`mailto:${company.contact.email}`} className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Mail size={14} className="text-sky-600" />{company.contact.email}</a>
                 <Button href="/request-quote" className="mt-2 w-full justify-center bg-[#0A1B2E] hover:bg-[#132D4A] text-white font-bold text-[12px] tracking-[0.08em] uppercase">REQUEST QUOTE</Button>
               </div>
             </Container>
@@ -403,8 +404,8 @@ function MegaPanel({ config, onClose }: { config: MegaMenuConfig; onClose: () =>
           </Link>
           <div className="mt-4 pt-4 border-t border-slate-200">
             <p className="text-[11px] text-slate-400 mb-1">Need help?</p>
-            <a href="tel:09860269972" className="flex items-center gap-1.5 text-[12px] font-semibold text-[#0A1B2E] hover:text-sky-600 transition-colors">
-              <Phone size={12} />09860269972
+            <a href={`tel:${company.contact.phone}`} className="flex items-center gap-1.5 text-[12px] font-semibold text-[#0A1B2E] hover:text-sky-600 transition-colors">
+              <Phone size={12} />{company.contact.phone}
             </a>
           </div>
         </div>

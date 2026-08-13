@@ -35,7 +35,7 @@ export function ProductGallery({ images, name }: { images: string[], name: strin
                 i === activeImg ? "border-oxide" : "border-line opacity-60 hover:opacity-100"
               }`}
             >
-              <Image src={img} alt={`Thumbnail ${i + 1}`} fill className="object-cover" />
+              <Image src={img} alt={`Thumbnail ${i + 1}`} fill sizes="(min-width: 1024px) 8vw, 25vw" className="object-cover" />
             </button>
           ))}
         </div>
@@ -54,7 +54,7 @@ export function ProductDrawing({ product }: { product: ProductData }) {
       </div>
       <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-line bg-white flex flex-col items-center justify-center p-8 text-center group">
         {product.engineeringDrawing ? (
-          <Image src={product.engineeringDrawing} alt="Engineering Drawing" fill className="object-contain p-4 opacity-50 group-hover:opacity-80 transition-opacity" />
+          <Image src={product.engineeringDrawing} alt="Engineering Drawing" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-contain p-4 opacity-50 group-hover:opacity-80 transition-opacity" />
         ) : (
           <div className="text-ink-muted flex flex-col items-center">
             <ScanLine size={48} className="mb-4 text-slate-300" />

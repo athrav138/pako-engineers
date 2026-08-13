@@ -1,10 +1,8 @@
-"use client";
 import { Images } from "@/lib/images";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
-import { company, equipment, machiningCapacity } from "@/lib/content/company";
+import { company } from "@/lib/content/company";
 
 const INFRA_IMAGES = [
   { id: 1, src: Images.assets.heavyDutyEngineLathe.src, label: "CNC Machine Shop" },
@@ -33,13 +31,7 @@ export function InfrastructureSection() {
         {/* Carousel / Large Image Gallery Layout */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-2 h-auto md:h-[600px]">
           {/* Main Large Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group relative overflow-hidden rounded-2xl md:col-span-8 md:row-span-2 min-h-[300px] bg-surface"
-          >
+          <div className="group relative min-h-[300px] overflow-hidden rounded-2xl bg-surface motion-safe:opacity-0 motion-safe:animate-fade-up md:col-span-8 md:row-span-2">
             <Image
               src={Images.assets.modernFactoryFloorOverview.src}
               alt="Pako Engineers factory floor overview"
@@ -52,17 +44,14 @@ export function InfrastructureSection() {
               <p className="font-display text-xl font-bold text-white">Factory Floor Overview</p>
               <p className="text-sm text-white/80">{company.address.full}</p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Smaller Images */}
           {INFRA_IMAGES.slice(0, 2).map((img, i) => (
-            <motion.div 
+            <div
               key={img.id}
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 + (i * 0.1) }}
-              className="group relative overflow-hidden rounded-2xl md:col-span-4 md:row-span-1 min-h-[200px] bg-surface"
+              className="group relative min-h-[200px] overflow-hidden rounded-2xl bg-surface motion-safe:opacity-0 motion-safe:animate-fade-up md:col-span-4 md:row-span-1"
+              style={{ animationDelay: `${200 + i * 100}ms` }}
             >
               <Image
                 src={img.src}
@@ -77,7 +66,7 @@ export function InfrastructureSection() {
                   {img.label}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

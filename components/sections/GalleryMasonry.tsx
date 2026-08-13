@@ -1,8 +1,6 @@
-"use client";
 import { Images } from "@/lib/images";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Maximize2 } from "lucide-react";
 
@@ -31,13 +29,10 @@ export function GalleryMasonry() {
 
         <div className="grid auto-rows-[240px] grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
           {GALLERY_ITEMS.map((item, i) => (
-            <motion.div
+            <div
               key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group relative overflow-hidden rounded-xl bg-navy ${item.span}`}
+              className={`group relative overflow-hidden rounded-xl bg-navy motion-safe:opacity-0 motion-safe:animate-zoom-in ${item.span}`}
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <Image
                 src={item.src}
@@ -58,7 +53,7 @@ export function GalleryMasonry() {
                   <Maximize2 size={20} />
                 </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

@@ -14,7 +14,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { company } from "@/lib/content/company";
+import { company, companyProfileDocument } from "@/lib/content/company";
 
 import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
@@ -88,8 +88,8 @@ export default function AboutPage() {
             <Download size={16} className="mr-2" /> Company Profile
           </Button>
           <a
-            href="/documents/pako-company-profile.pptx"
-            download="Pako-Engineers-Company-Profile.pptx"
+            href={companyProfileDocument.publicPath}
+            download={companyProfileDocument.fileName}
             className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 hover:bg-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors backdrop-blur-sm"
           >
             <Download size={16} /> Download PPT

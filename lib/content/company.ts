@@ -108,6 +108,14 @@ export const company = {
   },
 } as const;
 
+export const companyProfileDocument = {
+  title: "Pako Engineers Company Profile",
+  fileName: "Pako-Engineers-Company-Profile-February-2026.pptx",
+  publicPath: "/documents/pako-company-profile-february-2026.pptx",
+  type: "PowerPoint",
+  sizeLabel: "9.5 MB",
+} as const;
+
 export const materials = [
   "Stainless Steel (SS304, SS316, 410, 410T)",
   "Duplex & Super Duplex",

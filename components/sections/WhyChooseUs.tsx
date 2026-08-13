@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Shield, Cog, Truck, Globe2, Award, Users } from "lucide-react";
 
@@ -37,23 +34,6 @@ const REASONS = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
 export function WhyChooseUs() {
   return (
     <section className="bg-background-light py-20 lg:py-32">
@@ -67,18 +47,12 @@ export function WhyChooseUs() {
           </h2>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {REASONS.map((reason, i) => (
-            <motion.div
+            <div
               key={i}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-xl border border-line bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-raised"
+              className="group relative overflow-hidden rounded-xl border border-line bg-white p-8 shadow-sm transition-all motion-safe:opacity-0 motion-safe:animate-fade-up hover:-translate-y-1 hover:shadow-raised"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="mb-6 inline-flex rounded-lg bg-navy/5 p-4 text-navy transition-colors group-hover:bg-navy group-hover:text-white">
                 <reason.icon size={32} strokeWidth={1.5} />
@@ -89,9 +63,9 @@ export function WhyChooseUs() {
               <p className="text-ink-muted leading-relaxed">
                 {reason.description}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

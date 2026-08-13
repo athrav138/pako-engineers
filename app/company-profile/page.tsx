@@ -8,7 +8,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { company, materials, clients, machiningCapacity, equipment, industries } from "@/lib/content/company";
+import { company, companyProfileDocument, materials, clients, machiningCapacity, equipment, industries } from "@/lib/content/company";
 
 import { Images } from "@/lib/images";
 export const metadata: Metadata = {
@@ -67,14 +67,14 @@ export default function CompanyProfilePage() {
       >
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
           <a
-            href="/documents/pako-company-profile.pptx"
-            download="Pako-Engineers-Company-Profile.pptx"
+            href={companyProfileDocument.publicPath}
+            download={companyProfileDocument.fileName}
             className="inline-flex items-center gap-2 rounded-md bg-oxide hover:bg-[#E64A19] px-6 py-3 text-sm font-semibold text-white transition-colors"
           >
             <BookOpen size={16} /> Download Presentation
           </a>
           <Button href="#download" variant="glass">
-            <Download size={16} className="mr-2" /> Download PDF
+            <Download size={16} className="mr-2" /> Download Profile
           </Button>
         </div>
       </PageHero>
@@ -165,8 +165,8 @@ export default function CompanyProfilePage() {
 
                 {/* ── PPT Download ── */}
                 <a
-                  href="/documents/pako-company-profile.pptx"
-                  download="Pako-Engineers-Company-Profile.pptx"
+                  href={companyProfileDocument.publicPath}
+                  download={companyProfileDocument.fileName}
                   className="group mb-3 flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-500/20 text-orange-300">
@@ -174,23 +174,23 @@ export default function CompanyProfilePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-white truncate">Company Presentation</p>
-                    <p className="text-xs text-white/50">PowerPoint · PPTX · ~9.5 MB</p>
+                    <p className="text-xs text-white/50">{companyProfileDocument.type} · PPTX · {companyProfileDocument.sizeLabel}</p>
                   </div>
                   <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
                 </a>
 
                 {/* ── PDF Download ── */}
                 <a
-                  href="/documents/pako-company-profile.pdf"
-                  download="Pako-Engineers-Company-Profile.pdf"
+                  href={companyProfileDocument.publicPath}
+                  download={companyProfileDocument.fileName}
                   className="group flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-red-500/20 text-red-300">
                     <FileText size={20} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-white truncate">Company Profile PDF</p>
-                    <p className="text-xs text-white/50">PDF Document · Printable</p>
+                    <p className="text-sm font-semibold text-white truncate">Full Company Profile</p>
+                    <p className="text-xs text-white/50">Official presentation document</p>
                   </div>
                   <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
                 </a>

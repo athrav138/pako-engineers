@@ -1,38 +1,8 @@
-"use client";
-import { Images } from "@/lib/images";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-
-const NEWS_ITEMS = [
-  {
-    id: 1,
-    title: "Pako Engineers expands CNC turning capacity with new 10m heavy-duty lathe.",
-    category: "Company Update",
-    date: "Aug 15, 2026",
-    excerpt: "To meet the growing demand from global pump manufacturers, we have successfully expanded our CNC lathe fleet capable of turning shafts up to 1500mm in diameter and 8,000mm in length.",
-    image: Images.assets.largePumpRotorAssemblyThumb.src,
-  },
-  {
-    id: 2,
-    title: "Achieving Zero-Defect Manufacturing in Super Duplex Machining",
-    category: "Technical Article",
-    date: "Jul 22, 2026",
-    excerpt: "Machining super duplex stainless steel presents unique challenges. Learn how our engineering team optimizes tooling and feeds to maintain tight tolerances.",
-    image: Images.assets.legacyLatheInspectionThumb.src,
-  },
-  {
-    id: 3,
-    title: "Pako Engineers awarded 'Best Exporter 2026' by Engineering Council",
-    category: "Awards",
-    date: "Jun 10, 2026",
-    excerpt: "We are proud to announce that Pako Engineers has been recognized for its outstanding contribution to India's engineering export growth.",
-    image: Images.assets.verticalPumpAssemblyThumb.src,
-  },
-];
+import { newsItems } from "@/lib/content/news";
 
 export function NewsSection() {
   return (
@@ -53,14 +23,11 @@ export function NewsSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {NEWS_ITEMS.map((item, i) => (
-            <motion.div
+          {newsItems.map((item, i) => (
+            <div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-all hover:border-navy/20 hover:shadow-raised"
+              className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-all motion-safe:opacity-0 motion-safe:animate-fade-up hover:border-navy/20 hover:shadow-raised"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* News thumbnail image */}
               <div className="relative h-48 w-full overflow-hidden bg-surface">
@@ -93,7 +60,7 @@ export function NewsSection() {
                   <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

@@ -6,8 +6,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { products } from "@/lib/content/products";
 
 export function ProductOverview() {
-  const featured = products.slice(0, 4);
-
   return (
     <section className="py-20 md:py-28">
       <Container>
@@ -29,6 +27,7 @@ export function ProductOverview() {
                   src={product.image}
                   alt={product.name}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

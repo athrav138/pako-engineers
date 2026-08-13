@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import {
   ShieldCheck,
@@ -86,13 +83,10 @@ export function MaterialsSection() {
           {MATERIALS.map((mat, i) => {
             const Icon = mat.icon;
             return (
-              <motion.div
+              <div
                 key={mat.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 motion-safe:opacity-0 motion-safe:animate-fade-up hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg"
+                style={{ animationDelay: `${i * 80}ms` }}
               >
                 {/* Top accent bar */}
                 <div className={`absolute left-0 top-0 h-1 w-full ${mat.dot}`} />
@@ -114,7 +108,7 @@ export function MaterialsSection() {
                 <p className="text-sm leading-relaxed text-slate-500">
                   {mat.desc}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

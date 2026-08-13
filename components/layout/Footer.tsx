@@ -34,10 +34,16 @@ export function Footer() {
             Company
           </p>
           <ul className="mt-6 space-y-3">
-            {["About Us", "Company Profile", "Our Story", "Manufacturing", "Quality Assurance"].map((item) => (
-              <li key={item}>
-                <Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="text-sm text-white/80 transition-colors hover:text-white">
-                  {item}
+            {([
+              { label: "About Us", href: "/about" },
+              { label: "Company Profile", href: "/company-profile" },
+              { label: "Our Story", href: "/our-story" },
+              { label: "Manufacturing", href: "/manufacturing-facility" },
+              { label: "Quality Assurance", href: "/quality" },
+            ] as const).map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -50,10 +56,15 @@ export function Footer() {
             Products & Resources
           </p>
           <ul className="mt-6 space-y-3">
-            {["Products", "Capabilities", "Industries Served", "Careers"].map((item) => (
-              <li key={item}>
-                <Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="text-sm text-white/80 transition-colors hover:text-white">
-                  {item}
+            {([
+              { label: "Products", href: "/products" },
+              { label: "Capabilities", href: "/capabilities" },
+              { label: "Industries Served", href: "/industries" },
+              { label: "Careers", href: "/careers" },
+            ] as const).map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                  {item.label}
                 </Link>
               </li>
             ))}

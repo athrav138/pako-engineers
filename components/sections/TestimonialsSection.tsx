@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
@@ -40,13 +37,10 @@ export function TestimonialsSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((test, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col justify-between rounded-2xl border border-line bg-white p-8 shadow-sm transition-shadow hover:shadow-raised"
+              className="flex flex-col justify-between rounded-2xl border border-line bg-white p-8 shadow-sm transition-shadow motion-safe:opacity-0 motion-safe:animate-fade-up hover:shadow-raised"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <div>
                 <Quote className="mb-6 text-oxide/20" size={48} />
@@ -64,7 +58,7 @@ export function TestimonialsSection() {
                   <p className="text-xs font-medium text-oxide">{test.company}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

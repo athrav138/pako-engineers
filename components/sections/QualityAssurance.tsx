@@ -1,8 +1,6 @@
-"use client";
 import { Images } from "@/lib/images";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Search, ShieldCheck, Microscope, Ruler } from "lucide-react";
 
@@ -61,18 +59,15 @@ export function QualityAssurance() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {QA_FACILITIES.map((facility, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition-colors hover:bg-white/10"
+              className="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition-colors motion-safe:opacity-0 motion-safe:animate-fade-up hover:bg-white/10"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <facility.icon size={36} className="mb-6 text-oxide" strokeWidth={1.5} />
               <h3 className="mb-3 font-display text-xl font-bold">{facility.title}</h3>
               <p className="text-sm text-white/60">{facility.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

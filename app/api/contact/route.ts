@@ -107,11 +107,11 @@ export async function POST(request: Request) {
   }
 
   const fields = {
-    name: body.name.trim(),
-    email: body.email.trim().toLowerCase(),
+    name: (body.name || "").trim(),
+    email: (body.email || "").trim().toLowerCase(),
     company: (body.company || "").trim(),
     phone: (body.phone || "").trim(),
-    message: body.message.trim(),
+    message: (body.message || "").trim(),
   };
 
   const smtpHost = process.env.SMTP_HOST;

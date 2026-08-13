@@ -1,8 +1,6 @@
-"use client";
 import { Images } from "@/lib/images";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -18,13 +16,7 @@ export function AboutSplit() {
   return (
     <section className="overflow-hidden py-20 lg:py-32">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="relative aspect-square overflow-hidden rounded-lg bg-surface lg:aspect-[4/5]"
-        >
+        <div className="relative aspect-square overflow-hidden rounded-lg bg-surface motion-safe:opacity-0 motion-safe:animate-fade-up lg:aspect-[4/5]">
           <Image
             src={Images.assets.modernFactoryFloorOverview.src}
             alt="Pako Engineers Factory Floor"
@@ -33,14 +25,9 @@ export function AboutSplit() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-navy/10" />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="motion-safe:opacity-0 motion-safe:animate-fade-up [animation-delay:120ms]">
           <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
             About Pako Engineers
           </p>
@@ -64,7 +51,7 @@ export function AboutSplit() {
             Read Our Story
             <ArrowRight size={18} className="ml-2" />
           </Button>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
