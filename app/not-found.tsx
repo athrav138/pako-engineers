@@ -23,7 +23,7 @@ export default function NotFound() {
           </h2>
           
           <p className="text-ink-muted mb-8 leading-relaxed">
-            The page you're looking for doesn't exist or has been moved. 
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
             Please check the URL or navigate to another section of our website.
           </p>
 
@@ -41,25 +41,25 @@ export default function NotFound() {
           <div className="border-t border-line pt-8">
             <p className="text-sm text-ink-muted mb-4">Looking for something specific?</p>
             <div className="flex flex-wrap gap-2 justify-center">
-              <a href="/products" className="text-sm text-navy hover:text-oxide transition-colors">
+              <Link href="/products" className="text-sm text-navy hover:text-oxide transition-colors">
                 Products
-              </a>
+              </Link>
               <span className="text-ink-muted">•</span>
-              <a href="/projects" className="text-sm text-navy hover:text-oxide transition-colors">
+              <Link href="/projects" className="text-sm text-navy hover:text-oxide transition-colors">
                 Projects
-              </a>
+              </Link>
               <span className="text-ink-muted">•</span>
-              <a href="/about" className="text-sm text-navy hover:text-oxide transition-colors">
+              <Link href="/about" className="text-sm text-navy hover:text-oxide transition-colors">
                 About Us
-              </a>
+              </Link>
               <span className="text-ink-muted">•</span>
-              <a href="/contact" className="text-sm text-navy hover:text-oxide transition-colors">
+              <Link href="/contact" className="text-sm text-navy hover:text-oxide transition-colors">
                 Contact
-              </a>
+              </Link>
               <span className="text-ink-muted">•</span>
-              <a href="/request-quote" className="text-sm text-navy hover:text-oxide transition-colors">
+              <Link href="/request-quote" className="text-sm text-navy hover:text-oxide transition-colors">
                 Request Quote
-              </a>
+              </Link>
             </div>
           </div>
 
