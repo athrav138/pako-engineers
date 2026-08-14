@@ -13,16 +13,14 @@ const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
   display: "swap",
-  preload: true,
-  weight: ["400", "500", "600", "700", "800"],
+  preload: false,
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
   display: "swap",
-  preload: true,
-  weight: ["500", "600", "700"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
