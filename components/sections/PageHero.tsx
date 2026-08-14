@@ -12,7 +12,7 @@ type PageHeroProps = {
 };
 
 /** Standard interior-page hero: dark navy band, used on every page except Home. */
-export function PageHero({ eyebrow, title, description, children, backgroundImage, priorityImage = false }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, children, backgroundImage, priorityImage = true }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-navy py-20 md:py-28">
       {backgroundImage && (

@@ -168,13 +168,13 @@ export function ContactSection() {
                   <label className="text-sm font-medium text-navy" htmlFor="name">
                     Name <span className="text-red-500">*</span>
                   </label>
-                  <Input id="name" name="name" placeholder="John Doe" required />
+                  <Input id="name" name="name" placeholder="e.g. Rahul Sharma" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-navy" htmlFor="company">
                     Company
                   </label>
-                  <Input id="company" name="company" placeholder="OEM Inc." />
+                  <Input id="company" name="company" placeholder="e.g. Flowtech Industries" />
                 </div>
               </div>
 
@@ -183,13 +183,13 @@ export function ContactSection() {
                   <label className="text-sm font-medium text-navy" htmlFor="email">
                     Email <span className="text-red-500">*</span>
                   </label>
-                  <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+                  <Input id="email" name="email" type="email" placeholder="procurement@company.com" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-navy" htmlFor="phone">
                     Phone
                   </label>
-                  <Input id="phone" name="phone" type="tel" placeholder="+1 234 567 890" />
+                  <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
                 </div>
               </div>
 

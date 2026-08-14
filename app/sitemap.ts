@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 
-const routes = [
+import { getAllProducts } from "@/lib/content/products";
+import { getProjectPages } from "@/lib/content/projects";
+
+const staticRoutes = [
   "",
   "/about",
   "/company-profile",
@@ -9,6 +12,7 @@ const routes = [
   "/infrastructure",
   "/manufacturing-facility",
   "/products",
+  "/projects",
   "/services",
   "/capabilities",
   "/quality",
@@ -20,19 +24,34 @@ const routes = [
   "/careers",
   "/csr",
   "/export-markets",
+  "/materials",
   "/contact",
   "/request-quote",
   "/faq",
   "/privacy-policy",
   "/terms",
+  "/cookie-policy",
   "/search",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/contact" || route === "/request-quote" ? 0.9 : 0.7,
-  }));
+  const productRoutes = getAllProducts().map((p) => `/products/${p.slug}`);
+  const projectRoutes = getProjectPages().map((p) => `/projects/${p.slug}`);
+
+  const allRoutes = [...staticRoutes, ...productRoutes, ...projectRoutes];
+
+  return allRoutes.map((route) => {
+    const isHome = route === "";
+    const isHighPriority =
+      route === "/contact" ||
+      route === "/request-quote" ||
+      route.startsWith("/products/");
+
+    return {
+      url: `${SITE_URL}${route}`,
+      lastModified: new Date(),
+      changeFrequency: isHome ? "weekly" : "monthly",
+      priority: isHome ? 1.0 : isHighPriority ? 0.9 : 0.7,
+    };
+  });
 }

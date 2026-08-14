@@ -8,12 +8,20 @@ function validateContact(data: {
   email?: string;
   company?: string;
   phone?: string;
+  country?: string;
+  subject?: string;
   message?: string;
 }): string | null {
   if (!data.name || data.name.trim().length < 2)
     return "Name must be at least 2 characters.";
   if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     return "A valid email address is required.";
+  if (!data.phone || data.phone.trim().length < 8)
+    return "Phone number is required.";
+  if (!data.country || data.country.trim().length < 2)
+    return "Country is required.";
+  if (!data.subject || data.subject.trim().length < 3)
+    return "Subject is required.";
   if (!data.message || data.message.trim().length < 10)
     return "Message must be at least 10 characters.";
   return null;
@@ -24,6 +32,8 @@ function buildEmailHtml(fields: {
   email: string;
   company: string;
   phone: string;
+  country: string;
+  subject: string;
   message: string;
 }) {
   return `<!DOCTYPE html>
@@ -34,7 +44,7 @@ function buildEmailHtml(fields: {
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);max-width:600px;width:100%;">
         <tr><td style="background:#1a2744;padding:28px 36px;">
-          <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;">New Quote Request — Pako Engineers</h1>
+          <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;">New Contact Enquiry — Pako Engineers</h1>
           <p style="margin:6px 0 0;color:#94a3b8;font-size:13px;">Received via pakoshaft.com contact form</p>
         </td></tr>
         <tr><td style="padding:32px 36px;">
@@ -49,8 +59,13 @@ function buildEmailHtml(fields: {
             </td></tr>
             ${fields.company ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Company</span><p style="margin:4px 0 0;font-size:15px;color:#1e293b;">${fields.company}</p></td></tr>` : ""}
             ${fields.phone ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Phone</span><p style="margin:4px 0 0;font-size:15px;color:#1e293b;">${fields.phone}</p></td></tr>` : ""}
+            ${fields.country ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Country</span><p style="margin:4px 0 0;font-size:15px;color:#1e293b;">${fields.country}</p></td></tr>` : ""}
+            <tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;">
+              <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Subject</span>
+              <p style="margin:4px 0 0;font-size:15px;color:#1e293b;">${fields.subject}</p>
+            </td></tr>
             <tr><td style="padding:14px 0 0;">
-              <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Requirements / Message</span>
+              <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;">Message</span>
               <div style="margin:8px 0 0;padding:16px;background:#f8fafc;border-left:4px solid #e55a2b;border-radius:6px;font-size:14px;color:#334155;line-height:1.65;white-space:pre-wrap;">${fields.message}</div>
             </td></tr>
           </table>
@@ -65,7 +80,7 @@ function buildEmailHtml(fields: {
 </html>`;
 }
 
-function buildAutoReplyHtml(name: string) {
+function buildAutoReplyHtml(name: string, subject: string) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"/></head>
@@ -79,9 +94,9 @@ function buildAutoReplyHtml(name: string) {
         </td></tr>
         <tr><td style="padding:32px 36px;color:#334155;font-size:15px;line-height:1.7;">
           <p>Dear <strong>${name}</strong>,</p>
-          <p>Thank you for reaching out to <strong>Pako Engineers</strong>. We have successfully received your quote request and our engineering team will review your requirements shortly.</p>
+          <p>Thank you for reaching out to <strong>Pako Engineers</strong>. We have successfully received your enquiry regarding "<strong>${subject}</strong>" and our team will review it shortly.</p>
           <p>We typically respond within <strong>24–48 business hours</strong>. If your inquiry is urgent, please call us directly at <a href="tel:+919921854252" style="color:#e55a2b;">+91-9921854252</a>.</p>
-          <p style="margin-bottom:0;">Warm regards,<br/><strong>Sales Team — Pako Engineers</strong><br/><span style="color:#94a3b8;font-size:13px;">sales@pakoshaft.com</span></p>
+          <p style="margin-bottom:0;">Warm regards,<br/><strong>Team — Pako Engineers</strong><br/><span style="color:#94a3b8;font-size:13px;">sales@pakoshaft.com</span></p>
         </td></tr>
         <tr><td style="background:#f8fafc;padding:16px 36px;border-top:1px solid #e2e8f0;">
           <p style="margin:0;font-size:12px;color:#94a3b8;text-align:center;">Gat No. 453, Palus Colony, Kirloskar Wadi Road, Burli, Sangli-416308, MH, India</p>
@@ -111,6 +126,8 @@ export async function POST(request: Request) {
     email: (body.email || "").trim().toLowerCase(),
     company: (body.company || "").trim(),
     phone: (body.phone || "").trim(),
+    country: (body.country || "").trim(),
+    subject: (body.subject || "").trim(),
     message: (body.message || "").trim(),
   };
 
@@ -148,11 +165,11 @@ export async function POST(request: Request) {
       from: smtpFrom,
       to: SALES_EMAIL,
       replyTo: `${fields.name} <${fields.email}>`,
-      subject: `[Quote Request] ${fields.company ? fields.company + " — " : ""}${fields.name}`,
+      subject: `[Contact Enquiry] ${fields.company ? fields.company + " — " : ""}${fields.subject}`,
       html: buildEmailHtml(fields),
       text:
-        `New quote request from ${fields.name} (${fields.email})\n` +
-        `Company: ${fields.company || "—"}\nPhone: ${fields.phone || "—"}\n\n${fields.message}`,
+        `New contact enquiry from ${fields.name} (${fields.email})\n` +
+        `Company: ${fields.company || "—"}\nPhone: ${fields.phone || "—"}\nCountry: ${fields.country || "—"}\nSubject: ${fields.subject}\n\n${fields.message}`,
     });
 
     // Auto-reply to the enquirer
@@ -160,8 +177,8 @@ export async function POST(request: Request) {
       from: smtpFrom,
       to: `${fields.name} <${fields.email}>`,
       subject: "We received your enquiry — Pako Engineers",
-      html: buildAutoReplyHtml(fields.name),
-      text: `Dear ${fields.name},\n\nThank you for contacting Pako Engineers. We will respond within 24-48 business hours.\n\nBest regards,\nSales Team — Pako Engineers`,
+      html: buildAutoReplyHtml(fields.name, fields.subject),
+      text: `Dear ${fields.name},\n\nThank you for contacting Pako Engineers. We will respond within 24-48 business hours.\n\nBest regards,\nTeam — Pako Engineers`,
     });
 
     return NextResponse.json({ ok: true });

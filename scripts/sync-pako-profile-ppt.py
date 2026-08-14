@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PPTX = ROOT / "Company Information" / "PAKO PROFILE FEBRUARY 2026 .pptx"
 BACKUP = ROOT / "Company Information" / "PAKO PROFILE FEBRUARY 2026 .backup-before-sync.pptx"
-IMAGE_OUT = ROOT / "public" / "images" / "gallery" / "ppt-profile"
+IMAGE_OUT = ROOT / "docs" / "image-audit" / "ppt-profile-source"
 REPORT = ROOT / "docs" / "PPT_WEBSITE_SYNC_REPORT.md"
 
 NS_TEXT = "{http://schemas.openxmlformats.org/drawingml/2006/main}t"
@@ -293,7 +293,7 @@ def main() -> None:
                 f"- Status: {status}",
                 f"- Website section matched: {matched_section(slide_no)}",
                 f"- Summary: {SLIDE_NOTES.get(slide_no, 'Verified against website content.')}",
-                "- Images verified: Embedded slide images extracted to `public/images/gallery/ppt-profile/` for traceability.",
+                "- Images verified: Embedded slide images extracted to `docs/image-audit/ppt-profile-source/` for traceability.",
                 f"- Images replaced: None",
                 f"- Files affected: `Company Information/PAKO PROFILE FEBRUARY 2026 .pptx`",
                 "",
@@ -304,13 +304,13 @@ def main() -> None:
         [
             "## Image Report",
             "",
-            f"- Added Images: {media_count} embedded PPT media files extracted into `public/images/gallery/ppt-profile/`.",
+            f"- Added Images: {media_count} embedded PPT media files extracted into `docs/image-audit/ppt-profile-source/`.",
             "- Replaced Images: None.",
             "- Moved Images: None.",
             "- Renamed Images: Extracted files use clean names `pako-profile-media-XX.ext`.",
             "- Missing Images: None identified from the embedded deck package.",
             "- Unused Images: Not removed; website image assets remain unchanged.",
-            "- Image Categories Created: `public/images/gallery/ppt-profile/`.",
+            "- Image Categories Created: `docs/image-audit/ppt-profile-source/`.",
             "",
             "## Content Report",
             "",
@@ -325,7 +325,7 @@ def main() -> None:
             "- Technical Consistency: Product capacities and testing terminology now match the website's current manufacturing capability data.",
             "- Design Consistency: Existing deck layout and visual language were preserved; only text-level corrections were applied.",
             "- Content Consistency: Website and deck now use consistent terminology for products, materials, clients and export markets.",
-            "- Image Consistency: Embedded deck images were preserved and copied into the public image tree for traceability.",
+            "- Image Consistency: Embedded deck images were preserved outside the public website image tree for traceability.",
             "",
             "## Final Quality Score",
             "",

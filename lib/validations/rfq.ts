@@ -12,19 +12,18 @@ export const PRODUCT_OPTIONS = [
 ] as const;
 
 export const rfqSchema = z.object({
-  name: z.string().min(2, "Enter your full name."),
-  company: z.string().min(2, "Enter your company name."),
-  email: z.string().email("Enter a valid email address."),
+  companyName: z.string().min(2, "Enter your company name."),
   country: z.string().min(2, "Enter your country."),
-  phone: z.string().optional(),
-  productType: z.enum(PRODUCT_OPTIONS, {
-    errorMap: () => ({ message: "Select a product type." }),
-  }),
-  material: z.string().optional(),
-  quantity: z.string().optional(),
-  message: z
-    .string()
-    .min(10, "Add a few details about your requirement (minimum 10 characters)."),
+  industry: z.string().optional(),
+  contactName: z.string().min(2, "Enter your full name."),
+  designation: z.string().optional(),
+  email: z.string().email("Enter a valid email address."),
+  phone: z.string().min(8, "Enter a valid phone number."),
+  product: z.string().min(2, "Enter the product component."),
+  material: z.string().min(2, "Enter the material grade."),
+  quantity: z.string().min(1, "Enter the order quantity."),
+  requiredDate: z.string().optional(),
+  message: z.string().optional(),
 });
 
 export type RfqFormValues = z.infer<typeof rfqSchema>;

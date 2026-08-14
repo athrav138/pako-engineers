@@ -415,8 +415,9 @@ export const products: ProductData[] = [
     summary: "High-precision retainer rings and elastomeric bearings for marine and industrial pumps.",
     description: "We manufacture tight-tolerance retainer rings and bearing components, including the machining of specialized elastomeric bearings like Thordon and Feroform.",
     overview: "Vertical turbine pumps and marine tail-shafts rely on water-lubricated bearings housed inside metallic retainer rings. Machining non-metallic composites like Thordon requires specialized tooling, speeds, and feeds to maintain tight running clearances without melting or distorting the material. Pako Engineers has perfected this process, supplying ready-to-install bearing assemblies.",
-    image: Images.assets.machinedSleeveComponents.src,
+    image: Images.assets.retainerBearingComponent.src,
     gallery: [
+      Images.assets.retainerBearingComponent.src,
       Images.assets.machinedSleeveComponents.src
     ],
     features: [
@@ -475,8 +476,9 @@ export const products: ProductData[] = [
     summary: "Precision machined gears for integration into rotating assemblies and gearboxes.",
     description: "Pako Engineers manufactures custom spur and helical gears based on customer drawings.",
     overview: "Gears transmit massive torque and speed. Inaccurate tooth geometry leads to noise, heat, and rapid failure. Integrated into our broader capability of producing rotating assemblies, our gear manufacturing process involves precise hobbing, case hardening, and profile grinding. We ensure exact involute profiles, pitch accuracy, and optimal surface hardness.",
-    image: Images.assets.shaftMachiningLathe.src,
+    image: Images.assets.gearComponents.src,
     gallery: [
+      Images.assets.gearComponents.src,
       Images.assets.shaftMachiningLathe.src
     ],
     features: [

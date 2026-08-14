@@ -88,7 +88,7 @@ export default async function ContactPage({
               </div>
             </div>
 
-            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
+            <div id="hours" className="rounded-lg border border-line bg-white p-6 shadow-card">
               <h3 className="font-display text-base font-semibold text-navy">
                 Business Hours
               </h3>
@@ -111,7 +111,7 @@ export default async function ContactPage({
               Chat on WhatsApp
             </a>
 
-            <div className="overflow-hidden rounded-lg border border-line">
+            <div id="map" className="overflow-hidden rounded-lg border border-line">
               <iframe
                 title="Pako Engineers location map"
                 width="100%"

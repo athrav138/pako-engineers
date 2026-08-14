@@ -1,0 +1,599 @@
+{
+  "total": 32,
+  "exactDuplicates": [],
+  "nearDuplicates": [],
+  "items": [
+    {
+      "index": 1,
+      "relativePath": "company/factory-building-exterior.webp",
+      "publicPath": "/images/company/factory-building-exterior.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\company\\factory-building-exterior.webp",
+      "extension": ".webp",
+      "size": 97592,
+      "width": 1080,
+      "height": 684,
+      "aspectRatio": "1.58:1",
+      "format": "webp",
+      "hash": "3ffd01aea25a24abc117d2f37830ab9bfa70903ea1dfa8562bfb94d3d43a49b7",
+      "perceptualHash": "0000000000000001111111110000001010011000011111110111111100111111",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Company/About"
+    },
+    {
+      "index": 2,
+      "relativePath": "company/factory-entrance-signage.webp",
+      "publicPath": "/images/company/factory-entrance-signage.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\company\\factory-entrance-signage.webp",
+      "extension": ".webp",
+      "size": 16258,
+      "width": 360,
+      "height": 360,
+      "aspectRatio": "1.00:1",
+      "format": "webp",
+      "hash": "8a1f4f79b2f22cd6eb6d8d0a354159ab5cab9fd66ac0b507264365d2ac80887d",
+      "perceptualHash": "1111111101111111000000000000000000000000000000001100000011110000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Company/About"
+    },
+    {
+      "index": 3,
+      "relativePath": "company/leadership/ceo-sudarshan-khot.webp",
+      "publicPath": "/images/company/leadership/ceo-sudarshan-khot.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\company\\leadership\\ceo-sudarshan-khot.webp",
+      "extension": ".webp",
+      "size": 171018,
+      "width": 900,
+      "height": 1350,
+      "aspectRatio": "0.67:1",
+      "format": "webp",
+      "hash": "83e674cf35c755fd3e4ed4437536ee5be85068a94dca367104311ce4a1feffc4",
+      "perceptualHash": "0000000001110110111111111111111110111000001100000000000000000000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Leadership"
+    },
+    {
+      "index": 4,
+      "relativePath": "company/leadership/md-suhas-khot.webp",
+      "publicPath": "/images/company/leadership/md-suhas-khot.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\company\\leadership\\md-suhas-khot.webp",
+      "extension": ".webp",
+      "size": 142158,
+      "width": 900,
+      "height": 1350,
+      "aspectRatio": "0.67:1",
+      "format": "webp",
+      "hash": "6cca15ec216a74fd37277963eb6634ae7a4aa47398bd0a132b014c2e005f1466",
+      "perceptualHash": "0011100011111110111111111111111110111000001100000010000000000000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Leadership"
+    },
+    {
+      "index": 5,
+      "relativePath": "company/pako-engineers-building-signage.webp",
+      "publicPath": "/images/company/pako-engineers-building-signage.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\company\\pako-engineers-building-signage.webp",
+      "extension": ".webp",
+      "size": 10506,
+      "width": 250,
+      "height": 250,
+      "aspectRatio": "1.00:1",
+      "format": "webp",
+      "hash": "9e8500dcd64f6691e345c7c08ac28b02f4823ceaf13dfe7fadc924004592450f",
+      "perceptualHash": "1111111111111111000000001100000011111111000000000000000011011101",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Company/About"
+    },
+    {
+      "index": 6,
+      "relativePath": "hero/homepage-hero.webp",
+      "publicPath": "/images/hero/homepage-hero.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\hero\\homepage-hero.webp",
+      "extension": ".webp",
+      "size": 230360,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "124aec0e52064ea9aa916576cbe963d7643e3158d65b6f4a968f5a160c4641a3",
+      "perceptualHash": "1000001111111111111101110000000000000000110000001100000011100000",
+      "usedBy": [
+        "lib/images.ts",
+        "config/site.ts"
+      ],
+      "section": "Hero"
+    },
+    {
+      "index": 7,
+      "relativePath": "logos/pako-engineers-logo.png",
+      "publicPath": "/images/logos/pako-engineers-logo.png",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\logos\\pako-engineers-logo.png",
+      "extension": ".png",
+      "size": 1133890,
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "1.50:1",
+      "format": "png",
+      "hash": "689b2136207696244649c7d1be2a1fca6ae1f99e8e1dc9d7204de937d3aa6728",
+      "perceptualHash": "1111111111100111111001111110011111100111100000011100001111111111",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Logo/branding"
+    },
+    {
+      "index": 8,
+      "relativePath": "machines/cnc-lathe-operator.webp",
+      "publicPath": "/images/machines/cnc-lathe-operator.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\cnc-lathe-operator.webp",
+      "extension": ".webp",
+      "size": 66022,
+      "width": 1200,
+      "height": 799,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "355e081b4a8c67a7f880a5b1347b641357d41326b0abb70b323a16c41d5bfd1f",
+      "perceptualHash": "1111100011111011111100101111011011100010000000000000000000000000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 9,
+      "relativePath": "machines/cylindrical-grinding-machine.webp",
+      "publicPath": "/images/machines/cylindrical-grinding-machine.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\cylindrical-grinding-machine.webp",
+      "extension": ".webp",
+      "size": 180350,
+      "width": 1600,
+      "height": 1067,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "02f2c4664996416fd15947f6c8943a13315d3065356011e46dfc2e9426d5e55e",
+      "perceptualHash": "1110111111111000011011010111101100100000000100001110000111000011",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 10,
+      "relativePath": "machines/edm-machine.webp",
+      "publicPath": "/images/machines/edm-machine.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\edm-machine.webp",
+      "extension": ".webp",
+      "size": 115226,
+      "width": 1400,
+      "height": 932,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "39058097a1ffdab7703c5500566808cfab07046a2cac795d5bef246650096b5c",
+      "perceptualHash": "0111111111011111110111110000001100000011000001110000001100000001",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 11,
+      "relativePath": "machines/grinding-machine-operator.webp",
+      "publicPath": "/images/machines/grinding-machine-operator.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\grinding-machine-operator.webp",
+      "extension": ".webp",
+      "size": 135366,
+      "width": 1200,
+      "height": 799,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "4929b2ec475cb3705787aa60555f1335537b08c320e2bb05cd8de52e802e598a",
+      "perceptualHash": "1110101111111111110010001100000001110000001111000001100000000000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 12,
+      "relativePath": "machines/heavy-duty-engine-lathe.webp",
+      "publicPath": "/images/machines/heavy-duty-engine-lathe.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\heavy-duty-engine-lathe.webp",
+      "extension": ".webp",
+      "size": 251014,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "fefa9d37ab3c883c17a5385c96063a38df66d21c90142ed055db4a5f0709ec8a",
+      "perceptualHash": "0000000011101000011111111110000001000000010011110111111101111110",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 13,
+      "relativePath": "machines/heavy-duty-lathe-bed.webp",
+      "publicPath": "/images/machines/heavy-duty-lathe-bed.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\heavy-duty-lathe-bed.webp",
+      "extension": ".webp",
+      "size": 70316,
+      "width": 1600,
+      "height": 1067,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "4d63a6954ec516989e806aab21963b1710d6f772a493a68827170e907aba4774",
+      "perceptualHash": "0000000100000001111111111111111111101110000000000000000000000000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 14,
+      "relativePath": "machines/large-boring-machine.webp",
+      "publicPath": "/images/machines/large-boring-machine.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\large-boring-machine.webp",
+      "extension": ".webp",
+      "size": 180738,
+      "width": 1200,
+      "height": 799,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "6b59bef487dd82e64ffecfde27cf303dff84ea0f230946adac9619b5977fae4b",
+      "perceptualHash": "0000001001111110111111111110111101100000000110010001100100000001",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 15,
+      "relativePath": "machines/lathe-setup-inspection.webp",
+      "publicPath": "/images/machines/lathe-setup-inspection.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\lathe-setup-inspection.webp",
+      "extension": ".webp",
+      "size": 113290,
+      "width": 1400,
+      "height": 932,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "1e8c34ca5067ddf1ec5ecd481cd5f5b3f72af7dedc8fd3c99827691a05ff510b",
+      "perceptualHash": "1110111111111111111111110000011000000110000000000000000000000000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 16,
+      "relativePath": "machines/long-bed-turning-lathe.webp",
+      "publicPath": "/images/machines/long-bed-turning-lathe.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\long-bed-turning-lathe.webp",
+      "extension": ".webp",
+      "size": 132104,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "45b0a3d5494ce705c5beaa27d84ed0456576e0c0547047c13d27af2ebe0f6520",
+      "perceptualHash": "1111111111111111111111110010001100000000000000001100000011110000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 17,
+      "relativePath": "machines/long-shaft-machining-lathe.webp",
+      "publicPath": "/images/machines/long-shaft-machining-lathe.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\long-shaft-machining-lathe.webp",
+      "extension": ".webp",
+      "size": 253952,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "f295b9899ed5aa52e2477093fca448ad2d38c573ce626347435fd43e03ad7468",
+      "perceptualHash": "1000011100001111001111111110111110000011000000001000000010011100",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 18,
+      "relativePath": "machines/machine-operator-lathe.webp",
+      "publicPath": "/images/machines/machine-operator-lathe.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\machine-operator-lathe.webp",
+      "extension": ".webp",
+      "size": 109514,
+      "width": 1400,
+      "height": 933,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "d90ac4792fd2a80b83d9dfeffec197fccc3782dd63fa5e8fe4fbedb58fe441f6",
+      "perceptualHash": "0010111100111111101111111000011110000000110001100000000000000000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 19,
+      "relativePath": "machines/shaft-machining-lathe.webp",
+      "publicPath": "/images/machines/shaft-machining-lathe.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\shaft-machining-lathe.webp",
+      "extension": ".webp",
+      "size": 244770,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "3392d89201c4c4e3ea944f51363ab044c98c8450b1a1d7728bc969d9214339d3",
+      "perceptualHash": "1111000011110000111111011001111100100001000100010001100100011011",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 20,
+      "relativePath": "machines/surface-grinding-machine.webp",
+      "publicPath": "/images/machines/surface-grinding-machine.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\surface-grinding-machine.webp",
+      "extension": ".webp",
+      "size": 135596,
+      "width": 1600,
+      "height": 1067,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "f9ec6dce13bd821d9fbfb507c96f4aaf245363427f87911a33947c8570460a2b",
+      "perceptualHash": "1111111111111111111011110000010100000000000100110000001100000111",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 21,
+      "relativePath": "machines/vmc-machine-operator.webp",
+      "publicPath": "/images/machines/vmc-machine-operator.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\machines\\vmc-machine-operator.webp",
+      "extension": ".webp",
+      "size": 91574,
+      "width": 1200,
+      "height": 799,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "9f1fdd0bd5be9abd27279bf69093b413a4de2fe41b2891abdc395689b39eeb0d",
+      "perceptualHash": "1111100111111110111011010110110001100000001110010011000100000001",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Machinery"
+    },
+    {
+      "index": 22,
+      "relativePath": "manufacturing/factory-floor-overview.webp",
+      "publicPath": "/images/manufacturing/factory-floor-overview.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\manufacturing\\factory-floor-overview.webp",
+      "extension": ".webp",
+      "size": 244210,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "069615450f2c7b7b3348ab90346aecd2d3459e2aeceafd202a5f620594b33359",
+      "perceptualHash": "0000000011110000111111111111011011000000000000110001111101111011",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Manufacturing"
+    },
+    {
+      "index": 23,
+      "relativePath": "manufacturing/raw-material-staging.webp",
+      "publicPath": "/images/manufacturing/raw-material-staging.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\manufacturing\\raw-material-staging.webp",
+      "extension": ".webp",
+      "size": 224298,
+      "width": 1537,
+      "height": 1023,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "b21623acdab0aa1cc34f256bfcfa5205b69e8ef714acfe5c78b33267fa15e816",
+      "perceptualHash": "0100000011111000111111111111111110000000000000000000011100010011",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Manufacturing"
+    },
+    {
+      "index": 24,
+      "relativePath": "products/gear-components.webp",
+      "publicPath": "/images/products/gear-components.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\gear-components.webp",
+      "extension": ".webp",
+      "size": 162912,
+      "width": 756,
+      "height": 1008,
+      "aspectRatio": "0.75:1",
+      "format": "webp",
+      "hash": "47c8218633ecb4283a8050e071ecfbfca0b54de7f73982154a3da82d93a5bbad",
+      "perceptualHash": "1111000111100011110001111101100110001011101011110000001100000001",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 25,
+      "relativePath": "products/machined-circular-flange.webp",
+      "publicPath": "/images/products/machined-circular-flange.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\machined-circular-flange.webp",
+      "extension": ".webp",
+      "size": 202430,
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "1.33:1",
+      "format": "webp",
+      "hash": "dcb08b00dcedb8ce22f302f139a4fea21c1d370f94f88c61a84045be8c604138",
+      "perceptualHash": "0011100001111100011111000111110011111000110000001100000011000000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 26,
+      "relativePath": "products/machined-flange-component.webp",
+      "publicPath": "/images/products/machined-flange-component.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\machined-flange-component.webp",
+      "extension": ".webp",
+      "size": 198986,
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "1.33:1",
+      "format": "webp",
+      "hash": "75c9f651d5570be6f2c9fd04eb03b85f3757c2ae291abd93fcddf18ed64dbf61",
+      "perceptualHash": "0110000011111000111111000110110001101100001110000011110000001000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 27,
+      "relativePath": "products/machined-sleeve-components.webp",
+      "publicPath": "/images/products/machined-sleeve-components.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\machined-sleeve-components.webp",
+      "extension": ".webp",
+      "size": 224358,
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "1.33:1",
+      "format": "webp",
+      "hash": "6ef085e546b25b818f265a503e97404db2cc65678b6beddea1b977fbc6a844c2",
+      "perceptualHash": "1110000111111110110110101110100011100000111100001111000011100000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 28,
+      "relativePath": "products/precision-pump-shafts-lineup.webp",
+      "publicPath": "/images/products/precision-pump-shafts-lineup.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\precision-pump-shafts-lineup.webp",
+      "extension": ".webp",
+      "size": 163932,
+      "width": 1200,
+      "height": 1800,
+      "aspectRatio": "0.67:1",
+      "format": "webp",
+      "hash": "8b401dbd5674a96666642f7f30a2b96041e0a97faad246a91babf67406b603a6",
+      "perceptualHash": "1111111111111111111111110000000000000000000000000000110000001000",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 29,
+      "relativePath": "products/pump-shaft-components.webp",
+      "publicPath": "/images/products/pump-shaft-components.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\pump-shaft-components.webp",
+      "extension": ".webp",
+      "size": 197918,
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "0.67:1",
+      "format": "webp",
+      "hash": "87f9ef775f0040ac393eb61ccba271830bb306eebc2503d390bdd95c7b850b9c",
+      "perceptualHash": "0011100000000100000111110011011111110011111100111100001011000000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 30,
+      "relativePath": "products/retainer-bearing-component.webp",
+      "publicPath": "/images/products/retainer-bearing-component.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\products\\retainer-bearing-component.webp",
+      "extension": ".webp",
+      "size": 109040,
+      "width": 864,
+      "height": 1152,
+      "aspectRatio": "0.75:1",
+      "format": "webp",
+      "hash": "ba3620e37df4bbe7e4e60eb6782f503d04e8f0ee645c86ad72ca11858aa5a4c6",
+      "perceptualHash": "0000000000001000001111000010110000111111101111111111111111111111",
+      "usedBy": [
+        "lib/images.ts"
+      ],
+      "section": "Products"
+    },
+    {
+      "index": 31,
+      "relativePath": "projects/large-pump-rotor-assembly.webp",
+      "publicPath": "/images/projects/large-pump-rotor-assembly.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\projects\\large-pump-rotor-assembly.webp",
+      "extension": ".webp",
+      "size": 345900,
+      "width": 1400,
+      "height": 1050,
+      "aspectRatio": "1.33:1",
+      "format": "webp",
+      "hash": "8a89196c075e55bad6a8e5f55c45bf43248e3fbaeafbd8221617b1bc01fb6bdf",
+      "perceptualHash": "0001111100000111000110010111111100111110000000000000001001111100",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Projects"
+    },
+    {
+      "index": 32,
+      "relativePath": "projects/vertical-pump-assembly.webp",
+      "publicPath": "/images/projects/vertical-pump-assembly.webp",
+      "fullPath": "D:\\Project List\\pako-engineers\\public\\images\\projects\\vertical-pump-assembly.webp",
+      "extension": ".webp",
+      "size": 54720,
+      "width": 676,
+      "height": 450,
+      "aspectRatio": "1.50:1",
+      "format": "webp",
+      "hash": "ec0f2688a1631ae264585b8e06e4c5af9776883d17a00280983fffc66e70c226",
+      "perceptualHash": "1111111111101100111111111111111100011000000010000000100011101000",
+      "usedBy": [
+        "lib/images.ts",
+        "lib/images.ts"
+      ],
+      "section": "Projects"
+    }
+  ]
+}

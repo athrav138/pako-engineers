@@ -131,9 +131,9 @@ export default function QualityPage() {
             <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Review our comprehensive Quality Management System (QMS) guidelines, standard operating procedures, and calibration schedules.
             </p>
-            <button className="bg-white text-navy hover:bg-slate-100 font-bold py-4 px-8 rounded-md inline-flex items-center gap-2 transition-colors">
-              <FileDown size={20} /> Get Quality Manual (PDF)
-            </button>
+            <a href="/contact?subject=Quality%20Manual%20Request" className="bg-white text-navy hover:bg-slate-100 font-bold py-4 px-8 rounded-md inline-flex items-center gap-2 transition-colors">
+              <FileDown size={20} /> Request Quality Manual (PDF)
+            </a>
           </div>
         </Container>
       </section>

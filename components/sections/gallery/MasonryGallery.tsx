@@ -11,13 +11,19 @@ const CATEGORIES = ["All", "Factory", "Machines", "Products", "Assembly", "Inspe
 
 const IMAGES = [
   { id: 1, category: "Factory", src: Images.assets.factoryBuildingExterior.src, title: "Main Plant Exterior" },
-  { id: 2, category: "Machines", src: Images.assets.shaftMachiningLathe.src, title: "Heavy Duty CNC Lathe" },
-  { id: 3, category: "Products", src: Images.assets.pumpShaftsAndSleeves.src, title: "Super Duplex Pump Shaft" },
+  { id: 2, category: "Machines", src: Images.assets.galleryMachineShopOverview.src, title: "Machine Shop Overview" },
+  { id: 3, category: "Products", src: Images.assets.galleryFinishedPumpShaft.src, title: "Finished Pump Shaft" },
   { id: 4, category: "Assembly", src: Images.assets.largePumpRotorAssembly.src, title: "Rotor Assembly Line" },
-  { id: 5, category: "Inspection", src: Images.assets.precisionQualityInspection.src, title: "Precision Quality Inspection" },
-  { id: 6, category: "Machines", src: Images.assets.cylindricalGrindingMachine.src, title: "Cylindrical Grinding Machine" },
+  { id: 5, category: "Inspection", src: Images.assets.precisionQualityInspection.src, title: "Lathe Setup Inspection" },
+  { id: 6, category: "Machines", src: Images.assets.galleryGrindingMachineOperator.src, title: "Grinding Machine Operator" },
   { id: 7, category: "Products", src: Images.assets.machinedSleeveComponents.src, title: "Precision Sleeves" },
-  { id: 8, category: "Inspection", src: Images.assets.legacyLatheInspection.src, title: "Lathe Setup Inspection" },
+  { id: 8, category: "Machines", src: Images.assets.galleryLargeBoringMachine.src, title: "Large Boring Machine" },
+  { id: 9, category: "Factory", src: Images.assets.galleryRawMaterialStaging.src, title: "Raw Material Staging" },
+  { id: 10, category: "Machines", src: Images.assets.galleryCncMachineOperator.src, title: "CNC Machine Operator" },
+  { id: 11, category: "Machines", src: Images.assets.galleryEdmMachine.src, title: "EDM Machine" },
+  { id: 12, category: "Machines", src: Images.assets.galleryVmcMachineOperator.src, title: "VMC Machine Operator" },
+  { id: 13, category: "Products", src: Images.assets.gearComponents.src, title: "Machined Gear Components" },
+  { id: 14, category: "Products", src: Images.assets.retainerBearingComponent.src, title: "Retainer Bearing Component" },
 ];
 
 export function MasonryGallery() {

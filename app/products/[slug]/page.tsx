@@ -157,9 +157,9 @@ export default async function ProductDetailPage({
                 <Mail size={18} className="mr-2" /> Contact Engineering
               </Button>
               {primaryDownload && (
-                <Button href={primaryDownload.url} variant="outline" size="lg" className="border-line text-navy hover:border-oxide bg-white">
-                  <FileText size={18} className="mr-2" /> Download Catalogue
-                </Button>
+                <a href={primaryDownload.url} download target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98] border border-line bg-white hover:bg-surface hover:border-oxide text-navy h-14 px-8 text-base rounded-md">
+                  <FileText size={18} className="mr-2" /> Download Datasheet
+                </a>
               )}
             </div>
           </div>
@@ -253,7 +253,7 @@ export default async function ProductDetailPage({
                   <h2 className="font-display text-3xl font-bold text-navy mb-6">Technical Downloads</h2>
                   <div className="space-y-4 mt-8">
                     {product.downloads.map((dl, i) => (
-                      <a key={i} href={dl.url} className="group flex items-center justify-between p-6 border border-line rounded-xl bg-surface hover:border-oxide/50 hover:bg-white shadow-sm transition-all">
+                      <a key={i} href={dl.url} {...(dl.type !== "CAD" ? { download: true, target: "_blank", rel: "noopener noreferrer" } : {})} className="group flex items-center justify-between p-6 border border-line rounded-xl bg-surface hover:border-oxide/50 hover:bg-white shadow-sm transition-all">
                         <div className="flex items-center gap-4">
                           <div className="bg-white border border-line p-3 rounded shadow-sm group-hover:border-oxide/30 transition-colors">
                             <FileDown size={24} className="text-oxide" />

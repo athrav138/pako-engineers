@@ -6,11 +6,6 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
 
-const LEADER_IMAGES = [
-  Images.assets.pakoEngineersBuildingSignageThumb.src,
-  Images.assets.cncOperatorMachineControlThumb.src,
-];
-
 export function LeadershipSection() {
   return (
     <section className="bg-white py-20 lg:py-32">
@@ -34,13 +29,13 @@ export function LeadershipSection() {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               className="group"
             >
-              <div className="relative mb-8 aspect-square overflow-hidden rounded-2xl bg-surface">
+              <div className="relative mb-8 aspect-[3/4] overflow-hidden rounded-2xl bg-surface">
                 <Image
-                  src={LEADER_IMAGES[i] ?? LEADER_IMAGES[0] ?? Images.assets.cncTurningHero.src}
+                  src={leader.image}
                   alt={`${leader.name} - ${leader.role} at Pako Engineers`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
               </div>

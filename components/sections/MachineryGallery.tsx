@@ -23,7 +23,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "2 Microns",
     applications: "Complex Housings, Impellers, Keyways",
-    image: Images.assets.machineOperatorLatheThumb.src,
+    image: Images.assets.galleryVmcMachineOperator.src,
   },
   {
     name: "Cylindrical Grinding Machine",
@@ -32,16 +32,16 @@ const MACHINES = [
     maxLength: "2000 mm",
     tolerance: "1 Micron",
     applications: "Bearing Areas, Seal Fits, Precision Sleeves",
-    image: Images.assets.surfaceGrindingMachine.src,
+    image: Images.assets.cylindricalGrindingMachine.src,
   },
   {
     name: "Wire Cut EDM",
-    manufacturer: "Sodick AG Series",
+    manufacturer: "Ratnaparkhi EZEECUT NC",
     maxDiameter: "N/A",
     maxLength: "N/A",
     tolerance: "1 Micron",
     applications: "Splines, Special Keyways, Exotic Alloy Profiles",
-    image: Images.assets.longShaftMachiningLathe.src,
+    image: Images.assets.edmMachine.src,
   }
 ];
 

@@ -102,9 +102,9 @@ export default function CertificationsPage() {
                 </p>
               </div>
 
-              <button className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-surface transition-colors w-full justify-center relative z-10">
+              <a href="/contact?subject=ISO%20Certificate%20Request" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-surface transition-colors w-full justify-center relative z-10">
                 <Download size={18} /> Request Certificate PDF
-              </button>
+              </a>
             </div>
             
           </div>

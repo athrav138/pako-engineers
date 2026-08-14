@@ -114,7 +114,7 @@ export default function AboutPage() {
                 Pako Engineers is an {company.certification} certified manufacturer and exporter of precision machined components based in Sangli, Maharashtra. We specialize in pump shafts, sleeves, couplings, impellers, lock nuts, retainer rings, Thordon bearings, gears, and complete pump assemblies in all materials of construction.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
-                Our core strength lies in heavy-duty CNC turning, precision grinding, and wire-cut EDM machining for pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East, and North America. With machining capacity up to 1500 mm diameter and 8,000 mm length, we handle some of the largest pump components in the industry.
+                Our core strength lies in heavy-duty CNC turning, precision grinding, and wire-cut EDM machining for pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East, and North America. With machining capacity up to 500 mm diameter and 6,000 mm length, we handle precision-engineered pump components in the industry.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted">
                 Backed by a dedicated team of {company.workforce.total} professionals — including engineers, quality control specialists, CNC programmers, and skilled machinists — we maintain a zero-defect philosophy that has earned the trust of global corporations like Flowserve, EBARA, TMEIC, DMW Corporation, and Valmet.
@@ -145,8 +145,8 @@ export default function AboutPage() {
           { value: company.yearsInBusiness, suffix: "+", label: "Years Experience" },
           { value: company.exportCountries.length, suffix: "+", label: "Countries Served" },
           { value: company.workforce.total, label: "Team Members" },
-          { value: 1500, suffix: "mm", label: "Max Turning Dia" },
-          { value: 8000, suffix: "mm", label: "Max Length" },
+          { value: 500, suffix: "mm", label: "Max Shaft Dia" },
+          { value: 6000, suffix: "mm", label: "Max Shaft Length" },
           { value: 500, suffix: "+", label: "Satisfied Clients" },
         ]}
       />
@@ -172,13 +172,25 @@ export default function AboutPage() {
               <div className="space-y-6">
                 {company.leadership.map((leader) => (
                   <div key={leader.name} className="flex items-start gap-5 rounded-xl border border-line bg-surface p-6">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy text-white font-bold text-xl">
-                      {leader.name.split(" ").slice(-1)[0]?.[0] ?? "P"}
+                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-line bg-navy/5">
+                      {leader.image ? (
+                        <Image
+                          src={leader.image}
+                          alt={leader.name}
+                          fill
+                          sizes="80px"
+                          className="object-cover object-top"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-navy text-white font-bold text-xl">
+                          {leader.name.split(" ").slice(-1)[0]?.[0] ?? "P"}
+                        </div>
+                      )}
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-bold text-navy">{leader.name}</h3>
                       <p className="text-sm text-oxide font-semibold">{leader.role}</p>
-                      <a href={`tel:${leader.phone}`} className="mt-1 text-sm text-ink-muted hover:text-navy transition-colors">
+                      <a href={`tel:${leader.phone}`} className="mt-1 block text-sm text-ink-muted hover:text-navy transition-colors">
                         {leader.phone}
                       </a>
                     </div>

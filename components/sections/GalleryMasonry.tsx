@@ -6,12 +6,12 @@ import { Maximize2 } from "lucide-react";
 
 // Real factory photographs from public/images
 const GALLERY_ITEMS = [
-  { id: 1, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.largePumpRotorAssemblyThumb.src },
+  { id: 1, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.largePumpRotorAssembly.src },
   { id: 2, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: Images.assets.shaftMachiningLathe.src },
-  { id: 3, span: "col-span-1 row-span-1", category: "Factory", src: Images.assets.factoryEntranceSignageThumb.src },
-  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: Images.assets.longBedTurningLatheThumb.src },
-  { id: 5, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.verticalPumpAssemblyThumb.src },
-  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Machinery", src: Images.assets.machineOperatorLatheThumb.src },
+  { id: 3, span: "col-span-1 row-span-1", category: "Factory", src: Images.assets.factoryBuildingExterior.src },
+  { id: 4, span: "col-span-1 row-span-2 md:col-span-2", category: "Machinery", src: Images.assets.longBedTurningLathe.src },
+  { id: 5, span: "col-span-1 row-span-1", category: "Assembly", src: Images.assets.verticalPumpAssembly.src },
+  { id: 6, span: "col-span-1 row-span-1 md:col-span-2", category: "Machinery", src: Images.assets.cncOperatorMachineControlThumb.src },
 ];
 
 export function GalleryMasonry() {

@@ -21,7 +21,7 @@ export function HomeHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src={Images.assets.cncTurningHero.src}
-          alt="CNC precision machining at Pako Engineers factory"
+          alt={Images.assets.cncTurningHero.alt}
           fill
           priority
           quality={90}

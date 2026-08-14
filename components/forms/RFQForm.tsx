@@ -82,12 +82,12 @@ export function RFQForm() {
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Company Name *</label>
-                <Input {...register("companyName")} placeholder="OEM Engineering Ltd" />
+                <Input {...register("companyName")} placeholder="e.g. Apex Rotating Equipment Corp." />
                 {errors.companyName && <p className="text-xs text-red-500">{errors.companyName.message}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Contact Name *</label>
-                <Input {...register("contactName")} placeholder="John Smith" />
+                <Input {...register("contactName")} placeholder="e.g. Michael Vance" />
                 {errors.contactName && <p className="text-xs text-red-500">{errors.contactName.message}</p>}
               </div>
             </div>
@@ -95,12 +95,12 @@ export function RFQForm() {
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Email Address *</label>
-                <Input type="email" {...register("email")} placeholder="john@oem.com" />
+                <Input type="email" {...register("email")} placeholder="procurement@company.com" />
                 {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Phone Number *</label>
-                <Input type="tel" {...register("phone")} placeholder="+1 234 567 8900" />
+                <Input type="tel" {...register("phone")} placeholder="+1 (555) 019-2834" />
                 {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
               </div>
             </div>

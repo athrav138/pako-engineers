@@ -3,17 +3,57 @@ import { Container } from "@/components/ui/Container";
 import { CTABand } from "@/components/sections/CTABand";
 import { ArrowRight, Trophy } from "lucide-react";
 
+import { company, clients as officialClients } from "@/lib/content/company";
+
 export const metadata: Metadata = {
   title: "Our Clients & Global Reach | Pako Engineers",
-  description: "Trusted by OEMs, industrial manufacturers, and global engineering companies worldwide.",
+  description: "Trusted by global pump OEMs and rotating equipment manufacturers worldwide.",
   alternates: { canonical: "/clients" },
 };
 
 const FEATURED_CLIENTS = [
-  { name: "Global Pump OEM", industry: "Fluid Handling", country: "Germany", projects: "150+", years: 12 },
-  { name: "Marine Systems Corp", industry: "Marine", country: "Netherlands", projects: "45", years: 8 },
-  { name: "PetroTech Industries", industry: "Oil & Gas", country: "Saudi Arabia", projects: "200+", years: 15 },
-  { name: "AgriFlow", industry: "Agriculture", country: "USA", projects: "80", years: 5 }
+  { 
+    name: "Flowserve Corporation", 
+    industry: "Fluid Motion & Control", 
+    country: "USA / Global", 
+    contacts: "Mr. Fabrizio Baccani (Dir. Mfg), Mr. Jayakumar Jagadeeshan (Supply Chain)",
+    role: "Precision Pump Component Partner"
+  },
+  { 
+    name: "Ebara Machinery India Private Limited", 
+    industry: "Turbomachinery & Pumps", 
+    country: "Japan / India", 
+    contacts: "Mr. Hiroshi Suzuki (Director), Mr. Yusuke Chikamori (Procurement)",
+    role: "Precision Shaft & Assembly Supplier"
+  },
+  { 
+    name: "TMEIC", 
+    industry: "Industrial Electric & Rotating Systems", 
+    country: "Japan / India", 
+    contacts: "Mr. Katsuki Manabu (Japanese Expert), Mr. Sailesh H. Puranik (Head, SCM)",
+    role: "Precision Machined Rotating Parts"
+  },
+  { 
+    name: "DMW Corporation Ltd.", 
+    industry: "Pumps & Fans", 
+    country: "Japan / Pune", 
+    contacts: "Mr. Taizo Kobayashi (Japan), Mr. Ashok Yadav (Factory Mgr), Mr. Gajanan Lokhande (QA)",
+    role: "Machining & Quality Approved Partner"
+  },
+  { 
+    name: "Valmet, Sweden", 
+    industry: "Process Technology & Industrial Equipment", 
+    country: "Sweden", 
+    contacts: "Industrial Engineering & QA Team",
+    role: "International Supply Partner"
+  },
+  { 
+    name: "NASH", 
+    industry: "Liquid Ring Vacuum Pumps & Compressors", 
+    country: "South Korea / Global", 
+    contacts: "Korean Quality Expert Inspection Team",
+    role: "Customer Inspection & Quality Verified"
+  },
 ];
 
 export default function ClientsPage() {
@@ -30,7 +70,7 @@ export default function ClientsPage() {
             Trusted by Industry Leaders Worldwide
           </h1>
           <p className="max-w-2xl text-lg text-white/80">
-            Serving OEMs, Industrial Manufacturers, Pump Manufacturers, Engineering Companies, and Global Clients across 20+ countries.
+            Serving global pump OEMs and rotating equipment manufacturers across {company.exportCountries.length} export countries.
           </p>
         </Container>
       </section>
@@ -38,19 +78,21 @@ export default function ClientsPage() {
       {/* Global Reach Section */}
       <section className="bg-white py-12 border-b border-line overflow-hidden">
          <Container>
-           <p className="text-center text-sm font-semibold uppercase tracking-wider text-ink-muted mb-8">Exporting to 20+ Countries including USA, Germany, Japan, and UAE</p>
+           <p className="text-center text-sm font-semibold uppercase tracking-wider text-ink-muted mb-8">
+             Exporting Worldwide: {company.exportCountries.join(" • ")}
+           </p>
          </Container>
       </section>
 
       {/* Featured Clients */}
-      <section className="bg-background-light py-20 lg:py-32">
+      <section className="bg-background-light py-20 lg:py-28">
         <Container>
           <div className="mb-12">
-             <h2 className="font-display text-3xl font-bold text-navy mb-4">Strategic Partnerships</h2>
-             <p className="text-ink-muted">Long-term associations built on zero-defect manufacturing and on-time delivery.</p>
+             <h2 className="font-display text-3xl font-bold text-navy mb-4">Customer Relationships & Visits</h2>
+             <p className="text-ink-muted">Established customer visits, technical evaluations, and long-term industrial manufacturing associations.</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURED_CLIENTS.map((client) => (
               <div key={client.name} className="group rounded-xl border border-line bg-white p-6 shadow-sm transition-shadow hover:shadow-raised">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-navy/5 text-navy">
@@ -59,21 +101,16 @@ export default function ClientsPage() {
                 <h3 className="mb-1 font-display text-xl font-bold text-navy">{client.name}</h3>
                 <p className="mb-4 text-sm font-medium text-oxide">{client.industry} &bull; {client.country}</p>
                 
-                <div className="space-y-2 text-sm text-ink-muted mb-6">
-                  <div className="flex justify-between border-b border-line pb-1">
-                    <span>Projects:</span>
-                    <span className="font-semibold text-navy">{client.projects}</span>
+                <div className="space-y-2 text-sm text-ink-muted mb-4">
+                  <div className="border-t border-line pt-2">
+                    <span className="font-semibold text-navy block mb-1">Key Personnel / Delegation:</span>
+                    <span className="text-xs text-ink">{client.contacts}</span>
                   </div>
-                  <div className="flex justify-between border-b border-line pb-1">
-                    <span>Association:</span>
-                    <span className="font-semibold text-navy">{client.years} Years</span>
+                  <div className="border-t border-line pt-2">
+                    <span className="font-semibold text-navy block mb-1">Relationship:</span>
+                    <span className="text-xs text-ink-muted">{client.role}</span>
                   </div>
                 </div>
-
-                <button className="flex w-full items-center justify-center gap-2 rounded-md border border-line py-2 text-sm font-semibold text-navy transition-colors hover:bg-surface">
-                  Success Story
-                  <ArrowRight size={16} />
-                </button>
               </div>
             ))}
           </div>

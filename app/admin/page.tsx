@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
-export default function AdminDashboardPage() {
-  redirect("/");
+export default function AdminPage() {
+  notFound();
 }
-

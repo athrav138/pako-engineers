@@ -1,0 +1,402 @@
+{
+  "created": [
+    {
+      "path": "logos/pako-engineers-logo.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 1133890
+    },
+    {
+      "path": "company/leadership/ceo-sudarshan-khot.webp",
+      "width": 900,
+      "height": 1350,
+      "size": 171018
+    },
+    {
+      "path": "company/leadership/md-suhas-khot.webp",
+      "width": 900,
+      "height": 1350,
+      "size": 142158
+    },
+    {
+      "path": "company/factory-building-exterior.webp",
+      "width": 1080,
+      "height": 684,
+      "size": 97592
+    },
+    {
+      "path": "company/factory-entrance-signage.webp",
+      "width": 360,
+      "height": 360,
+      "size": 16258
+    },
+    {
+      "path": "company/pako-engineers-building-signage.webp",
+      "width": 250,
+      "height": 250,
+      "size": 10506
+    },
+    {
+      "path": "hero/homepage-hero.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 230360
+    },
+    {
+      "path": "manufacturing/factory-floor-overview.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 244210
+    },
+    {
+      "path": "manufacturing/raw-material-staging.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 224298
+    },
+    {
+      "path": "manufacturing/long-shaft-machining-line.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 253952
+    },
+    {
+      "path": "manufacturing/finished-shaft-shop-floor.webp",
+      "width": 1023,
+      "height": 1537,
+      "size": 197918
+    },
+    {
+      "path": "machines/cnc-lathe-operator.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 66022
+    },
+    {
+      "path": "machines/cylindrical-grinding-machine.webp",
+      "width": 1600,
+      "height": 1067,
+      "size": 180350
+    },
+    {
+      "path": "machines/heavy-duty-engine-lathe.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 251014
+    },
+    {
+      "path": "machines/heavy-duty-lathe-bed.webp",
+      "width": 1600,
+      "height": 1067,
+      "size": 70316
+    },
+    {
+      "path": "machines/lathe-setup-inspection.webp",
+      "width": 1400,
+      "height": 932,
+      "size": 113290
+    },
+    {
+      "path": "machines/long-bed-turning-lathe.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 132104
+    },
+    {
+      "path": "machines/long-shaft-machining-lathe.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 253952
+    },
+    {
+      "path": "machines/machine-operator-lathe.webp",
+      "width": 1400,
+      "height": 933,
+      "size": 109514
+    },
+    {
+      "path": "machines/shaft-machining-lathe.webp",
+      "width": 1537,
+      "height": 1023,
+      "size": 244770
+    },
+    {
+      "path": "machines/surface-grinding-machine.webp",
+      "width": 1600,
+      "height": 1067,
+      "size": 135596
+    },
+    {
+      "path": "machines/edm-machine.webp",
+      "width": 1400,
+      "height": 932,
+      "size": 115226
+    },
+    {
+      "path": "products/pump-shaft-components.webp",
+      "width": 1023,
+      "height": 1537,
+      "size": 197918
+    },
+    {
+      "path": "products/precision-pump-shafts-lineup.webp",
+      "width": 1200,
+      "height": 1800,
+      "size": 163932
+    },
+    {
+      "path": "products/machined-sleeve-components.webp",
+      "width": 1200,
+      "height": 900,
+      "size": 224358
+    },
+    {
+      "path": "products/machined-flange-component.webp",
+      "width": 1200,
+      "height": 900,
+      "size": 198986
+    },
+    {
+      "path": "products/machined-circular-flange.webp",
+      "width": 1200,
+      "height": 900,
+      "size": 202430
+    },
+    {
+      "path": "products/gear-components.webp",
+      "width": 756,
+      "height": 1008,
+      "size": 162912
+    },
+    {
+      "path": "products/retainer-bearing-component.webp",
+      "width": 864,
+      "height": 1152,
+      "size": 109040
+    },
+    {
+      "path": "projects/large-pump-rotor-assembly.webp",
+      "width": 1400,
+      "height": 1050,
+      "size": 345900
+    },
+    {
+      "path": "projects/vertical-pump-assembly.webp",
+      "width": 676,
+      "height": 450,
+      "size": 54720
+    },
+    {
+      "path": "quality/machine-setup-inspection.webp",
+      "width": 1400,
+      "height": 932,
+      "size": 113290
+    },
+    {
+      "path": "gallery/lathe-operator.webp",
+      "width": 1200,
+      "height": 800,
+      "size": 90800
+    },
+    {
+      "path": "gallery/turning-machine-side-view.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 112782
+    },
+    {
+      "path": "gallery/grinding-machine-operator.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 135366
+    },
+    {
+      "path": "gallery/large-boring-machine.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 180738
+    },
+    {
+      "path": "gallery/shaft-machining-operation.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 160554
+    },
+    {
+      "path": "gallery/edm-machine.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 89020
+    },
+    {
+      "path": "gallery/raw-material-staging.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 145820
+    },
+    {
+      "path": "gallery/machine-shop-overview.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 160834
+    },
+    {
+      "path": "gallery/heavy-lathe-aisle.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 147300
+    },
+    {
+      "path": "gallery/cnc-machine-operator.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 66022
+    },
+    {
+      "path": "gallery/vmc-machine-operator.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 91574
+    },
+    {
+      "path": "gallery/long-shaft-machining.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 165992
+    },
+    {
+      "path": "gallery/finished-pump-shaft.webp",
+      "width": 1023,
+      "height": 1537,
+      "size": 187808
+    },
+    {
+      "path": "gallery/factory-floor-raw-materials.webp",
+      "width": 1200,
+      "height": 799,
+      "size": 152578
+    }
+  ],
+  "removed": [
+    "gallery/23.webp",
+    "gallery/3.webp",
+    "gallery/4.webp",
+    "gallery/5.webp",
+    "gallery/6.webp",
+    "gallery/7.webp",
+    "gallery/8.webp",
+    "gallery/9.webp",
+    "gallery/ppt-profile/pako-profile-media-01.jpeg",
+    "gallery/ppt-profile/pako-profile-media-02.png",
+    "gallery/ppt-profile/pako-profile-media-03.jpeg",
+    "gallery/ppt-profile/pako-profile-media-04.png",
+    "gallery/ppt-profile/pako-profile-media-05.png",
+    "gallery/ppt-profile/pako-profile-media-06.jpeg",
+    "gallery/ppt-profile/pako-profile-media-07.jpg",
+    "gallery/ppt-profile/pako-profile-media-08.jpeg",
+    "gallery/ppt-profile/pako-profile-media-09.jpeg",
+    "gallery/ppt-profile/pako-profile-media-10.jpeg",
+    "gallery/ppt-profile/pako-profile-media-11.jpeg",
+    "gallery/ppt-profile/pako-profile-media-12.png",
+    "gallery/ppt-profile/pako-profile-media-13.png",
+    "gallery/ppt-profile/pako-profile-media-14.png",
+    "gallery/ppt-profile/pako-profile-media-15.wdp",
+    "gallery/ppt-profile/pako-profile-media-16.png",
+    "gallery/ppt-profile/pako-profile-media-17.jpeg",
+    "gallery/ppt-profile/pako-profile-media-18.jpeg",
+    "gallery/ppt-profile/pako-profile-media-19.jpeg",
+    "gallery/ppt-profile/pako-profile-media-20.wdp",
+    "gallery/ppt-profile/pako-profile-media-21.png",
+    "gallery/ppt-profile/pako-profile-media-22.jpeg",
+    "gallery/ppt-profile/pako-profile-media-23.jpeg",
+    "gallery/ppt-profile/pako-profile-media-24.jpeg",
+    "gallery/ppt-profile/pako-profile-media-25.jpg",
+    "gallery/ppt-profile/pako-profile-media-26.jpg",
+    "gallery/ppt-profile/pako-profile-media-27.jpg",
+    "gallery/ppt-profile/pako-profile-media-28.jpeg",
+    "gallery/ppt-profile/pako-profile-media-29.jpeg",
+    "gallery/ppt-profile/pako-profile-media-30.jpeg",
+    "gallery/ppt-profile/pako-profile-media-31.jpeg",
+    "gallery/ppt-profile/pako-profile-media-32.jpg",
+    "gallery/ppt-profile/pako-profile-media-33.jpeg",
+    "gallery/ppt-profile/pako-profile-media-34.jpeg",
+    "gallery/ppt-profile/pako-profile-media-35.jpeg",
+    "gallery/ppt-profile/pako-profile-media-36.wdp",
+    "gallery/ppt-profile/pako-profile-media-37.png",
+    "gallery/ppt-profile/pako-profile-media-38.jpg",
+    "gallery/ppt-profile/pako-profile-media-39.jpeg",
+    "gallery/ppt-profile/pako-profile-media-40.jpeg",
+    "gallery/ppt-profile/pako-profile-media-41.png",
+    "gallery/ppt-profile/pako-profile-media-42.png",
+    "gallery/ppt-profile/pako-profile-media-43.png",
+    "gallery/ppt-profile/pako-profile-media-44.png",
+    "gallery/ppt-profile/pako-profile-media-45.png",
+    "gallery/ppt-profile/pako-profile-media-46.jpeg",
+    "gallery/ppt-profile/pako-profile-media-47.png",
+    "gallery/ppt-profile/pako-profile-media-48.png",
+    "gallery/ppt-profile/pako-profile-media-49.jpeg",
+    "gallery/ppt-profile/pako-profile-media-50.jpeg",
+    "gallery/ppt-profile/pako-profile-media-51.png",
+    "gallery/ppt-profile/pako-profile-media-52.jpeg",
+    "gallery/ppt-profile/pako-profile-media-53.png",
+    "gallery/ppt-profile/pako-profile-media-54.jpeg",
+    "gallery/ppt-profile/pako-profile-media-55.jpeg",
+    "gallery/ppt-profile/pako-profile-media-56.png",
+    "gallery/ppt-profile/pako-profile-media-57.jpeg",
+    "gallery/ppt-profile/pako-profile-media-58.png",
+    "gallery/ppt-profile/pako-profile-media-59.jpeg",
+    "gallery/ppt-profile/pako-profile-media-60.jpeg",
+    "gallery/ppt-profile/pako-profile-media-61.jpeg",
+    "gallery/ppt-profile/pako-profile-media-62.jpeg",
+    "gallery/ppt-profile/pako-profile-media-63.jpeg",
+    "gallery/ppt-profile/pako-profile-media-64.jpeg",
+    "gallery/ppt-profile/pako-profile-media-65.jpeg",
+    "gallery/ppt-profile/pako-profile-media-66.png",
+    "gallery/ppt-profile/pako-profile-media-67.png",
+    "gallery/ppt-profile/pako-profile-media-68.jpeg",
+    "hero/cnc-turning-hero.png",
+    "Machine Photos/10_1.webp",
+    "Machine Photos/11_1.webp",
+    "Machine Photos/12_1.webp",
+    "Machine Photos/13_1.webp",
+    "Machine Photos/14_1.webp",
+    "Machine Photos/15_1.webp",
+    "Machine Photos/16_1.webp",
+    "Machine Photos/1_1.webp",
+    "Machine Photos/2_1.webp",
+    "Machine Photos/3_1.webp",
+    "Machine Photos/4_1.webp",
+    "Machine Photos/5_1.webp",
+    "Machine Photos/6_1.webp",
+    "Machine Photos/7_1.webp",
+    "Machine Photos/8_1.webp",
+    "Machine Photos/9_1.webp",
+    "machines/cnc-operator-machine-control-thumb.avif",
+    "machines/cylindrical-grinding-machine.avif",
+    "machines/heavy-duty-engine-lathe.avif",
+    "machines/heavy-duty-lathe-bed.avif",
+    "machines/legacy-lathe-inspection-thumb.avif",
+    "machines/legacy-lathe-inspection.avif",
+    "machines/long-bed-turning-lathe-thumb.avif",
+    "machines/long-bed-turning-lathe.avif",
+    "machines/long-shaft-machining-lathe.avif",
+    "machines/machine-operator-lathe-thumb.avif",
+    "machines/shaft-machining-lathe.avif",
+    "machines/surface-grinding-machine.jpg",
+    "manufacturing/modern-factory-floor-overview.png",
+    "products/machined-circular-flange.avif",
+    "products/machined-flange-component.jpg",
+    "products/machined-sleeve-components.avif",
+    "products/precision-pump-shafts-lineup.avif",
+    "products/pump-shafts-and-sleeves.png",
+    "projects/large-pump-rotor-assembly-thumb.avif",
+    "projects/large-pump-rotor-assembly.avif",
+    "projects/vertical-pump-assembly-thumb.avif",
+    "projects/vertical-pump-assembly.jpg",
+    "quality/precision-quality-inspection.png"
+  ],
+  "deleteSkipped": [
+    "gallery/20.webp",
+    "gallery/22.webp"
+  ]
+}

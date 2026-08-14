@@ -16,7 +16,7 @@ function MultiStepRFQForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const searchParams = useSearchParams();
-  const initialProduct = searchParams.get("product") || "";
+  const initialProduct = searchParams.get("product") || searchParams.get("service") || "";
 
   const [formData, setFormData] = useState({
     companyName: "",
@@ -44,6 +44,19 @@ function MultiStepRFQForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!formData.companyName || !formData.country || !formData.contactName || 
+        !formData.email || !formData.phone || !formData.product || !formData.material || !formData.quantity) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       const payload = new FormData();
@@ -61,10 +74,13 @@ function MultiStepRFQForm() {
       if (formData.drawing) payload.append("drawing", formData.drawing);
 
       const response = await fetch("/api/rfq", { method: "POST", body: payload });
-      if (!response.ok) throw new Error("RFQ submission failed");
+      const result = await response.json();
+      
+      if (!response.ok) throw new Error(result.error || "RFQ submission failed");
       setIsSuccess(true);
     } catch (error) {
       console.error(error);
+      alert(error instanceof Error ? error.message : "Failed to submit RFQ. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -146,21 +162,21 @@ function MultiStepRFQForm() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Full Name *</label>
-                      <Input placeholder="John Smith" value={formData.contactName} onChange={(e) => setFormData({ ...formData, contactName: e.target.value })} required />
+                      <Input placeholder="e.g. Michael Vance" value={formData.contactName} onChange={(e) => setFormData({ ...formData, contactName: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Designation</label>
-                      <Input placeholder="Procurement Manager" value={formData.designation} onChange={(e) => setFormData({ ...formData, designation: e.target.value })} />
+                      <Input placeholder="e.g. Head of Procurement" value={formData.designation} onChange={(e) => setFormData({ ...formData, designation: e.target.value })} />
                     </div>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Business Email *</label>
-                      <Input type="email" placeholder="john@oem.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
+                      <Input type="email" placeholder="procurement@company.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-navy">Phone Number *</label>
-                      <Input type="tel" placeholder="+1 234 567 8900" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
+                      <Input type="tel" placeholder="+1 (555) 019-2834" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
                     </div>
                   </div>
                 </div>

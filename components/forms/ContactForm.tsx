@@ -15,7 +15,6 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(8, "Phone is required"),
   country: z.string().min(2, "Country is required"),
-  industry: z.string().optional(),
   subject: z.string().min(3, "Subject is required"),
   message: z.string().min(10, "Message is required"),
   consent: z.literal(true, {
@@ -41,12 +40,23 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call for lead management
-      await new Promise(resolve => setTimeout(resolve, 1500)); 
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit form");
+      }
+
       setIsSuccess(true);
       reset();
     } catch (error) {
-      console.error(error);
+      console.error("Contact form submission error:", error);
+      alert(error instanceof Error ? error.message : "Failed to submit form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -84,24 +94,24 @@ export function ContactForm() {
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Name *</label>
-                <Input {...register("name")} placeholder="John Doe" />
+                <Input {...register("name")} placeholder="e.g. Rahul Sharma" />
                 {errors.name && <p className="text-xs text-red-500">{errors.name.message}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Company</label>
-                <Input {...register("company")} placeholder="OEM Inc." />
+                <Input {...register("company")} placeholder="e.g. Flowtech Industries" />
               </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Email *</label>
-                <Input type="email" {...register("email")} placeholder="john@example.com" />
+                <Input type="email" {...register("email")} placeholder="procurement@company.com" />
                 {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-navy">Phone *</label>
-                <Input type="tel" {...register("phone")} placeholder="+1 234 567 890" />
+                <Input type="tel" {...register("phone")} placeholder="+91 98765 43210" />
                 {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
               </div>
             </div>

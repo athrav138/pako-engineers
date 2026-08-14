@@ -30,10 +30,10 @@ const CAPABILITIES: CapabilitySpec[] = [
     id: "turning",
     title: "CNC Turning & Machining",
     description: "Shaft, flange and concrete shaft machining supported by massive CNC lathe capacity for long precision components.",
-    capacity: "50 mm - 1500 mm dia., up to 8,000 mm length",
+    capacity: "Up to 500 mm dia., up to 6,000 mm length",
     image: Images.assets.cncTurningHero.src,
     details: {
-      dimensions: "50 mm – 1500 mm Outer Diameter, 0.5 m – 8.0 m Length (CNC Lathes up to 10,000 mm length capacity)",
+      dimensions: "Up to 500 mm Outer Diameter, up to 6.0 m Length",
       tolerances: "Sub-micron accuracy down to 10 – 50 microns depending on component profile",
       machines: [
         "Heavy-Duty CNC Lathes (10,000 mm bed capacity)",
@@ -64,10 +64,10 @@ const CAPABILITIES: CapabilitySpec[] = [
     id: "grinding",
     title: "Cylindrical Grinding",
     description: "High-precision grinding capability for shafts, sleeves, couplings and bushes with extensive internal and outer diameter support.",
-    capacity: "50 mm - 800 mm dia., up to 6,500 mm length",
+    capacity: "Up to 500 mm dia., up to 6,000 mm length",
     image: Images.assets.precisionQualityInspection.src,
     details: {
-      dimensions: "Outer Diameter: 50 mm – 800 mm up to 6,500 mm length; Internal Diameter: 50 mm – 500 mm up to 1,000 mm length",
+      dimensions: "Outer Diameter: Up to 500 mm, up to 6,000 mm length; Internal Diameter: 50 mm – 500 mm up to 1,000 mm length",
       tolerances: "Micro-smooth surface finish down to Ra 0.2 microns with strict roundness control",
       machines: [
         "CNC Cylindrical Grinding Machines",
@@ -212,7 +212,7 @@ export function CapabilitiesSection() {
                     <ArrowRight size={18} className="ml-2 transition-transform group-hover/btn:translate-x-1" />
                   </button>
                   <Link
-                    href={`/capabilities#${cap.id}`}
+                    href={`/services#${cap.id === "turning" ? "cnc-turning" : cap.id === "grinding" ? "cnc-grinding" : cap.id}`}
                     className="text-xs font-medium text-ink-muted hover:text-navy underline transition-colors"
                   >
                     Full details page &rarr;

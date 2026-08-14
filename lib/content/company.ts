@@ -1,4 +1,5 @@
 import { Images } from "@/lib/images";
+
 export const company = {
   name: "Pako Engineers",
   legalName: "Pako Engineers",
@@ -9,13 +10,23 @@ export const company = {
   yearsInBusiness: new Date().getFullYear() - 1994,
   certification: "ISO 9001:2015",
   address: {
-    line1: "Gat No. 453, M. No. 1230, Palus Colony, Kirloskar Wadi Road",
-    line2: "Burli, Tal - Palus, Sangli-416308, Maharashtra, India",
-    full: "Gat No. 453, M. No. 1230, Palus Colony, Kirloskar Wadi Road, Burli, Tal - Palus, Sangli-416308, Maharashtra, India",
+    line1: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road",
+    line2: "Burli, Taluka Palus, District Sangli - 416308, Maharashtra, India",
+    full: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road, Burli, Taluka Palus, District Sangli - 416308, Maharashtra, India",
   },
   leadership: [
-    { name: "Mr. Sudarshan Khot", role: "Chief Executive Officer", phone: "+91-9921854252" },
-    { name: "Mr. Suhas Khot", role: "Managing Director", phone: "+91-9860269972" },
+    {
+      name: "Mr. Sudarshan Khot",
+      role: "Chief Executive Officer",
+      phone: "+91 99218 54252",
+      image: Images.assets.ceoSudarshan.src,
+    },
+    {
+      name: "Mr. Suhas Khot",
+      role: "Managing Director",
+      phone: "+91 98602 69972",
+      image: Images.assets.mdSuhas.src,
+    },
   ],
   organizationChart: [
     {
@@ -28,21 +39,26 @@ export const company = {
     {
       department: "Production",
       members: [
-        { name: "Mr. Yogesh Mangave", role: "In House" },
-        { name: "Mr. Amit Pawar", role: "Out Source" },
+        { name: "Mr. Tejas Surve", role: "Production" },
+        { name: "Mr. Suhas Khot", role: "Production" },
       ],
     },
     {
-      department: "Quality",
+      department: "In-House Activities",
       members: [
-        { name: "Mr. Tejas Surve", role: "Quality" },
-        { name: "Mr. Suhas Khot", role: "Quality" },
+        { name: "Mr. Yogesh Mangave", role: "In-House" },
       ],
     },
     {
-      department: "Account",
+      department: "Outsourcing Activities",
       members: [
-        { name: "Mr. Dipak Bobade", role: "Account" },
+        { name: "Mr. Amit Pawar", role: "Out-Source" },
+      ],
+    },
+    {
+      department: "Accounts",
+      members: [
+        { name: "Mr. Dipak Bobade", role: "Accounts" },
       ],
     },
   ],
@@ -90,13 +106,13 @@ export const company = {
     "Saudi Arabia",
   ],
   contact: {
-    phone: "09860269972",
+    phone: "+91 98602 69972",
     email: "sales@pakoshaft.com",
-    whatsapp: "+919921854252",
-    mapQuery: "Pako Engineers, Burli, Tal - Palus, Sangli, Maharashtra 416308",
+    whatsapp: "+91 99218 54252",
+    mapQuery: "Pako Engineers, Burli, Taluka Palus, District Sangli, Maharashtra 416308",
   },
   businessHours: {
-    open: "Wednesday - Monday: 10:00 AM - 6:00 PM",
+    open: "Wednesday - Monday: 9:00 AM - 6:00 PM",
     closed: "Tuesday",
   },
   links: {
@@ -117,11 +133,12 @@ export const companyProfileDocument = {
 } as const;
 
 export const materials = [
-  "Stainless Steel (SS304, SS316, 410, 410T)",
-  "Duplex & Super Duplex",
-  "Nitronic 50",
-  "EN-Series Steels",
-  "K-Monel 400 / 500",
+  "EN8",
+  "SS304",
+  "SS316",
+  "SS410",
+  "SS410T",
+  "K-MONEL 500",
 ] as const;
 
 export const bushMaterials = [
@@ -134,44 +151,36 @@ export const bushMaterials = [
 
 export const machiningCapacity = [
   {
-    process: "Flange / Concrete Shaft Machining",
-    range: "50 mm - 1500 mm diameter, up to 8,000 mm length",
-  },
-  {
-    process: "Flange / Concrete Shaft Grinding",
-    range: "50 mm - 800 mm diameter, up to 6,500 mm length",
-  },
-  {
     process: "Shaft Machining",
-    range: "50 mm - 1500 mm diameter, 0.5 mtr - 8 mtr length (up to 8000 mm)",
+    range: "Up to 500 mm diameter, up to 6000 mm length",
   },
   {
     process: "Shaft Grinding",
-    range: "50 mm - 800 mm diameter, up to 6,500 mm length",
+    range: "Up to 500 mm diameter, up to 6000 mm length",
   },
   {
     process: "CNC Lathe",
-    range: "Up to 500 mm diameter, 10,000 mm length",
+    range: "Up to 500 mm diameter, up to 6000 mm length",
   },
   {
     process: "Sleeve / Coupling / Bush Grinding",
-    range: "Internal: 50-500 mm dia. up to 1000 mm length. Outer: 50-800 mm dia. up to 1000 mm length. Internal key-way up to 1200 mm.",
+    range: "Internal: 50-500 mm dia. up to 1000 mm length. Outer: 50-500 mm dia. up to 1000 mm length.",
   },
   {
     process: "Lock Nut Machining & Threading",
-    range: "Machining 30-750 mm diameter. Threading 1-120 mm pitch (metric).",
+    range: "Machining up to 500 mm diameter.",
   },
   {
     process: "Retainer Ring / Thordon Bearing",
-    range: "70 mm - 700 mm diameter",
+    range: "Up to 500 mm diameter",
   },
 ] as const;
 
 export const equipment = [
+  "CNC Turning Machine",
+  "CNC Grinding Machine",
+  "VMC Key-Way Machine",
   "NXG EZEECUT Wire-Cut Machine",
-  "CNC Grinding Machines",
-  "CNC Lathe (up to 10,000 mm length, 500 mm diameter)",
-  "VMC Key-Way Machines",
 ] as const;
 
 export const inHouseTesting = [
@@ -192,29 +201,72 @@ export const outsourcedTesting = [
 export const clients = [
   {
     name: "Flowserve Corporation",
-    contacts: ["Mr. Fabrizio Baccani - Director, Manufacturing", "Mr. Jayakumar Jagadeeshan - Supply Chain"],
+    contacts: [
+      "Mr. Fabrizio Baccani - Director, Manufacturing",
+      "Mr. Jayakumar Jagadeeshan - Supply Chain",
+    ],
   },
   {
-    name: "EBARA Machinery India Pvt. Ltd.",
-    contacts: ["Mr. Hiroshi Suzuki - Director", "Mr. Yusuke Chikamori - Procurement", "Mr. Rajamanikandan K - Deputy Manager, Procurement"],
+    name: "Ebara Machinery India Private Limited",
+    contacts: [
+      "Mr. Hiroshi Suzuki - Director",
+      "Mr. Yusuke Chikamori - Procurement",
+      "Mr. Rajamanikandan K - Deputy Manager, Procurement",
+    ],
   },
   {
     name: "TMEIC",
-    contacts: ["Mr. Katsuki Manabu - Japanese Expert", "Mr. Balasubramaniam - Manager, Manufacturing Engineering", "Mr. Anesh Pandit - Manager, Vendor Development", "Mr. Sailes H Puranik - Head, SCM & Procurement"],
+    contacts: [
+      "Mr. Katsuki Manabu - Japanese Expert",
+      "Mr. Balasubramaniam - Manager, Manufacturing Engineering",
+      "Mr. Anesh Pandit - Manager, Vendor Development",
+      "Mr. Sailesh H. Puranik - Head, SCM & Procurement",
+    ],
   },
   {
     name: "Valmet, Sweden",
-    contacts: [],
+    contacts: ["Valmet Sweden - International Industrial Customer"],
   },
   {
     name: "DMW Corporation Ltd.",
-    contacts: ["Mr. Taizo Kobayashi - Costing Sales, Japan", "Mr. Ashok Yadav - Factory Manager, Pune", "Mr. Gajanan Lokhande - QA Manager, Pune"],
+    contacts: [
+      "Mr. Taizo Kobayashi - DMW Japan (Costing Sales)",
+      "Mr. Ashok Yadav - DMW Pune (Factory Manager)",
+      "Mr. Gajanan Lokhande - DMW Pune (QA Manager)",
+    ],
   },
   {
-    name: "Nash",
-    contacts: [],
+    name: "NASH",
+    contacts: ["Korean Quality Expert Inspection Team Visit"],
   },
 ] as const;
+
+export const specialCapabilities = {
+  specialShaft: {
+    title: "Special Long Shaft Capability",
+    diameter: "400 mm",
+    length: "9500 mm (9.5 m)",
+    threadLength: "390 mm",
+    description: "Special extra-long precision shaft manufacturing capability.",
+  },
+  specialMaterialGrade: {
+    title: "Special Grade Material Processing",
+    diameter: "200 mm",
+    length: "4882 mm",
+    material: "X2CrNiMoN 22-5-3 (Duplex Stainless Steel)",
+    description: "High-spec alloy machining for severe industrial environments.",
+  },
+  assemblyProjects: {
+    title: "In-House Assembly Capability",
+    flagshipProject: "Project ES-562",
+    description: "Complete in-house pump assembly and testing capability under strict QA.",
+  },
+  gearManufacturing: {
+    title: "Custom Gear Manufacturing",
+    types: ["Spur Gears", "Helical Gears"],
+    description: "Custom manufactured spur and helical gears per customer drawings and specifications.",
+  },
+} as const;
 
 export const industries = [
   "Pump OEMs",

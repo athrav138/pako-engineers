@@ -1,3 +1,47 @@
+import fs from 'fs';
+import path from 'path';
+
+try {
+  const dir = './public/images/company/leadership';
+  if (fs.existsSync(dir)) {
+    const ceoSrc = path.join(dir, 'sudarshankhot');
+    if (fs.existsSync(ceoSrc)) {
+      const dest = path.join(dir, 'ceo-sudarshan-khot.webp');
+      fs.copyFileSync(ceoSrc, dest);
+      console.log(`[CONFIG] Copied sudarshankhot to ${dest}`);
+    }
+
+    const suhasDir = path.join(dir, 'suhaskhot_files');
+    if (fs.existsSync(suhasDir)) {
+      const items = fs.readdirSync(suhasDir);
+      for (const item of items) {
+        const itemPath = path.join(suhasDir, item);
+        const stat = fs.statSync(itemPath);
+        if (stat.isFile() && stat.size > 200000) {
+          const fd = fs.openSync(itemPath, 'r');
+          const buffer = Buffer.alloc(12);
+          fs.readSync(fd, buffer, 0, 12, 0);
+          fs.closeSync(fd);
+          const hex = buffer.toString('hex').toUpperCase();
+          let type = 'unknown';
+          if (hex.startsWith('FFD8FF')) type = 'jpg';
+          else if (hex.startsWith('89504E47')) type = 'png';
+          else if (buffer.toString('utf8', 0, 4) === 'RIFF' && buffer.toString('utf8', 8, 12) === 'WEBP') type = 'webp';
+          
+          if (type !== 'unknown') {
+            const dest = path.join(dir, 'md-suhas-khot.webp');
+            fs.copyFileSync(itemPath, dest);
+            console.log(`[CONFIG] Copied MD image ${item} to ${dest}`);
+            break;
+          }
+        }
+      }
+    }
+  }
+} catch (e) {
+  console.error('[CONFIG] Error copying leadership images:', e);
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
