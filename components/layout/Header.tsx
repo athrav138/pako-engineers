@@ -35,7 +35,7 @@ type MegaMenuConfig = {
 const MEGA = {
   Company: {
     heading: "Company",
-    description: "30+ years of precision engineering excellence, serving pump OEMs and rotating equipment manufacturers across 12+ countries.",
+    description: "30+ years of precision engineering excellence, serving pump OEMs and rotating equipment manufacturers across 15+ countries.",
     image: Images.assets.cncTurningHero.src,
     imageAlt: "Pako Engineers manufacturing facility",
     links: [
@@ -119,11 +119,11 @@ type NavItem = { label: string; href: string; megaKey?: MegaKey };
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Company", href: "/about", megaKey: "Company" },
-  { label: "Products", href: "/products", megaKey: "Products" },
-  { label: "Projects", href: "/projects", megaKey: "Projects" },
-  { label: "Services", href: "/services", megaKey: "Services" },
-  { label: "Contact", href: "/contact", megaKey: "Contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 /* ─────────────────────────────────────────────

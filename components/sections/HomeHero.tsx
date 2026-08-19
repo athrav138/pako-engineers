@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 const STATS = [
   { icon: ShieldCheck, title: "ISO 9001:2015", desc: "Certified Company" },
   { icon: Award, title: "30+ Years", desc: "Experience" },
-  { icon: Globe, title: "12+ Countries", desc: "Global Exports" },
+  { icon: Globe, title: "15+ Countries", desc: "Global Exports" },
   { icon: Users, title: "500+", desc: "Happy Clients" },
 ];
 

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 const features = [
   "Over 30 years of engineering excellence",
   "ISO 9001:2015 Certified Manufacturing",
-  "Global export to 12+ countries",
+  "Global export to 15+ countries",
   "State-of-the-art CNC machinery",
 ];
 

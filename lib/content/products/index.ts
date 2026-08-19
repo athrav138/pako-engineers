@@ -19,12 +19,14 @@ export const products: ProductData[] = [
     summary: "Heavy-duty precision pump shafts engineered for critical industrial and marine applications.",
     description: "Our precision pump shafts are the core of our manufacturing capability. Machined to exacting tolerances from 50 mm to 1500 mm diameter and up to 8000 mm length (8 mtr) for machining, and up to 6500 mm length for grinding, these shafts deliver uncompromising performance in high-stress, continuous-duty environments.",
     overview: "Pump shafts are critical power transmission components responsible for connecting the pump driver (motor/engine) to the impeller. They must withstand severe torsional loads, vibration, and corrosive fluids. Pako Engineers manufactures precision shafts with absolute straightness and concentricity. Our advanced CNC machining capability allows us to produce complex profiles, splines, and keyways perfectly aligned with OEM specifications, ensuring extended bearing life and reduced mechanical seal wear.",
-    image: Images.assets.pumpShaftsAndSleeves.src,
+    image: Images.assets.shaftPhoto.src,
     gallery: [
-      Images.assets.pumpShaftsAndSleeves.src,
-      Images.assets.cncTurningHero.src,
-      Images.assets.largePumpRotorAssemblyThumb.src,
-      Images.assets.precisionQualityInspection.src
+      Images.assets.shaftPhoto.src,
+      Images.assets.shaftPhoto2.src,
+      Images.assets.shaftPng.src,
+      Images.assets.shaftInWhite.src,
+      Images.assets.specialShaft.src,
+      Images.assets.pumpShaftsAndSleeves.src
     ],
     engineeringDrawing: Images.assets.pumpShaftsAndSleeves.src,
     features: [
@@ -97,10 +99,11 @@ export const products: ProductData[] = [
     summary: "Wear-resistant sleeves and bushes designed to protect pump shafts in extreme conditions.",
     description: "Pako Engineers manufactures high-precision shaft sleeves designed to protect the pump shaft from wear, corrosion, and erosion at the stuffing box and seal locations.",
     overview: "Shaft sleeves act as a sacrificial barrier between the rotating shaft and the stationary packing or mechanical seal. Since they are subjected to intense friction and abrasive fluids, they must be extremely hard and perfectly concentric. We manufacture sleeves with superior surface finishes and high Rockwell hardness, drastically reducing seal wear and maintenance downtime for industrial pumps.",
-    image: Images.assets.machinedSleeveComponents.src,
+    image: Images.assets.sleeveMuffCouplingBushes.src,
     gallery: [
-      Images.assets.machinedSleeveComponents.src,
-      Images.assets.precisionQualityInspection.src
+      Images.assets.sleeveMuffCouplingBushes.src,
+      Images.assets.sleeveMuffulCouplingBush.src,
+      Images.assets.machinedSleeveComponents.src
     ],
     features: [
       { title: "Exceptional Hardness", description: "Heat-treated for maximum wear resistance in abrasive pumping applications." },
@@ -165,7 +168,8 @@ export const products: ProductData[] = [
     overview: "The impeller is the heart of a centrifugal pump, directly dictating flow rate and pressure. Pako Engineers specializes in the precision machining and dynamic balancing of impeller castings. We ensure critical bore tolerances, vane profiles, and keyways are exact. Proper dynamic balancing is crucial, and we ensure every impeller meets ISO 1940 standards, preventing vibration that could destroy bearings and seals.",
     image: Images.assets.machinedFlangeComponent.src,
     gallery: [
-      Images.assets.machinedFlangeComponent.src
+      Images.assets.machinedFlangeComponent.src,
+      Images.assets.productPng.src
     ],
     features: [
       { title: "Dynamic Balancing", description: "In-house static and dynamic balancing to ISO 1940 Grade 6.3 or 2.5." },
@@ -291,8 +295,9 @@ export const products: ProductData[] = [
     summary: "Customized pump parts and accessories manufactured to stringent OEM drawings.",
     description: "Beyond standard shafts and impellers, we act as a complete contract manufacturing partner for global OEMs. We manufacture a wide array of pump parts and accessories.",
     overview: "Pumps consist of dozens of precision-machined stationary and rotating components. We manufacture bearing housings, stuffing boxes, mechanical seal plates, wear rings, discharge manifolds, and casing covers. By combining heavy CNC turning, multi-axis milling, and precision grinding, we deliver ready-to-assemble components straight to your production line.",
-    image: Images.assets.longBedTurningLathe.src,
+    image: Images.assets.productPng.src,
     gallery: [
+      Images.assets.productPng.src,
       Images.assets.longBedTurningLathe.src,
       Images.assets.cncTurningHero.src
     ],
@@ -415,10 +420,11 @@ export const products: ProductData[] = [
     summary: "High-precision retainer rings and elastomeric bearings for marine and industrial pumps.",
     description: "We manufacture tight-tolerance retainer rings and bearing components, including the machining of specialized elastomeric bearings like Thordon and Feroform.",
     overview: "Vertical turbine pumps and marine tail-shafts rely on water-lubricated bearings housed inside metallic retainer rings. Machining non-metallic composites like Thordon requires specialized tooling, speeds, and feeds to maintain tight running clearances without melting or distorting the material. Pako Engineers has perfected this process, supplying ready-to-install bearing assemblies.",
-    image: Images.assets.retainerBearingComponent.src,
+    image: Images.assets.retainerRingThordonBearing.src,
     gallery: [
-      Images.assets.retainerBearingComponent.src,
-      Images.assets.machinedSleeveComponents.src
+      Images.assets.retainerRingThordonBearing.src,
+      Images.assets.thordonBearing.src,
+      Images.assets.retainerBearingComponent.src
     ],
     features: [
       { title: "Specialized Machining", description: "Expertise in machining non-metallic bearing composites like Thordon and Feroform." },
@@ -482,63 +488,55 @@ export const products: ProductData[] = [
       Images.assets.shaftMachiningLathe.src
     ],
     features: [
-      { title: "Profile Accuracy", description: "Precision gear hobbing and grinding for exact involute profiles." },
-      { title: "Optimal Hardness", description: "Case carburizing and induction hardening for extended tooth wear life." },
-      { title: "Complete Assemblies", description: "Gears can be assembled onto shafts in-house for a complete drop-in solution." }
+      { title: "High Tooth Accuracy", description: "Precision hobbed and ground profiles for smooth power transmission." },
+      { title: "Heat Treated", description: "Case hardened/nitrided to extend wear life and resist fatigue." },
+      { title: "Custom Splines & Keyways", description: "Internal and external splines cut to match customer shaft interfaces." }
     ],
     specifications: [
-      { label: "Gear Types", value: "Spur Gears, Helical Gears" },
-      { label: "Outside Diameter", value: "Custom, per drawing" },
-      { label: "Module / Pitch", value: "As specified" },
-      { label: "Heat Treatment", value: "Case Carburizing, Nitriding, Induction Hardening" },
-      { label: "Quality Grade", value: "DIN / AGMA standards as specified" },
-      { label: "Profile Grinding", value: "Available for high-precision gears" }
+      { label: "Gear Types", value: "Spur, Helical, Splined Shafts" },
+      { label: "Module Range", value: "1.0 to 12.0 Module" },
+      { label: "Max Outer Diameter", value: "600 mm" },
+      { label: "Accuracy Class", value: "DIN 6 / AGMA 11 or custom requirements" },
+      { label: "Surface Finish", value: "Ground profiles down to Ra 0.8 microns" }
     ],
     detailedMaterials: [
-      { name: "Alloy Steels (EN353, 8620)", description: "Case hardening steels.", recommendedFor: "High wear gear teeth." },
-      { name: "Carbon Steel (EN8/EN9)", description: "Medium strength.", recommendedFor: "Low speed gears." },
-      { name: "Bronze", description: "Low friction.", recommendedFor: "Worm gears." }
+      { name: "Alloy Steel (EN19 / EN24)", description: "High tensile strength and toughness.", recommendedFor: "Standard industrial gearboxes." },
+      { name: "Case Hardening Steel (20MnCr5 / 17CrNiMo6)", description: "Excellent core toughness with high surface hardness post heat-treatment.", recommendedFor: "Heavy duty, high-wear gears." },
+      { name: "Stainless Steel (SS304 / SS316)", description: "Corrosion resistance for special applications.", recommendedFor: "Food processing or marine environments." }
     ],
-    materials: ["EN353", "8620", "Carbon Steel", "Bronze"],
+    materials: ["Alloy Steel", "Case Hardened Steel", "Stainless Steel"],
     manufacturingWorkflow: [
-      { step: "Blank Turning", description: "Machining the gear blank.", machinesUsed: "CNC Lathe", inspection: "Dimensional" },
-      { step: "Hobbing", description: "Cutting the gear teeth.", machinesUsed: "Gear Hobber", inspection: "Pitch and Profile" },
-      { step: "Heat Treatment", description: "Case hardening the teeth.", machinesUsed: "Furnace", inspection: "Hardness testing" },
-      { step: "Bore/Face Grinding", description: "Grinding the mounting surfaces.", machinesUsed: "Cylindrical Grinder", inspection: "Concentricity" },
-      { step: "Profile Grinding", description: "Final finishing of the teeth.", machinesUsed: "Gear Grinder", inspection: "Tooth geometry check" }
+      { step: "Turning", description: "Pre-machining of gear blanks.", machinesUsed: "CNC Lathe", inspection: "Dimensional check" },
+      { step: "Gear Hobbing", description: "Cutting the gear teeth to profile.", machinesUsed: "Hobbing Machine", inspection: "Span measurement / Tooth thickness" },
+      { step: "Heat Treatment", description: "Case hardening or nitriding for surface hardness.", machinesUsed: "Heat Treatment Furnace", inspection: "Hardness testing" },
+      { step: "Profile Grinding", description: "Final grinding of teeth for noise reduction and alignment.", machinesUsed: "Gear Grinder", inspection: "Lead and profile error checking" }
     ],
     qualityAssurance: QA_STANDARD,
     industries: [
-      { name: "OEMs", usage: "Gearbox manufacturers." },
-      { name: "Automotive", usage: "Transmission components." },
-      { name: "Heavy Engineering", usage: "Crane and hoist drives." },
-      { name: "Agriculture", usage: "Tractor and machinery gears." }
+      { name: "Heavy Engineering", usage: "Industrial gearboxes and speed reducers." },
+      { name: "Marine", usage: "Propulsion and winch gear drives." },
+      { name: "Sugar Industry", usage: "Cane crusher and mill drives." },
+      { name: "OEMs", usage: "Custom rotating machinery integration." }
     ],
-    applications: ["OEMs", "Automotive", "Heavy Engineering", "Agriculture"],
+    applications: ["Heavy Engineering", "Marine", "Sugar Industry", "OEMs"],
     certifications: ["ISO 9001:2015"],
     downloads: [
-      { title: "Gear Manufacturing Capabilities", type: "PDF", size: "2.1 MB", url: "/documents/gear-manufacturing-capabilities.pdf" }
+      { title: "Gear Manufacturing Capability Profile", type: "PDF", size: "1.2 MB", url: "/documents/gear-manufacturing-capability.pdf" }
     ],
     faqs: [
-      { question: "Do you manufacture gearboxes?", answer: "We primarily manufacture the internal gear components and shafts, though we can perform sub-assembly based on customer requirements." },
-      { question: "What types of gears do you make?", answer: "We specialize in spur and helical gears." },
-      { question: "Do you perform gear profile grinding?", answer: "Yes, for applications requiring low noise and high precision (e.g., DIN 6 or better), we perform post-heat treatment profile grinding." },
-      { question: "What heat treatments do you offer for gears?", answer: "We offer case carburizing, induction hardening, and nitriding to achieve the required tooth surface hardness." },
-      { question: "Can you manufacture integral gear shafts?", answer: "Yes, we routinely machine shafts with integral hobbed pinions." },
-      { question: "Do you test gear hardness?", answer: "Yes, we perform rigorous hardness testing (HRC/BHN) on the teeth flanks." },
-      { question: "Can you reverse engineer a broken gear?", answer: "If an OEM drawing is unavailable, we can measure the broken gear, calculate the module and pitch, and manufacture a replacement." },
-      { question: "Do you make bronze worm gears?", answer: "Yes, we machine bronze worm gears for specific gearbox applications." },
-      { question: "What is the maximum diameter gear you can cut?", answer: "Please contact our engineering team with your drawings to confirm current machine capacity." },
-      { question: "Are gears dynamically balanced?", answer: "High-speed gears can be dynamically balanced upon request." }
+      { question: "What types of gears can you manufacture?", answer: "We manufacture custom spur gears, helical gears, and splined shafts according to customer drawings." },
+      { question: "Do you offer gear grinding?", answer: "Yes, we perform profile grinding to achieve precision tolerances, reduce noise, and increase life." },
+      { question: "What materials do you use for heavy-duty gears?", answer: "We typically use case-hardening steels like 20MnCr5 or 17CrNiMo6, which offer high surface hardness and tough cores." },
+      { question: "Can you cut internal splines?", answer: "Yes, we can broach or slot internal splines and keyways to suit customer requirements." }
     ],
-    relatedProducts: ["shaft", "coupling"]
+    relatedProducts: ["shaft", "coupling", "sleeve"]
   }
 ];
 
-export function getAllProducts(): ProductData[] {
-  return products;
-}
-
 export function getProductBySlug(slug: string): ProductData | undefined {
   return products.find((p) => p.slug === slug);
+}
+
+export function getAllProducts(): ProductData[] {
+  return products;
 }

@@ -112,7 +112,7 @@ export default async function ProjectDetailPage({
                   ))}
                 </div>
                 <p className="mt-5 rounded-lg bg-white p-4 text-sm text-ink-muted">
-                  Downloads: Available Upon Request
+                  Documents & Drawings: Available Upon Request
                 </p>
               </div>
             </div>

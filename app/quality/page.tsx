@@ -7,7 +7,7 @@ import { TestingFacilities } from "@/components/sections/TestingFacilities";
 import { QualityAssurance as QAOverview } from "@/components/sections/QualityAssurance";
 import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
-import { FileDown, Search, ShieldAlert, BarChart, ArrowRight, CheckCircle2, Factory } from "lucide-react";
+import { FileText, Search, ShieldAlert, BarChart, ArrowRight, CheckCircle2, Factory } from "lucide-react";
 
 import { Images } from "@/lib/images";
 export const metadata: Metadata = {
@@ -44,11 +44,11 @@ export default function QualityPage() {
         description="Quality is embedded at every stage of the manufacturing process ensuring complete traceability and dimensional accuracy for every component we export."
         backgroundImage={Images.assets.precisionQualityInspection.src}
       >
-         <div className="mt-8 flex flex-col sm:flex-row gap-4">
-          <Button href="#manual" variant="glass">
-            <FileDown size={16} className="mr-2" /> Download Quality Manual
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <Button href="/contact?subject=Quality%20Manual%20Request" className="bg-oxide hover:bg-[#E64A19] text-white">
+            Request Quality Manual <ArrowRight size={16} className="ml-2" />
           </Button>
-          <Button href="/certifications" className="bg-oxide hover:bg-[#E64A19] text-white">
+          <Button href="/certifications" variant="glass">
             View ISO Certificate <ArrowRight size={16} className="ml-2" />
           </Button>
         </div>
@@ -122,17 +122,17 @@ export default function QualityPage() {
         </Container>
       </section>
 
-      {/* ═══ DOWNLOAD MANUAL ═══ */}
+      {/* ═══ REQUEST MANUAL ═══ */}
       <section id="manual" className="bg-navy py-20 text-white">
         <Container>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-16 text-center backdrop-blur-sm max-w-4xl mx-auto">
-            <FileDown size={48} className="mx-auto text-oxide mb-6" />
-            <h2 className="font-display text-3xl font-bold mb-4">Download Quality Manual</h2>
+            <FileText size={48} className="mx-auto text-oxide mb-6" />
+            <h2 className="font-display text-3xl font-bold mb-4">Request Quality Manual</h2>
             <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-              Review our comprehensive Quality Management System (QMS) guidelines, standard operating procedures, and calibration schedules.
+              Get in touch to review our comprehensive Quality Management System (QMS) guidelines, standard operating procedures, and calibration schedules.
             </p>
             <a href="/contact?subject=Quality%20Manual%20Request" className="bg-white text-navy hover:bg-slate-100 font-bold py-4 px-8 rounded-md inline-flex items-center gap-2 transition-colors">
-              <FileDown size={20} /> Request Quality Manual (PDF)
+              Request Quality Manual <ArrowRight size={20} />
             </a>
           </div>
         </Container>

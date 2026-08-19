@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MissionVision } from "@/components/sections/MissionVision";
@@ -20,12 +20,12 @@ import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About Us | Pako Engineers – Precision Machined Components Since 1994",
   description:
-    "Pako Engineers is an ISO 9001:2015 certified manufacturer and exporter of precision machined pump components, shafts, sleeves, and assemblies based in Sangli, Maharashtra. Serving global OEMs for 30+ years.",
+    "Pako Engineers is an ISO 9001:2015 certified manufacturer and exporter of precision machined pump components, shafts, sleeves, and assemblies based in Palus, Maharashtra. Serving global OEMs for 30+ years in 15+ countries.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Pako Engineers – 30+ Years of Precision Manufacturing",
     description:
-      "ISO 9001:2015 certified manufacturer and exporter of precision machined components and pump assemblies, serving OEMs across 12+ countries.",
+      "ISO 9001:2015 certified manufacturer and exporter of precision machined components and pump assemblies, serving OEMs across 15+ countries.",
     url: "https://pakoshaft.com/about",
     type: "website",
     images: [{ url: Images.assets.modernFactoryFloorOverview.src, width: 1200, height: 630 }],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Pako Engineers – Precision Manufacturing Since 1994",
-    description: "30+ years of engineering excellence. ISO 9001:2015 certified. Exporting to 12+ countries.",
+    description: "30+ years of engineering excellence. ISO 9001:2015 certified. Exporting to 15+ countries.",
   },
 };
 
@@ -50,7 +50,7 @@ function OrganizationSchema() {
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address.line1,
-      addressLocality: "Sangli",
+      addressLocality: "Palus",
       addressRegion: "Maharashtra",
       postalCode: "416308",
       addressCountry: "IN",
@@ -85,15 +85,8 @@ export default function AboutPage() {
             Request a Quote <ArrowRight size={16} className="ml-2" />
           </Button>
           <Button href="/company-profile" variant="glass">
-            <Download size={16} className="mr-2" /> Company Profile
+            Company Profile <ArrowRight size={16} className="ml-2" />
           </Button>
-          <a
-            href={companyProfileDocument.publicPath}
-            download={companyProfileDocument.fileName}
-            className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 hover:bg-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors backdrop-blur-sm"
-          >
-            <Download size={16} /> Download PPT
-          </a>
         </div>
       </PageHero>
 
@@ -111,7 +104,7 @@ export default function AboutPage() {
                 Precision Manufacturing Since {company.founded}
               </h2>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
-                Pako Engineers is an {company.certification} certified manufacturer and exporter of precision machined components based in Sangli, Maharashtra. We specialize in pump shafts, sleeves, couplings, impellers, lock nuts, retainer rings, Thordon bearings, gears, and complete pump assemblies in all materials of construction.
+                Pako Engineers is an {company.certification} certified manufacturer and exporter of precision machined components based in Palus, Maharashtra. We specialize in pump shafts, sleeves, couplings, impellers, lock nuts, retainer rings, Thordon bearings, gears, and complete pump assemblies in all materials of construction.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
                 Our core strength lies in heavy-duty CNC turning, precision grinding, and wire-cut EDM machining for pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East, and North America. With machining capacity up to 500 mm diameter and 6,000 mm length, we handle precision-engineered pump components in the industry.
@@ -124,14 +117,14 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-raised border border-line">
               <Image
                 src={Images.assets.largePumpRotorAssembly.src}
-                alt="Pako Engineers manufacturing facility in Sangli, Maharashtra"
+                alt="Pako Engineers manufacturing facility in Palus, Maharashtra"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
               <div className="absolute bottom-6 left-6 z-10">
-                <p className="font-display text-lg font-bold text-white">Burli, Sangli — Maharashtra</p>
+                <p className="font-display text-lg font-bold text-white">Burli, Palus — Maharashtra</p>
                 <p className="text-sm text-white/80">ISO 9001:2015 Certified Facility</p>
               </div>
             </div>

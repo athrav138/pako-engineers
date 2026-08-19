@@ -79,7 +79,14 @@ export function Footer() {
           <ul className="mt-6 space-y-4 text-sm text-white/80">
             <li className="flex gap-3">
               <MapPin size={18} className="mt-0.5 shrink-0 text-white/50" />
-              <span className="leading-relaxed">{company.address.full}</span>
+              <a
+                href={company.contact.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="leading-relaxed transition-colors hover:text-white"
+              >
+                {company.address.full}
+              </a>
             </li>
             {company.leadership.map((person) => (
               <li key={person.phone} className="flex gap-3">

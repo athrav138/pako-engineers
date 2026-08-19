@@ -12,18 +12,23 @@ const CATEGORIES = ["All", "Factory", "Machines", "Products", "Assembly", "Inspe
 const IMAGES = [
   { id: 1, category: "Factory", src: Images.assets.factoryBuildingExterior.src, title: "Main Plant Exterior" },
   { id: 2, category: "Machines", src: Images.assets.galleryMachineShopOverview.src, title: "Machine Shop Overview" },
-  { id: 3, category: "Products", src: Images.assets.galleryFinishedPumpShaft.src, title: "Finished Pump Shaft" },
+  { id: 3, category: "Products", src: Images.assets.shaftPhoto.src, title: "Finished Pump Shaft" },
   { id: 4, category: "Assembly", src: Images.assets.largePumpRotorAssembly.src, title: "Rotor Assembly Line" },
   { id: 5, category: "Inspection", src: Images.assets.precisionQualityInspection.src, title: "Lathe Setup Inspection" },
   { id: 6, category: "Machines", src: Images.assets.galleryGrindingMachineOperator.src, title: "Grinding Machine Operator" },
-  { id: 7, category: "Products", src: Images.assets.machinedSleeveComponents.src, title: "Precision Sleeves" },
+  { id: 7, category: "Products", src: Images.assets.sleeveMuffCouplingBushes.src, title: "Precision Sleeves & Bushes" },
   { id: 8, category: "Machines", src: Images.assets.galleryLargeBoringMachine.src, title: "Large Boring Machine" },
-  { id: 9, category: "Factory", src: Images.assets.galleryRawMaterialStaging.src, title: "Raw Material Staging" },
+  { id: 9, category: "Factory", src: Images.assets.shopFloorPng.src, title: "Active Machine Shop Floor" },
   { id: 10, category: "Machines", src: Images.assets.galleryCncMachineOperator.src, title: "CNC Machine Operator" },
-  { id: 11, category: "Machines", src: Images.assets.galleryEdmMachine.src, title: "EDM Machine" },
+  { id: 11, category: "Machines", src: Images.assets.wireCutMachine.src, title: "Wire Cut EDM Machine" },
   { id: 12, category: "Machines", src: Images.assets.galleryVmcMachineOperator.src, title: "VMC Machine Operator" },
   { id: 13, category: "Products", src: Images.assets.gearComponents.src, title: "Machined Gear Components" },
-  { id: 14, category: "Products", src: Images.assets.retainerBearingComponent.src, title: "Retainer Bearing Component" },
+  { id: 14, category: "Products", src: Images.assets.retainerRingThordonBearing.src, title: "Retainer Ring & Thordon Bearing" },
+  { id: 15, category: "Products", src: Images.assets.supportRollerFinal.src, title: "Finished Support Roller" },
+  { id: 16, category: "Assembly", src: Images.assets.supportRollerAssembly.src, title: "Support Roller Quality Inspection" },
+  { id: 17, category: "Factory", src: Images.assets.specialGradeMaterial.src, title: "Special Grade Bar Stock" },
+  { id: 18, category: "Products", src: Images.assets.specialShaft.src, title: "Special Alloy Pump Shaft" },
+  { id: 19, category: "Products", src: Images.assets.thordonBearing.src, title: "Thordon Composite Bearing" },
 ];
 
 export function MasonryGallery() {

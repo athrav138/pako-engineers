@@ -41,7 +41,17 @@ export default async function ContactPage({
               </h3>
               <div className="mt-4 flex items-start gap-3 text-sm text-muted">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-oxide" />
-                {company.address.full}
+                <div>
+                  <p>{company.address.full}</p>
+                  <a
+                    href={company.contact.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center text-xs font-semibold text-oxide hover:underline"
+                  >
+                    View on Google Maps &rarr;
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, FileDown, Cog, Mail, FileText } from "lucide-react";
+import { ArrowRight, Cog, Mail, FileText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -59,8 +59,6 @@ export default async function ProductDetailPage({
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  const primaryDownload = product.downloads[0];
-
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -156,11 +154,6 @@ export default async function ProductDetailPage({
               <Button href="/contact" variant="outline" size="lg" className="border-line text-navy hover:border-oxide bg-white">
                 <Mail size={18} className="mr-2" /> Contact Engineering
               </Button>
-              {primaryDownload && (
-                <a href={primaryDownload.url} download target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98] border border-line bg-white hover:bg-surface hover:border-oxide text-navy h-14 px-8 text-base rounded-md">
-                  <FileText size={18} className="mr-2" /> Download Datasheet
-                </a>
-              )}
             </div>
           </div>
         </Container>
@@ -232,43 +225,14 @@ export default async function ProductDetailPage({
         </Container>
       </section>
 
-      {/* ═════ DOWNLOADS & FAQ ═════ */}
-      {(product.downloads.length > 0 || product.faqs.length > 0) && (
+      {/* ═════ FAQ ═════ */}
+      {product.faqs.length > 0 && (
         <section className="bg-white py-20 lg:py-28">
           <Container>
-            <div className="grid gap-16 lg:grid-cols-2">
-              {/* FAQ */}
-              {product.faqs.length > 0 && (
-                <div>
-                  <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Support</p>
-                  <h2 className="font-display text-3xl font-bold text-navy mb-6">Frequently Asked Questions</h2>
-                  <ProductFaq faqs={product.faqs} />
-                </div>
-              )}
-              
-              {/* DOWNLOADS */}
-              {product.downloads.length > 0 && (
-                <div>
-                  <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Resources</p>
-                  <h2 className="font-display text-3xl font-bold text-navy mb-6">Technical Downloads</h2>
-                  <div className="space-y-4 mt-8">
-                    {product.downloads.map((dl, i) => (
-                      <a key={i} href={dl.url} {...(dl.type !== "CAD" ? { download: true, target: "_blank", rel: "noopener noreferrer" } : {})} className="group flex items-center justify-between p-6 border border-line rounded-xl bg-surface hover:border-oxide/50 hover:bg-white shadow-sm transition-all">
-                        <div className="flex items-center gap-4">
-                          <div className="bg-white border border-line p-3 rounded shadow-sm group-hover:border-oxide/30 transition-colors">
-                            <FileDown size={24} className="text-oxide" />
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-navy group-hover:text-oxide transition-colors">{dl.title}</h4>
-                            <p className="text-xs text-ink-muted uppercase tracking-wider font-semibold mt-1">{dl.type} • {dl.size}</p>
-                          </div>
-                        </div>
-                        <ArrowRight size={20} className="text-slate-300 group-hover:text-oxide group-hover:-translate-x-1 transition-all" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+            <div className="max-w-3xl mx-auto">
+              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Support</p>
+              <h2 className="font-display text-3xl font-bold text-navy mb-6">Frequently Asked Questions</h2>
+              <ProductFaq faqs={product.faqs} />
             </div>
           </Container>
         </section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { FileText, Download, CheckCircle, ArrowRight, Users, Award, MapPin, Factory, Globe, Cog, BookOpen } from "lucide-react";
+import { FileText, CheckCircle, ArrowRight, Users, Award, MapPin, Factory, Globe, Cog, BookOpen } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { StatsSection } from "@/components/sections/StatsSection";
@@ -8,12 +8,12 @@ import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { company, companyProfileDocument, materials, clients, machiningCapacity, equipment, industries } from "@/lib/content/company";
+import { company, materials, clients, machiningCapacity, equipment, industries } from "@/lib/content/company";
 
 import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Company Profile | Pako Engineers – Manufacturer & Exporter Since 1994",
-  description: "Comprehensive company profile of Pako Engineers: ISO 9001:2015 certified, 47-member team, exporting precision machined components to 12+ countries.",
+  description: "Comprehensive company profile of Pako Engineers: ISO 9001:2015 certified, 47-member team, exporting precision machined components to 15+ countries.",
   alternates: { canonical: "/company-profile" },
   openGraph: {
     title: "Pako Engineers – Company Profile",
@@ -64,20 +64,7 @@ export default function CompanyProfilePage() {
         title="Pako Engineers at a Glance"
         description={company.profile.positioning}
         backgroundImage={Images.assets.shaftMachiningLathe.src}
-      >
-        <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <a
-            href={companyProfileDocument.publicPath}
-            download={companyProfileDocument.fileName}
-            className="inline-flex items-center gap-2 rounded-md bg-oxide hover:bg-[#E64A19] px-6 py-3 text-sm font-semibold text-white transition-colors"
-          >
-            <BookOpen size={16} /> Download Presentation
-          </a>
-          <Button href="#download" variant="glass">
-            <Download size={16} className="mr-2" /> Download Profile
-          </Button>
-        </div>
-      </PageHero>
+      />
 
       <Breadcrumb items={[{ label: "Company", href: "/about" }, { label: "Company Profile", href: "/company-profile" }]} />
 
@@ -90,7 +77,7 @@ export default function CompanyProfilePage() {
               <h2 className="font-display text-3xl font-bold text-navy mb-6">Who We Are</h2>
               <div className="space-y-4 text-lg leading-relaxed text-ink-muted">
                 <p>
-                  Pako Engineers is a precision machining company headquartered in Sangli, Maharashtra, India. Established in {company.founded}, the company has grown into a trusted OEM supplier serving global pump manufacturers and rotating equipment companies.
+                  Pako Engineers is a precision machining company headquartered in Palus, Maharashtra, India. Established in {company.founded}, the company has grown into a trusted OEM supplier serving global pump manufacturers and rotating equipment companies.
                 </p>
                 <p>
                   {company.profile.facility}
@@ -154,47 +141,7 @@ export default function CompanyProfilePage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div id="download" className="bg-navy text-white p-8 rounded-xl shadow-lg relative overflow-hidden">
-                <div className="absolute -right-6 -top-6 opacity-10 pointer-events-none">
-                  <FileText size={140} />
-                </div>
-                <h3 className="font-display text-xl font-bold mb-2 relative z-10">Download Profile</h3>
-                <p className="text-white/70 text-sm mb-6 relative z-10">
-                  Get our full company profile — machine list, testing facilities, client references, and manufacturing capacity.
-                </p>
 
-                {/* ── PPT Download ── */}
-                <a
-                  href={companyProfileDocument.publicPath}
-                  download={companyProfileDocument.fileName}
-                  className="group mb-3 flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-500/20 text-orange-300">
-                    <BookOpen size={20} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-white truncate">Company Presentation</p>
-                    <p className="text-xs text-white/50">{companyProfileDocument.type} · PPTX · {companyProfileDocument.sizeLabel}</p>
-                  </div>
-                  <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
-                </a>
-
-                {/* ── PDF Download ── */}
-                <a
-                  href={companyProfileDocument.publicPath}
-                  download={companyProfileDocument.fileName}
-                  className="group flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3 transition-all relative z-10"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-red-500/20 text-red-300">
-                    <FileText size={20} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-white truncate">Full Company Profile</p>
-                    <p className="text-xs text-white/50">Official presentation document</p>
-                  </div>
-                  <Download size={16} className="shrink-0 text-white/50 group-hover:text-white transition-colors" />
-                </a>
-              </div>
 
               <div className="bg-white p-8 rounded-xl border border-line shadow-sm">
                 <h3 className="font-display text-lg font-bold text-navy mb-4">Quality Policy</h3>

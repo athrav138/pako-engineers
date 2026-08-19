@@ -11,8 +11,8 @@ export const company = {
   certification: "ISO 9001:2015",
   address: {
     line1: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road",
-    line2: "Burli, Taluka Palus, District Sangli - 416308, Maharashtra, India",
-    full: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road, Burli, Taluka Palus, District Sangli - 416308, Maharashtra, India",
+    line2: "Burli, Taluka Palus - 416308, Maharashtra, India",
+    full: "Gat No. 453, M. No. 1230, Kirloskar Wadi Road, Burli, Taluka Palus - 416308, Maharashtra, India",
   },
   leadership: [
     {
@@ -70,7 +70,7 @@ export const company = {
     positioning:
       "An ISO 9001:2015 manufacturer and exporter serving pump OEMs and rotating equipment manufacturers across Asia, Europe, the Middle East and North America.",
     facility:
-      "Pako Engineers operates from Gat No. 453, Burli, Tal - Palus, Sangli, with machining, grinding, CNC lathe, wire-cut, VMC key-way and in-house assembly capabilities supported by calibrated measuring instruments.",
+      "Pako Engineers operates from Gat No. 453, Burli, Tal - Palus, Maharashtra, with machining, grinding, CNC lathe, wire-cut, VMC key-way and in-house assembly capabilities supported by calibrated measuring instruments.",
   },
   workforce: {
     total: 47,
@@ -89,7 +89,7 @@ export const company = {
     { label: "Years in Business", value: "30+" },
     { label: "Max Machining Diameter", value: "1500 mm" },
     { label: "Team Members", value: "47" },
-    { label: "Export Countries", value: "12" },
+    { label: "Export Countries", value: "15+" },
   ],
   exportCountries: [
     "Japan",
@@ -110,6 +110,7 @@ export const company = {
     email: "sales@pakoshaft.com",
     whatsapp: "+91 99218 54252",
     mapQuery: "Pako Engineers, Burli, Taluka Palus, District Sangli, Maharashtra 416308",
+    googleMapsUrl: "https://www.google.com/maps/place/PAKO+ENGINEERS/@17.102104,74.422174,14z/data=!4m6!3m5!1s0x3bc16d8224e04071:0xb4762c7e693634eb!8m2!3d17.1052912!4d74.4121198!16s%2Fg%2F11j252fdcz?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D",
   },
   businessHours: {
     open: "Wednesday - Monday: 9:00 AM - 6:00 PM",

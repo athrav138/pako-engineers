@@ -55,7 +55,7 @@ const commonLinks: LinkItem[] = [
   { label: "Quality", href: "/quality" },
   { label: "Contact", href: "/contact" },
   { label: "RFQ", href: "/request-quote" },
-  { label: "Downloads", href: "/company-profile" },
+  { label: "Company Profile", href: "/company-profile" },
 ];
 
 const capacityItems = machiningCapacity.map((item) => `${item.process}: ${item.range}`);

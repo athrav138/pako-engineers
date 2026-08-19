@@ -41,7 +41,7 @@ const MACHINES = [
     maxLength: "N/A",
     tolerance: "1 Micron",
     applications: "Splines, Special Keyways, Exotic Alloy Profiles",
-    image: Images.assets.edmMachine.src,
+    image: Images.assets.wireCutMachine.src,
   }
 ];
 

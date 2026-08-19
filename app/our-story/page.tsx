@@ -12,7 +12,7 @@ import { company } from "@/lib/content/company";
 import { Images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our Story & History | Pako Engineers – A Legacy of Precision Since 1994",
-  description: "From a modest workshop in Sangli to a global OEM supplier — discover the three-decade journey of Pako Engineers and our evolution in precision machining.",
+  description: "From a modest workshop in Palus, Maharashtra to a global OEM supplier — discover the three-decade journey of Pako Engineers and our evolution in precision machining.",
   alternates: { canonical: "/our-story" },
   openGraph: {
     title: "The Story of Pako Engineers – 30+ Years of Engineering Excellence",
@@ -44,7 +44,7 @@ export default function OurStoryPage() {
                 Founded on Precision, Built for Export
               </h2>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
-                In {company.founded}, Pako Engineers was established in Burli, a village near Sangli in Maharashtra, with a clear and ambitious goal: to provide the highest level of machining precision available in western India. What began as a workshop with conventional lathes has grown into a fully equipped manufacturing facility serving some of the world&apos;s most demanding pump and rotating equipment manufacturers.
+                In {company.founded}, Pako Engineers was established in Burli, a village in Palus, Maharashtra, with a clear and ambitious goal: to provide the highest level of machining precision available in western India. What began as a workshop with conventional lathes has grown into a fully equipped manufacturing facility serving some of the world&apos;s most demanding pump and rotating equipment manufacturers.
               </p>
               <p className="text-lg leading-relaxed text-ink-muted mb-6">
                 The Khot family — led by Mr. Sudarshan Khot and Mr. Suhas Khot — recognized early on that precision machining was not just about tight tolerances; it was about understanding metallurgy, investing in the right machinery, building repeatable processes, and earning the trust of clients who had zero tolerance for defects.

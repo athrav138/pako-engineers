@@ -5,7 +5,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { RelatedPages } from "@/components/sections/RelatedPages";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { ShieldCheck, Download, CheckCircle2, Award, FileSearch, ArrowRight, RefreshCcw, CheckSquare, Settings } from "lucide-react";
+import { ShieldCheck, CheckCircle2, Award, FileSearch, ArrowRight, RefreshCcw, CheckSquare, Settings } from "lucide-react";
 import { company } from "@/lib/content/company";
 
 import { Images } from "@/lib/images";
@@ -46,8 +46,8 @@ export default function CertificationsPage() {
         backgroundImage={Images.assets.precisionQualityInspection.src}
       >
         <div className="mt-8">
-          <Button href="#download" variant="glass">
-            <Download size={16} className="mr-2" /> View Certificate
+          <Button href="#certificate" variant="glass">
+            View Certificate <ArrowRight size={16} className="ml-2" />
           </Button>
         </div>
       </PageHero>
@@ -87,7 +87,7 @@ export default function CertificationsPage() {
             </div>
 
             {/* Right Certificate Viewer/Card */}
-            <div id="download" className="bg-navy border border-navy rounded-2xl p-8 lg:p-12 text-center shadow-raised relative overflow-hidden">
+            <div id="certificate" className="bg-navy border border-navy rounded-2xl p-8 lg:p-12 text-center shadow-raised relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none text-white">
                 <Award size={200} />
               </div>
@@ -103,7 +103,7 @@ export default function CertificationsPage() {
               </div>
 
               <a href="/contact?subject=ISO%20Certificate%20Request" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-surface transition-colors w-full justify-center relative z-10">
-                <Download size={18} /> Request Certificate PDF
+                Request Certificate <ArrowRight size={18} />
               </a>
             </div>
             

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { AboutSplit } from "@/components/sections/AboutSplit";
+import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
 import { ProductOverview } from "@/components/sections/ProductOverview";
@@ -28,6 +29,7 @@ export default function HomePage() {
     <>
       <HomeHero />
       <AboutSplit />
+      <LeadershipSection />
       <WhyChooseUs />
       <CapabilitiesSection />
       <ProductOverview />

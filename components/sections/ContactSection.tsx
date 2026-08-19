@@ -90,6 +90,14 @@ export function ContactSection() {
               <div>
                 <p className="font-bold text-navy">Factory Address</p>
                 <p className="mt-1 text-ink-muted">{company.address.full}</p>
+                <a
+                  href={company.contact.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 inline-flex items-center text-xs font-semibold text-oxide hover:underline"
+                >
+                  View on Google Maps &rarr;
+                </a>
               </div>
             </div>
 
