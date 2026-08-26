@@ -21,6 +21,24 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+  async redirects() {
+    return [
+      { source: "/about", destination: "/company", permanent: true },
+      { source: "/company-profile", destination: "/company", permanent: true },
+      { source: "/our-story", destination: "/company", permanent: true },
+      { source: "/infrastructure", destination: "/manufacturing", permanent: true },
+      { source: "/machines", destination: "/manufacturing", permanent: true },
+      { source: "/manufacturing-facility", destination: "/manufacturing", permanent: true },
+      { source: "/materials", destination: "/manufacturing", permanent: true },
+      { source: "/capabilities", destination: "/manufacturing", permanent: true },
+      { source: "/certifications", destination: "/quality", permanent: true },
+      { source: "/industries", destination: "/services", permanent: true },
+      { source: "/industries-served", destination: "/services", permanent: true },
+      { source: "/export-markets", destination: "/services", permanent: true },
+      { source: "/clients", destination: "/projects", permanent: true },
+      { source: "/admin", destination: "/", permanent: true },
+    ];
+  },
   async headers() {
     const securityHeaders = [
       { key: "X-DNS-Prefetch-Control", value: "on" },

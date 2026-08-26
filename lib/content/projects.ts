@@ -50,12 +50,12 @@ const productLinks = getAllProducts().map((product) => ({
 
 const commonLinks: LinkItem[] = [
   { label: "Products", href: "/products" },
-  { label: "Services", href: "/capabilities" },
-  { label: "Manufacturing Facility", href: "/manufacturing-facility" },
+  { label: "Services", href: "/services" },
+  { label: "Manufacturing Facility", href: "/manufacturing" },
   { label: "Quality", href: "/quality" },
   { label: "Contact", href: "/contact" },
   { label: "RFQ", href: "/request-quote" },
-  { label: "Company Profile", href: "/company-profile" },
+  { label: "Company Profile", href: "/company" },
 ];
 
 const capacityItems = machiningCapacity.map((item) => `${item.process}: ${item.range}`);
@@ -67,7 +67,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Pump Assembly Projects",
     eyebrow: "Projects",
     description: "Drawing-led pump component and assembly support for OEM pump programs.",
-    image: Images.assets.verticalPumpAssembly.src,
+    image: Images.assets.largePumpRotorAssembly.src,
     overview:
       "Pako Engineers manufactures precision machined pump shafts, sleeves, couplings, lock nuts, retainer rings, bearings and pump parts for OEM assembly programs. Work is controlled through drawing review, routing, machining, inspection, documentation and dispatch.",
     sections: [
@@ -144,7 +144,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Custom Engineering",
     eyebrow: "Projects",
     description: "Custom precision component manufacturing support for drawings, samples and prototypes.",
-    image: Images.assets.precisionQualityInspection.src,
+    image: Images.assets.cncTurningHero.src,
     overview:
       "Custom engineering work is handled as a controlled manufacturing support process. Pako Engineers reviews customer requirements, confirms feasible machining routes and manufactures components based on approved drawings, samples or technical specifications.",
     sections: [
@@ -226,7 +226,7 @@ export const projectPages: ProjectPageData[] = [
     title: "Industrial Solutions",
     eyebrow: "Projects",
     description: "Manufacturing solutions for industrial rotating equipment applications.",
-    image: Images.assets.shaftMachiningLathe.src,
+    image: Images.assets.cncTurningHero.src,
     overview:
       "Pako Engineers supports industrial sectors that rely on precision shafts, sleeves, impellers, couplings, lock nuts, retainer rings, bearings, gears and custom pump parts.",
     sections: [],

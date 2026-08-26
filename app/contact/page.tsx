@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/lib/content/company";
+import { createWhatsAppUrl } from "@/lib/utils";
 
 import { Images } from "@/lib/images";
 export const metadata: Metadata = {
@@ -112,7 +113,10 @@ export default async function ContactPage({
             </div>
 
             <a
-              href={`https://wa.me/${company.contact.whatsapp.replace("+", "")}`}
+              href={createWhatsAppUrl(
+                company.contact.whatsapp,
+                "Hello Pako Engineers, I would like to request a quote."
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface p-4 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-white"

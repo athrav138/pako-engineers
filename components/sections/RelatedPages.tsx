@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 
 const COMPANY_PAGES = [
   { label: "About Us", href: "/about" },
-  { label: "Company Profile", href: "/company-profile" },
+  { label: "Company Profile", href: "/company" },
   { label: "Our Story", href: "/our-story" },
   { label: "Infrastructure", href: "/infrastructure" },
-  { label: "Manufacturing Facility", href: "/manufacturing-facility" },
+  { label: "Manufacturing Facility", href: "/manufacturing" },
   { label: "Quality Assurance", href: "/quality" },
   { label: "ISO Certification", href: "/certifications" },
 ];
@@ -75,7 +75,7 @@ export function RelatedPages() {
         {/* Cross-Links */}
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
           <Link href="/products" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Products</Link>
-          <Link href="/capabilities" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Services & Capabilities</Link>
+          <Link href="/services" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Services & Capabilities</Link>
           <Link href="/projects" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Projects</Link>
           <Link href="/contact" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Contact Us</Link>
           <Link href="/request-quote" className="rounded-full border border-line bg-white px-4 py-2 text-ink-muted transition-colors hover:border-oxide hover:text-navy">Request Quote</Link>

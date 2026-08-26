@@ -36,9 +36,9 @@ export function Footer() {
           <ul className="mt-6 space-y-3">
             {([
               { label: "About Us", href: "/about" },
-              { label: "Company Profile", href: "/company-profile" },
+              { label: "Company Profile", href: "/company" },
               { label: "Our Story", href: "/our-story" },
-              { label: "Manufacturing", href: "/manufacturing-facility" },
+              { label: "Manufacturing", href: "/manufacturing" },
               { label: "Quality Assurance", href: "/quality" },
             ] as const).map((item) => (
               <li key={item.label}>
@@ -58,8 +58,8 @@ export function Footer() {
           <ul className="mt-6 space-y-3">
             {([
               { label: "Products", href: "/products" },
-              { label: "Capabilities", href: "/capabilities" },
-              { label: "Industries Served", href: "/industries" },
+              { label: "Services", href: "/services" },
+              { label: "Projects", href: "/projects" },
               { label: "Careers", href: "/careers" },
             ] as const).map((item) => (
               <li key={item.label}>

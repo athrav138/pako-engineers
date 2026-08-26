@@ -175,7 +175,7 @@ function CapabilitiesSectionContent({ pageMode = false }: CapabilitiesSectionCon
             </h2>
           </div>
           {!pageMode && (
-            <Button href="/capabilities" variant="outline" className="w-fit">
+            <Button href="/services" variant="outline" className="w-fit">
               View All Capabilities
             </Button>
           )}

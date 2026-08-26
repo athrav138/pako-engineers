@@ -3,13 +3,10 @@
 import { Images } from "@/lib/images";
 import Link from "next/link";
 import Image from "next/image";
-import { Logo } from "@/components/ui/Logo";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import {
-  Menu, Phone, Mail, X, ChevronDown, ChevronRight, Linkedin,
-  MapPin, ShieldCheck, ArrowRight, Building2, Package, Cog, Factory,
-  Award, BookOpen, FileText, Globe, Briefcase, Wrench,
-  Microscope, FlaskConical, Settings, Clock, MessageSquare, Map,
+  Menu, Phone, Mail, X, Linkedin,
+  MapPin, ShieldCheck, ArrowRight, MessageSquare,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -18,108 +15,14 @@ import { cn } from "@/lib/utils";
 import { company } from "@/lib/content/company";
 
 /* ─────────────────────────────────────────────
-   Mega Menu Data
+   Navigation Items
    ───────────────────────────────────────────── */
 
-type MegaLink = { label: string; href: string; icon: React.ElementType };
-
-type MegaMenuConfig = {
-  heading: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-  links: MegaLink[];
-  featured: { title: string; desc: string; href: string; cta: string };
-};
-
-const MEGA = {
-  Company: {
-    heading: "Company",
-    description: "30+ years of precision engineering excellence, serving pump OEMs and rotating equipment manufacturers across 15+ countries.",
-    image: Images.assets.cncTurningHero.src,
-    imageAlt: "Pako Engineers manufacturing facility",
-    links: [
-      { label: "About Us", href: "/about", icon: Building2 },
-      { label: "Company Profile", href: "/company-profile", icon: FileText },
-      { label: "Our Story", href: "/our-story", icon: BookOpen },
-      { label: "Infrastructure", href: "/infrastructure", icon: Factory },
-      { label: "Manufacturing Facility", href: "/manufacturing-facility", icon: Settings },
-      { label: "Quality Assurance", href: "/quality", icon: Award },
-      { label: "ISO Certification", href: "/certifications", icon: ShieldCheck },
-    ],
-    featured: { title: "ISO 9001:2015 Certified", desc: "Internationally recognized quality management systems ensuring precision in every component.", href: "/certifications", cta: "View Certifications" },
-  },
-  Products: {
-    heading: "Products",
-    description: "Precision machined components and pump assemblies manufactured to international standards for global OEMs.",
-    image: Images.assets.pumpShaftsAndSleeves.src,
-    imageAlt: "Precision pump shafts by Pako Engineers",
-    links: [
-      { label: "Pump Shafts", href: "/products/shaft", icon: Cog },
-      { label: "Sleeves", href: "/products/sleeve", icon: Cog },
-      { label: "Impellers", href: "/products/impeller", icon: Cog },
-      { label: "Couplings", href: "/products/coupling", icon: Cog },
-      { label: "Pump Components", href: "/products/pump-parts", icon: Package },
-      { label: "Lock Nuts", href: "/products/lock-nut", icon: Cog },
-      { label: "Retainer Rings & Bearings", href: "/products/retainer-ring", icon: Cog },
-      { label: "Gears", href: "/products/gears", icon: Cog },
-      { label: "All Products", href: "/products", icon: ArrowRight },
-    ],
-    featured: { title: "Custom Components", desc: "Send your drawing and specifications for a custom manufacturing quote.", href: "/request-quote", cta: "Request Quote" },
-  },
-  Projects: {
-    heading: "Projects",
-    description: "Delivering precision solutions for leading pump OEMs, marine systems, and industrial rotating equipment manufacturers worldwide.",
-    image: Images.assets.precisionQualityInspection.src,
-    imageAlt: "Pako Engineers project delivery",
-    links: [
-      { label: "Pump Assembly Projects", href: "/projects/pump-assembly-projects", icon: Settings },
-      { label: "OEM Manufacturing", href: "/projects/oem-manufacturing", icon: Factory },
-      { label: "Custom Engineering", href: "/projects/custom-engineering", icon: Wrench },
-      { label: "Export Projects", href: "/projects/export-projects", icon: Globe },
-      { label: "Industrial Solutions", href: "/projects/industrial-solutions", icon: Cog },
-    ],
-    featured: { title: "Global Exports", desc: "Exporting precision components to Japan, Germany, USA, and 9+ more countries.", href: "/export-markets", cta: "View Markets" },
-  },
-  Services: {
-    heading: "Services",
-    description: "End-to-end manufacturing capabilities from CNC machining to final inspection, supporting diameters up to 500mm.",
-    image: Images.assets.modernFactoryFloorOverview.src,
-    imageAlt: "CNC machining services at Pako Engineers",
-    links: [
-      { label: "CNC Turning", href: "/services#cnc-turning", icon: Wrench },
-      { label: "CNC Grinding", href: "/services#cnc-grinding", icon: Wrench },
-      { label: "Precision Machining", href: "/services#precision", icon: Cog },
-      { label: "Pump Assembly", href: "/services#assembly", icon: Settings },
-      { label: "Custom Manufacturing", href: "/services#custom", icon: Factory },
-      { label: "Surface Finishing", href: "/services#finishing", icon: Wrench },
-      { label: "Heat Treatment", href: "/services#heat-treatment", icon: FlaskConical },
-      { label: "Quality Inspection", href: "/services#inspection", icon: Microscope },
-      { label: "Export Packaging", href: "/services#packaging", icon: Package },
-    ],
-    featured: { title: "Max Capacity", desc: "Machining up to 500mm diameter and 6,000mm length with CNC precision.", href: "/services", cta: "View Services" },
-  },
-  Contact: {
-    heading: "Contact",
-    description: "Connect with our engineering and sales team for inquiries, quotations, and technical support.",
-    image: Images.assets.cncTurningHero.src,
-    imageAlt: "Contact Pako Engineers",
-    links: [
-      { label: "Contact Us", href: "/contact", icon: MessageSquare },
-      { label: "Factory Location", href: "/contact#map", icon: Map },
-      { label: "Business Hours", href: "/contact#hours", icon: Clock },
-      { label: "Careers", href: "/careers", icon: Briefcase },
-    ],
-    featured: { title: "Get a Quote", desc: "Send your specifications and get a detailed manufacturing proposal within 24 hours.", href: "/request-quote", cta: "Request Quote" },
-  },
-} satisfies Record<string, MegaMenuConfig>;
-
-type MegaKey = keyof typeof MEGA;
-type NavItem = { label: string; href: string; megaKey?: MegaKey };
+type NavItem = { label: string; href: string };
 
 const NAV_ITEMS: NavItem[] = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
+  { label: "COMPANY", href: "/company" },
   { label: "PRODUCTS", href: "/products" },
   { label: "PROJECTS", href: "/projects" },
   { label: "SERVICES", href: "/services" },
@@ -133,11 +36,8 @@ const NAV_ITEMS: NavItem[] = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeMega, setActiveMega] = useState<MegaKey | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<MegaKey | null>(null);
 
   const pathname = usePathname();
-  const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -163,23 +63,8 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    setActiveMega(null);
     setMobileOpen(false);
-    setMobileExpanded(null);
   }, [pathname]);
-
-  const openMega = useCallback((key: MegaKey) => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setActiveMega(key);
-  }, []);
-
-  const closeMega = useCallback(() => {
-    closeTimer.current = setTimeout(() => setActiveMega(null), 180);
-  }, []);
-
-  const keepMega = useCallback(() => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-  }, []);
 
   const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -244,22 +129,15 @@ export function Header() {
             {/* Desktop Nav Links */}
             <nav className="hidden lg:flex items-center gap-1 mx-auto" aria-label="Primary">
               {NAV_ITEMS.map((item) => (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => item.megaKey && openMega(item.megaKey)}
-                  onMouseLeave={closeMega}
-                >
+                <div key={item.label} className="relative">
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center gap-1.5 px-3 py-2 text-[15px] font-bold tracking-[0.03em] rounded transition-all whitespace-nowrap",
-                      isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-600 hover:text-[#0A1B2E]",
-                      activeMega === item.megaKey && "text-[#0A1B2E] bg-slate-50"
+                      "flex items-center px-3 py-2 text-[15px] font-bold tracking-[0.03em] rounded transition-all whitespace-nowrap",
+                      isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-600 hover:text-[#0A1B2E]"
                     )}
                   >
                     {item.label}
-                    {item.megaKey && <ChevronDown size={14} className={cn("ml-1 transition-transform duration-200 text-slate-400", activeMega === item.megaKey && "rotate-180 text-[#0A1B2E]")} />}
                   </Link>
                   {/* Active indicator */}
                   {isActive(item.href) && <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-[#0A1B2E] rounded-full" />}
@@ -286,48 +164,20 @@ export function Header() {
           </Container>
         </div>
 
-        {/* ═══════════ MEGA MENU PANEL ═══════════ */}
-        {activeMega && MEGA[activeMega] && (
-          <div
-            className="hidden lg:block absolute left-0 w-full bg-white border-b border-slate-200 shadow-2xl z-40"
-            style={{ top: scrolled ? "90px" : "126px" }}
-            onMouseEnter={keepMega}
-            onMouseLeave={closeMega}
-          >
-            <MegaPanel config={MEGA[activeMega]} onClose={() => setActiveMega(null)} />
-          </div>
-        )}
-
         {/* ═══════════ MOBILE NAV ═══════════ */}
         {mobileOpen && (
           <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl w-full max-h-[calc(100dvh-80px)] overflow-y-auto">
             <Container className="py-3">
               <nav className="flex flex-col">
                 {NAV_ITEMS.map((item) => (
-                  <div key={item.label} className="border-b border-slate-50 last:border-0">
-                    <div className="flex items-center">
-                      <Link href={item.href} className={cn("flex-1 px-3 py-3 text-[16px] font-bold tracking-wide transition-colors", isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-700")} onClick={() => setMobileOpen(false)}>
-                        {item.label}
-                      </Link>
-                      {item.megaKey && (
-                        <button type="button" onClick={() => setMobileExpanded(mobileExpanded === item.megaKey ? null : (item.megaKey ?? null))} className="p-3 text-slate-400" aria-label={`Expand ${item.label}`}>
-                          <ChevronDown size={18} className={cn("transition-transform duration-200", mobileExpanded === item.megaKey && "rotate-180")} />
-                        </button>
-                      )}
-                    </div>
-                    {item.megaKey && mobileExpanded === item.megaKey && MEGA[item.megaKey] && (
-                      <div className="ml-3 mb-2 pl-3 border-l-2 border-[#0A1B2E]/10 flex flex-col">
-                        {MEGA[item.megaKey].links.map((sub) => {
-                          const Icon = sub.icon;
-                          return (
-                            <Link key={sub.label} href={sub.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 text-[14px] font-medium text-slate-600 hover:text-[#0A1B2E] rounded transition-colors">
-                              <Icon size={16} className="text-slate-400 shrink-0" />{sub.label}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
+                  <Link 
+                    key={item.label} 
+                    href={item.href} 
+                    className={cn("flex items-center px-3 py-3 text-[16px] font-bold tracking-wide transition-colors border-b border-slate-50 last:border-0", isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-700")} 
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 ))}
               </nav>
               <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
@@ -339,82 +189,6 @@ export function Header() {
           </div>
         )}
       </header>
-
-      {/* Overlay for mega menu */}
-      {activeMega && <div className="fixed inset-0 z-30 bg-black/10 hidden lg:block" onClick={() => setActiveMega(null)} />}
     </>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   3‑Panel Mega Menu (Bosch / Siemens style)
-   ───────────────────────────────────────────── */
-
-function MegaPanel({ config, onClose }: { config: MegaMenuConfig; onClose: () => void }) {
-  return (
-    <Container className="py-0">
-      <div className="grid grid-cols-[240px_1fr_260px] min-h-[320px]">
-        {/* LEFT: Image + Description */}
-        <div className="bg-[#0A1B2E] text-white p-6 flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            <Image src={config.image} alt={config.imageAlt} fill className="object-cover" sizes="240px" />
-          </div>
-          <div className="relative z-10">
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-3">{config.heading}</h3>
-            <p className="text-[13px] leading-relaxed text-white/75">{config.description}</p>
-          </div>
-          <div className="relative z-10">
-            <Link href={config.featured.href} onClick={onClose} className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-sky-400 hover:text-white transition-colors">
-              Explore <ArrowRight size={12} />
-            </Link>
-          </div>
-        </div>
-
-        {/* CENTER: Navigation Links */}
-        <div className="px-8 py-6 border-x border-slate-100">
-          <div className={cn("grid gap-0.5", config.links.length > 6 ? "grid-cols-2" : "grid-cols-1")}>
-            {config.links.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={onClose}
-                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-slate-600 hover:bg-slate-50 hover:text-[#0A1B2E] transition-all group"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded bg-slate-100 text-slate-400 group-hover:bg-[#0A1B2E] group-hover:text-white transition-all">
-                    <Icon size={14} />
-                  </span>
-                  <span className="font-medium">{item.label}</span>
-                  <ChevronRight size={12} className="ml-auto text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* RIGHT: Featured / CTA */}
-        <div className="p-6 bg-slate-50/70 flex flex-col justify-between">
-          <div>
-            <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-[#0A1B2E]/10 text-[#0A1B2E] mb-3">Featured</span>
-            <h4 className="text-[15px] font-bold text-[#0A1B2E] mb-2">{config.featured.title}</h4>
-            <p className="text-[12.5px] text-slate-500 leading-relaxed">{config.featured.desc}</p>
-          </div>
-          <Link
-            href={config.featured.href}
-            onClick={onClose}
-            className="mt-4 flex items-center justify-center gap-2 rounded bg-[#0A1B2E] px-4 py-2.5 text-[11px] font-bold uppercase tracking-widest text-white hover:bg-[#132D4A] transition-colors shadow-sm"
-          >
-            {config.featured.cta} <ArrowRight size={12} />
-          </Link>
-          <div className="mt-4 pt-4 border-t border-slate-200">
-            <p className="text-[11px] text-slate-400 mb-1">Need help?</p>
-            <a href={`tel:${company.contact.phone}`} className="flex items-center gap-1.5 text-[12px] font-semibold text-[#0A1B2E] hover:text-sky-600 transition-colors">
-              <Phone size={12} />{company.contact.phone}
-            </a>
-          </div>
-        </div>
-      </div>
-    </Container>
   );
 }
