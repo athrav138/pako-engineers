@@ -7,7 +7,7 @@ import { InfrastructureSection } from "@/components/sections/InfrastructureSecti
 import { GalleryMasonry } from "@/components/sections/GalleryMasonry";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTABand } from "@/components/sections/CTABand";
-import { RelatedPages } from "@/components/sections/RelatedPages";
+
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { company, equipment, machiningCapacity } from "@/lib/content/company";
@@ -161,7 +161,6 @@ export default function InfrastructurePage() {
         title="Need a facility tour or capability assessment?"
         description="We welcome clients and partners to visit our manufacturing facility in Sangli for an in-person walkthrough."
       />
-      <RelatedPages />
     </>
   );
 }

@@ -4,57 +4,67 @@ import { company } from "@/lib/content/company";
 import { Images } from "@/lib/images";
 
 export function LeadershipSection() {
+  const featuredLeaders = company.leadership.slice(0, 2);
+
   return (
     <section className="py-20 lg:py-28 bg-[#F8FAFC] border-t border-line">
       <Container>
-        <div className="grid gap-16 lg:grid-cols-2 items-center">
-          <div>
-            <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Leadership</p>
-            <h2 className="font-display text-3xl font-bold text-navy mb-6 md:text-4xl">
-              Led by Industry Veterans
-            </h2>
-            <p className="text-lg leading-relaxed text-ink-muted mb-8">
-              Under the stewardship of the Khot family, Pako Engineers has grown from a modest machining workshop into a globally recognized supplier. Our leadership prioritizes engineering excellence, continuous improvement, and customer partnership.
-            </p>
-            <div className="space-y-6">
-              {company.leadership.map((leader) => (
-                <div key={leader.name} className="flex items-start gap-5 rounded-xl border border-line bg-white p-6 shadow-sm">
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-line bg-navy/5">
-                    {leader.image ? (
-                      <Image
-                        src={leader.image}
-                        alt={leader.name}
-                        fill
-                        sizes="80px"
-                        className="object-cover object-top"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-navy text-white font-bold text-xl">
-                        {leader.name.split(" ").slice(-1)[0]?.[0] ?? "P"}
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-navy">{leader.name}</h3>
-                    <p className="text-sm text-oxide font-semibold">{leader.role}</p>
-                    <a href={`tel:${leader.phone.replaceAll("-", "")}`} className="mt-1 block text-sm text-ink-muted hover:text-navy transition-colors">
-                      {leader.phone}
-                    </a>
-                  </div>
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <p className="mb-3 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
+            Leadership
+          </p>
+          <h2 className="font-display text-3xl font-bold text-navy md:text-4xl">
+            Led by Industry Veterans
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-base leading-relaxed text-ink-muted">
+            Under the stewardship of the Khot family, Pako Engineers has grown
+            from a modest machining workshop into a globally recognized supplier.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
+          {featuredLeaders.map((leader) => (
+            <div
+              key={leader.name}
+              className="group overflow-hidden rounded-2xl border border-line bg-white shadow-sm hover:shadow-raised transition-shadow duration-300"
+            >
+              {/* Portrait image — fixed aspect ratio, no stretching */}
+              <div className="relative w-full aspect-[3/4] overflow-hidden bg-navy/5">
+                <Image
+                  src={leader.image ?? Images.assets.cncOperatorMachineControlThumb.src}
+                  alt={leader.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Subtle gradient at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+
+                {/* Name overlay on image */}
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 mb-1">
+                    {leader.role}
+                  </p>
+                  <h3 className="font-display text-xl font-bold leading-tight">
+                    {leader.name}
+                  </h3>
                 </div>
-              ))}
+              </div>
+
+              {/* Contact row */}
+              <div className="flex items-center justify-between px-6 py-4 border-t border-line">
+                <span className="text-sm font-semibold text-navy">{leader.role}</span>
+                <a
+                  href={`tel:${leader.phone.replaceAll("-", "")}`}
+                  className="text-sm text-ink-muted hover:text-oxide transition-colors"
+                >
+                  {leader.phone}
+                </a>
+              </div>
             </div>
-          </div>
-          
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-raised border border-line hidden lg:block">
-            <Image
-              src={Images.assets.cncOperatorMachineControlThumb.src}
-              alt="Pako Engineers Machine Setup"
-              fill
-              sizes="50vw"
-              className="object-cover"
-            />
-          </div>
+          ))}
         </div>
       </Container>
     </section>

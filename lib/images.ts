@@ -63,7 +63,7 @@ export const Images = {
       height: 250,
     }),
     ceoSudarshan: asset({
-      src: "/images/company/leadership/ceo-sudarshan-khot.webp",
+      src: "/images/company/leadership/ceo-sudarshan-khot.jpeg",
       alt: "Mr. Sudarshan Khot, Chief Executive Officer of Pako Engineers",
       title: "Mr. Sudarshan Khot",
       caption: "Chief Executive Officer",
@@ -72,7 +72,7 @@ export const Images = {
       height: 1350,
     }),
     mdSuhas: asset({
-      src: "/images/company/leadership/md-suhas-khot.webp",
+      src: "/images/company/leadership/md-suhas-khot.jpeg",
       alt: "Mr. Suhas Khot, Managing Director of Pako Engineers",
       title: "Mr. Suhas Khot",
       caption: "Managing Director",
@@ -91,13 +91,23 @@ export const Images = {
       priority: true,
     }),
     logo: asset({
-      src: "/images/logos/pako-engineers-logo.png",
+      src: "/images/logos/logo.jpeg",
       alt: "Pako Engineers logo",
       title: "Pako Engineers Logo",
       caption: "Official Pako Engineers brand mark.",
       category: "logos",
       width: 1536,
       height: 1024,
+      priority: true,
+    }),
+    companyBuilding: asset({
+      src: "/images/logos/company.jpeg",
+      alt: "Pako Engineers company building exterior",
+      title: "Pako Engineers Company Building",
+      caption: "Exterior view of the Pako Engineers company facility.",
+      category: "company",
+      width: 1443,
+      height: 1090,
       priority: true,
     }),
     cncOperatorMachineControlThumb: asset({
@@ -456,7 +466,7 @@ export const Images = {
       height: 799,
     }),
     productPng: asset({
-      src: "/images/products/Product.png",
+      src: "/images/products/product-precision.png",
       alt: "Precision machined pump component",
       title: "Precision Machined Product",
       caption: "Finished precision component after final dimensional quality check.",
@@ -465,7 +475,7 @@ export const Images = {
       height: 900,
     }),
     retainerRingThordonBearing: asset({
-      src: "/images/products/Retainer ing, Throdan Bearing.png",
+      src: "/images/products/retainer-ring-thordon-bearing.png",
       alt: "Machined retainer ring and Thordon bearing assembly",
       title: "Retainer Ring & Thordon Bearing",
       caption: "Precision machined retainer ring assembly fitted with a Thordon bearing.",
@@ -474,7 +484,7 @@ export const Images = {
       height: 900,
     }),
     shaftPhoto2: asset({
-      src: "/images/products/SHAFT PHOTO 2.png",
+      src: "/images/products/shaft-photo-2.png",
       alt: "Heavy duty precision pump shaft",
       title: "Precision Pump Shaft Detail",
       caption: "Close-up of keyway and bearing journal section on a finished pump shaft.",
@@ -483,7 +493,7 @@ export const Images = {
       height: 900,
     }),
     shaftPhoto: asset({
-      src: "/images/products/SHAFT PHOTO.png",
+      src: "/images/products/shaft-photo.png",
       alt: "Machined precision pump shaft",
       title: "Machined Pump Shaft",
       caption: "Full view of a long-bed machined precision pump shaft.",
@@ -492,7 +502,7 @@ export const Images = {
       height: 900,
     }),
     shaftPng: asset({
-      src: "/images/products/SHAFT.png",
+      src: "/images/products/shaft.png",
       alt: "Precision pump shaft finish",
       title: "Precision Pump Shaft",
       caption: "Finished pump shaft showcasing the ground and polished seal areas.",
@@ -501,7 +511,7 @@ export const Images = {
       height: 900,
     }),
     supportRollerFinal: asset({
-      src: "/images/products/SUpport Roller Final.png",
+      src: "/images/products/support-roller-final.png",
       alt: "Finished support roller component",
       title: "Precision Support Roller",
       caption: "Fully finished support roller assembly ready for installation.",
@@ -510,7 +520,7 @@ export const Images = {
       height: 900,
     }),
     shaftInWhite: asset({
-      src: "/images/products/Shaft in white.png",
+      src: "/images/products/shaft-in-white.png",
       alt: "Precision pump shaft close-up view",
       title: "Pump Shaft Polished Finish",
       caption: "Close-up of a high-finish pump shaft showcasing polished bearing surfaces.",
@@ -519,7 +529,7 @@ export const Images = {
       height: 900,
     }),
     shopFloorPng: asset({
-      src: "/images/products/Shop.png",
+      src: "/images/products/shop.png",
       alt: "Pako Engineers machine shop floor",
       title: "Machine Shop Floor",
       caption: "View of the busy heavy-duty machining floor at Pako Engineers.",
@@ -528,7 +538,7 @@ export const Images = {
       height: 900,
     }),
     sleeveMuffCouplingBushes: asset({
-      src: "/images/products/Sleev, muffe coupling, bushes.png",
+      src: "/images/products/sleeve-muff-coupling-bushes.png",
       alt: "Machined sleeves, muff couplings, and bushes",
       title: "Sleeves, Couplings & Bushes",
       caption: "A lineup of machined sleeve, muff coupling, and custom bush components.",
@@ -537,7 +547,7 @@ export const Images = {
       height: 900,
     }),
     sleeveMuffulCouplingBush: asset({
-      src: "/images/products/Sleev, mufful coupling, bush.png",
+      src: "/images/products/sleeve-muff-coupling-bush.png",
       alt: "Precision machined sleeve and bush components",
       title: "Sleeve & Bush Components",
       caption: "Finished sleeves, muff couplings, and precision bushes.",
@@ -546,7 +556,7 @@ export const Images = {
       height: 900,
     }),
     specialGradeMaterial: asset({
-      src: "/images/products/Spacial Grade Matarial.png",
+      src: "/images/products/special-grade-material.png",
       alt: "Special grade raw materials for precision machining",
       title: "Special Grade Bar Stock",
       caption: "Super alloy and special grade stainless steel bar stock staged for machining.",
@@ -555,7 +565,7 @@ export const Images = {
       height: 900,
     }),
     specialShaft: asset({
-      src: "/images/products/Spacial Shaft.png",
+      src: "/images/products/special-shaft.png",
       alt: "Special machined pump shaft",
       title: "Special Alloy Pump Shaft",
       caption: "Custom designed and machined pump shaft in specialized alloy.",
@@ -564,7 +574,7 @@ export const Images = {
       height: 900,
     }),
     supportRollerAssembly: asset({
-      src: "/images/products/Support roller asambley.png",
+      src: "/images/products/support-roller-assembly.png",
       alt: "Support roller assembly under inspection",
       title: "Support Roller Assembly",
       caption: "Precision support roller assembly during quality checking.",
@@ -573,7 +583,7 @@ export const Images = {
       height: 900,
     }),
     thordonBearing: asset({
-      src: "/images/products/Thordon bearing.png",
+      src: "/images/products/thordon-bearing.png",
       alt: "Machined Thordon composite bearing",
       title: "Thordon Composite Bearing",
       caption: "Machined water-lubricated Thordon elastomeric bearing sleeve.",
@@ -582,7 +592,7 @@ export const Images = {
       height: 900,
     }),
     wireCutMachine: asset({
-      src: "/images/products/Wire Cuting Machine.png",
+      src: "/images/products/wire-cutting-machine.png",
       alt: "Wire cut EDM machine in operation",
       title: "Wire Cut EDM Machine",
       caption: "Advanced wire cut EDM machine cutting complex spline profiles.",

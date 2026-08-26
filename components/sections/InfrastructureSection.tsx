@@ -1,5 +1,4 @@
 import { Images } from "@/lib/images";
-
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { company } from "@/lib/content/company";
@@ -22,21 +21,22 @@ export function InfrastructureSection() {
             Robust Infrastructure for Scalable Production
           </h2>
           <p className="text-lg leading-relaxed text-ink-muted">
-            {company.profile.facility} The production department is supported
-            by calipers, micrometers, gauges and the required measuring
-            instruments for routine dimensional control.
+            {company.profile.facility} The production department is supported by calipers,
+            micrometers, gauges and the required measuring instruments for routine dimensional
+            control.
           </p>
         </div>
 
-        {/* Carousel / Large Image Gallery Layout */}
+        {/* Image grid */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-2 h-auto md:h-[600px]">
-          {/* Main Large Image */}
+          {/* Main large image */}
           <div className="group relative min-h-[300px] overflow-hidden rounded-2xl bg-surface motion-safe:opacity-0 motion-safe:animate-fade-up md:col-span-8 md:row-span-2">
             <Image
               src={Images.assets.modernFactoryFloorOverview.src}
               alt="Pako Engineers factory floor overview"
               fill
               sizes="(max-width: 768px) 100vw, 66vw"
+              loading="lazy"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent opacity-80" />
@@ -46,7 +46,7 @@ export function InfrastructureSection() {
             </div>
           </div>
 
-          {/* Smaller Images */}
+          {/* Smaller images */}
           {INFRA_IMAGES.slice(0, 2).map((img, i) => (
             <div
               key={img.id}
@@ -58,13 +58,12 @@ export function InfrastructureSection() {
                 alt={`Pako Engineers ${img.label}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
               <div className="absolute bottom-4 left-4 z-10">
-                <p className="font-display font-bold text-white">
-                  {img.label}
-                </p>
+                <p className="font-display font-bold text-white">{img.label}</p>
               </div>
             </div>
           ))}

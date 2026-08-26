@@ -16,12 +16,12 @@ function validateContact(data: {
     return "Name must be at least 2 characters.";
   if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     return "A valid email address is required.";
-  if (!data.phone || data.phone.trim().length < 8)
-    return "Phone number is required.";
-  if (!data.country || data.country.trim().length < 2)
-    return "Country is required.";
-  if (!data.subject || data.subject.trim().length < 3)
-    return "Subject is required.";
+  if (data.phone && data.phone.trim().length > 0 && data.phone.trim().length < 8)
+    return "Phone number must be at least 8 characters.";
+  if (data.country && data.country.trim().length > 0 && data.country.trim().length < 2)
+    return "Country must be at least 2 characters.";
+  if (data.subject && data.subject.trim().length > 0 && data.subject.trim().length < 3)
+    return "Subject must be at least 3 characters.";
   if (!data.message || data.message.trim().length < 10)
     return "Message must be at least 10 characters.";
   return null;
@@ -124,10 +124,10 @@ export async function POST(request: Request) {
   const fields = {
     name: (body.name || "").trim(),
     email: (body.email || "").trim().toLowerCase(),
-    company: (body.company || "").trim(),
-    phone: (body.phone || "").trim(),
-    country: (body.country || "").trim(),
-    subject: (body.subject || "").trim(),
+    company: (body.company || "").trim() || "Not Provided",
+    phone: (body.phone || "").trim() || "Not Provided",
+    country: (body.country || "").trim() || "Not Provided",
+    subject: (body.subject || "").trim() || "Website Contact Form Inquiry",
     message: (body.message || "").trim(),
   };
 

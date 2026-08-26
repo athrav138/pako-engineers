@@ -1,56 +1,78 @@
 import { Images } from "@/lib/images";
-
 import Image from "next/image";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Award, Globe2, Users, Factory } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { company } from "@/lib/content/company";
 
-const features = [
-  "Over 30 years of engineering excellence",
-  "ISO 9001:2015 Certified Manufacturing",
-  "Global export to 15+ countries",
-  "State-of-the-art CNC machinery",
+const STATS = [
+  { icon: Award,   value: "30+",  label: "Years of Excellence" },
+  { icon: Globe2,  value: `${company.exportCountries.length}+`, label: "Countries Served" },
+  { icon: Factory, value: "500mm", label: "Max Shaft Diameter" },
+  { icon: Users,   value: `${company.workforce.total}+`, label: "Skilled Professionals" },
 ];
 
 export function AboutSplit() {
   return (
-    <section className="overflow-hidden py-20 lg:py-32">
-      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <div className="relative aspect-square overflow-hidden rounded-lg bg-surface motion-safe:opacity-0 motion-safe:animate-fade-up lg:aspect-[4/5]">
-          <Image
-            src={Images.assets.modernFactoryFloorOverview.src}
-            alt="Pako Engineers Factory Floor"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-navy/10" />
-        </div>
+    <section className="overflow-hidden bg-white py-20 lg:py-32">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
-        <div className="motion-safe:opacity-0 motion-safe:animate-fade-up [animation-delay:120ms]">
-          <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
-            About Pako Engineers
-          </p>
-          <h2 className="mb-6 font-display text-3xl font-bold tracking-tight text-navy md:text-4xl lg:text-5xl">
-            Precision engineering that drives global industries.
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-ink-muted">
-            Since 1994, Pako Engineers has been at the forefront of manufacturing high-precision shafts, sleeves, couplings, and pump components. We combine decades of metallurgical expertise with modern CNC technology to deliver zero-defect components to global OEMs.
-          </p>
-          
-          <ul className="mb-10 space-y-4">
-            {features.map((feature) => (
-              <li key={feature} className="flex items-center gap-3 text-ink">
-                <CheckCircle2 className="text-success" size={20} />
-                <span className="font-medium">{feature}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Left — factory image */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-raised">
+            <Image
+              src={Images.assets.companyBuilding.src}
+              alt={Images.assets.companyBuilding.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+            <div className="absolute bottom-6 left-6 text-white">
+              <p className="font-display text-base font-bold">Burli, Palus — Maharashtra, India</p>
+              <p className="text-sm text-white/70">ISO 9001:2015 Certified · Est. {company.founded}</p>
+            </div>
+          </div>
 
-          <Button href="/about" size="lg">
-            Read Our Story
-            <ArrowRight size={18} className="ml-2" />
-          </Button>
+          {/* Right — intro teaser */}
+          <div>
+            <p className="mb-3 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
+              About Pako Engineers
+            </p>
+            <h2 className="mb-5 font-display text-3xl font-bold tracking-tight text-navy md:text-4xl lg:text-5xl">
+              Precision Engineering Since {company.founded}
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-ink-muted">
+              We are an {company.certification} certified manufacturer and exporter of
+              precision machined pump components — shafts, sleeves, couplings, impellers,
+              and complete pump assemblies — serving leading OEMs across{" "}
+              {company.exportCountries.length}+ countries worldwide.
+            </p>
+
+            {/* Key stats grid */}
+            <div className="mb-8 grid grid-cols-2 gap-4">
+              {STATS.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-3 rounded-xl border border-line bg-[#F8FAFC] p-4"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-oxide/10 text-oxide">
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <p className="font-display text-lg font-bold leading-none text-navy">{value}</p>
+                    <p className="mt-0.5 text-xs text-ink-muted">{label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Button href="/about" size="lg">
+              Learn More About Us
+              <ArrowRight size={18} className="ml-2" />
+            </Button>
+          </div>
         </div>
       </Container>
     </section>

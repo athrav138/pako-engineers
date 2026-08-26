@@ -148,17 +148,6 @@ export const Logo = ({ className, variant = 'default', compact = false }: LogoPr
           Engineers
         </text>
       </g>
-
-      {/* ── Subtle underline accent ── */}
-      <rect
-        x="68"
-        y="50"
-        width="40"
-        height="2"
-        rx="1"
-        fill={accentBlue}
-        opacity="0.5"
-      />
     </svg>
   );
 };

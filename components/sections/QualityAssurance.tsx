@@ -1,5 +1,4 @@
 import { Images } from "@/lib/images";
-
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Search, ShieldCheck, Microscope, Ruler } from "lucide-react";
@@ -37,13 +36,17 @@ export function QualityAssurance() {
           alt="Quality inspection at Pako Engineers"
           fill
           sizes="100vw"
+          loading="lazy"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-navy/85" />
       </div>
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-[1] opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      
+      <div
+        className="absolute inset-0 z-[1] opacity-10"
+        style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+      />
+
       <Container className="relative z-10">
         <div className="mb-16 md:w-2/3 lg:w-1/2">
           <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">
@@ -53,7 +56,9 @@ export function QualityAssurance() {
             Zero-Defect Philosophy.
           </h2>
           <p className="text-lg leading-relaxed text-white/70">
-            Quality is embedded at every stage of our manufacturing process. With dedicated inspection facilities and NDT capabilities, we guarantee the structural and dimensional integrity of every component.
+            Quality is embedded at every stage of our manufacturing process. With dedicated
+            inspection facilities and NDT capabilities, we guarantee the structural and
+            dimensional integrity of every component.
           </p>
         </div>
 

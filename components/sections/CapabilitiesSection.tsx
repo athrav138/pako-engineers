@@ -129,7 +129,15 @@ const CAPABILITIES: CapabilitySpec[] = [
   },
 ];
 
-export function CapabilitiesSection() {
+export function CapabilitiesSection({ pageMode = false }: CapabilitiesSectionContentProps = {}) {
+  return <CapabilitiesSectionContent pageMode={pageMode} />;
+}
+
+type CapabilitiesSectionContentProps = {
+  pageMode?: boolean;
+};
+
+function CapabilitiesSectionContent({ pageMode = false }: CapabilitiesSectionContentProps) {
   const [activeSpec, setActiveSpec] = useState<CapabilitySpec | null>(null);
 
   const handleClose = useCallback(() => {
@@ -166,9 +174,11 @@ export function CapabilitiesSection() {
               Profile-verified capacity for precision pump components.
             </h2>
           </div>
-          <Button href="/capabilities" variant="outline" className="w-fit">
-            View All Capabilities
-          </Button>
+          {!pageMode && (
+            <Button href="/capabilities" variant="outline" className="w-fit">
+              View All Capabilities
+            </Button>
+          )}
         </div>
 
         <div className="flex flex-col gap-8">
@@ -362,12 +372,12 @@ export function CapabilitiesSection() {
                     Request Quote for Spec
                   </Button>
                   <Button
-                    href="/capabilities"
+                    href={pageMode ? "/services" : "/capabilities"}
                     variant="outline"
                     className="w-full sm:w-auto"
                     onClick={handleClose}
                   >
-                    View All Specs Page
+                    {pageMode ? "View Services" : "View All Specs Page"}
                   </Button>
                 </div>
               </div>

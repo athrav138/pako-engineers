@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -11,10 +10,10 @@ import { IndustriesServed } from "@/components/sections/IndustriesServed";
 import { WorldMap } from "@/components/sections/WorldMap";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTABand } from "@/components/sections/CTABand";
-import { RelatedPages } from "@/components/sections/RelatedPages";
+
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { company, companyProfileDocument } from "@/lib/content/company";
+import { company } from "@/lib/content/company";
 
 import { Images, absoluteImageUrl } from "@/lib/images";
 export const metadata: Metadata = {
@@ -264,8 +263,6 @@ export default function AboutPage() {
         description="Send your drawings and specifications — we respond with capability confirmation and lead time within 24 hours."
       />
 
-      {/* ═══ RELATED PAGES ═══ */}
-      <RelatedPages />
     </>
   );
 }

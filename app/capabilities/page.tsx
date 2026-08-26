@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Cog, Ruler } from "lucide-react";
-import { PageHero } from "@/components/sections/PageHero";
+import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTABand } from "@/components/sections/CTABand";
@@ -16,11 +16,7 @@ export const metadata: Metadata = {
 export default function CapabilitiesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Capabilities"
-        title="Machining capacity built for large, precision rotating components"
-        description="Turning, grinding and CNC machining across a wide range of diameters and lengths, backed by dedicated wire-cut and key-way equipment."
-      />
+      <CapabilitiesSection pageMode />
 
       <section className="py-20 md:py-28">
         <Container>

@@ -118,12 +118,12 @@ type MegaKey = keyof typeof MEGA;
 type NavItem = { label: string; href: string; megaKey?: MegaKey };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT US", href: "/about" },
+  { label: "PRODUCTS", href: "/products" },
+  { label: "PROJECTS", href: "/projects" },
+  { label: "SERVICES", href: "/services" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 /* ─────────────────────────────────────────────
@@ -165,7 +165,6 @@ export function Header() {
   useEffect(() => {
     setActiveMega(null);
     setMobileOpen(false);
-
     setMobileExpanded(null);
   }, [pathname]);
 
@@ -226,15 +225,24 @@ export function Header() {
           "w-full bg-white border-b transition-shadow duration-300",
           scrolled ? "shadow-md border-slate-200" : "shadow-sm border-slate-100"
         )}>
-          <Container className="flex h-[64px] items-center justify-between gap-3">
+          <Container className="flex h-[80px] lg:h-[90px] items-center justify-between gap-3">
             <Link href="/" className="shrink-0" onClick={() => setMobileOpen(false)}>
-              <div className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3 py-1.5 shadow-sm">
-                <Logo variant="default" className="h-[48px] w-auto" />
+              <div className="inline-flex items-center rounded-xl bg-transparent px-2 py-1">
+                {/* Fallback rendering of user uploaded logo since we can't reliably replace the file right now */}
+                {/* It uses absolute Next.js <Image> with the user's uploaded logo */}
+                <Image 
+                  src="/images/logos/logo.jpeg"
+                  alt="Pako Engineers Logo"
+                  width={240}
+                  height={80}
+                  className="h-[55px] w-auto object-contain"
+                  priority
+                />
               </div>
             </Link>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center gap-0 mx-auto" aria-label="Primary">
+            <nav className="hidden lg:flex items-center gap-1 mx-auto" aria-label="Primary">
               {NAV_ITEMS.map((item) => (
                 <div
                   key={item.label}
@@ -245,24 +253,24 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center gap-1 px-2.5 py-2 text-[13px] font-semibold tracking-[0.01em] rounded transition-all whitespace-nowrap",
+                      "flex items-center gap-1.5 px-3 py-2 text-[15px] font-bold tracking-[0.03em] rounded transition-all whitespace-nowrap",
                       isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-600 hover:text-[#0A1B2E]",
                       activeMega === item.megaKey && "text-[#0A1B2E] bg-slate-50"
                     )}
                   >
                     {item.label}
-                    {item.megaKey && <ChevronDown size={11} className={cn("ml-0.5 transition-transform duration-200 text-slate-400", activeMega === item.megaKey && "rotate-180 text-[#0A1B2E]")} />}
+                    {item.megaKey && <ChevronDown size={14} className={cn("ml-1 transition-transform duration-200 text-slate-400", activeMega === item.megaKey && "rotate-180 text-[#0A1B2E]")} />}
                   </Link>
                   {/* Active indicator */}
-                  {isActive(item.href) && <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0A1B2E] rounded-full" />}
+                  {isActive(item.href) && <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-[#0A1B2E] rounded-full" />}
                 </div>
               ))}
             </nav>
 
             {/* Right Actions */}
             <div className="hidden lg:flex items-center gap-1.5">
-              <Button href="/request-quote" className="bg-[#0A1B2E] hover:bg-[#132D4A] text-white font-bold text-[11px] tracking-[0.1em] uppercase px-4 py-2.5 rounded flex items-center gap-1.5 h-auto ml-1 shadow-sm">
-                REQUEST QUOTE <ArrowRight size={12} />
+              <Button href="/request-quote" className="bg-[#0A1B2E] hover:bg-[#132D4A] text-white font-bold text-[12px] tracking-[0.1em] uppercase px-5 py-3 rounded flex items-center gap-1.5 h-auto ml-2 shadow-sm">
+                REQUEST QUOTE <ArrowRight size={14} />
               </Button>
             </div>
 
@@ -273,18 +281,16 @@ export function Header() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((v) => !v)}
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </Container>
         </div>
-
-
 
         {/* ═══════════ MEGA MENU PANEL ═══════════ */}
         {activeMega && MEGA[activeMega] && (
           <div
             className="hidden lg:block absolute left-0 w-full bg-white border-b border-slate-200 shadow-2xl z-40"
-            style={{ top: scrolled ? "64px" : "100px" }}
+            style={{ top: scrolled ? "90px" : "126px" }}
             onMouseEnter={keepMega}
             onMouseLeave={closeMega}
           >
@@ -294,19 +300,18 @@ export function Header() {
 
         {/* ═══════════ MOBILE NAV ═══════════ */}
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl w-full max-h-[calc(100dvh-64px)] overflow-y-auto">
+          <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl w-full max-h-[calc(100dvh-80px)] overflow-y-auto">
             <Container className="py-3">
-
               <nav className="flex flex-col">
                 {NAV_ITEMS.map((item) => (
                   <div key={item.label} className="border-b border-slate-50 last:border-0">
                     <div className="flex items-center">
-                      <Link href={item.href} className={cn("flex-1 px-3 py-3 text-[15px] font-semibold transition-colors", isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-700")} onClick={() => setMobileOpen(false)}>
+                      <Link href={item.href} className={cn("flex-1 px-3 py-3 text-[16px] font-bold tracking-wide transition-colors", isActive(item.href) ? "text-[#0A1B2E]" : "text-slate-700")} onClick={() => setMobileOpen(false)}>
                         {item.label}
                       </Link>
                       {item.megaKey && (
                         <button type="button" onClick={() => setMobileExpanded(mobileExpanded === item.megaKey ? null : (item.megaKey ?? null))} className="p-3 text-slate-400" aria-label={`Expand ${item.label}`}>
-                          <ChevronDown size={15} className={cn("transition-transform duration-200", mobileExpanded === item.megaKey && "rotate-180")} />
+                          <ChevronDown size={18} className={cn("transition-transform duration-200", mobileExpanded === item.megaKey && "rotate-180")} />
                         </button>
                       )}
                     </div>
@@ -315,8 +320,8 @@ export function Header() {
                         {MEGA[item.megaKey].links.map((sub) => {
                           const Icon = sub.icon;
                           return (
-                            <Link key={sub.label} href={sub.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2 text-[13.5px] text-slate-600 hover:text-[#0A1B2E] rounded transition-colors">
-                              <Icon size={13} className="text-slate-400 shrink-0" />{sub.label}
+                            <Link key={sub.label} href={sub.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 text-[14px] font-medium text-slate-600 hover:text-[#0A1B2E] rounded transition-colors">
+                              <Icon size={16} className="text-slate-400 shrink-0" />{sub.label}
                             </Link>
                           );
                         })}
@@ -326,9 +331,9 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                <a href={`tel:${company.contact.phone}`} className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Phone size={14} className="text-sky-600" />{company.contact.phone}</a>
-                <a href={`mailto:${company.contact.email}`} className="flex items-center gap-3 text-sm text-slate-700 px-3 py-2"><Mail size={14} className="text-sky-600" />{company.contact.email}</a>
-                <Button href="/request-quote" className="mt-2 w-full justify-center bg-[#0A1B2E] hover:bg-[#132D4A] text-white font-bold text-[12px] tracking-[0.08em] uppercase">REQUEST QUOTE</Button>
+                <a href={`tel:${company.contact.phone}`} className="flex items-center gap-3 text-[15px] font-medium text-slate-700 px-3 py-2"><Phone size={16} className="text-sky-600" />{company.contact.phone}</a>
+                <a href={`mailto:${company.contact.email}`} className="flex items-center gap-3 text-[15px] font-medium text-slate-700 px-3 py-2"><Mail size={16} className="text-sky-600" />{company.contact.email}</a>
+                <Button href="/request-quote" className="mt-4 w-full justify-center bg-[#0A1B2E] hover:bg-[#132D4A] text-white font-bold text-[14px] tracking-[0.08em] uppercase py-3">REQUEST QUOTE</Button>
               </div>
             </Container>
           </div>
@@ -375,7 +380,7 @@ function MegaPanel({ config, onClose }: { config: MegaMenuConfig; onClose: () =>
                   key={item.label}
                   href={item.href}
                   onClick={onClose}
-                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13.5px] text-slate-600 hover:bg-slate-50 hover:text-[#0A1B2E] transition-all group"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-slate-600 hover:bg-slate-50 hover:text-[#0A1B2E] transition-all group"
                 >
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded bg-slate-100 text-slate-400 group-hover:bg-[#0A1B2E] group-hover:text-white transition-all">
                     <Icon size={14} />

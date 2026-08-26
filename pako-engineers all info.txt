@@ -1,0 +1,768 @@
+For your **PAKO ENGINEERS Next.js + Tailwind website**, you already have a large part of the frontend completed. To make it a **fully working, professional production website**, I would divide the remaining work into these areas.
+
+## 1. Core website pages
+
+Make sure these pages are complete and actually connected:
+
+```text
+Home
+│
+├── Company
+│   ├── About Us
+│   ├── Company Profile
+│   ├── Leadership
+│   ├── Infrastructure
+│   ├── Manufacturing Facility
+│   ├── Machinery
+│   ├── Quality
+│   └── Certifications
+│
+├── Products
+│   ├── All Products
+│   ├── Shafts
+│   ├── Sleeves
+│   ├── Impellers
+│   ├── Couplings
+│   ├── Pump Parts
+│   ├── Lock Nuts
+│   ├── Retainer Rings
+│   └── Gears
+│
+├── Projects
+│   ├── Pump Assembly
+│   ├── OEM Manufacturing
+│   ├── Custom Engineering
+│   ├── Export Projects
+│   └── Industrial Solutions
+│
+├── Services
+│
+├── Contact
+│
+└── Request Quote
+```
+
+Every navigation item, submenu, CTA and button should lead to a real working page.
+
+---
+
+# 2. Company information
+
+This is especially important for an industrial manufacturing company.
+
+You need verified information for:
+
+* Company introduction
+* Established/history
+* Manufacturing capabilities
+* Product capabilities
+* Machinery
+* Infrastructure
+* Quality systems
+* Certifications
+* Industries served
+* Export markets
+* Leadership
+* Manpower
+* Manufacturing capacity
+* Materials
+* Engineering capabilities
+
+Use the **official PAKO Engineers information/PPT as the source of truth** rather than inventing technical information.
+
+---
+
+# 3. Products
+
+Your product section should work like a proper industrial catalogue.
+
+Each product should have:
+
+### Product overview
+
+* Product name
+* Description
+* Product image
+* Applications
+* Industries
+* Manufacturing capability
+
+### Technical information
+
+* Material
+* Size range
+* Diameter
+* Length
+* Tolerance
+* Surface finish
+* Manufacturing process
+* Heat treatment where applicable
+* Inspection method
+
+### Product actions
+
+```text
+View Details
+Request Quote
+Download Datasheet
+Contact Us
+```
+
+And related products should work.
+
+---
+
+# 4. Request Quote system
+
+This is one of the **most important functional parts** of your website.
+
+The RFQ form should collect:
+
+```text
+Name
+Company
+Email
+Phone
+Country
+Product
+Quantity
+Material
+Required Delivery
+Drawing Upload
+Additional Requirements
+```
+
+Then:
+
+```text
+Submit RFQ
+       ↓
+Validation
+       ↓
+API
+       ↓
+Email / Database
+       ↓
+Success Confirmation
+```
+
+The drawing upload should actually work.
+
+Don't leave it as a visual form only.
+
+---
+
+# 5. Contact system
+
+Your Contact page should have:
+
+```text
+Company Address
+Phone
+Email
+Working Hours
+Google Maps
+Contact Form
+```
+
+The contact form should actually send/store submissions.
+
+For example:
+
+```text
+Name
+Email
+Phone
+Company
+Message
+```
+
+Then show:
+
+> Thank you. Your enquiry has been received.
+
+---
+
+# 6. Email functionality
+
+You should have a proper business email such as:
+
+```text
+sales@pakoshaft.com
+info@pakoshaft.com
+```
+
+or your final domain-based email.
+
+Then connect:
+
+```text
+Contact Form
+       ↓
+Email Service
+       ↓
+Business Email
+```
+
+and:
+
+```text
+RFQ Form
+       ↓
+Email + Database
+```
+
+---
+
+# 7. Database
+
+A database is useful for storing enquiries.
+
+For example:
+
+```text
+contacts
+rfq_requests
+newsletter_subscribers
+```
+
+An RFQ record could contain:
+
+```text
+id
+name
+company
+email
+phone
+country
+product
+quantity
+material
+drawing_url
+message
+created_at
+status
+```
+
+Status could be:
+
+```text
+New
+Contacted
+In Progress
+Quoted
+Closed
+```
+
+---
+
+# 8. Admin panel
+
+For a professional business website, an optional but very useful feature is:
+
+```text
+/admin
+```
+
+with:
+
+```text
+Dashboard
+│
+├── Contact Enquiries
+├── RFQ Requests
+├── Product Enquiries
+├── Uploaded Drawings
+├── Messages
+└── Analytics
+```
+
+You should secure this properly.
+
+Do **not** create an admin page that exposes customer information publicly.
+
+---
+
+# 9. Images
+
+Your current image organization is already heading in the right direction.
+
+Maintain:
+
+```text
+public/images/
+
+hero/
+company/
+products/
+projects/
+machines/
+manufacturing/
+quality/
+logos/
+gallery/
+```
+
+For each image:
+
+* Real image
+* Correct category
+* Descriptive filename
+* Proper `alt`
+* Correct dimensions
+* Optimized WebP/AVIF
+* No unnecessary duplicates
+
+You should still collect the missing real photography you identified:
+
+### High priority
+
+* Management/team
+* ISO certificates
+* CMM
+* VMC
+* EDM
+* Export packaging
+* Raw material
+* Warehouse
+
+These will make the website considerably more credible.
+
+---
+
+# 10. Mobile responsiveness
+
+Test the complete website at:
+
+```text
+320px
+375px
+425px
+768px
+1024px
+1280px
+1440px
+1920px
+```
+
+Check:
+
+* Navbar
+* Mega menu
+* Hero
+* Cards
+* Product tables
+* Forms
+* Images
+* Buttons
+* Footer
+* Breadcrumbs
+
+There should be **zero horizontal scrolling** on mobile.
+
+---
+
+# 11. Performance
+
+Since you've already asked about performance, target:
+
+```text
+LCP      < 2.5s
+INP      < 200ms
+CLS      < 0.1
+```
+
+Ideally:
+
+```text
+LCP      < 2s
+INP      < 150ms
+CLS      < 0.05
+```
+
+Optimize:
+
+* Images
+* Fonts
+* JavaScript
+* CSS
+* Animations
+* Third-party scripts
+* Client components
+* API requests
+* Page rendering
+
+Use `next/image` and `next/font`.
+
+---
+
+# 12. SEO
+
+Every important page should have unique:
+
+```text
+Title
+Meta Description
+Canonical URL
+Open Graph
+Twitter metadata
+```
+
+Add appropriate structured data:
+
+```text
+Organization
+ManufacturingOrganization
+Product
+BreadcrumbList
+FAQPage
+WebPage
+```
+
+Also verify:
+
+```text
+/sitemap.xml
+/robots.txt
+```
+
+---
+
+# 13. Google Search
+
+Buying `pakoengineers.com` does **not automatically guarantee** that searching "PAKO Engineers" immediately shows your website.
+
+You need:
+
+```text
+Domain
+   ↓
+Vercel
+   ↓
+Google Search Console
+   ↓
+Sitemap
+   ↓
+Google indexing
+```
+
+Then gradually build search visibility.
+
+Also make sure your company name, address, phone and website are consistent everywhere.
+
+---
+
+# 14. Domain
+
+Once you buy the domain:
+
+```text
+pakoengineers.com
+```
+
+configure:
+
+```text
+www.pakoengineers.com
+```
+
+and choose one as the canonical domain.
+
+For example:
+
+```text
+https://pakoengineers.com
+```
+
+Redirect:
+
+```text
+www → non-www
+```
+
+or the opposite, but don't maintain two separate versions.
+
+---
+
+# 15. Analytics
+
+Add analytics so you know what visitors are doing.
+
+Track:
+
+```text
+Page views
+Product views
+RFQ submissions
+Contact submissions
+Phone clicks
+Email clicks
+WhatsApp clicks
+Download clicks
+```
+
+This is particularly useful for a B2B manufacturing website.
+
+---
+
+# 16. Security
+
+Before launch, verify:
+
+* HTTPS
+* Secure headers
+* Form validation
+* Rate limiting
+* File upload restrictions
+* File size limits
+* Allowed file types
+* API protection
+* No exposed API keys
+* Environment variables
+* Admin authentication
+* Spam protection
+
+For drawing uploads, don't allow arbitrary executable files.
+
+---
+
+# 17. Error handling
+
+Create proper:
+
+```text
+loading.tsx
+error.tsx
+not-found.tsx
+```
+
+Also provide useful messages.
+
+Instead of:
+
+> Error 500
+
+show something like:
+
+> Something went wrong. Please try again or contact PAKO Engineers.
+
+---
+
+# 18. Forms
+
+Every form should have:
+
+### Before submission
+
+```text
+Validation
+Required fields
+Email validation
+Phone validation
+File validation
+```
+
+### During submission
+
+```text
+Submitting...
+```
+
+### Success
+
+```text
+Request submitted successfully.
+```
+
+### Failure
+
+```text
+Unable to submit.
+Please try again.
+```
+
+Never let the user wonder whether their enquiry was actually submitted.
+
+---
+
+# 19. Legal pages
+
+For a professional production website, add:
+
+```text
+Privacy Policy
+Terms & Conditions
+Cookie Policy
+```
+
+Especially if you're collecting:
+
+* Name
+* Email
+* Phone
+* Company
+* Drawings
+* Enquiry information
+
+---
+
+# 20. Final testing
+
+Before calling it complete, test **every route**.
+
+For example:
+
+```text
+/
+ /about
+ /company-profile
+ /leadership
+ /infrastructure
+ /manufacturing
+ /quality
+ /certifications
+
+/products
+/products/shaft
+/products/sleeve
+/products/impeller
+/products/coupling
+/products/pump-parts
+/products/lock-nut
+/products/retainer-ring
+/products/gears
+
+/projects
+/projects/pump-assembly-projects
+/projects/oem-manufacturing
+/projects/custom-engineering
+/projects/export-projects
+/projects/industrial-solutions
+
+/services
+/contact
+/request-quote
+```
+
+Test every:
+
+```text
+Navbar link
+Mega-menu link
+Product card
+Project card
+CTA
+Breadcrumb
+Footer link
+Download
+Form
+Phone link
+Email link
+Map
+```
+
+---
+
+# 21. Production build
+
+Your final local checklist should be:
+
+```bash
+npm install
+
+npm run lint
+
+npm run build
+
+npm run start
+```
+
+Then test the production build, not only:
+
+```bash
+npm run dev
+```
+
+---
+
+# 22. Vercel deployment
+
+Final flow:
+
+```text
+Local Website
+      ↓
+Production Build
+      ↓
+GitHub
+      ↓
+Vercel
+      ↓
+pakoengineers.com
+      ↓
+HTTPS
+      ↓
+Google Search Console
+      ↓
+Sitemap
+      ↓
+Google Indexing
+```
+
+---
+
+# 23. Most important remaining priorities
+
+If I were finishing your PAKO Engineers website, I'd prioritize it in this order:
+
+### 🔴 Priority 1
+
+**Make RFQ and Contact forms genuinely functional**
+
+### 🔴 Priority 2
+
+**Verify every product page and technical specification**
+
+### 🔴 Priority 3
+
+**Verify all company information against the official PPT**
+
+### 🔴 Priority 4
+
+**Add real missing industrial photographs**
+
+### 🔴 Priority 5
+
+**Mobile testing**
+
+### 🔴 Priority 6
+
+**Performance optimization**
+
+### 🟠 Priority 7
+
+**SEO + Google Search Console**
+
+### 🟠 Priority 8
+
+**Business email**
+
+### 🟠 Priority 9
+
+**Analytics**
+
+### 🟡 Priority 10
+
+**Admin/enquiry management system**
+
+---
+
+## The definition of "fully working"
+
+For your website, I would consider it genuinely production-ready when this is true:
+
+**Visitor → finds company → explores products → views technical information → selects product → submits RFQ → uploads drawing → PAKO receives enquiry → customer receives confirmation → PAKO can manage enquiry → website is fast/mobile/SEO-friendly → Google can index it.**
+
+That's more important than simply having a polished frontend.
+
+Your current website appears to have the **frontend structure and content architecture largely in place**. The next major focus should be the **real business functionality, especially RFQ/contact submission, email handling, file uploads, domain/SEO, and final production testing**.
