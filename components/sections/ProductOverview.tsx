@@ -3,20 +3,22 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { products } from "@/lib/content/products";
+import { getAllProducts } from "@/lib/content/products";
 
 export function ProductOverview() {
+  const products = getAllProducts();
+
   return (
     <section className="py-20 md:py-28">
       <Container>
         <SectionHeading
           eyebrow="What We Manufacture"
-          title="Component families machined to OEM specification"
-          description="Every part is machined and finished in-house, in corrosion-resistant alloys selected for rotating equipment and pump applications."
+          title="Precision products machined to OEM specification"
+          description="A neatly sorted catalogue of shafts, sleeves, couplings, rings, rollers, gears, and pump components manufactured from certified materials."
         />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.slice(0, 4).map((product) => (
+          {products.map((product) => (
             <Link
               key={product.slug}
               href={`/products/${product.slug}`}
@@ -32,10 +34,13 @@ export function ProductOverview() {
                 />
               </div>
               <div className="flex flex-col flex-1 p-6">
+                <p className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-oxide">
+                  {product.category}
+                </p>
                 <h3 className="font-display text-lg font-semibold text-navy">
                   {product.name}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-ink-muted line-clamp-3">
+                <p className="mt-3 text-[14px] leading-relaxed text-ink-muted line-clamp-2">
                   {product.summary}
                 </p>
                 <div className="mt-auto pt-6 flex items-center gap-1 text-[13px] font-bold uppercase tracking-wider text-orange">

@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Cog, Mail, FileText } from "lucide-react";
+import { ArrowRight, Cog, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABand } from "@/components/sections/CTABand";
 import { RelatedProductsCarousel } from "@/components/sections/products/RelatedProductsCarousel";
-import { 
-  ProductGallery, 
-  ProductDrawing,
-  ProductSpecs, 
-  ProductFeatures, 
-  ProductMaterials,
-  ProductWorkflow,
-  ProductQuality,
-  ProductApplications, 
-  ProductFaq 
+import {
+  ProductGallery,
+  ProductSpecs,
 } from "@/components/sections/products/ProductDetailComponents";
 import { getProductBySlug, getAllProducts } from "@/lib/content/products";
 
@@ -59,6 +52,7 @@ export default async function ProductDetailPage({
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
+  
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -74,17 +68,17 @@ export default async function ProductDetailPage({
       "@type": "Organization",
       "name": "Pako Engineers"
     },
-    "additionalProperty": product.specifications.map((spec) => ({
+    "additionalProperty": product.specifications?.map((spec) => ({
       "@type": "PropertyValue",
       "name": spec.label,
       "value": spec.value
-    }))
+    })) || []
   };
 
   const faqSchema = product.faqs && product.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": product.faqs.map(faq => ({
+    "mainEntity": product.faqs.map((faq: any) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -162,81 +156,17 @@ export default async function ProductDetailPage({
       {/* ═════ SPECIFICATIONS & MATERIALS ═════ */}
       <section className="bg-background-light py-20 border-t border-line">
         <Container>
-          <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="max-w-4xl">
             {/* Left Col: Specs & Drawings */}
             <div>
-              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Engineering Details</p>
-              <h2 className="font-display text-3xl font-bold text-navy mb-6">Technical Specifications</h2>
-              <p className="text-ink-muted leading-relaxed mb-8">Manufactured strictly to OEM drawings, QAP (Quality Assurance Plan), and international material standards.</p>
-              
+              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Product Details</p>
+              <h2 className="font-display text-3xl font-bold text-navy mb-6">Basic Specifications</h2>
+              <p className="text-ink-muted leading-relaxed mb-8">Manufactured to customer drawings and inspected for critical dimensions before dispatch.</p>
               <ProductSpecs product={product} />
-
-              <div className="mt-12">
-                 <ProductDrawing product={product} />
-              </div>
-            </div>
-
-            {/* Right Col: Materials */}
-            <div>
-              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Metallurgy</p>
-              <h2 className="font-display text-3xl font-bold text-navy mb-6">Available Materials</h2>
-              <p className="text-ink-muted leading-relaxed">We source certified raw materials with complete 3.1 traceability to ensure component integrity in extreme environments.</p>
-              <ProductMaterials materials={product.detailedMaterials} />
             </div>
           </div>
         </Container>
       </section>
-
-      {/* ═════ MANUFACTURING WORKFLOW & FEATURES ═════ */}
-      <section className="bg-white py-20 lg:py-28 border-t border-line">
-        <Container>
-          <div className="grid gap-16 lg:grid-cols-2">
-            <div>
-              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Production</p>
-              <h2 className="font-display text-3xl font-bold text-navy mb-6">Manufacturing Process</h2>
-              <p className="text-ink-muted leading-relaxed mb-8">Every {product.name.toLowerCase()} follows a strict, documented routing plan from raw material to dispatch.</p>
-              <ProductWorkflow workflow={product.manufacturingWorkflow} />
-            </div>
-
-            <div>
-               <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Key Advantages</p>
-               <h2 className="font-display text-3xl font-bold text-navy mb-6">Features & Benefits</h2>
-               <ProductFeatures features={product.features} />
-
-               <div className="mt-16">
-                  <h3 className="font-display text-2xl font-bold text-navy mb-6">Quality Assurance Plan</h3>
-                  <p className="text-ink-muted leading-relaxed mb-8">100% inspection is performed at critical checkpoints. Components are delivered with full documentation.</p>
-                  <ProductQuality qa={product.qualityAssurance} />
-               </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ═════ APPLICATIONS ═════ */}
-      <section className="bg-navy py-20 lg:py-28 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/5" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.05 }} />
-        <Container className="relative z-10">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="font-display text-3xl font-bold mb-4">Industries & Applications</h2>
-            <p className="text-white/70">Our {product.name.toLowerCase()} are trusted by leading equipment manufacturers across heavy industries globally.</p>
-          </div>
-          <ProductApplications apps={product.industries} />
-        </Container>
-      </section>
-
-      {/* ═════ FAQ ═════ */}
-      {product.faqs.length > 0 && (
-        <section className="bg-white py-20 lg:py-28">
-          <Container>
-            <div className="max-w-3xl mx-auto">
-              <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-oxide">Support</p>
-              <h2 className="font-display text-3xl font-bold text-navy mb-6">Frequently Asked Questions</h2>
-              <ProductFaq faqs={product.faqs} />
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* ═════ RELATED PRODUCTS ═════ */}
       <RelatedProductsCarousel currentSlug={product.slug} relatedSlugs={product.relatedProducts} />

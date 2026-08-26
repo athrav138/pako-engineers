@@ -7,18 +7,14 @@ import {
   ChevronDown,
   ChevronUp,
   Cog,
-  Download,
   Droplet,
   Factory,
   Flame,
   Hammer,
   HardHat,
-  Ruler,
-  ScanLine,
   Settings,
   ShieldCheck,
   Wrench,
-  Check,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -105,65 +101,6 @@ export function ProductSpecs({ product }: { product: ProductData }) {
           ))}
         </tbody>
       </table>
-    </div>
-  );
-}
-
-export function ProductDrawing({ product }: { product: ProductData }) {
-  return (
-    <div className="rounded-xl border border-line bg-surface p-6 shadow-sm">
-      <div className="mb-6 flex items-center gap-3">
-        <Ruler className="text-oxide" size={24} />
-        <h3 className="font-display text-xl font-bold text-navy">Engineering Drawing</h3>
-      </div>
-      <div className="group relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-line bg-white p-8 text-center">
-        {product.engineeringDrawing ? (
-          <Image
-            src={product.engineeringDrawing}
-            alt="Engineering Drawing"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-contain p-4 opacity-50 transition-opacity group-hover:opacity-80"
-          />
-        ) : (
-          <div className="flex flex-col items-center text-ink-muted">
-            <ScanLine size={48} className="mb-4 text-slate-300" />
-            <p className="font-semibold text-navy">Detailed 2D/3D CAD Drawings Available</p>
-            <p className="mt-2 text-sm">Proprietary drawings are restricted. Please request access.</p>
-          </div>
-        )}
-        <div className="absolute inset-0 flex items-center justify-center bg-white/80 opacity-0 backdrop-blur-[2px] transition-opacity group-hover:opacity-100">
-          <a
-            href={`/request-quote?product=${product.slug}&requestType=cad`}
-            className="inline-flex items-center gap-2 rounded bg-navy px-4 py-2 text-sm font-bold tracking-wider text-white transition-colors hover:bg-oxide"
-          >
-            <Download size={16} /> Request CAD File
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function ProductMaterials({ materials }: { materials: ProductData["detailedMaterials"] }) {
-  return (
-    <div className="mt-8 space-y-4">
-      {materials.map((mat, i) => (
-        <div
-          key={i}
-          className="rounded-xl border border-line bg-white p-6 shadow-sm transition-colors hover:border-oxide/30"
-        >
-          <h4 className="mb-2 font-display text-lg font-bold text-navy">{mat.name}</h4>
-          <p className="mb-4 text-sm text-ink-muted">{mat.description}</p>
-          <div className="flex items-start gap-2 rounded-md bg-surface p-3">
-            <Check size={16} className="mt-0.5 shrink-0 text-success" />
-            <p className="text-xs font-semibold text-navy">
-              <span className="mr-2 uppercase tracking-widest text-oxide">Recommended:</span>
-              {mat.recommendedFor}
-            </p>
-          </div>
-        </div>
-      ))}
     </div>
   );
 }

@@ -230,7 +230,7 @@ export const products: ProductData[] = [
     summary: "Rigid muff and flexible drive couplings machined for absolute alignment in rotating assemblies.",
     description: "Pako Engineers manufactures high-precision muff couplings, rigid couplings, and drive coupling components. Machined to exacting standards, these components ensure zero angular or parallel misalignment.",
     overview: "Couplings are vital for transmitting torque from the motor to the pump shaft while accommodating slight misalignments and dampening vibration. We manufacture the metallic hubs, flanges, and muff couplings that form these assemblies. Because any misalignment causes severe bearing failure, our couplings are bored and faced with extreme perpendicularity and concentricity.",
-    image: Images.assets.machinedCircularFlange.src,
+    image: Images.assets.sleeveMuffulCouplingBush.src,
     gallery: [
       Images.assets.machinedCircularFlange.src
     ],
@@ -476,6 +476,58 @@ export const products: ProductData[] = [
     relatedProducts: ["shaft", "pump-parts", "sleeve"]
   },
   {
+    slug: "support-roller",
+    name: "Support Rollers",
+    category: "Pump Components",
+    summary: "Custom support rollers machined and assembled for rotating equipment and heavy-duty industrial use.",
+    description: "Pako Engineers manufactures support rollers as per customer drawings, with controlled machining, fitting, and final dimensional inspection.",
+    overview: "Support rollers are used where rotating or guided assemblies need stable load support and smooth movement. We machine roller bodies, shafts, bores, and mating faces to drawing requirements, then inspect critical dimensions before dispatch.",
+    image: Images.assets.supportRollerFinal.src,
+    gallery: [
+      Images.assets.supportRollerFinal.src,
+      Images.assets.supportRollerAssembly.src
+    ],
+    features: [
+      { title: "Custom Manufacturing", description: "Machined to customer drawings for required size, fit, and assembly needs." },
+      { title: "Ready for Assembly", description: "Supplied after deburring, dimensional checking, and fitment verification." },
+      { title: "Material Flexibility", description: "Manufactured from certified steel grades selected for the application load and environment." }
+    ],
+    specifications: [
+      { label: "Size", value: "As per customer drawing" },
+      { label: "Material", value: "Carbon steel, alloy steel, stainless steel, or specified grade" },
+      { label: "Finish", value: "As per drawing requirement" },
+      { label: "Inspection", value: "Dimensional and visual inspection before dispatch" }
+    ],
+    detailedMaterials: [
+      { name: "Carbon Steel", description: "General-purpose steel for standard industrial roller applications.", recommendedFor: "Moderate load support roller assemblies." },
+      { name: "Alloy Steel", description: "Higher strength steel for heavy-duty service.", recommendedFor: "High-load rotating assemblies." },
+      { name: "Stainless Steel", description: "Corrosion-resistant material option.", recommendedFor: "Wet or corrosive operating environments." }
+    ],
+    materials: ["Carbon Steel", "Alloy Steel", "Stainless Steel"],
+    manufacturingWorkflow: [
+      { step: "Material Preparation", description: "Cutting and preparing certified raw material.", machinesUsed: "Bandsaw / Lathe", inspection: "Material and size check" },
+      { step: "Turning", description: "Machining roller body, shaft fits, and faces.", machinesUsed: "CNC / Conventional Lathe", inspection: "Dimensional check" },
+      { step: "Drilling or Milling", description: "Machining holes, slots, or mounting features where required.", machinesUsed: "VMC / Drilling Machine", inspection: "Feature inspection" },
+      { step: "Final Inspection", description: "Checking dimensions, finish, and assembly readiness.", machinesUsed: "Calibrated instruments", inspection: "Final QA release" }
+    ],
+    qualityAssurance: QA_STANDARD,
+    industries: [
+      { name: "Heavy Engineering", usage: "Support and guide roller assemblies." },
+      { name: "Mining", usage: "Heavy-duty equipment and handling systems." },
+      { name: "OEMs", usage: "Build-to-print roller components for machinery manufacturers." }
+    ],
+    applications: ["Heavy Engineering", "Mining", "OEMs"],
+    certifications: ["ISO 9001:2015"],
+    downloads: [
+      { title: "Support Roller Manufacturing Enquiry", type: "PDF", size: "On request", url: "/request-quote?product=support-roller" }
+    ],
+    faqs: [
+      { question: "Do you manufacture support rollers in standard sizes?", answer: "Support rollers are manufactured mainly as per customer drawings and application requirements." },
+      { question: "Can you supply assembled rollers?", answer: "Yes, support roller assemblies can be supplied after machining, fitment, and final inspection." }
+    ],
+    relatedProducts: ["shaft", "pump-parts", "gears"]
+  },
+  {
     slug: "gears",
     name: "Industrial Custom Gears",
     category: "Gears",
@@ -538,5 +590,20 @@ export function getProductBySlug(slug: string): ProductData | undefined {
 }
 
 export function getAllProducts(): ProductData[] {
-  return products;
+  return [...products].sort((a, b) => {
+    const categoryOrder = [
+      "Pump Shafts",
+      "Sleeves & Bushes",
+      "Couplings",
+      "Lock Nuts",
+      "Bearings & Rings",
+      "Gears",
+      "Pump Components",
+    ];
+
+    return (
+      categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) ||
+      a.name.localeCompare(b.name)
+    );
+  });
 }
